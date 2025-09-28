@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government & Public Sector Transcription Software - LocalTranscribe</title>
+    <meta name="description" content="Secure transcription software for government agencies, court systems, and public sector organizations. Local processing for sensitive data. 5 minutes free monthly.">
+    <meta name="keywords" content="government transcription, court transcription, public sector, secure transcription, local processing, government software, federal agencies">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Government/Security color scheme */
+            --gov-primary: #1e3a8a;
+            --gov-secondary: #1e40af;
+            --gov-accent: #3b82f6;
+            --gov-light: #60a5fa;
+            --security-gradient: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            --lexopoly-primary: #1a365d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #059669;
+            --warning: #d97706;
+            --secure: #047857;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gov-accent);
+        }
+
+        .cta-button-nav {
+            background: var(--gov-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button-nav:hover {
+            background: var(--gov-secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: var(--security-gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-feature strong {
+            color: #dbeafe;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--gov-primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .freemium-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--gov-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pain-points {
+            background: var(--bg-secondary);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-point {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--gov-accent);
+        }
+
+        .pain-point-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-point h3 {
+            color: var(--gov-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .solution-features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--security-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--gov-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .security-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .security-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secure);
+        }
+
+        .security-card h4 {
+            color: var(--gov-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .compliance-notice {
+            background: #f0f9ff;
+            border: 2px solid var(--gov-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .compliance-notice h3 {
+            color: var(--gov-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .agencies-section {
+            background: white;
+        }
+
+        .agencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .agency-type {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .agency-type:hover {
+            transform: translateY(-5px);
+        }
+
+        .agency-type h4 {
+            color: var(--gov-primary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .agency-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-section {
+            background: var(--gov-primary);
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-display {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #dbeafe;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #dbeafe;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .enterprise-note {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: var(--gov-accent);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .final-cta-button:hover {
+            background: var(--gov-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .demo-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--gov-accent);
+            border: 2px solid var(--gov-accent);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+
+        .demo-button:hover {
+            background: var(--gov-accent);
+            color: white;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--gov-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #dbeafe;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid,
+            .pain-points-grid,
+            .security-grid,
+            .agencies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .freemium-badge {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+                max-width: fit-content;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .demo-button {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <div class="nav-links">
+                <a href="/lawyers/">Legal</a>
+                <a href="/government/">Government</a>
+                <a href="/production/">A/V Production</a>
+                <a href="/#verticals">All Verticals</a>
+                <a href="/signup/" class="cta-button-nav">Start Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Government & Public Sector Transcription</h1>
+                <p class="hero-subtitle">
+                    Secure transcription software for government agencies, court systems, and public sector organizations
+                    <span class="freemium-badge">5 minutes free monthly</span>
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <strong>Local Processing</strong><br>
+                        No cloud uploads for sensitive data
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Security Compliance</strong><br>
+                        Supports government security requirements
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Cost Efficiency</strong><br>
+                        Predictable unlimited pricing
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Enterprise Ready</strong><br>
+                        Institutional licensing available
+                    </div>
+                </div>
+
+                <a href="/signup/" class="cta-button-hero">Get Your 5 Free Minutes</a>
+            </div>
+        </section>
+
+        <section class="section pain-points">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Government Transcription Challenges</h2>
+                    <p>Secure transcription solutions for public sector organizations and government agencies</p>
+                </div>
+
+                <div class="pain-points-grid">
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🔒</div>
+                        <h3>Data Security Requirements</h3>
+                        <p>Government agencies handle sensitive and classified information requiring strict security protocols. Cloud-based transcription services create unacceptable data exposure risks for public sector organizations.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">💰</div>
+                        <h3>Budget Constraints & Cost Control</h3>
+                        <p>Government budgets require predictable costs and value optimization. Per-minute transcription pricing creates unpredictable expenses for high-volume documentation requirements.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">📋</div>
+                        <h3>Procurement & Compliance</h3>
+                        <p>Government procurement requires specific compliance standards and vendor qualifications. Traditional transcription services often lack necessary security certifications and compliance documentation.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">⚖️</div>
+                        <h3>Court System Requirements</h3>
+                        <p>Court proceedings, depositions, and legal documentation require accurate transcription with strict confidentiality and chain of custody requirements for official records.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🏛️</div>
+                        <h3>Public Meeting Documentation</h3>
+                        <p>City councils, public hearings, and government meetings require accurate transcription for public records and transparency requirements while maintaining operational efficiency.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">📊</div>
+                        <h3>Volume & Efficiency Demands</h3>
+                        <p>Government agencies generate high volumes of audio documentation requiring efficient processing without compromising security or accuracy standards for official records.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section solution-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LocalTranscribe Government Solutions</h2>
+                    <p>Secure transcription architecture designed for government and public sector requirements</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Local Security Architecture</h3>
+                        <p>All transcription processing occurs locally on government devices. No data transmission to external cloud services ensures compliance with security protocols and data protection requirements.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💾</div>
+                        <h3>User-Controlled Data Export</h3>
+                        <p>Government agencies maintain complete control over data sharing and export. Optional integrations only transmit data when explicitly authorized by agency personnel.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>High-Volume Processing</h3>
+                        <p>Unlimited transcription capabilities support high-volume government documentation requirements without per-minute cost constraints or usage limitations.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🏛️</div>
+                        <h3>Multi-Format Documentation</h3>
+                        <p>Generate official transcripts, meeting minutes, court records, and structured government documentation in multiple formats suitable for public records and archives.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>Legal & Court Optimized</h3>
+                        <p>Specialized recognition for legal terminology, government procedures, and official documentation with accuracy standards appropriate for public records.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <h3>Procurement-Friendly Pricing</h3>
+                        <p>Transparent unlimited pricing model supports government budget planning and procurement requirements. Enterprise licensing available for multi-department implementations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section security-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Security & Compliance</h2>
+                    <p>Professional transcription architecture designed to support government security requirements</p>
+                </div>
+
+                <div class="compliance-notice">
+                    <h3>🏛️ Government Security Support</h3>
+                    <p><strong>LocalTranscribe's local processing architecture supports government security requirements</strong> by keeping sensitive data on government devices during transcription. Agencies remain responsible for implementing appropriate security policies, clearance requirements, and compliance protocols for their specific environment.</p>
+                </div>
+
+                <div class="security-grid">
+                    <div class="security-card">
+                        <h4>🔐 Data Sovereignty</h4>
+                        <p>Local transcription processing ensures government data remains under agency control and jurisdiction without external cloud exposure.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <h4>🛡️ Classification Protection</h4>
+                        <p>Support for classified and sensitive information processing with appropriate security measures maintained by agency personnel.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <h4>📋 Audit Trail Support</h4>
+                        <p>Professional documentation standards compatible with government audit requirements and public records management systems.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <h4>⚖️ Agency Responsibility</h4>
+                        <p>Government agencies remain responsible for security clearance verification, policy implementation, and compliance with specific regulatory requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section agencies-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Government Use Cases</h2>
+                    <p>Professional transcription for all levels of government and public sector organizations</p>
+                </div>
+
+                <div class="agencies-grid">
+                    <div class="agency-type">
+                        <div class="agency-icon">🏛️</div>
+                        <h4>Federal Agencies</h4>
+                        <p>Department meetings, hearings, and official documentation with security compliance support.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">🏛️</div>
+                        <h4>State & Local Government</h4>
+                        <p>City councils, public meetings, and municipal documentation for transparency requirements.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">⚖️</div>
+                        <h4>Court Systems</h4>
+                        <p>Court proceedings, depositions, and legal documentation with confidentiality protection.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">👮</div>
+                        <h4>Law Enforcement</h4>
+                        <p>Interview transcription, incident documentation, and investigative records with security protocols.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">🏥</div>
+                        <h4>Public Health</h4>
+                        <p>Health department meetings, public health documentation, and medical record transcription.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">🎓</div>
+                        <h4>Public Education</h4>
+                        <p>School board meetings, educational documentation, and accessibility compliance support.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">🔧</div>
+                        <h4>Public Works</h4>
+                        <p>Engineering meetings, project documentation, and infrastructure planning transcription.</p>
+                    </div>
+
+                    <div class="agency-type">
+                        <div class="agency-icon">📊</div>
+                        <h4>Regulatory Agencies</h4>
+                        <p>Regulatory hearings, compliance documentation, and official regulatory proceedings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section">
+            <div class="container">
+                <div class="pricing-container">
+                    <h2>Government Pricing</h2>
+                    <p>Procurement-friendly pricing designed for government budget planning</p>
+
+                    <div class="price-display">
+                        <div class="price">5 min</div>
+                        <p class="price-subtitle">free every month • $299/month unlimited</p>
+
+                        <ul class="pricing-features">
+                            <li>5 minutes free government transcription monthly</li>
+                            <li>Local processing - no cloud uploads</li>
+                            <li>Security compliance architecture support</li>
+                            <li>Legal and government terminology recognition</li>
+                            <li>Multiple documentation formats</li>
+                            <li>High-volume processing capabilities</li>
+                            <li>User-controlled data export</li>
+                            <li>Professional accuracy standards</li>
+                            <li>Enterprise licensing available</li>
+                            <li>Priority support (paid plans)</li>
+                            <li>No credit card required for free tier</li>
+                        </ul>
+
+                        <div class="enterprise-note">
+                            <strong>Enterprise & Institutional Licensing:</strong> Custom pricing available for multi-department implementations, volume licensing, and specialized government requirements. Contact our team for procurement assistance and compliance documentation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Start Secure Government Transcription</h2>
+                    <p>Join government agencies using LocalTranscribe for secure, compliant transcription workflows. Get 5 minutes free transcription monthly to experience local processing and security-focused architecture.</p>
+
+                    <a href="/signup/" class="final-cta-button">Get Your 5 Free Minutes</a>
+                    <a href="mailto:government@lexopoly.com" class="demo-button">Request Demo</a>
+
+                    <div class="trust-indicators">
+                        <div class="trust-indicator">
+                            <span>🛡️</span>
+                            <span>Security Compliance Support</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🔒</span>
+                            <span>Local Processing</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🏛️</span>
+                            <span>Government Optimized</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>💳</span>
+                            <span>No Credit Card Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/lawyers/">Legal Professionals</a>
+            <a href="/government/">Government</a>
+            <a href="/production/">A/V Production</a>
+            <a href="/signup/">Free Trial</a>
+            <a href="/terms/">Terms & Privacy</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. Secure transcription for government and public sector.</p>
+    </footer>
+</body>
+</html>
