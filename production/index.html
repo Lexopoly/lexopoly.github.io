@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Production & Podcast Transcription Software - LocalTranscribe</title>
+    <meta name="description" content="Professional transcription for video producers, podcasters, and content creators. Generate subtitles, captions, and transcripts locally. 5 minutes free monthly.">
+    <meta name="keywords" content="video transcription, podcast transcription, subtitle generation, captions, content creation, video production, YouTube creators, streaming">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* A/V Production color scheme */
+            --production-primary: #4c1d95;
+            --production-secondary: #6b21a8;
+            --production-accent: #8b5cf6;
+            --production-light: #a78bfa;
+            --creative-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --lexopoly-primary: #1a365d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8faff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--production-accent);
+        }
+
+        .cta-button-nav {
+            background: var(--production-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button-nav:hover {
+            background: var(--production-secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: var(--creative-gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-feature strong {
+            color: #e0e7ff;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background: #e0e7ff;
+            color: var(--production-primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .freemium-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--production-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pain-points {
+            background: var(--bg-secondary);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-point {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--production-accent);
+        }
+
+        .pain-point-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-point h3 {
+            color: var(--production-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .solution-features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--creative-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--production-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .workflow-section {
+            background: linear-gradient(135deg, #f8faff 0%, #eef2ff 100%);
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .workflow-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--production-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .workflow-step h4 {
+            color: var(--production-primary);
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .content-types {
+            background: white;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .content-type {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .content-type:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-type h4 {
+            color: var(--production-primary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .content-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-section {
+            background: var(--production-primary);
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-display {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e0e7ff;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #e0e7ff;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: var(--production-accent);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .final-cta-button:hover {
+            background: var(--production-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--production-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e0e7ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid,
+            .pain-points-grid,
+            .workflow-steps,
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .freemium-badge {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+                max-width: fit-content;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <div class="nav-links">
+                <a href="/lawyers/">Legal</a>
+                <a href="/journalists/">Journalism</a>
+                <a href="/production/">A/V Production</a>
+                <a href="/#verticals">All Verticals</a>
+                <a href="/signup/" class="cta-button-nav">Start Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Video Production & Podcast Transcription</h1>
+                <p class="hero-subtitle">
+                    Professional transcription, subtitles, and captions for content creators and production teams
+                    <span class="freemium-badge">5 minutes free monthly</span>
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <strong>Subtitle Generation</strong><br>
+                        SRT, VTT, and multiple caption formats
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Local Processing</strong><br>
+                        No content uploaded to cloud services
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Multi-Format Export</strong><br>
+                        Transcripts, captions, and timestamped text
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Unlimited Usage</strong><br>
+                        $299/month for unlimited transcription
+                    </div>
+                </div>
+
+                <a href="/signup/" class="cta-button-hero">Get Your 5 Free Minutes</a>
+            </div>
+        </section>
+
+        <section class="section pain-points">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Content Creation Challenges</h2>
+                    <p>Professional transcription solutions for modern video and audio production workflows</p>
+                </div>
+
+                <div class="pain-points-grid">
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🎬</div>
+                        <h3>Post-Production Bottlenecks</h3>
+                        <p>Manual subtitle creation and transcription slow down video production timelines. Efficient transcription tools are essential for meeting content creation deadlines and publication schedules.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">💰</div>
+                        <h3>Per-Minute Transcription Costs</h3>
+                        <p>Traditional services charge per minute, making costs unpredictable for high-volume content creators. Podcasters and video producers need budget-friendly unlimited transcription solutions.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">♿</div>
+                        <h3>Accessibility Requirements</h3>
+                        <p>Platforms increasingly require captions and accessibility compliance. Content creators need reliable subtitle generation to meet platform requirements and reach wider audiences.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🔒</div>
+                        <h3>Content Security Concerns</h3>
+                        <p>Uploading exclusive content to cloud transcription services creates security risks. Creators need local processing to protect unreleased content and intellectual property.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">⚡</div>
+                        <h3>Format Compatibility Issues</h3>
+                        <p>Different platforms require different subtitle formats (SRT, VTT, WebVTT). Content creators need tools that export multiple formats for cross-platform distribution.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🎙️</div>
+                        <h3>Audio Quality Challenges</h3>
+                        <p>Podcasts, interviews, and live recordings often have varying audio quality. Professional transcription tools must handle multiple speakers and challenging audio conditions effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section solution-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LocalTranscribe Production Solutions</h2>
+                    <p>Professional-grade transcription designed for content creators and production teams</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">📹</div>
+                        <h3>Professional Subtitle Generation</h3>
+                        <p>Generate accurate subtitles and captions in multiple formats including SRT, VTT, and WebVTT. Perfect timing and formatting for professional video production workflows.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Local Content Security</h3>
+                        <p>Process your content locally without uploading to cloud services. Protect unreleased content, exclusive interviews, and intellectual property during transcription.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🎚️</div>
+                        <h3>Multi-Speaker Recognition</h3>
+                        <p>Advanced speaker identification for interviews, podcasts, and multi-person content. Clear speaker attribution for efficient post-production editing workflows.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Timestamped Transcription</h3>
+                        <p>Precise timestamps for every line, making it easy to sync transcripts with video editing software. Streamline your post-production timeline editing process.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Platform-Ready Formats</h3>
+                        <p>Export formats compatible with YouTube, Vimeo, social media platforms, and professional video editing software. One transcription, multiple distribution channels.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Content Creator Optimized</h3>
+                        <p>Designed for high-volume content creation with batch processing capabilities. Efficient workflows for podcasters, YouTubers, and professional production teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Streamlined Production Workflow</h2>
+                    <p>Integrate professional transcription seamlessly into your content creation process</p>
+                </div>
+
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <h4>Record & Import</h4>
+                        <p>Import your podcast episodes, video content, or interviews directly into LocalTranscribe for local processing.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <h4>Automated Transcription</h4>
+                        <p>Professional-grade transcription with speaker identification and accurate timing for multi-person content.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <h4>Review & Edit</h4>
+                        <p>Quick review and editing tools optimized for content creators. Fine-tune accuracy for professional standards.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <h4>Export Multiple Formats</h4>
+                        <p>Generate subtitles (SRT, VTT), full transcripts, and timestamped text for all your distribution platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section content-types">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Content Types We Support</h2>
+                    <p>Professional transcription for every type of audio and video content</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="content-type">
+                        <div class="content-icon">🎙️</div>
+                        <h4>Podcasts</h4>
+                        <p>Episode transcripts, show notes generation, and multi-speaker identification for professional podcast production.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">📺</div>
+                        <h4>YouTube Videos</h4>
+                        <p>Accurate subtitles and captions for YouTube content, improving accessibility and SEO performance.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">🎬</div>
+                        <h4>Film & TV Production</h4>
+                        <p>Professional subtitles and post-production transcripts for film, television, and streaming content.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">📹</div>
+                        <h4>Corporate Videos</h4>
+                        <p>Training videos, webinars, and corporate communications with professional transcription and captioning.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">🎭</div>
+                        <h4>Live Streaming</h4>
+                        <p>Post-stream transcription and highlight generation for Twitch, YouTube Live, and other streaming platforms.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">🎵</div>
+                        <h4>Music Videos</h4>
+                        <p>Lyric transcription and subtitle generation for music videos and audio content with specialized formatting.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">📱</div>
+                        <h4>Social Media</h4>
+                        <p>Short-form content transcription for TikTok, Instagram, and social media platforms requiring captions.</p>
+                    </div>
+
+                    <div class="content-type">
+                        <div class="content-icon">🎯</div>
+                        <h4>Educational Content</h4>
+                        <p>Course videos, tutorials, and educational content with accessibility-compliant subtitles and transcripts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section">
+            <div class="container">
+                <div class="pricing-container">
+                    <h2>Content Creator Pricing</h2>
+                    <p>Freemium model designed for high-volume content production</p>
+
+                    <div class="price-display">
+                        <div class="price">5 min</div>
+                        <p class="price-subtitle">free every month • $299/month unlimited</p>
+
+                        <ul class="pricing-features">
+                            <li>5 minutes free content transcription monthly</li>
+                            <li>Local processing - no content uploaded</li>
+                            <li>Multiple subtitle formats (SRT, VTT, WebVTT)</li>
+                            <li>Multi-speaker identification</li>
+                            <li>Timestamped transcription</li>
+                            <li>Batch processing capabilities</li>
+                            <li>Platform-ready exports</li>
+                            <li>Professional accuracy standards</li>
+                            <li>Priority support (paid plans)</li>
+                            <li>No credit card required for free tier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Start Professional Content Transcription</h2>
+                    <p>Join content creators using LocalTranscribe for efficient, secure transcription workflows. Get 5 minutes free transcription monthly to experience professional subtitle generation and local processing.</p>
+
+                    <a href="/signup/" class="final-cta-button">Get Your 5 Free Minutes</a>
+
+                    <div class="trust-indicators">
+                        <div class="trust-indicator">
+                            <span>🛡️</span>
+                            <span>Local Content Security</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>📹</span>
+                            <span>Professional Subtitles</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🎚️</span>
+                            <span>Multi-Speaker Support</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>💳</span>
+                            <span>No Credit Card Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/lawyers/">Legal Professionals</a>
+            <a href="/journalists/">Journalists</a>
+            <a href="/production/">A/V Production</a>
+            <a href="/signup/">Free Trial</a>
+            <a href="/terms/">Terms & Privacy</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. Professional transcription for content creators.</p>
+    </footer>
+</body>
+</html>
