@@ -48,17 +48,19 @@ Competition Level: High (many consumer tools, few source-protection focused)
 #### 🎤 **Dictation Users + Medical Providers Vertical**
 ```
 Revenue Potential: VERY HIGH ($299/month x executives/professionals/physicians)
-Primary Markets: Executives, Researchers, Physicians, Medical Providers, Consultants
+Primary Markets: Executives, Researchers, Physicians, Medical Providers, Psychologists, Mental Health Professionals, Consultants
 Medical Pain Points: HIPAA compliance, medical terminology, patient privacy, EHR integration
+Mental Health Pain Points: Session confidentiality, therapy notes, treatment plans, psychological assessments
 General Pain Points: Efficiency, document quality, workflow integration
 Key Messages:
-- Professional quality + medical terminology recognition
+- Professional quality + medical/psychological terminology recognition
 - 100% local HIPAA compliance (no cloud exposure)
-- Multiple formats (text, medical reports, structured notes)
-- Unlimited usage for high-volume medical documentation
+- Multiple formats (text, medical reports, therapy notes, structured assessments)
+- Unlimited usage for high-volume medical/mental health documentation
+- Session confidentiality protection for therapy and counseling
 Success Metrics: Trial signup rate >20%, conversion rate >35% (medical higher value)
 Competition Level: Low (Dragon alternatives limited, especially HIPAA-compliant)
-Medical Differentiators: Local processing = automatic HIPAA compliance, medical dictionary
+Medical Differentiators: Local processing = automatic HIPAA compliance, medical + psychological terminology dictionary
 ```
 
 #### ⚖️ **Court Reporters Vertical**

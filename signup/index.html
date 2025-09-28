@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Free Account - LocalTranscribe</title>
+    <meta name="description" content="Create your free LocalTranscribe account. 5 minutes of professional transcription every month, no credit card required. 100% local processing for complete privacy.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #c53030;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --error: #e53e3e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-back {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        /* Main container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Signup form section */
+        .signup-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .signup-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .signup-header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-prop {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .value-prop .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .value-prop h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .value-prop p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Vertical detection */
+        .vertical-detection {
+            margin-bottom: 2rem;
+        }
+
+        .vertical-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-option {
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .vertical-option:hover {
+            border-color: var(--accent);
+        }
+
+        .vertical-option.selected {
+            border-color: var(--accent);
+            background: rgba(49, 130, 206, 0.1);
+        }
+
+        .vertical-option .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .vertical-option .label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Form */
+        .signup-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group input.error {
+            border-color: var(--error);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2c5aa0;
+        }
+
+        .submit-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+        }
+
+        /* Privacy assurance */
+        .privacy-assurance {
+            background: rgba(56, 161, 105, 0.1);
+            border: 1px solid rgba(56, 161, 105, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .privacy-assurance h3 {
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-assurance ul {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .privacy-assurance li {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-assurance li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Vertical-specific messaging */
+        .vertical-specific {
+            display: none;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .vertical-specific.active {
+            display: block;
+        }
+
+        .vertical-specific h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .vertical-specific ul {
+            list-style: none;
+        }
+
+        .vertical-specific li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .vertical-specific li::before {
+            content: "→";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .signup-section {
+                padding: 2rem 1rem;
+            }
+
+            .signup-header h1 {
+                font-size: 2rem;
+            }
+
+            .vertical-selection {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <a href="/" class="nav-back">← Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="signup-section">
+            <div class="signup-header">
+                <h1>Start Your Free Account</h1>
+                <p class="subtitle">5 minutes of professional transcription every month. No credit card required.</p>
+
+                <div class="value-props">
+                    <div class="value-prop">
+                        <span class="icon">🔒</span>
+                        <h3>100% Local</h3>
+                        <p>Never leaves your computer</p>
+                    </div>
+                    <div class="value-prop">
+                        <span class="icon">⚡</span>
+                        <h3>Instant Access</h3>
+                        <p>Start transcribing immediately</p>
+                    </div>
+                    <div class="value-prop">
+                        <span class="icon">💰</span>
+                        <h3>No Credit Card</h3>
+                        <p>Free account, no commitments</p>
+                    </div>
+                    <div class="value-prop">
+                        <span class="icon">🎯</span>
+                        <h3>Professional Quality</h3>
+                        <p>Court-ready accuracy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical-detection">
+                <h3 style="text-align: center; margin-bottom: 1rem; color: var(--text-primary);">I primarily use transcription for:</h3>
+                <div class="vertical-selection">
+                    <div class="vertical-option" data-vertical="lawyers">
+                        <span class="icon">👨‍⚖️</span>
+                        <div class="label">Legal Work</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="journalists">
+                        <span class="icon">📰</span>
+                        <div class="label">Journalism</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="dictation">
+                        <span class="icon">🎤</span>
+                        <div class="label">Dictation</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="medical">
+                        <span class="icon">🏥</span>
+                        <div class="label">Medical</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="court">
+                        <span class="icon">⚖️</span>
+                        <div class="label">Court Reporting</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="government">
+                        <span class="icon">🏛️</span>
+                        <div class="label">Government</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="education">
+                        <span class="icon">🎓</span>
+                        <div class="label">Education</div>
+                    </div>
+                    <div class="vertical-option" data-vertical="general">
+                        <span class="icon">💼</span>
+                        <div class="label">Other/General</div>
+                    </div>
+                </div>
+
+                <!-- Vertical-specific messaging -->
+                <div class="vertical-specific" id="lawyers-specific">
+                    <h3>🔒 Legal-Grade Privacy Protection</h3>
+                    <ul>
+                        <li>Attorney-client privilege maintained with 100% local processing</li>
+                        <li>No cloud exposure means no subpoena risk</li>
+                        <li>Legal terminology recognition for court-ready accuracy</li>
+                        <li>Optional Clio integration for seamless workflow</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="journalists-specific">
+                    <h3>📰 Source Protection Guaranteed</h3>
+                    <ul>
+                        <li>Zero cloud exposure protects source confidentiality</li>
+                        <li>Fast processing to meet tight deadlines</li>
+                        <li>Interview transcription optimized for accuracy</li>
+                        <li>No third-party servers can be compromised</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="dictation-specific">
+                    <h3>🎤 Professional Documentation Made Easy</h3>
+                    <ul>
+                        <li>Executive-level accuracy for professional documents</li>
+                        <li>Multiple export formats for any workflow</li>
+                        <li>Unlimited monthly usage with paid plan</li>
+                        <li>Perfect for reports, memos, and documentation</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="medical-specific">
+                    <h3>🏥 HIPAA-Compliant Medical & Mental Health Transcription</h3>
+                    <ul>
+                        <li>100% local processing ensures automatic HIPAA compliance</li>
+                        <li>Medical + psychological terminology recognition</li>
+                        <li>Patient and client privacy protected - never touches the cloud</li>
+                        <li>Perfect for patient notes, therapy sessions, medical reports, and assessments</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="court-specific">
+                    <h3>⚖️ Court Reporter Workflow Enhancement</h3>
+                    <ul>
+                        <li>Real-time backup transcription for quality assurance</li>
+                        <li>Verification tools for accuracy checking</li>
+                        <li>Legal terminology optimized for court proceedings</li>
+                        <li>Seamless integration with existing court workflows</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="government-specific">
+                    <h3>🏛️ Government-Grade Security</h3>
+                    <ul>
+                        <li>Meets security requirements with local processing</li>
+                        <li>Cost-effective alternative to per-minute services</li>
+                        <li>Perfect for court systems and government agencies</li>
+                        <li>No cloud exposure reduces security compliance burden</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="education-specific">
+                    <h3>🎓 Educational Accessibility Support</h3>
+                    <ul>
+                        <li>Make lectures accessible to all students</li>
+                        <li>Support note-taking and study materials</li>
+                        <li>Compliance with accessibility requirements</li>
+                        <li>Institutional pricing available for schools</li>
+                    </ul>
+                </div>
+
+                <div class="vertical-specific" id="general-specific">
+                    <h3>💼 Professional Transcription Platform</h3>
+                    <ul>
+                        <li>Professional-grade accuracy across all industries</li>
+                        <li>100% local processing for complete privacy</li>
+                        <li>Multiple export formats for any workflow</li>
+                        <li>5 minutes free monthly, unlimited for $299/month</li>
+                    </ul>
+                </div>
+            </div>
+
+            <form class="signup-form" id="signupForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <div class="error-message" id="firstNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <div class="error-message" id="lastNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Create Free Account (5 min/month)
+                </button>
+            </form>
+
+            <div class="privacy-assurance">
+                <h3>🔒 Your Privacy is Protected</h3>
+                <ul>
+                    <li>All transcription happens locally on your computer</li>
+                    <li>Your audio never travels to the cloud</li>
+                    <li>No credit card required for free account</li>
+                    <li>Cancel anytime, no commitments</li>
+                    <li>Professional-grade security and privacy</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Vertical selection handling
+        const verticalOptions = document.querySelectorAll('.vertical-option');
+        const verticalSpecific = document.querySelectorAll('.vertical-specific');
+        let selectedVertical = null;
+
+        verticalOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all options
+                verticalOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Add selected class to clicked option
+                option.classList.add('selected');
+
+                // Hide all vertical-specific messaging
+                verticalSpecific.forEach(section => section.classList.remove('active'));
+
+                // Show selected vertical messaging
+                selectedVertical = option.dataset.vertical;
+                const specificSection = document.getElementById(`${selectedVertical}-specific`);
+                if (specificSection) {
+                    specificSection.classList.add('active');
+                }
+
+                // Update submit button text based on vertical
+                updateSubmitButton();
+            });
+        });
+
+        // Form handling
+        const form = document.getElementById('signupForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function updateSubmitButton() {
+            if (selectedVertical) {
+                const verticalMessages = {
+                    'lawyers': 'Create Legal Account (5 min/month free)',
+                    'journalists': 'Create Journalist Account (5 min/month free)',
+                    'dictation': 'Create Professional Account (5 min/month free)',
+                    'medical': 'Create HIPAA-Compliant Account (5 min/month free)',
+                    'court': 'Create Court Reporter Account (5 min/month free)',
+                    'government': 'Create Government Account (5 min/month free)',
+                    'education': 'Create Educational Account (5 min/month free)',
+                    'general': 'Create Free Account (5 min/month)'
+                };
+
+                submitBtn.textContent = verticalMessages[selectedVertical] || 'Create Free Account (5 min/month)';
+            }
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Clear previous errors
+            clearErrors();
+
+            // Get form data
+            const formData = new FormData(form);
+            const userData = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                password: formData.get('password'),
+                vertical: selectedVertical || 'general',
+                source: 'freemium_signup'
+            };
+
+            // Validate form
+            if (!validateForm(userData)) {
+                return;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creating Account...';
+
+            try {
+                // TODO: Replace with actual API endpoint
+                console.log('Creating account:', userData);
+
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Success - redirect to dashboard or confirmation
+                window.location.href = '/dashboard/';
+
+            } catch (error) {
+                console.error('Signup error:', error);
+                showError('email', 'Unable to create account. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                updateSubmitButton();
+            }
+        });
+
+        function validateForm(data) {
+            let isValid = true;
+
+            if (!data.firstName.trim()) {
+                showError('firstName', 'First name is required');
+                isValid = false;
+            }
+
+            if (!data.lastName.trim()) {
+                showError('lastName', 'Last name is required');
+                isValid = false;
+            }
+
+            if (!data.email.trim()) {
+                showError('email', 'Email address is required');
+                isValid = false;
+            } else if (!isValidEmail(data.email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            if (!data.password.trim()) {
+                showError('password', 'Password is required');
+                isValid = false;
+            } else if (data.password.length < 8) {
+                showError('password', 'Password must be at least 8 characters');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(fieldName, message) {
+            const field = document.getElementById(fieldName);
+            const errorElement = document.getElementById(`${fieldName}Error`);
+
+            field.classList.add('error');
+            errorElement.textContent = message;
+        }
+
+        function clearErrors() {
+            const fields = ['firstName', 'lastName', 'email', 'password'];
+            fields.forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                const errorElement = document.getElementById(`${fieldName}Error`);
+
+                field.classList.remove('error');
+                errorElement.textContent = '';
+            });
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Auto-detect vertical from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const verticalFromUrl = urlParams.get('vertical');
+        if (verticalFromUrl) {
+            const verticalOption = document.querySelector(`[data-vertical="${verticalFromUrl}"]`);
+            if (verticalOption) {
+                verticalOption.click();
+            }
+        }
+    </script>
+</body>
+</html>
