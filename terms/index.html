@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service & Legal Disclaimer - LocalTranscribe</title>
+    <meta name="description" content="Terms of service, privacy policy, and legal disclaimers for LocalTranscribe professional transcription software and services.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-back {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-back:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .legal-header {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .legal-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .legal-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: inline-block;
+        }
+
+        .legal-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .legal-section h2 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .legal-section h3 {
+            color: var(--lexopoly-secondary);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .legal-section ul, .legal-section ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .important-notice {
+            background: #fff3cd;
+            border: 1px solid var(--warning);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .important-notice h4 {
+            color: var(--warning);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .critical-notice {
+            background: #f8d7da;
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .critical-notice h4 {
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .legal-header {
+                padding: 2rem 1rem;
+            }
+
+            .legal-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <a href="/" class="nav-back">← Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="legal-header">
+            <h1>Terms of Service & Legal Disclaimer</h1>
+            <p class="subtitle">Professional transcription services, privacy protection, and legal compliance information</p>
+            <div class="last-updated">Last Updated: September 28, 2025</div>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#privacy-data-handling">1. Privacy & Data Handling</a></li>
+                <li><a href="#service-terms">2. Service Terms & Usage</a></li>
+                <li><a href="#professional-disclaimers">3. Professional Disclaimers</a></li>
+                <li><a href="#limitation-liability">4. Limitation of Liability</a></li>
+                <li><a href="#compliance-disclaimers">5. Compliance Disclaimers</a></li>
+                <li><a href="#intellectual-property">6. Intellectual Property</a></li>
+                <li><a href="#user-responsibilities">7. User Responsibilities</a></li>
+                <li><a href="#software-terms">8. Software Terms</a></li>
+                <li><a href="#governing-law">9. Governing Law</a></li>
+                <li><a href="#contact">10. Contact Information</a></li>
+            </ul>
+        </div>
+
+        <section class="legal-section" id="privacy-data-handling">
+            <h2>1. Privacy & Data Handling</h2>
+
+            <h3>Local Processing Architecture</h3>
+            <p>LocalTranscribe processes audio transcription locally on your device during the transcription process. This local processing approach provides enhanced privacy control compared to cloud-based alternatives.</p>
+
+            <div class="important-notice">
+                <h4>Important: Data Flow Accuracy</h4>
+                <p>While transcription processing occurs locally, <strong>you control what data leaves your computer</strong>. The software includes optional integrations (such as Clio) and export features that allow you to share transcripts when you choose to do so. We do not automatically transmit your data, but you have the ability to export and share your transcripts through available integrations and export functions.</p>
+            </div>
+
+            <h3>Data Collection & Website Analytics</h3>
+            <ul>
+                <li><strong>Website Usage:</strong> We collect standard web analytics data (page views, user interactions, conversion events) to improve our services.</li>
+                <li><strong>Account Information:</strong> We collect necessary account details (name, email, billing information) for service provision.</li>
+                <li><strong>Support Data:</strong> Customer support interactions may be recorded for quality and training purposes.</li>
+                <li><strong>No Audio Storage:</strong> We do not store your audio files or transcripts on our servers unless you explicitly use cloud-based features.</li>
+            </ul>
+
+            <h3>Third-Party Integrations</h3>
+            <p>When you use optional integrations (such as Clio, practice management software, or cloud storage services), your data handling is subject to both our terms and the terms of those third-party services. You are responsible for understanding and agreeing to the data handling practices of any integrated services you choose to use.</p>
+        </section>
+
+        <section class="legal-section" id="service-terms">
+            <h2>2. Service Terms & Usage</h2>
+
+            <h3>Service Description</h3>
+            <p>LocalTranscribe provides professional transcription software and related services. Our freemium model includes 5 minutes of free transcription per month, with unlimited transcription available through paid subscriptions.</p>
+
+            <h3>Account Terms</h3>
+            <ul>
+                <li>You must provide accurate information when creating an account</li>
+                <li>You are responsible for maintaining the security of your account credentials</li>
+                <li>You may not share your account with others or create multiple accounts</li>
+                <li>We reserve the right to suspend accounts that violate these terms</li>
+            </ul>
+
+            <h3>Payment Terms</h3>
+            <ul>
+                <li>Paid subscriptions are billed monthly or annually as selected</li>
+                <li>All fees are non-refundable except as required by law</li>
+                <li>Price changes will be communicated with 30 days advance notice</li>
+                <li>Failed payments may result in service suspension</li>
+            </ul>
+
+            <h3>Service Availability</h3>
+            <p>While we strive for high availability, we do not guarantee uninterrupted service. Scheduled maintenance and updates may cause temporary service interruptions.</p>
+        </section>
+
+        <section class="legal-section" id="professional-disclaimers">
+            <h2>3. Professional Disclaimers</h2>
+
+            <div class="critical-notice">
+                <h4>Critical: Professional Use Disclaimers</h4>
+                <p>LocalTranscribe is a transcription tool, not a substitute for professional judgment. All transcripts require human review and verification before use in professional, legal, medical, or official contexts.</p>
+            </div>
+
+            <h3>Accuracy Disclaimers</h3>
+            <ul>
+                <li><strong>Professional Accuracy:</strong> While we strive for high accuracy, no automated transcription system is 100% accurate. Always review transcripts for errors.</li>
+                <li><strong>Not Court-Certified:</strong> Our transcripts are not court-certified or legally verified. Professional verification is required for legal proceedings.</li>
+                <li><strong>Medical Terminology:</strong> Medical and technical terminology recognition is provided as a convenience feature but requires professional verification.</li>
+                <li><strong>Legal Terminology:</strong> Legal terminology recognition does not constitute legal advice or ensure legal compliance.</li>
+            </ul>
+
+            <h3>Professional Use Warning</h3>
+            <p>Users in regulated professions (legal, medical, government, education) are responsible for ensuring compliance with their professional standards and regulations. LocalTranscribe does not provide professional advice or guarantee compliance with professional standards.</p>
+        </section>
+
+        <section class="legal-section" id="limitation-liability">
+            <h2>4. Limitation of Liability</h2>
+
+            <div class="critical-notice">
+                <h4>Important Legal Limitation</h4>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, LOCALTRASCRIBE AND LEXOPOLY LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OUR SERVICES.</p>
+            </div>
+
+            <h3>No Warranty</h3>
+            <p>This software and service are provided "AS IS" without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+            <h3>Limitation of Damages</h3>
+            <p>In no event shall our total liability to you for all damages, losses, and causes of action exceed the amount you have paid us in the twelve (12) months preceding the claim, or $100, whichever is greater.</p>
+
+            <h3>Professional Liability Exclusion</h3>
+            <p>We are not liable for professional consequences, legal outcomes, medical decisions, or business losses resulting from transcript usage. Users assume full responsibility for professional application of transcripts.</p>
+        </section>
+
+        <section class="legal-section" id="compliance-disclaimers">
+            <h2>5. Compliance Disclaimers</h2>
+
+            <h3>HIPAA Compliance</h3>
+            <div class="important-notice">
+                <h4>HIPAA Compliance Statement</h4>
+                <p>LocalTranscribe's local processing architecture <strong>supports</strong> HIPAA compliance requirements by keeping data on your local device during transcription. However, HIPAA compliance depends on your implementation, policies, and procedures. We do not guarantee automatic HIPAA compliance and recommend consulting with compliance professionals.</p>
+            </div>
+
+            <h3>Legal & Regulatory Compliance</h3>
+            <ul>
+                <li><strong>Recording Consent:</strong> You are responsible for obtaining proper consent before recording and transcribing any audio.</li>
+                <li><strong>Confidentiality:</strong> Professional confidentiality obligations (attorney-client privilege, doctor-patient confidentiality) are your responsibility to maintain.</li>
+                <li><strong>Data Protection:</strong> Compliance with data protection laws (GDPR, CCPA, etc.) is your responsibility.</li>
+                <li><strong>Professional Standards:</strong> Adherence to professional licensing and ethical standards is your responsibility.</li>
+            </ul>
+
+            <h3>Industry-Specific Disclaimers</h3>
+            <ul>
+                <li><strong>Legal Profession:</strong> Does not provide legal advice or guarantee attorney-client privilege protection</li>
+                <li><strong>Healthcare:</strong> Does not provide medical advice or guarantee patient privacy compliance</li>
+                <li><strong>Government:</strong> Users responsible for security clearance and classification requirements</li>
+                <li><strong>Education:</strong> Users responsible for FERPA compliance and student privacy protection</li>
+            </ul>
+        </section>
+
+        <section class="legal-section" id="intellectual-property">
+            <h2>6. Intellectual Property</h2>
+
+            <h3>Our Intellectual Property</h3>
+            <p>LocalTranscribe software, website content, trademarks, and related intellectual property are owned by Lexopoly LLC. You receive a limited license to use our software and services according to these terms.</p>
+
+            <h3>Your Content</h3>
+            <p>You retain ownership of your audio files and transcripts. By using our services, you grant us a limited license to process your content solely for the purpose of providing transcription services.</p>
+
+            <h3>Open Source Components</h3>
+            <p>LocalTranscribe incorporates open source components. All components are used in compliance with their respective licenses. A complete list of open source licenses is available in the software.</p>
+        </section>
+
+        <section class="legal-section" id="user-responsibilities">
+            <h2>7. User Responsibilities</h2>
+
+            <h3>Legal Use Requirements</h3>
+            <ul>
+                <li>Ensure you have legal authority to record and transcribe all audio content</li>
+                <li>Obtain proper consent from all parties before recording</li>
+                <li>Comply with applicable privacy and data protection laws</li>
+                <li>Respect intellectual property rights of content creators</li>
+                <li>Use services only for lawful purposes</li>
+            </ul>
+
+            <h3>Professional Responsibilities</h3>
+            <ul>
+                <li>Review all transcripts for accuracy before professional use</li>
+                <li>Maintain professional standards and ethical obligations</li>
+                <li>Implement appropriate security measures for sensitive content</li>
+                <li>Ensure compliance with industry-specific regulations</li>
+            </ul>
+
+            <h3>Prohibited Uses</h3>
+            <ul>
+                <li>Transcribing content without proper authorization</li>
+                <li>Using services to violate privacy rights or laws</li>
+                <li>Reverse engineering or attempting to extract proprietary algorithms</li>
+                <li>Reselling or redistributing our services without authorization</li>
+            </ul>
+        </section>
+
+        <section class="legal-section" id="software-terms">
+            <h2>8. Software Terms</h2>
+
+            <div class="important-notice">
+                <h4>Software-Specific Terms</h4>
+                <p>The LocalTranscribe software application includes additional terms and disclaimers. Updated terms and conditions can be found at <strong>lexopoly.com/terms</strong> and supersede any terms displayed in older software versions.</p>
+            </div>
+
+            <h3>Software License</h3>
+            <p>LocalTranscribe software is licensed, not sold. Your license is subject to these terms and may be revoked for violations.</p>
+
+            <h3>Updates and Modifications</h3>
+            <p>We may update the software and services at any time. Continued use constitutes acceptance of updates and modifications.</p>
+
+            <h3>Data Processing Architecture</h3>
+            <p>The software is designed to process transcription locally on your device. However, certain features (analytics, integrations, updates) may communicate with our servers. You can control these features through software settings.</p>
+        </section>
+
+        <section class="legal-section" id="governing-law">
+            <h2>9. Governing Law & Dispute Resolution</h2>
+
+            <h3>Governing Law</h3>
+            <p>These terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles.</p>
+
+            <h3>Dispute Resolution</h3>
+            <p>Any disputes arising from these terms or use of our services shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association.</p>
+
+            <h3>Changes to Terms</h3>
+            <p>We may modify these terms at any time with 30 days notice. Continued use of our services constitutes acceptance of modified terms.</p>
+
+            <h3>Severability</h3>
+            <p>If any provision of these terms is found unenforceable, the remaining provisions shall remain in full force and effect.</p>
+        </section>
+
+        <section class="legal-section" id="contact">
+            <h2>10. Contact Information</h2>
+
+            <div class="contact-info">
+                <h3>Legal & Compliance Inquiries</h3>
+                <p><strong>Lexopoly LLC</strong><br>
+                Email: <a href="mailto:legal@lexopoly.com">legal@lexopoly.com</a><br>
+                Support: <a href="mailto:support@lexopoly.com">support@lexopoly.com</a></p>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    For urgent compliance or legal matters, please mark your email as "URGENT - LEGAL" in the subject line.
+                </p>
+            </div>
+        </section>
+
+        <div class="legal-section">
+            <div class="important-notice">
+                <h4>Professional Advice Recommendation</h4>
+                <p>These terms do not constitute legal advice. If you have specific legal, compliance, or professional questions regarding the use of LocalTranscribe in your practice, we recommend consulting with qualified legal counsel or compliance professionals.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
