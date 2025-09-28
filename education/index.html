@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Transcription & Accessibility Software - LocalTranscribe</title>
+    <meta name="description" content="Accessible transcription software for educational institutions, universities, and online learning. ADA compliance support for lecture capture. 5 minutes free monthly.">
+    <meta name="keywords" content="educational transcription, accessibility compliance, ADA compliance, lecture transcription, university transcription, student accessibility, online learning">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Education/Academic color scheme */
+            --edu-primary: #0d4a73;
+            --edu-secondary: #1565c0;
+            --edu-accent: #2196f3;
+            --edu-light: #42a5f5;
+            --academic-gradient: linear-gradient(135deg, #0d4a73 0%, #1976d2 100%);
+            --lexopoly-primary: #1a365d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f3f8ff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #388e3c;
+            --warning: #f57c00;
+            --accessible: #2e7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--edu-accent);
+        }
+
+        .cta-button-nav {
+            background: var(--edu-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button-nav:hover {
+            background: var(--edu-secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: var(--academic-gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-feature strong {
+            color: #e3f2fd;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background: #e3f2fd;
+            color: var(--edu-primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .freemium-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--edu-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pain-points {
+            background: var(--bg-secondary);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-point {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--edu-accent);
+        }
+
+        .pain-point-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-point h3 {
+            color: var(--edu-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .solution-features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--academic-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--edu-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .accessibility-section {
+            background: linear-gradient(135deg, #f3f8ff 0%, #e8f4fd 100%);
+        }
+
+        .accessibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .accessibility-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--accessible);
+        }
+
+        .accessibility-card h4 {
+            color: var(--edu-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .accessibility-notice {
+            background: #e8f5e8;
+            border: 2px solid var(--accessible);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .accessibility-notice h3 {
+            color: var(--edu-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .use-cases-section {
+            background: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .use-case {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .use-case:hover {
+            transform: translateY(-5px);
+        }
+
+        .use-case h4 {
+            color: var(--edu-primary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .use-case-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-section {
+            background: var(--edu-primary);
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-display {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #e3f2fd;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #e3f2fd;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .institutional-note {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: var(--edu-accent);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .final-cta-button:hover {
+            background: var(--edu-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .demo-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--edu-accent);
+            border: 2px solid var(--edu-accent);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+
+        .demo-button:hover {
+            background: var(--edu-accent);
+            color: white;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--edu-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e3f2fd;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid,
+            .pain-points-grid,
+            .accessibility-grid,
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .freemium-badge {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+                max-width: fit-content;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .demo-button {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <div class="nav-links">
+                <a href="/lawyers/">Legal</a>
+                <a href="/education/">Education</a>
+                <a href="/production/">A/V Production</a>
+                <a href="/#verticals">All Verticals</a>
+                <a href="/signup/" class="cta-button-nav">Start Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Educational Transcription & Accessibility</h1>
+                <p class="hero-subtitle">
+                    Professional transcription software for educational institutions, universities, and accessible learning platforms
+                    <span class="freemium-badge">5 minutes free monthly</span>
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <strong>Accessibility Compliance</strong><br>
+                        Supports ADA and Section 508 requirements
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Lecture Capture</strong><br>
+                        Professional transcription for educational content
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Student Support</strong><br>
+                        Enhanced accessibility for diverse learners
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Institutional Pricing</strong><br>
+                        Budget-friendly educational licensing
+                    </div>
+                </div>
+
+                <a href="/signup/" class="cta-button-hero">Get Your 5 Free Minutes</a>
+            </div>
+        </section>
+
+        <section class="section pain-points">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Educational Accessibility Challenges</h2>
+                    <p>Professional transcription solutions for modern educational institutions and online learning platforms</p>
+                </div>
+
+                <div class="pain-points-grid">
+                    <div class="pain-point">
+                        <div class="pain-point-icon">♿</div>
+                        <h3>Accessibility Compliance Requirements</h3>
+                        <p>Educational institutions must comply with ADA and Section 508 accessibility requirements. Manual transcription and captioning create compliance risks and slow accessibility implementation.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">💰</div>
+                        <h3>Educational Budget Constraints</h3>
+                        <p>Universities and schools face tight budgets while needing comprehensive accessibility support. Per-minute transcription costs become prohibitive for high-volume educational content.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🎓</div>
+                        <h3>Lecture & Course Documentation</h3>
+                        <p>Recording and transcribing lectures, seminars, and educational content requires efficient workflows that don't burden faculty while providing accessible content for all students.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🌐</div>
+                        <h3>Online Learning Accessibility</h3>
+                        <p>Distance learning and online education platforms need accessible transcripts and captions for video content to serve diverse student populations and learning needs.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">👥</div>
+                        <h3>Student Diversity & Inclusion</h3>
+                        <p>Supporting students with hearing impairments, learning differences, and non-native language backgrounds requires comprehensive accessibility tools and documentation.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">⚡</div>
+                        <h3>Technology Integration Challenges</h3>
+                        <p>Educational technology systems need seamless integration with learning management systems while maintaining student privacy and institutional security standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section solution-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LocalTranscribe Educational Solutions</h2>
+                    <p>Professional transcription designed for educational accessibility and institutional requirements</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">♿</div>
+                        <h3>Accessibility Compliance Support</h3>
+                        <p>Professional transcription architecture designed to support ADA compliance and Section 508 accessibility requirements for educational institutions and online learning platforms.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🎓</div>
+                        <h3>Lecture & Educational Content</h3>
+                        <p>Specialized transcription for educational content including lectures, seminars, online courses, and academic presentations with academic terminology recognition.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <h3>Student-Centered Design</h3>
+                        <p>Supporting diverse learning needs with accurate transcriptions, multiple export formats, and accessibility features for students with hearing impairments and learning differences.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Educational Privacy Protection</h3>
+                        <p>Local processing protects student privacy and educational content. Supports FERPA compliance requirements and institutional data protection policies.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Learning Management Integration</h3>
+                        <p>Export transcripts and captions in formats compatible with popular LMS platforms including Canvas, Blackboard, and Moodle for seamless educational workflows.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <h3>Educational Budget Optimization</h3>
+                        <p>Unlimited transcription model provides cost predictability for educational institutions. Volume licensing available for university-wide accessibility initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section accessibility-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Accessibility Compliance & Support</h2>
+                    <p>Professional transcription architecture designed to support educational accessibility requirements</p>
+                </div>
+
+                <div class="accessibility-notice">
+                    <h3>♿ Educational Accessibility Support</h3>
+                    <p><strong>LocalTranscribe supports educational accessibility requirements</strong> by providing professional transcription tools for ADA compliance and Section 508 accessibility initiatives. Educational institutions remain responsible for implementing appropriate accessibility policies and compliance verification.</p>
+                </div>
+
+                <div class="accessibility-grid">
+                    <div class="accessibility-card">
+                        <h4>🎯 ADA Compliance Support</h4>
+                        <p>Professional transcription tools designed to support ADA accessibility requirements for educational content and student services.</p>
+                    </div>
+
+                    <div class="accessibility-card">
+                        <h4>📋 Section 508 Standards</h4>
+                        <p>Export formats and documentation standards compatible with Section 508 accessibility requirements for educational technology.</p>
+                    </div>
+
+                    <div class="accessibility-card">
+                        <h4>👂 Hearing Accessibility</h4>
+                        <p>Comprehensive transcription and captioning support for students with hearing impairments and deaf/hard of hearing communities.</p>
+                    </div>
+
+                    <div class="accessibility-card">
+                        <h4>🌍 Language Support</h4>
+                        <p>Accessible content creation for international students and English language learners with clear transcription and formatting.</p>
+                    </div>
+
+                    <div class="accessibility-card">
+                        <h4>🎓 Learning Differences</h4>
+                        <p>Support for students with dyslexia, ADHD, and other learning differences through accessible text formats and clear documentation.</p>
+                    </div>
+
+                    <div class="accessibility-card">
+                        <h4>⚖️ Institutional Responsibility</h4>
+                        <p>Educational institutions remain responsible for accessibility policy implementation, compliance verification, and student accommodation processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section use-cases-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Educational Use Cases</h2>
+                    <p>Professional transcription for all types of educational content and institutional needs</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <div class="use-case">
+                        <div class="use-case-icon">🏫</div>
+                        <h4>Universities & Colleges</h4>
+                        <p>Lecture transcription, course content accessibility, and campus-wide accessibility compliance initiatives.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">💻</div>
+                        <h4>Online Learning Platforms</h4>
+                        <p>Course video transcription, accessibility compliance, and enhanced student engagement for distance learning.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">🎥</div>
+                        <h4>Educational Content Creators</h4>
+                        <p>Tutorial transcription, educational video captioning, and accessible content creation for online courses.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">🔬</div>
+                        <h4>Research Institutions</h4>
+                        <p>Research interview transcription, academic conference documentation, and scholarly content accessibility.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">👨‍🏫</div>
+                        <h4>Professional Development</h4>
+                        <p>Training program transcription, professional education accessibility, and continuing education documentation.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">🌐</div>
+                        <h4>Language Learning</h4>
+                        <p>Language instruction transcription, pronunciation guides, and accessible language education materials.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">♿</div>
+                        <h4>Accessibility Services</h4>
+                        <p>Student accommodation support, disability services documentation, and campus accessibility initiatives.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <div class="use-case-icon">📚</div>
+                        <h4>Library & Archives</h4>
+                        <p>Historical content transcription, academic archives accessibility, and digital collection enhancement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section">
+            <div class="container">
+                <div class="pricing-container">
+                    <h2>Educational Pricing</h2>
+                    <p>Budget-friendly pricing designed for educational institutions and accessibility initiatives</p>
+
+                    <div class="price-display">
+                        <div class="price">5 min</div>
+                        <p class="price-subtitle">free every month • $299/month unlimited</p>
+
+                        <ul class="pricing-features">
+                            <li>5 minutes free educational transcription monthly</li>
+                            <li>Accessibility compliance support</li>
+                            <li>Educational content optimization</li>
+                            <li>Multiple export formats (captions, transcripts)</li>
+                            <li>LMS integration compatibility</li>
+                            <li>Student privacy protection</li>
+                            <li>Academic terminology recognition</li>
+                            <li>High-volume processing capabilities</li>
+                            <li>Institutional licensing available</li>
+                            <li>Priority support (paid plans)</li>
+                            <li>No credit card required for free tier</li>
+                        </ul>
+
+                        <div class="institutional-note">
+                            <strong>Educational & Institutional Licensing:</strong> Volume discounts available for university-wide implementations, accessibility initiatives, and multi-department educational programs. Contact our team for educational pricing and compliance documentation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Start Educational Transcription</h2>
+                    <p>Join educational institutions using LocalTranscribe for accessible, compliant transcription workflows. Get 5 minutes free transcription monthly to experience educational content optimization and accessibility support.</p>
+
+                    <a href="/signup/" class="final-cta-button">Get Your 5 Free Minutes</a>
+                    <a href="mailto:education@lexopoly.com" class="demo-button">Request Demo</a>
+
+                    <div class="trust-indicators">
+                        <div class="trust-indicator">
+                            <span>♿</span>
+                            <span>Accessibility Compliance</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🎓</span>
+                            <span>Educational Optimized</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🔒</span>
+                            <span>Student Privacy Protection</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>💳</span>
+                            <span>No Credit Card Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/lawyers/">Legal Professionals</a>
+            <a href="/education/">Education</a>
+            <a href="/production/">A/V Production</a>
+            <a href="/signup/">Free Trial</a>
+            <a href="/terms/">Terms & Privacy</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. Accessible transcription for educational institutions.</p>
+    </footer>
+</body>
+</html>
