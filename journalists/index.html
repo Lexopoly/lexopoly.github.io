@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalTranscribe for Journalists - Protect Sources with Local Transcription</title>
+    <meta name="description" content="Professional journalism transcription software with local processing. Protect source confidentiality, meet tight deadlines, and control your data. Free 5 minutes monthly, unlimited for $299/month.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* Journalists-specific colors */
+            --journalists: #c53030;
+            --journalists-light: #feb2b2;
+            --journalists-dark: #822727;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #c53030 0%, #822727 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--journalists);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: var(--journalists-dark);
+            color: white;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--journalists);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--journalists);
+        }
+
+        /* Pain points section */
+        .pain-points {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .pain-points h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--journalists);
+        }
+
+        .pain-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pain-card h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+            font-size: 1.3rem;
+        }
+
+        .pain-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Solution section */
+        .solution {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .solution h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(197, 48, 48, 0.15);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--journalists);
+        }
+
+        .solution-card h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+            font-size: 1.3rem;
+        }
+
+        .solution-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Journalism specific features */
+        .journalism-features {
+            background: rgba(197, 48, 48, 0.05);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .journalism-features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .features-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .feature-highlight {
+            text-align: center;
+        }
+
+        .feature-highlight h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--journalists);
+        }
+
+        .feature-highlight p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--journalists);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Proof section */
+        .proof {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .proof h2 {
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--journalists);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Freemium CTA section */
+        .freemium-cta {
+            background: linear-gradient(135deg, var(--journalists) 0%, var(--journalists-dark) 100%);
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .freemium-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .freemium-cta .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .risk-reduction {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .risk-reduction h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .risk-list {
+            list-style: none;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .risk-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .risk-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .pain-points, .solution, .journalism-features, .proof, .freemium-cta {
+                padding: 2rem 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <ul class="nav-links">
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/" style="color: var(--journalists); font-weight: 600;">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/signup/?vertical=journalists" class="cta-nav">Start Free (5 min/month)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-badge">📰 For Journalists & News Organizations</div>
+            <h1>Protect Your Sources</h1>
+            <p class="tagline">Local Journalism Transcription</p>
+            <p class="subtitle">
+                Fast, accurate transcription with complete source protection. You control what data goes where.
+                Meet tight deadlines while keeping sensitive interviews confidential.
+            </p>
+            <div class="hero-cta">
+                <a href="/signup/?vertical=journalists" class="btn-primary">Start Free (5 min/month)</a>
+                <a href="/demo/" class="btn-secondary">Watch Journalism Demo</a>
+            </div>
+        </section>
+
+        <section class="pain-points">
+            <h2>Journalism Transcription Challenges</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <span class="pain-icon">🔍</span>
+                    <h3>Source Protection Risk</h3>
+                    <p>Cloud-based services expose sensitive interviews to potential data breaches, government surveillance, and subpoenas. Your sources' safety depends on true confidentiality.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">⏰</span>
+                    <h3>Deadline Pressure</h3>
+                    <p>Breaking news doesn't wait for slow transcription services. Upload delays, processing queues, and format issues cost precious time in competitive news cycles.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">💰</span>
+                    <h3>Per-Minute Costs</h3>
+                    <p>Traditional services charge per minute, making long interviews expensive. Freelance journalists and small newsrooms struggle with unpredictable transcription budgets.</p>
+                </div>
+                <div class="pain-card">
+                    <span class="pain-icon">🎯</span>
+                    <h3>Accuracy Issues</h3>
+                    <p>Generic transcription services miss journalism terminology, proper nouns, and context. Time spent correcting transcripts reduces time for actual reporting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution">
+            <h2>LocalTranscribe Journalism Solution</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="solution-icon">🔒</span>
+                    <h3>Source Confidentiality</h3>
+                    <p>Local transcription processing keeps interviews on your computer during transcription. You control what data leaves your device, protecting source anonymity.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">⚡</span>
+                    <h3>Instant Processing</h3>
+                    <p>No upload delays or server queues. Start transcribing immediately for breaking news, live events, and time-sensitive stories.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">💰</span>
+                    <h3>Predictable Pricing</h3>
+                    <p>5 minutes free monthly, then unlimited transcription for $299/month. No per-minute charges for long investigative interviews or extensive research.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">🎯</span>
+                    <h3>Journalism Optimized</h3>
+                    <p>Trained on news terminology, political names, and interview formats. Less editing time means more time for actual journalism.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="journalism-features">
+            <h2>Built for News Professionals</h2>
+            <div class="features-showcase">
+                <div class="feature-highlight">
+                    <h4>Interview Transcription</h4>
+                    <p>Optimized for one-on-one and group interviews with speaker identification and journalism-specific terminology recognition.</p>
+                    <ul class="feature-list">
+                        <li>Political terminology and proper nouns</li>
+                        <li>Speaker separation for multi-person interviews</li>
+                        <li>Quote-ready formatting for article integration</li>
+                        <li>Background noise filtering for field recording</li>
+                    </ul>
+                </div>
+                <div class="feature-highlight">
+                    <h4>Source Protection</h4>
+                    <p>Advanced privacy controls ensure sensitive interviews remain confidential while maintaining professional workflow efficiency.</p>
+                    <ul class="feature-list">
+                        <li>Local processing with no cloud exposure during transcription</li>
+                        <li>You control all data export and sharing decisions</li>
+                        <li>Anonymous source interview support</li>
+                        <li>Secure deletion and file management tools</li>
+                    </ul>
+                </div>
+                <div class="feature-highlight">
+                    <h4>Deadline Support</h4>
+                    <p>Fast, reliable transcription designed for the speed and accuracy demands of modern journalism workflows.</p>
+                    <ul class="feature-list">
+                        <li>Real-time processing without server delays</li>
+                        <li>Multiple export formats for any editorial system</li>
+                        <li>Batch processing for multiple interview files</li>
+                        <li>Mobile and desktop compatibility for field work</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof">
+            <h2>Trusted by News Professionals</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Accuracy on news terminology</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Faster than cloud services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Source privacy control</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available for breaking news</div>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Join journalists and news organizations who've made the switch to truly confidential transcription.
+            </p>
+        </section>
+
+        <section class="freemium-cta">
+            <h2>Start Protecting Your Sources Today</h2>
+            <p class="subtitle">Free account with 5 minutes of transcription every month. No credit card required.</p>
+
+            <div class="risk-reduction">
+                <h3>Free Account (5 min/month) Includes:</h3>
+                <ul class="risk-list">
+                    <li>5 minutes free transcription monthly</li>
+                    <li>Full journalism terminology recognition</li>
+                    <li>Local processing with privacy control</li>
+                    <li>No credit card required</li>
+                    <li>Upgrade anytime to unlimited ($299/month)</li>
+                </ul>
+            </div>
+
+            <div class="hero-cta">
+                <a href="/signup/?vertical=journalists" class="btn-primary">Start Free Account</a>
+                <a href="/pricing/" class="btn-secondary">View Journalism Pricing</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/journalism-ethics/">Journalism Ethics</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Professional journalism transcription that protects source confidentiality.
+        </p>
+    </footer>
+</body>
+</html>
