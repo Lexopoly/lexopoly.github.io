@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Reporter & Legal Stenography Software - LocalTranscribe</title>
+    <meta name="description" content="Professional transcription software for court reporters, legal stenographers, and deposition services. Workflow enhancement and backup solutions. 5 minutes free monthly.">
+    <meta name="keywords" content="court reporter software, legal stenography, deposition transcription, court reporting, legal transcription, stenographer tools">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Court reporting/Legal professional color scheme */
+            --court-primary: #7c2d12;
+            --court-secondary: #92400e;
+            --court-accent: #d97706;
+            --court-light: #f59e0b;
+            --professional-gradient: linear-gradient(135deg, #7c2d12 0%, #a16207 100%);
+            --lexopoly-primary: #1a365d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #fefbf3;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #047857;
+            --warning: #d97706;
+            --professional: #92400e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--court-accent);
+        }
+
+        .cta-button-nav {
+            background: var(--court-accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button-nav:hover {
+            background: var(--court-secondary);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: var(--professional-gradient);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .hero-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-feature strong {
+            color: #fed7aa;
+        }
+
+        .cta-button-hero {
+            display: inline-block;
+            background: #fed7aa;
+            color: var(--court-primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .freemium-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--court-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pain-points {
+            background: var(--bg-secondary);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-point {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--court-accent);
+        }
+
+        .pain-point-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-point h3 {
+            color: var(--court-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .solution-features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--professional-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature h3 {
+            color: var(--court-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .workflow-section {
+            background: linear-gradient(135deg, #fefbf3 0%, #fef3c7 100%);
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .workflow-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--court-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .workflow-step h4 {
+            color: var(--court-primary);
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .services-section {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-type {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-type:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-type h4 {
+            color: var(--court-primary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-section {
+            background: var(--court-primary);
+            color: white;
+        }
+
+        .pricing-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-display {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fed7aa;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #fed7aa;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .professional-note {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: var(--court-accent);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .final-cta-button:hover {
+            background: var(--court-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--court-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fed7aa;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid,
+            .pain-points-grid,
+            .workflow-steps,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .freemium-badge {
+                display: block;
+                margin: 1rem auto 0;
+                text-align: center;
+                max-width: fit-content;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <div class="nav-links">
+                <a href="/lawyers/">Legal</a>
+                <a href="/court-reporters/">Court Reporters</a>
+                <a href="/production/">A/V Production</a>
+                <a href="/#verticals">All Verticals</a>
+                <a href="/signup/" class="cta-button-nav">Start Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Court Reporter & Legal Stenography Tools</h1>
+                <p class="hero-subtitle">
+                    Professional transcription software for court reporters, legal stenographers, and deposition services
+                    <span class="freemium-badge">5 minutes free monthly</span>
+                </p>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <strong>Workflow Enhancement</strong><br>
+                        Real-time backup and verification tools
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Professional Integration</strong><br>
+                        Compatible with stenography equipment
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Accuracy Verification</strong><br>
+                        Professional comparison and checking tools
+                    </div>
+                    <div class="hero-feature">
+                        <strong>Reliable Backup</strong><br>
+                        Secondary capture for critical proceedings
+                    </div>
+                </div>
+
+                <a href="/signup/" class="cta-button-hero">Get Your 5 Free Minutes</a>
+            </div>
+        </section>
+
+        <section class="section pain-points">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Court Reporting Challenges</h2>
+                    <p>Professional transcription solutions for modern court reporting and legal stenography workflows</p>
+                </div>
+
+                <div class="pain-points-grid">
+                    <div class="pain-point">
+                        <div class="pain-point-icon">⚖️</div>
+                        <h3>Critical Proceeding Backup</h3>
+                        <p>Court proceedings require absolute accuracy and reliability. Equipment failures or technical issues can jeopardize critical legal records. Professional backup solutions are essential for courtroom integrity.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">⏰</div>
+                        <h3>Real-Time Verification Pressure</h3>
+                        <p>Court reporters need immediate accuracy verification during live proceedings. Fast, reliable transcription tools help verify stenographic output and catch potential errors in real-time.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🔧</div>
+                        <h3>Workflow Integration Complexity</h3>
+                        <p>Modern court reporting requires integration with multiple systems: stenography machines, audio recording, real-time feeds, and transcript delivery systems for seamless professional workflows.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">📄</div>
+                        <h3>Post-Proceeding Verification</h3>
+                        <p>Ensuring transcript accuracy after proceedings requires efficient comparison tools and verification workflows. Manual checking is time-consuming and prone to oversight errors.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">💼</div>
+                        <h3>Freelance Business Efficiency</h3>
+                        <p>Independent court reporters need cost-effective tools that enhance productivity without sacrificing professional quality. Efficient workflows directly impact business profitability and client satisfaction.</p>
+                    </div>
+
+                    <div class="pain-point">
+                        <div class="pain-point-icon">🎯</div>
+                        <h3>Professional Standard Compliance</h3>
+                        <p>Court reporting requires adherence to strict professional standards and certification requirements. Tools must support professional excellence and regulatory compliance expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section solution-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>LocalTranscribe Court Reporting Solutions</h2>
+                    <p>Professional transcription tools designed to enhance court reporting workflows and stenographic accuracy</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Real-Time Backup Protection</h3>
+                        <p>Provide secondary audio capture during live proceedings. Local processing ensures backup transcription without cloud dependencies or connectivity risks during critical court sessions.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Accuracy Verification Tools</h3>
+                        <p>Compare stenographic output with audio transcription for verification and quality assurance. Professional tools to catch discrepancies and ensure transcript accuracy standards.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Workflow Enhancement</h3>
+                        <p>Streamline post-proceeding transcript preparation with efficient transcription tools. Reduce turnaround time while maintaining professional accuracy and formatting standards.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🔗</div>
+                        <h3>Professional Integration</h3>
+                        <p>Compatible with existing stenography equipment and court reporting systems. Seamless integration into established professional workflows without disrupting proven processes.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Quality Assurance</h3>
+                        <p>Professional comparison tools for stenographic accuracy verification. Side-by-side analysis capabilities to ensure transcript integrity and professional standard compliance.</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💼</div>
+                        <h3>Business Efficiency</h3>
+                        <p>Cost-effective unlimited transcription for high-volume court reporting businesses. Predictable pricing supports freelance and agency business planning and profitability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Enhanced Court Reporting Workflow</h2>
+                    <p>Integrate professional transcription seamlessly into court reporting and stenographic processes</p>
+                </div>
+
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <h4>Live Proceeding Backup</h4>
+                        <p>Run LocalTranscribe as secondary audio capture during court proceedings for real-time backup protection and redundancy.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <h4>Stenographic Verification</h4>
+                        <p>Compare stenographic output with audio transcription for accuracy verification and quality assurance during proceeding breaks.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <h4>Post-Proceeding Analysis</h4>
+                        <p>Detailed comparison and verification of final transcripts using professional analysis tools and side-by-side review capabilities.</p>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <h4>Professional Delivery</h4>
+                        <p>Export verified transcripts in professional formats for legal delivery while maintaining stenographic certification and professional standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Court Reporting Services</h2>
+                    <p>Professional transcription support for all types of legal stenography and court reporting services</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-type">
+                        <div class="service-icon">⚖️</div>
+                        <h4>Court Proceedings</h4>
+                        <p>Real-time backup for trials, hearings, and judicial proceedings with professional verification tools.</p>
+                    </div>
+
+                    <div class="service-type">
+                        <div class="service-icon">📋</div>
+                        <h4>Deposition Services</h4>
+                        <p>Professional deposition transcription with accuracy verification and stenographic comparison capabilities.</p>
+                    </div>
+
+                    <div class="service-type">
+                        <div class="service-icon">👨‍💼</div>
+                        <h4>Legal Proceedings</h4>
+                        <p>Arbitration, mediation, and legal conference transcription with professional workflow integration.</p>
+                    </div>
+
+                    <div class="service-type">
+                        <div class="service-icon">🏛️</div>
+                        <h4>Government Hearings</h4>
+                        <p>Administrative hearings, regulatory proceedings, and government meeting transcription support.</p>
+                    </div>
+
+                    <div class="service-type">
+                        <div class="service-icon">💼</div>
+                        <h4>Corporate Legal</h4>
+                        <p>Corporate legal proceedings, board meetings, and business litigation transcription services.</p>
+                    </div>
+
+                    <div class="service-type">
+                        <div class="service-icon">🎓</div>
+                        <h4>Educational Legal</h4>
+                        <p>Academic legal proceedings, disciplinary hearings, and educational legal documentation support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section">
+            <div class="container">
+                <div class="pricing-container">
+                    <h2>Court Reporter Pricing</h2>
+                    <p>Professional pricing designed for court reporting businesses and stenographic services</p>
+
+                    <div class="price-display">
+                        <div class="price">5 min</div>
+                        <p class="price-subtitle">free every month • $299/month unlimited</p>
+
+                        <ul class="pricing-features">
+                            <li>5 minutes free court reporting transcription monthly</li>
+                            <li>Real-time backup protection</li>
+                            <li>Stenographic verification tools</li>
+                            <li>Professional accuracy comparison</li>
+                            <li>Workflow enhancement capabilities</li>
+                            <li>High-volume processing support</li>
+                            <li>Legal terminology recognition</li>
+                            <li>Professional format exports</li>
+                            <li>Quality assurance tools</li>
+                            <li>Priority support (paid plans)</li>
+                            <li>No credit card required for free tier</li>
+                        </ul>
+
+                        <div class="professional-note">
+                            <strong>Professional Court Reporter Support:</strong> LocalTranscribe enhances but does not replace professional stenographic skills and certification. Court reporters maintain full responsibility for professional accuracy, legal compliance, and certification requirements.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Enhance Your Court Reporting Workflow</h2>
+                    <p>Join court reporters using LocalTranscribe for workflow enhancement, backup protection, and professional verification. Get 5 minutes free transcription monthly to experience professional court reporting support tools.</p>
+
+                    <a href="/signup/" class="final-cta-button">Get Your 5 Free Minutes</a>
+
+                    <div class="trust-indicators">
+                        <div class="trust-indicator">
+                            <span>⚖️</span>
+                            <span>Professional Court Support</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🛡️</span>
+                            <span>Real-Time Backup</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>🔍</span>
+                            <span>Verification Tools</span>
+                        </div>
+                        <div class="trust-indicator">
+                            <span>💳</span>
+                            <span>No Credit Card Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/lawyers/">Legal Professionals</a>
+            <a href="/court-reporters/">Court Reporters</a>
+            <a href="/production/">A/V Production</a>
+            <a href="/signup/">Free Trial</a>
+            <a href="/terms/">Terms & Privacy</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. Professional transcription for court reporters.</p>
+    </footer>
+</body>
+</html>
