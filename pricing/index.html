@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic SEO -->
+    <title>LocalTranscribe Pricing - Professional Transcription Plans</title>
+    <meta name="description" content="Flexible pricing for professional transcription software. Start free with 5 minutes monthly. Volume discounts from $79/user to $59/user. Local processing, Clio integration, unlimited transcription.">
+    <meta name="keywords" content="transcription pricing, volume pricing, professional transcription plans, legal transcription cost, local processing pricing">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.localtranscribe.com/pricing/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="LocalTranscribe Pricing - Professional Transcription Plans">
+    <meta property="og:description" content="Flexible volume pricing from $39-79/user monthly. Start free with 5 minutes. Local processing, HIPAA compliance, no per-minute fees.">
+    <meta property="og:url" content="https://www.localtranscribe.com/pricing/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.localtranscribe.com/images/og-pricing.png">
+    <meta property="og:site_name" content="LocalTranscribe">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LocalTranscribe Pricing - Professional Transcription Plans">
+    <meta name="twitter:description" content="Flexible volume pricing from $39-79/user monthly. Start free with 5 minutes. Local processing, HIPAA compliance, no per-minute fees.">
+    <meta name="twitter:image" content="https://www.localtranscribe.com/images/og-pricing.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Pricing tiers */
+        .pricing-tiers {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tier-card {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tier-card.popular {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        }
+
+        .tier-card.popular::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-price-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .tier-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .tier-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .tier-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .tier-cta:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .tier-cta.secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .tier-cta.secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Comparison table */
+        .comparison {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .comparison h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+        }
+
+        .comparison-table td.feature-name {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .check {
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cross {
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ section */
+        .faq {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .pricing-tiers, .comparison, .faq {
+                padding: 2rem 1rem;
+            }
+
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-price {
+                font-size: 2rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+
+    <!-- Pricing Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PriceSpecification",
+      "name": "LocalTranscribe Pricing Plans",
+      "description": "Professional transcription software with volume-based pricing",
+      "url": "https://www.localtranscribe.com/pricing/",
+      "priceCurrency": "USD",
+      "priceRange": "$0-79"
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in the free tier?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The free tier includes 5 minutes of transcription every month with full local processing and privacy protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does volume pricing work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our volume pricing decreases per-user costs as you add more team members: $79/user (1-9 users), $69/user (10-24 users), $59/user (25+ users)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a revenue share with Clio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, LocalTranscribe takes 0% revenue share from Clio integration, unlike other transcription services."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.localtranscribe.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": "https://www.localtranscribe.com/pricing/"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <ul class="nav-links">
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/" class="active">Pricing</a></li>
+            </ul>
+            <a href="/signup/" class="cta-nav">Start Free (5 min/month)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="subtitle">
+                Start free with 5 minutes monthly. Scale with volume discounts.
+                Professional local transcription with no hidden fees or per-minute charges.
+            </p>
+        </section>
+
+        <section class="pricing-tiers">
+            <div class="tiers-grid">
+                <!-- Freemium Tier -->
+                <div class="tier-card">
+                    <div class="tier-name">Freemium</div>
+                    <div class="tier-price">$0</div>
+                    <div class="tier-price-subtitle">5 minutes per month</div>
+                    <ul class="tier-features">
+                        <li>5 minutes free transcription monthly</li>
+                        <li>Full quality demonstration (85-92% accuracy)</li>
+                        <li>Local processing privacy</li>
+                        <li>28x faster than real-time</li>
+                        <li>Basic export formats</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="/signup/" class="tier-cta">Start Free</a>
+                </div>
+
+                <!-- Professional Tier -->
+                <div class="tier-card popular">
+                    <div class="tier-name">Professional</div>
+                    <div class="tier-price">$79</div>
+                    <div class="tier-price-subtitle">per user per month (1-9 users)</div>
+                    <ul class="tier-features">
+                        <li>Unlimited transcription</li>
+                        <li>Full editing tools + punchlist workflow</li>
+                        <li>Clio integration (0% revenue share)</li>
+                        <li>All export formats</li>
+                        <li>Email support</li>
+                        <li>Local processing privacy</li>
+                    </ul>
+                    <a href="/signup/" class="tier-cta">Start Professional</a>
+                </div>
+
+                <!-- Team Tier -->
+                <div class="tier-card">
+                    <div class="tier-name">Team</div>
+                    <div class="tier-price">$69</div>
+                    <div class="tier-price-subtitle">per user per month (10-24 users)</div>
+                    <ul class="tier-features">
+                        <li>Everything in Professional</li>
+                        <li>13% volume discount</li>
+                        <li>Priority support</li>
+                        <li>Team usage analytics</li>
+                        <li>Volume billing management</li>
+                        <li>Dedicated account rep</li>
+                    </ul>
+                    <a href="/signup/" class="tier-cta">Start Team</a>
+                </div>
+
+                <!-- Business Tier -->
+                <div class="tier-card">
+                    <div class="tier-name">Business</div>
+                    <div class="tier-price">$59</div>
+                    <div class="tier-price-subtitle">per user per month (25+ users)</div>
+                    <ul class="tier-features">
+                        <li>Everything in Team</li>
+                        <li>25% volume discount</li>
+                        <li>Advanced reporting</li>
+                        <li>Custom workflow setup</li>
+                        <li>Priority phone support</li>
+                        <li>Quarterly business reviews</li>
+                    </ul>
+                    <a href="/signup/" class="tier-cta">Start Business</a>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="tier-card">
+                    <div class="tier-name">Enterprise</div>
+                    <div class="tier-price">Custom</div>
+                    <div class="tier-price-subtitle">pricing for 50+ users</div>
+                    <ul class="tier-features">
+                        <li>Everything in Business</li>
+                        <li>30-40% volume discounts</li>
+                        <li>White-label options</li>
+                        <li>SSO integration</li>
+                        <li>API access</li>
+                        <li>Dedicated customer success manager</li>
+                    </ul>
+                    <a href="/contact/" class="tier-cta secondary">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <h2>Feature Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Freemium</th>
+                        <th>Professional</th>
+                        <th>Team</th>
+                        <th>Business</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Monthly transcription</td>
+                        <td>5 minutes</td>
+                        <td><span class="check">✓</span> Unlimited</td>
+                        <td><span class="check">✓</span> Unlimited</td>
+                        <td><span class="check">✓</span> Unlimited</td>
+                        <td><span class="check">✓</span> Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Local processing</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Editing tools + punchlist</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Clio integration</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Priority support</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Team analytics</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Custom workflows</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">SSO integration</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">API access</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Why is LocalTranscribe more expensive than per-minute services?</div>
+                <div class="faq-answer">LocalTranscribe offers unlimited transcription with local processing privacy and professional editing tools. At just 5.3 hours of Rev.com usage per month, Professional tier pays for itself while providing unlimited usage and zero cloud exposure.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do volume discounts work?</div>
+                <div class="faq-answer">Our pricing automatically decreases per user as your team grows: $79/user (1-9 users), $69/user (10-24 users), $59/user (25+ users). Enterprise customers (50+ users) get custom pricing with additional discounts.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I upgrade or downgrade my plan?</div>
+                <div class="faq-answer">Yes, you can change your plan at any time. Upgrades take effect immediately, downgrades take effect at your next billing cycle. We'll handle the proration automatically.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is there a long-term contract required?</div>
+                <div class="faq-answer">No, all plans are month-to-month with no long-term commitment. You can cancel anytime. Enterprise customers may choose annual contracts for additional discounts.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What's included in the 5 free minutes?</div>
+                <div class="faq-answer">Your 5 free minutes include full LocalTranscribe quality (85-92% accuracy), local processing, and basic export formats. It's a complete demonstration of our professional features.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does Clio integration cost extra?</div>
+                <div class="faq-answer">No! Unlike other providers, our Clio integration has zero revenue sharing or additional fees. You keep 100% of your revenue while getting seamless time entry and billing integration.</div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Professional transcription software that respects your privacy.
+        </p>
+    </footer>
+</body>
+</html>

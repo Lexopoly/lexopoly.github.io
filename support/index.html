@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalTranscribe Support - Help Documentation & FAQ</title>
+    <meta name="description" content="Get help with LocalTranscribe professional transcription software. FAQ, troubleshooting guides, getting started documentation, and customer support options.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Search box */
+        .search-box {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+        }
+
+        /* Support sections */
+        .support-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .support-section h2 {
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .support-section h3 {
+            font-size: 1.8rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Support categories */
+        .support-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .category-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .category-card h4 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .category-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .category-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .category-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Sections */
+        .faq-category {
+            margin-bottom: 3rem;
+        }
+
+        .faq-category h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        /* Contact options */
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--accent);
+        }
+
+        .contact-card h4 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .contact-link:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Status indicator */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--success);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .support-section {
+                padding: 2rem 1rem;
+            }
+
+            .support-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <ul class="nav-links">
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/signup/" class="cta-nav">Start Free (5 min/month)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Help & Support</h1>
+            <p class="subtitle">
+                Get the most out of LocalTranscribe with our comprehensive help documentation,
+                frequently asked questions, and customer support options.
+            </p>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                All systems operational
+            </div>
+        </section>
+
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search help articles and documentation..." id="supportSearch">
+        </div>
+
+        <section class="support-section">
+            <h2>Support Categories</h2>
+
+            <div class="support-categories">
+                <div class="category-card">
+                    <span class="category-icon">🚀</span>
+                    <h4>Getting Started</h4>
+                    <p>New to LocalTranscribe? Learn the basics and get up and running quickly.</p>
+                    <a href="#getting-started" class="category-link">View Getting Started Guide →</a>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">💰</span>
+                    <h4>Billing & Pricing</h4>
+                    <p>Questions about plans, pricing, billing, and account management.</p>
+                    <a href="#billing" class="category-link">View Billing FAQ →</a>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">🔧</span>
+                    <h4>Technical Support</h4>
+                    <p>Troubleshooting, installation issues, and technical questions.</p>
+                    <a href="#technical" class="category-link">View Technical Help →</a>
+                </div>
+
+                <div class="category-card">
+                    <span class="category-icon">🔗</span>
+                    <h4>Integrations</h4>
+                    <p>Clio integration setup, API usage, and third-party connections.</p>
+                    <a href="#integrations" class="category-link">View Integration Guides →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-category" id="getting-started">
+                <h3>🚀 Getting Started</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I get started with my free 5 minutes?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Simply sign up for a free account, download the LocalTranscribe software, and you'll automatically receive 5 minutes of professional transcription each month. No credit card required for the free tier.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What audio formats does LocalTranscribe support?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        LocalTranscribe supports all major audio and video formats including MP3, WAV, M4A, MP4, MOV, AVI, and more. If you have an unusual format, our software will attempt to process it automatically.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How accurate is LocalTranscribe compared to human transcription?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        LocalTranscribe achieves 85-92% accuracy with our built-in editing tools to improve quality further. Combined with our punchlist workflow, you can achieve professional-grade results much faster than traditional transcription services.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category" id="billing">
+                <h3>💰 Billing & Pricing</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does volume pricing work?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Our pricing automatically decreases per user as your team grows: $79/user (1-9 users), $69/user (10-24 users), $59/user (25+ users). Enterprise customers (50+ users) get custom pricing with additional discounts.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I upgrade or downgrade my plan anytime?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can change your plan at any time. Upgrades take effect immediately, downgrades take effect at your next billing cycle. We handle proration automatically.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a long-term contract required?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, all plans are month-to-month with no long-term commitment. You can cancel anytime. Enterprise customers may choose annual contracts for additional discounts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category" id="technical">
+                <h3>🔧 Technical Support</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the system requirements for LocalTranscribe?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        LocalTranscribe runs on Windows 10/11, macOS 10.14+, and Linux. Minimum requirements: 8GB RAM, 2GB free disk space, and a modern multi-core processor. More RAM and faster processors improve transcription speed.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Why is local processing better than cloud transcription?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Local processing means your audio never leaves your computer, protecting attorney-client privilege and sensitive information. It's also faster (no upload time), works offline, and gives you complete control over your data.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I do if transcription seems inaccurate?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Use our built-in editing tools and punchlist workflow to improve accuracy. Ensure good audio quality (clear speakers, minimal background noise) and use our confidence scoring to identify sections that may need review.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category" id="integrations">
+                <h3>🔗 Integrations</h3>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I set up Clio integration?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Connect your Clio account through the LocalTranscribe settings. Once connected, transcriptions can automatically create time entries and integrate with your billing workflow. We take 0% revenue share from this integration.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are there other practice management integrations available?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Currently, we offer deep integration with Clio. Additional practice management integrations are in development. Contact us if you have specific integration requirements for your practice.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there an API for custom integrations?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        API access is available for Enterprise customers. This allows custom integrations with your existing systems and workflows. Contact our sales team to discuss your specific API requirements.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Contact Support</h2>
+
+            <div class="contact-options">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h4>Email Support</h4>
+                    <p>Get help with general questions and account issues.</p>
+                    <a href="/contact/" class="contact-link">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <h4>Live Chat</h4>
+                    <p>Chat with our support team during business hours.</p>
+                    <a href="#" class="contact-link">Start Chat</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">📞</span>
+                    <h4>Priority Phone Support</h4>
+                    <p>Available for Team, Business, and Enterprise customers.</p>
+                    <a href="/contact/" class="contact-link">Request Callback</a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">🎥</span>
+                    <h4>Personal Demo</h4>
+                    <p>Schedule a one-on-one demonstration and training session.</p>
+                    <a href="/demo/" class="contact-link">Book Demo</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Professional transcription software that respects your privacy.
+        </p>
+    </footer>
+
+    <script>
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const toggle = item.querySelector('.faq-toggle');
+
+            answer.style.display = 'none';
+
+            question.addEventListener('click', () => {
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                toggle.textContent = isOpen ? '+' : '−';
+            });
+        });
+
+        // Simple search functionality
+        document.getElementById('supportSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

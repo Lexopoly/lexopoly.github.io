@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalTranscribe Privacy Policy - Data Protection & GDPR Compliance</title>
+    <meta name="description" content="LocalTranscribe privacy policy and data protection practices. GDPR compliant, minimal data collection, local processing ensures your transcription data never leaves your computer.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .last-updated {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .content-section h4 {
+            font-size: 1.2rem;
+            color: var(--lexopoly-secondary);
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .content-section ul, .content-section ol {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Privacy highlights */
+        .privacy-highlight {
+            background: linear-gradient(135deg, var(--success) 0%, #2f855a 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .privacy-highlight h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-highlight p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        /* Key points */
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .key-point {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .key-point h4 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .key-point p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Contact info */
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .contact-info h4 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        /* Table of contents */
+        .toc {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 2rem 1rem;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <ul class="nav-links">
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/signup/" class="cta-nav">Start Free (5 min/month)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">
+                Your privacy is fundamental to LocalTranscribe. Our local processing approach
+                means your audio data never leaves your computer, giving you complete control.
+            </p>
+            <div class="last-updated">
+                <strong>Last Updated:</strong> January 1, 2025<br>
+                <strong>Effective Date:</strong> January 1, 2025
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="privacy-highlight">
+                <h3>🔒 Privacy-First Design</h3>
+                <p>
+                    LocalTranscribe processes all audio and transcription data locally on your computer.
+                    Your sensitive conversations, legal discussions, and confidential audio never travel
+                    to our servers or any cloud service.
+                </p>
+            </div>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#overview">1. Overview</a></li>
+                    <li><a href="#data-collection">2. What Data We Collect</a></li>
+                    <li><a href="#local-processing">3. Local Processing Commitment</a></li>
+                    <li><a href="#data-use">4. How We Use Your Data</a></li>
+                    <li><a href="#data-sharing">5. Data Sharing and Disclosure</a></li>
+                    <li><a href="#data-security">6. Data Security</a></li>
+                    <li><a href="#your-rights">7. Your Rights and Controls</a></li>
+                    <li><a href="#third-party">8. Third-Party Services</a></li>
+                    <li><a href="#international">9. International Users</a></li>
+                    <li><a href="#children">10. Children's Privacy</a></li>
+                    <li><a href="#changes">11. Changes to This Policy</a></li>
+                    <li><a href="#contact">12. Contact Information</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="overview">
+            <h2>1. Overview</h2>
+
+            <p>
+                LocalTranscribe, operated by Lexopoly LLC ("we," "us," or "our"), is committed to protecting your privacy and maintaining the confidentiality of your data. This Privacy Policy explains how we collect, use, and protect information when you use our professional transcription software and services.
+            </p>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <h4>Local Processing</h4>
+                    <p>Audio transcription happens entirely on your computer - never on our servers.</p>
+                </div>
+                <div class="key-point">
+                    <h4>Minimal Data Collection</h4>
+                    <p>We only collect essential account and billing information.</p>
+                </div>
+                <div class="key-point">
+                    <h4>GDPR Compliant</h4>
+                    <p>Full compliance with EU data protection regulations.</p>
+                </div>
+                <div class="key-point">
+                    <h4>Your Control</h4>
+                    <p>You decide what data to share and can delete your account anytime.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="data-collection">
+            <h2>2. What Data We Collect</h2>
+
+            <h3>2.1 Account Information</h3>
+            <p>When you create a LocalTranscribe account, we collect:</p>
+            <ul>
+                <li>Email address (required for account access and communication)</li>
+                <li>Name (for billing and customer service)</li>
+                <li>Company information (optional, for business accounts)</li>
+                <li>Password (encrypted and stored securely)</li>
+            </ul>
+
+            <h3>2.2 Billing Information</h3>
+            <p>For paid subscriptions, we collect:</p>
+            <ul>
+                <li>Billing address</li>
+                <li>Payment method information (processed by our secure payment providers)</li>
+                <li>Transaction history and invoices</li>
+            </ul>
+
+            <h3>2.3 Usage Analytics</h3>
+            <p>We collect minimal, anonymized usage data to improve our service:</p>
+            <ul>
+                <li>Number of transcriptions processed (not the content)</li>
+                <li>Software version and performance metrics</li>
+                <li>Feature usage patterns (which features are used, not what data is processed)</li>
+                <li>Error logs and crash reports (containing no personal audio data)</li>
+            </ul>
+
+            <h3>2.4 What We DO NOT Collect</h3>
+            <div class="privacy-highlight">
+                <h3>🚫 Zero Audio Data Collection</h3>
+                <p>
+                    We never collect, store, or process your audio files, transcription content,
+                    or any sensitive data from your transcriptions. All processing happens locally on your device.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section" id="local-processing">
+            <h2>3. Local Processing Commitment</h2>
+
+            <p>
+                <strong>LocalTranscribe's core privacy principle:</strong> Your audio and transcription data never leaves your computer unless you explicitly choose to export or share it.
+            </p>
+
+            <h3>3.1 How Local Processing Works</h3>
+            <ul>
+                <li>Audio files are processed entirely on your local machine</li>
+                <li>Transcription happens using local AI models</li>
+                <li>No audio data is transmitted to our servers or any cloud service</li>
+                <li>You control all export and sharing of transcription results</li>
+            </ul>
+
+            <h3>3.2 Benefits for Legal and Healthcare Professionals</h3>
+            <ul>
+                <li><strong>Attorney-Client Privilege:</strong> Protected by design - no cloud exposure risk</li>
+                <li><strong>HIPAA Compliance Support:</strong> Local processing supports healthcare privacy requirements</li>
+                <li><strong>Confidential Sources:</strong> Journalists can protect source identity completely</li>
+                <li><strong>Government Security:</strong> Meets strict data handling requirements</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="data-use">
+            <h2>4. How We Use Your Data</h2>
+
+            <p>We use the limited data we collect for these specific purposes:</p>
+
+            <h3>4.1 Account Management</h3>
+            <ul>
+                <li>Providing access to your LocalTranscribe account</li>
+                <li>Authenticating your identity</li>
+                <li>Managing your subscription and billing</li>
+                <li>Providing customer support</li>
+            </ul>
+
+            <h3>4.2 Service Improvement</h3>
+            <ul>
+                <li>Analyzing usage patterns to improve software performance</li>
+                <li>Identifying and fixing bugs</li>
+                <li>Developing new features based on user needs</li>
+                <li>Ensuring software security and stability</li>
+            </ul>
+
+            <h3>4.3 Communication</h3>
+            <ul>
+                <li>Sending important service updates and security notifications</li>
+                <li>Providing technical support</li>
+                <li>Responding to your inquiries</li>
+                <li>Sending billing and payment notifications</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="data-sharing">
+            <h2>5. Data Sharing and Disclosure</h2>
+
+            <h3>5.1 We DO NOT Sell Your Data</h3>
+            <p>We never sell, rent, or trade your personal information to third parties for commercial purposes.</p>
+
+            <h3>5.2 Limited Sharing</h3>
+            <p>We may share your information only in these specific circumstances:</p>
+
+            <h4>Service Providers</h4>
+            <ul>
+                <li>Payment processors (Stripe) for billing</li>
+                <li>Email service providers for account communications</li>
+                <li>Analytics services (with anonymized data only)</li>
+            </ul>
+
+            <h4>Legal Requirements</h4>
+            <ul>
+                <li>When required by law or valid legal process</li>
+                <li>To protect our rights, property, or safety</li>
+                <li>To protect the rights, property, or safety of our users</li>
+                <li>To prevent fraud or security threats</li>
+            </ul>
+
+            <h4>Business Transfers</h4>
+            <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred to the new entity, subject to the same privacy protections.</p>
+        </section>
+
+        <section class="content-section" id="data-security">
+            <h2>6. Data Security</h2>
+
+            <p>We implement industry-standard security measures to protect your data:</p>
+
+            <h3>6.1 Technical Safeguards</h3>
+            <ul>
+                <li>Encryption in transit (TLS/SSL) for all data transmission</li>
+                <li>Encryption at rest for stored account data</li>
+                <li>Secure password hashing using industry best practices</li>
+                <li>Regular security audits and updates</li>
+                <li>Multi-factor authentication options</li>
+            </ul>
+
+            <h3>6.2 Operational Safeguards</h3>
+            <ul>
+                <li>Limited employee access to personal data on a need-to-know basis</li>
+                <li>Regular security training for staff</li>
+                <li>Incident response procedures</li>
+                <li>Regular backups with encryption</li>
+            </ul>
+
+            <h3>6.3 Your Local Security</h3>
+            <p>Since transcription data stays on your computer, we recommend:</p>
+            <ul>
+                <li>Using strong passwords for your device</li>
+                <li>Keeping your operating system updated</li>
+                <li>Using antivirus software</li>
+                <li>Securing your local transcription files appropriately</li>
+            </ul>
+        </section>
+
+        <section class="content-section" id="your-rights">
+            <h2>7. Your Rights and Controls</h2>
+
+            <p>You have significant control over your data and privacy:</p>
+
+            <h3>7.1 Access and Portability</h3>
+            <ul>
+                <li>View and download your account information</li>
+                <li>Export your account data in a portable format</li>
+                <li>Request copies of data we have about you</li>
+            </ul>
+
+            <h3>7.2 Correction and Updates</h3>
+            <ul>
+                <li>Update your account information at any time</li>
+                <li>Correct inaccurate personal data</li>
+                <li>Modify your communication preferences</li>
+            </ul>
+
+            <h3>7.3 Deletion and Account Management</h3>
+            <ul>
+                <li>Delete your account and associated data</li>
+                <li>Request deletion of specific information</li>
+                <li>Cancel your subscription at any time</li>
+            </ul>
+
+            <h3>7.4 GDPR Rights (EU Users)</h3>
+            <p>If you're in the European Union, you also have the right to:</p>
+            <ul>
+                <li>Object to processing of your personal data</li>
+                <li>Restrict processing under certain circumstances</li>
+                <li>Lodge a complaint with your local data protection authority</li>
+                <li>Withdraw consent for data processing</li>
+            </ul>
+
+            <div class="contact-info">
+                <h4>Exercise Your Rights</h4>
+                <p>
+                    To exercise any of these rights, contact us at <strong>privacy@lexopoly.com</strong>
+                    or use the data controls in your account settings. We'll respond within 30 days.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section" id="third-party">
+            <h2>8. Third-Party Services</h2>
+
+            <h3>8.1 Payment Processing</h3>
+            <p>We use Stripe for secure payment processing. Stripe's privacy policy governs how they handle your payment information.</p>
+
+            <h3>8.2 Analytics</h3>
+            <p>We may use analytics services to understand how our software is used. These services receive only anonymized, aggregated data with no personally identifiable information.</p>
+
+            <h3>8.3 Integration Partners</h3>
+            <p>When you use integrations (like Clio), data sharing is controlled by you and governed by the integration partner's privacy policy. We facilitate the connection but don't store integration data.</p>
+
+            <h3>8.4 No Advertising Networks</h3>
+            <p>We do not use advertising networks or tracking pixels for marketing purposes.</p>
+        </section>
+
+        <section class="content-section" id="international">
+            <h2>9. International Users</h2>
+
+            <h3>9.1 Data Transfers</h3>
+            <p>LocalTranscribe is operated from the United States. If you're located outside the US, your account information may be transferred to and processed in the United States.</p>
+
+            <h3>9.2 EU-US Data Protection</h3>
+            <p>For European users, we provide adequate protection for your data through:</p>
+            <ul>
+                <li>GDPR compliance measures</li>
+                <li>Standard contractual clauses with service providers</li>
+                <li>Minimized data collection and local processing</li>
+                <li>Strong security safeguards</li>
+            </ul>
+
+            <h3>9.3 Local Processing Advantage</h3>
+            <p>Since your transcription data never leaves your computer, international data transfer concerns are minimized to just account and billing information.</p>
+        </section>
+
+        <section class="content-section" id="children">
+            <h2>10. Children's Privacy</h2>
+
+            <p>LocalTranscribe is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information promptly.</p>
+
+            <p>If you believe we have collected information from a child under 13, please contact us immediately at privacy@lexopoly.com.</p>
+        </section>
+
+        <section class="content-section" id="changes">
+            <h2>11. Changes to This Policy</h2>
+
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we make changes:</p>
+
+            <ul>
+                <li>We'll update the "Last Updated" date at the top of this policy</li>
+                <li>We'll notify you of significant changes via email</li>
+                <li>We'll post a notice in the LocalTranscribe software</li>
+                <li>Changes take effect 30 days after notification</li>
+            </ul>
+
+            <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
+        </section>
+
+        <section class="content-section" id="contact">
+            <h2>12. Contact Information</h2>
+
+            <div class="contact-info">
+                <h4>Privacy Officer</h4>
+                <p>
+                    <strong>Email:</strong> privacy@lexopoly.com<br>
+                    <strong>Company:</strong> Lexopoly LLC<br>
+                    <strong>Response Time:</strong> Within 30 days
+                </p>
+            </div>
+
+            <h3>12.1 Questions and Concerns</h3>
+            <p>If you have questions about this Privacy Policy or our data practices, please contact us. We're committed to addressing your concerns promptly and transparently.</p>
+
+            <h3>12.2 Data Protection Requests</h3>
+            <p>For requests related to your personal data (access, correction, deletion), please include:</p>
+            <ul>
+                <li>Your full name and email address associated with your account</li>
+                <li>Specific details about your request</li>
+                <li>Any supporting information to verify your identity</li>
+            </ul>
+
+            <h3>12.3 Security Issues</h3>
+            <p>If you discover a security vulnerability, please report it to security@lexopoly.com. We take security reports seriously and will respond promptly.</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Professional transcription software that respects your privacy.
+        </p>
+    </footer>
+</body>
+</html>

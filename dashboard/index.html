@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalTranscribe Analytics Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f7fafc;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #1a365d;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header p {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3182ce;
+        }
+
+        .metric-card h3 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-change {
+            font-size: 0.875rem;
+            color: #38a169;
+        }
+
+        .metric-change.negative {
+            color: #e53e3e;
+        }
+
+        .chart-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .time-filter {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .time-filter button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e2e8f0;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+
+        .time-filter button.active {
+            background: #3182ce;
+            color: white;
+            border-color: #3182ce;
+        }
+
+        .funnel-chart {
+            display: flex;
+            align-items: end;
+            gap: 1rem;
+            height: 200px;
+            padding: 1rem 0;
+        }
+
+        .funnel-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .funnel-bar {
+            background: linear-gradient(to top, #3182ce, #63b3ed);
+            border-radius: 4px 4px 0 0;
+            width: 100%;
+            min-height: 20px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 0.5rem;
+        }
+
+        .funnel-label {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .conversion-rate {
+            position: absolute;
+            top: -1.5rem;
+            font-size: 0.75rem;
+            color: #38a169;
+            font-weight: 600;
+        }
+
+        .events-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .events-table th,
+        .events-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .events-table th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .events-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .status-active {
+            background: #38a169;
+        }
+
+        .status-warning {
+            background: #d69e2e;
+        }
+
+        .status-error {
+            background: #e53e3e;
+        }
+
+        .refresh-btn {
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .refresh-btn:hover {
+            background: #2c5aa0;
+        }
+
+        .alert {
+            background: #fed7d7;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .alert.info {
+            background: #bee3f8;
+            border-color: #90cdf4;
+            color: #2c5aa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 LocalTranscribe Analytics Dashboard</h1>
+        <p>Real-time insights into user behavior and conversion funnel performance</p>
+    </div>
+
+    <div class="container">
+        <div class="alert info">
+            <strong>Development Mode:</strong> This dashboard shows simulated data. Connect to Google Analytics and your backend for real metrics.
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Visitors</h3>
+                <div class="metric-value" id="total-visitors">1,247</div>
+                <div class="metric-change">+23% vs last week</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Signup Conversions</h3>
+                <div class="metric-value" id="signups">42</div>
+                <div class="metric-change">+15% vs last week</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Conversion Rate</h3>
+                <div class="metric-value" id="conversion-rate">3.4%</div>
+                <div class="metric-change negative">-0.3% vs last week</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Avg. Session Duration</h3>
+                <div class="metric-value" id="avg-session">2:34</div>
+                <div class="metric-change">+12% vs last week</div>
+            </div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2 class="chart-title">Conversion Funnel</h2>
+                <div class="time-filter">
+                    <button class="active">7 days</button>
+                    <button>30 days</button>
+                    <button>90 days</button>
+                </div>
+            </div>
+
+            <div class="funnel-chart">
+                <div class="funnel-step">
+                    <div class="conversion-rate">100%</div>
+                    <div class="funnel-bar" style="height: 100%;">1,247</div>
+                    <div class="funnel-label">Homepage Views</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="conversion-rate">34%</div>
+                    <div class="funnel-bar" style="height: 85%;">424</div>
+                    <div class="funnel-label">Vertical Pages</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="conversion-rate">18%</div>
+                    <div class="funnel-bar" style="height: 65%;">224</div>
+                    <div class="funnel-label">Pricing View</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="conversion-rate">7%</div>
+                    <div class="funnel-bar" style="height: 45%;">87</div>
+                    <div class="funnel-label">Demo Request</div>
+                </div>
+                <div class="funnel-step">
+                    <div class="conversion-rate">3.4%</div>
+                    <div class="funnel-bar" style="height: 30%;">42</div>
+                    <div class="funnel-label">Signup</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traffic Sources -->
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2 class="chart-title">Traffic Sources</h2>
+                <button class="refresh-btn" onclick="refreshData()">Refresh</button>
+            </div>
+
+            <table class="events-table">
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Visitors</th>
+                        <th>Conversion Rate</th>
+                        <th>Avg. Session</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google Organic</td>
+                        <td>687</td>
+                        <td>4.2%</td>
+                        <td>3:12</td>
+                        <td><span class="status-indicator status-active"></span>Active</td>
+                    </tr>
+                    <tr>
+                        <td>Direct Traffic</td>
+                        <td>312</td>
+                        <td>5.1%</td>
+                        <td>4:23</td>
+                        <td><span class="status-indicator status-active"></span>Active</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>156</td>
+                        <td>2.1%</td>
+                        <td>1:45</td>
+                        <td><span class="status-indicator status-warning"></span>Low Quality</td>
+                    </tr>
+                    <tr>
+                        <td>Email Campaign</td>
+                        <td>92</td>
+                        <td>8.7%</td>
+                        <td>5:34</td>
+                        <td><span class="status-indicator status-active"></span>Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Conversions -->
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2 class="chart-title">Recent Conversions</h2>
+                <span style="font-size: 0.875rem; color: #4a5568;">Last 24 hours</span>
+            </div>
+
+            <table class="events-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th>Source Page</th>
+                        <th>User Segment</th>
+                    </tr>
+                </thead>
+                <tbody id="recent-conversions">
+                    <tr>
+                        <td>2 min ago</td>
+                        <td>Signup</td>
+                        <td>/lawyers/</td>
+                        <td>Legal Professional</td>
+                    </tr>
+                    <tr>
+                        <td>15 min ago</td>
+                        <td>Demo Request</td>
+                        <td>/pricing/</td>
+                        <td>Enterprise</td>
+                    </tr>
+                    <tr>
+                        <td>32 min ago</td>
+                        <td>Contact Form</td>
+                        <td>/government/</td>
+                        <td>Government</td>
+                    </tr>
+                    <tr>
+                        <td>1 hour ago</td>
+                        <td>Signup</td>
+                        <td>/journalists/</td>
+                        <td>Media Professional</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    function refreshData() {
+        // Simulate data refresh
+        console.log('Refreshing analytics data...');
+
+        // In production, this would:
+        // 1. Fetch latest data from analytics API
+        // 2. Update all metrics and charts
+        // 3. Show loading states
+
+        // For now, just simulate an update
+        const signups = document.getElementById('signups');
+        const currentValue = parseInt(signups.textContent);
+        signups.textContent = currentValue + Math.floor(Math.random() * 3);
+
+        // Update timestamp
+        const conversionsTable = document.getElementById('recent-conversions');
+        const firstRow = conversionsTable.querySelector('tr');
+        firstRow.cells[0].textContent = 'Just now';
+
+        alert('Data refreshed! (This is a demo - connect to real analytics in production)');
+    }
+
+    // Simulate real-time updates
+    setInterval(() => {
+        const visitors = document.getElementById('total-visitors');
+        const current = parseInt(visitors.textContent.replace(',', ''));
+        visitors.textContent = (current + Math.floor(Math.random() * 5)).toLocaleString();
+    }, 30000);
+
+    // Load current session data if available
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof localTranscribeAnalytics !== 'undefined') {
+            const sessionData = localTranscribeAnalytics.exportSessionData();
+            console.log('Current session analytics:', sessionData);
+        }
+    });
+    </script>
+</body>
+</html>
