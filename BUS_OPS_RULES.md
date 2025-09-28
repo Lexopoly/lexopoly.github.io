@@ -31,7 +31,7 @@
 ```
 Revenue Potential: HIGH ($299/month x professional firms)
 Pain Points: Attorney-client privilege, confidentiality, billable time
-Key Messages: 100% local processing, Clio integration, legal compliance
+Key Messages: Local processing with user control, Clio integration, legal compliance
 Success Metrics: Trial signup rate >20%, conversion rate >35%
 Competition Level: Moderate (Otter.ai, Rev.com legal tiers)
 ```
@@ -54,13 +54,13 @@ Mental Health Pain Points: Session confidentiality, therapy notes, treatment pla
 General Pain Points: Efficiency, document quality, workflow integration
 Key Messages:
 - Professional quality + medical/psychological terminology recognition
-- 100% local HIPAA compliance (no cloud exposure)
+- Local processing supports HIPAA compliance requirements
 - Multiple formats (text, medical reports, therapy notes, structured assessments)
 - Unlimited usage for high-volume medical/mental health documentation
 - Session confidentiality protection for therapy and counseling
 Success Metrics: Trial signup rate >20%, conversion rate >35% (medical higher value)
 Competition Level: Low (Dragon alternatives limited, especially HIPAA-compliant)
-Medical Differentiators: Local processing = automatic HIPAA compliance, medical + psychological terminology dictionary
+Medical Differentiators: Local processing supports HIPAA compliance, medical + psychological terminology dictionary
 ```
 
 #### ⚖️ **Court Reporters Vertical**
