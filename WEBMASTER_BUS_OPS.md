@@ -82,16 +82,16 @@ VERTICAL                 MONTHLY TARGET    CAC TARGET    FREE→PAID CONVERSION
 👨‍⚖️ Lawyers                $6,279           <$200         >8% (high value)
 🏛️ Government             $2,392           <$300         >6% (enterprise)
 🎓 Education              $4,485           <$250         >7% (institutional)
-🎤 Dictation              $3,588           <$200         >9% (professional)
+🎤 Dictation + Medical    $5,681           <$200         >12% (HIPAA compliance)
 📰 Journalists            $2,392           <$250         >6% (freelance heavy)
 ⚖️ Court Reporters        $1,794           <$150         >5% (niche market)
                          ────────────────────────────────────────
-TOTAL MONTHLY MRR        $20,930          <$225 avg     >7% avg (freemium)
+TOTAL MONTHLY MRR        $23,023          <$220 avg     >8% avg (freemium)
 
 FREEMIUM FUNNEL METRICS:
-Free Users Target:       3,000/month      (drives viral growth)
-Free→Paid Conversion:    7% average       (210 paid users/month)
-Average Revenue Per User: $99             (blended free + paid)
+Free Users Target:       3,200/month      (drives viral growth)
+Free→Paid Conversion:    8% average       (256 paid users/month)
+Average Revenue Per User: $105            (blended free + paid)
 ```
 
 ### **Freemium Conversion Funnel Performance**

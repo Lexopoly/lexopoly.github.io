@@ -20,7 +20,7 @@ AFTER:  6 Professional Verticals
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 👨‍⚖️ Lawyers        → Attorney-client privilege protection
 📰 Journalists     → Source protection, deadline pressure
-🎤 Dictation Users → Professional documentation efficiency
+🎤 Dictation + Medical → Professional documentation + HIPAA compliance
 ⚖️ Court Reporters → Workflow enhancement, verification
 🏛️ Government      → Security compliance, cost efficiency
 🎓 Education       → Accessibility, lecture capture

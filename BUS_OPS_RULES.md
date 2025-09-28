@@ -45,13 +45,20 @@ Success Metrics: Trial signup rate >15%, conversion rate >25%
 Competition Level: High (many consumer tools, few source-protection focused)
 ```
 
-#### 🎤 **Dictation Users Vertical**
+#### 🎤 **Dictation Users + Medical Providers Vertical**
 ```
-Revenue Potential: HIGH ($299/month x executives/professionals)
-Pain Points: Efficiency, document quality, workflow integration
-Key Messages: Professional quality, multiple formats, unlimited usage
-Success Metrics: Trial signup rate >18%, conversion rate >30%
-Competition Level: Low (Dragon alternatives limited)
+Revenue Potential: VERY HIGH ($299/month x executives/professionals/physicians)
+Primary Markets: Executives, Researchers, Physicians, Medical Providers, Consultants
+Medical Pain Points: HIPAA compliance, medical terminology, patient privacy, EHR integration
+General Pain Points: Efficiency, document quality, workflow integration
+Key Messages:
+- Professional quality + medical terminology recognition
+- 100% local HIPAA compliance (no cloud exposure)
+- Multiple formats (text, medical reports, structured notes)
+- Unlimited usage for high-volume medical documentation
+Success Metrics: Trial signup rate >20%, conversion rate >35% (medical higher value)
+Competition Level: Low (Dragon alternatives limited, especially HIPAA-compliant)
+Medical Differentiators: Local processing = automatic HIPAA compliance, medical dictionary
 ```
 
 #### ⚖️ **Court Reporters Vertical**
@@ -127,7 +134,7 @@ Trial Signup            $1,000             $100,000+        CRITICAL
 Pricing Page            $800               $30,000+         HIGH
 Journalists Landing     $1,500             $15,000+         MEDIUM
 Education Landing       $1,500             $35,000+         MEDIUM
-Dictation Landing       $1,500             $20,000+         MEDIUM
+Dictation + Medical Landing $1,500         $35,000+         HIGH
 Court Reporters Landing $1,500             $12,000+         LOW
 ```
 
@@ -138,12 +145,12 @@ Vertical            Monthly Ad Spend    Expected Trials    Target Conversions
 Lawyers             $3,000             60                 21
 Government          $2,000             20                 8
 Education           $2,500             50                 15
-Dictation           $2,000             40                 12
+Dictation + Medical $3,000             55                 19
 Journalists         $1,500             30                 8
 Court Reporters     $1,000             15                 6
 
-TOTAL MONTHLY       $12,000            215                70
-Expected MRR        $20,930 (70 × $299)
+TOTAL MONTHLY       $14,000            230                77
+Expected MRR        $23,023 (77 × $299)
 CAC Payback         <1 month
 ```
 
