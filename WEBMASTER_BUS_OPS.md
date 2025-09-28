@@ -73,30 +73,44 @@ PAGE STATUS                    PROGRESS    DEPLOYMENT
 
 ## 💰 REVENUE IMPACT OPERATIONS
 
-### **Multi-Vertical Revenue Tracking**
+### **Freemium Revenue Tracking Model**
 ```
-VERTICAL                 MONTHLY TARGET    CAC TARGET    CONVERSION TARGET
+BUSINESS MODEL: Freemium (5 min/month free) + $299/month unlimited
+
+VERTICAL                 MONTHLY TARGET    CAC TARGET    FREE→PAID CONVERSION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-👨‍⚖️ Lawyers                $6,279           <$300         >20%
-🏛️ Government             $2,392           <$400         >15%
-🎓 Education              $4,485           <$350         >15%
-🎤 Dictation              $3,588           <$300         >18%
-📰 Journalists            $2,392           <$350         >15%
-⚖️ Court Reporters        $1,794           <$250         >12%
+👨‍⚖️ Lawyers                $6,279           <$200         >8% (high value)
+🏛️ Government             $2,392           <$300         >6% (enterprise)
+🎓 Education              $4,485           <$250         >7% (institutional)
+🎤 Dictation              $3,588           <$200         >9% (professional)
+📰 Journalists            $2,392           <$250         >6% (freelance heavy)
+⚖️ Court Reporters        $1,794           <$150         >5% (niche market)
                          ────────────────────────────────────────
-TOTAL MONTHLY MRR        $20,930          <$320 avg     >16% avg
+TOTAL MONTHLY MRR        $20,930          <$225 avg     >7% avg (freemium)
+
+FREEMIUM FUNNEL METRICS:
+Free Users Target:       3,000/month      (drives viral growth)
+Free→Paid Conversion:    7% average       (210 paid users/month)
+Average Revenue Per User: $99             (blended free + paid)
 ```
 
-### **Conversion Funnel Performance**
+### **Freemium Conversion Funnel Performance**
 ```
 STAGE                   TARGET RATE    MEASUREMENT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Homepage Engagement    60%           Time on page >2min
 Vertical Clickthrough  25%           Homepage → Landing
 Landing Engagement     70%           Time on page >3min
-Trial Signup          15%           Landing → Trial form
-Trial Completion      85%           Form start → submit
-Trial to Paid         30%           Free trial → subscription
+Free Signup           35%           Landing → Free account
+Free User Activation  80%           Signup → First transcription
+Free User Engagement  60%           Monthly active usage
+Free to Paid Conv.    7%            Free user → $299/month subscription
+
+FREEMIUM SPECIFIC METRICS:
+5-Min Usage Rate      90%           Free users who use full 5 min/month
+Upgrade Trigger       "Out of minutes" at 5min limit
+Value Demonstration   Professional quality on free transcription
+Upgrade Timing        Average: Day 12 of free usage
 ```
 
 ---
@@ -194,20 +208,25 @@ MANUAL REVIEW:
 
 ## 🎯 OPERATIONAL PRIORITIES
 
-### **Week 1: Foundation Stabilization**
+### **Week 1: Foundation Stabilization + Freemium Pivot**
 ```
-🔴 CRITICAL: Resolve SSL certificate issue
-   Impact: Conversion blocker for all verticals
+🔴 CRITICAL: Fix deployment issue (site showing old RevenueRescue content)
+   Impact: Website not reflecting new LocalTranscribe strategy
    Owner: Webmaster
-   Timeline: 48 hours
+   Timeline: Immediate
 
-🟡 HIGH: Complete lawyers landing page
-   Impact: Highest-value vertical completion
+🔴 CRITICAL: Update business model messaging to freemium (5 min free/month)
+   Impact: Conversion flow completely changes with freemium model
+   Owner: Webmaster
+   Timeline: 24 hours
+
+🟡 HIGH: Implement freemium signup flow
+   Impact: Foundation for all vertical conversions
    Owner: Webmaster
    Timeline: 2-3 days
 
-🟢 MEDIUM: Implement basic analytics
-   Impact: Performance measurement capability
+🟢 MEDIUM: Update all CTAs from "trial" to "start free"
+   Impact: Messaging consistency across all verticals
    Owner: Webmaster
    Timeline: End of week
 ```

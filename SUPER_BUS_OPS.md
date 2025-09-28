@@ -116,15 +116,20 @@ Port 8080: LocalTranscribe website development preview
 
 ## ⚠️ CRITICAL BLOCKERS
 
-### **1. SSL Certificate Issue** 🔴
-**Impact**: Professional transcription requires security trust
-**Risk**: Conversion killer for all verticals (especially legal/government)
-**Priority**: Must resolve before marketing launch
+### **1. Deployment Issue** 🔴
+**Impact**: Live site showing old RevenueRescue content instead of new LocalTranscribe
+**Risk**: Website not aligned with strategic multi-vertical pivot
+**Priority**: Immediate resolution required
 
-### **2. Content Development Pipeline** 🟡
-**Current**: Universal homepage complete
-**Needed**: 6 vertical landing pages + trial signup + pricing page
-**Timeline**: 2-3 days per vertical for optimized conversion flow
+### **2. Freemium Business Model Update** 🔴
+**Impact**: All website messaging needs updating for 5 min/month free model
+**Risk**: Conversion flows optimized for wrong business model
+**Priority**: Complete messaging overhaul within 24 hours
+
+### **3. Content Development Pipeline** 🟡
+**Current**: Universal homepage + lawyers page complete
+**Needed**: 5 remaining vertical pages + freemium signup + pricing page
+**Timeline**: 2-3 days per vertical with freemium messaging
 
 ---
 
