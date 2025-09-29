@@ -16,9 +16,15 @@
             /* Core brand colors */
             --lexopoly-primary: #1a365d;
             --lexopoly-secondary: #2d3748;
-            --lawyers-primary: #2b6cb0;
-            --lawyers-secondary: #3182ce;
-            --lawyers-accent: #bee3f8;
+            --accent: #3182ce;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
 
             /* UI colors */
             --bg-primary: #ffffff;
@@ -34,7 +40,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(135deg, var(--lawyers-primary) 0%, var(--lawyers-secondary) 100%);
+            background: linear-gradient(135deg, var(--lawyers) 0%, var(--accent) 100%);
             min-height: 100vh;
         }
 
@@ -64,18 +70,30 @@
             text-decoration: none;
         }
 
-        .breadcrumb {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .breadcrumb a {
-            color: var(--lawyers-primary);
+        .nav-links a {
             text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--lawyers);
+            font-weight: 600;
         }
 
         .cta-nav {
-            background: var(--lawyers-primary);
+            background: var(--lawyers);
             color: white;
             padding: 0.5rem 1.5rem;
             border-radius: 6px;
@@ -85,7 +103,7 @@
         }
 
         .cta-nav:hover {
-            background: var(--lawyers-secondary);
+            background: var(--accent);
             color: white;
         }
 
@@ -146,7 +164,7 @@
 
         .btn-primary {
             background: white;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
             padding: 1rem 2rem;
             border-radius: 8px;
             text-decoration: none;
@@ -175,7 +193,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         /* Pain points section */
@@ -191,7 +209,7 @@
             text-align: center;
             margin-bottom: 1rem;
             font-size: 2.5rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .pain-points .subtitle {
@@ -266,7 +284,7 @@
         .solution-card h3 {
             margin-bottom: 1rem;
             font-size: 1.4rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .solution-card p {
@@ -288,7 +306,7 @@
             text-align: center;
             margin-bottom: 3rem;
             font-size: 2.5rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .features-grid {
@@ -308,7 +326,7 @@
 
         .feature-icon-small {
             font-size: 1.5rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
             margin-top: 0.2rem;
         }
 
@@ -334,7 +352,7 @@
         .proof h2 {
             margin-bottom: 2rem;
             font-size: 2.5rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .stats-grid {
@@ -351,7 +369,7 @@
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
             display: block;
         }
 
@@ -373,7 +391,7 @@
         .final-cta h2 {
             margin-bottom: 1rem;
             font-size: 2.5rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .final-cta p {
@@ -383,7 +401,7 @@
         }
 
         .risk-reduction {
-            background: var(--lawyers-accent);
+            background: var(--bg-secondary);
             padding: 1.5rem;
             border-radius: 8px;
             margin-bottom: 2rem;
@@ -391,7 +409,7 @@
 
         .risk-reduction h3 {
             margin-bottom: 1rem;
-            color: var(--lawyers-primary);
+            color: var(--lawyers);
         }
 
         .risk-list {
@@ -478,9 +496,16 @@
     <header class="header">
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
-            <div class="breadcrumb">
-                <a href="/">Home</a> / Lawyers
-            </div>
+            <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
+                <li><a href="/lawyers/" class="active">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
             <a href="/demo/" class="cta-nav">Watch Demo</a>
         </nav>
     </header>

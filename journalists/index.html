@@ -18,10 +18,13 @@
             --lexopoly-secondary: #2d3748;
             --accent: #3182ce;
 
-            /* Journalists-specific colors - Professional news theme */
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
             --journalists: #b45309;
-            --journalists-light: #fed7aa;
-            --journalists-dark: #7c2d12;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
 
             /* UI colors */
             --bg-primary: #ffffff;
@@ -37,7 +40,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(135deg, #c53030 0%, #822727 100%);
+            background: linear-gradient(135deg, var(--journalists) 0%, var(--lexopoly-primary) 100%);
             min-height: 100vh;
         }
 
@@ -84,6 +87,11 @@
             color: var(--accent);
         }
 
+        .nav-links a.active {
+            color: var(--journalists);
+            font-weight: 600;
+        }
+
         .cta-nav {
             background: var(--journalists);
             color: white;
@@ -95,7 +103,7 @@
         }
 
         .cta-nav:hover {
-            background: var(--journalists-dark);
+            background: var(--lexopoly-primary);
             color: white;
         }
 
@@ -388,7 +396,7 @@
 
         /* Freemium CTA section */
         .freemium-cta {
-            background: linear-gradient(135deg, var(--journalists) 0%, var(--journalists-dark) 100%);
+            background: linear-gradient(135deg, var(--journalists) 0%, var(--lexopoly-primary) 100%);
             border-radius: 16px;
             padding: 4rem 3rem;
             text-align: center;
@@ -512,8 +520,9 @@
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
             <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
                 <li><a href="/lawyers/">Lawyers</a></li>
-                <li><a href="/journalists/" style="color: var(--journalists); font-weight: 600;">Journalists</a></li>
+                <li><a href="/journalists/" class="active">Journalists</a></li>
                 <li><a href="/dictation/">Dictation</a></li>
                 <li><a href="/court-reporters/">Court Reporters</a></li>
                 <li><a href="/government/">Government</a></li>
