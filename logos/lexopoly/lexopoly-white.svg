@@ -1,18 +1,24 @@
 <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-  <!-- White circular background with subtle stroke -->
-  <circle cx="150" cy="150" r="130" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Clean white circular background -->
+  <circle cx="150" cy="150" r="120" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
 
-  <!-- Dark "L" letterform -->
+  <!-- Simple, modern "L" letterform -->
   <g transform="translate(150, 150)">
-    <!-- Vertical bar -->
-    <rect x="-20" y="-50" width="14" height="80" fill="#1a365d" rx="3"/>
-    <!-- Horizontal bar -->
-    <rect x="-20" y="16" width="40" height="14" fill="#1a365d" rx="3"/>
+    <!-- Vertical element -->
+    <rect x="-20" y="-40" width="12" height="70" fill="#1e40af" rx="1"/>
+    <!-- Horizontal element -->
+    <rect x="-20" y="20" width="40" height="12" fill="#1e40af" rx="1"/>
   </g>
 
-  <!-- Dark wordmark below -->
-  <text x="150" y="240" font-family="system-ui, -apple-system, sans-serif"
-        font-size="22" font-weight="600" fill="#1a365d" text-anchor="middle">
+  <!-- Clean wordmark -->
+  <text x="150" y="230" font-family="system-ui, sans-serif"
+        font-size="22" font-weight="600" fill="#1e40af" text-anchor="middle">
     Lexopoly
+  </text>
+
+  <!-- Simple tagline -->
+  <text x="150" y="250" font-family="system-ui, sans-serif"
+        font-size="11" font-weight="400" fill="#64748b" text-anchor="middle">
+    Professional Software
   </text>
 </svg>

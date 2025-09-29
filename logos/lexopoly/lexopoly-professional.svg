@@ -1,6 +1,13 @@
 <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-  <!-- Clean black circular background -->
-  <circle cx="150" cy="150" r="120" fill="#000000"/>
+  <defs>
+    <linearGradient id="professionalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean circular background -->
+  <circle cx="150" cy="150" r="120" fill="url(#professionalGrad)"/>
 
   <!-- Simple, modern "L" letterform -->
   <g transform="translate(150, 150)">
@@ -12,13 +19,13 @@
 
   <!-- Clean wordmark -->
   <text x="150" y="230" font-family="system-ui, sans-serif"
-        font-size="22" font-weight="600" fill="#000000" text-anchor="middle">
+        font-size="24" font-weight="600" fill="#1e40af" text-anchor="middle">
     Lexopoly
   </text>
 
   <!-- Simple tagline -->
   <text x="150" y="250" font-family="system-ui, sans-serif"
-        font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+        font-size="12" font-weight="400" fill="#64748b" text-anchor="middle">
     Professional Software
   </text>
 </svg>
