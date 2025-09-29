@@ -526,7 +526,7 @@
                 </div>
 
                 <!-- Hidden fields for form processing -->
-                <input type="hidden" name="_subject" value="LocalTranscribe Account Signup">
+                <input type="hidden" name="_subject" value="LocalTranscribe Demo Request">
                 <input type="hidden" name="_next" value="https://lexopoly.com/signup/?success=true">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="vertical" id="hiddenVertical" value="">
@@ -534,8 +534,8 @@
                 <div class="form-status" id="form-status" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
 
                 <button type="submit" class="submit-btn" id="submitBtn">
-                    <span class="btn-text">Create Free Account (5 min/month)</span>
-                    <span class="btn-spinner" style="display: none;">Creating Account...</span>
+                    <span class="btn-text">Request Demo</span>
+                    <span class="btn-spinner" style="display: none;">Submitting Request...</span>
                 </button>
             </form>
 
@@ -544,7 +544,7 @@
                 <ul>
                     <li>All transcription happens locally on your computer</li>
                     <li>Your audio never travels to the cloud</li>
-                    <li>No credit card required for free account</li>
+                    <li>No commitment required for demo</li>
                     <li>Cancel anytime, no commitments</li>
                     <li>Professional-grade security and privacy</li>
                 </ul>
@@ -556,8 +556,8 @@
     <script src="/js/analytics.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Track signup page view
-        trackEvent('funnel', 'signup_page_view');
+        // Track demo request page view
+        trackEvent('funnel', 'demo_request_page_view');
 
         // Track vertical selection
         document.querySelectorAll('.vertical-option').forEach(option => {
@@ -572,7 +572,7 @@
             let focused = false;
             field.addEventListener('focus', () => {
                 if (!focused) {
-                    trackEvent('engagement', 'signup_field_focus', field.name || field.id);
+                    trackEvent('engagement', 'demo_field_focus', field.name || field.id);
                     focused = true;
                 }
             });
@@ -617,23 +617,23 @@
             const btnText = submitBtn.querySelector('.btn-text');
             if (selectedVertical && btnText) {
                 const verticalMessages = {
-                    'lawyers': 'Create Legal Account (5 min/month free)',
-                    'journalists': 'Create Journalist Account (5 min/month free)',
-                    'dictation': 'Create Professional Account (5 min/month free)',
-                    'medical': 'Create HIPAA-Compliant Account (5 min/month free)',
-                    'court': 'Create Court Reporter Account (5 min/month free)',
-                    'government': 'Create Government Account (5 min/month free)',
-                    'education': 'Create Educational Account (5 min/month free)',
-                    'general': 'Create Free Account (5 min/month)'
+                    'lawyers': 'Request Legal Demo',
+                    'journalists': 'Request Journalism Demo',
+                    'dictation': 'Request Professional Demo',
+                    'medical': 'Request HIPAA Demo',
+                    'court': 'Request Court Reporter Demo',
+                    'government': 'Request Government Demo',
+                    'education': 'Request Education Demo',
+                    'general': 'Request Demo'
                 };
 
-                btnText.textContent = verticalMessages[selectedVertical] || 'Create Free Account (5 min/month)';
+                btnText.textContent = verticalMessages[selectedVertical] || 'Request Demo';
             }
         }
 
         // Check for success parameter and show success message
         if (urlParams.get('success') === 'true') {
-            showFormStatus('success', '🎉 Welcome to LocalTranscribe! Your free account signup has been received. Check your email for next steps to access your account.');
+            showFormStatus('success', '🎉 Thank you! Your demo request has been received. We\'ll contact you within 24 hours to schedule your personalized demonstration.');
         }
 
         form.addEventListener('submit', async (e) => {
@@ -650,7 +650,7 @@
                 email: formData.get('email'),
                 password: formData.get('password'),
                 vertical: selectedVertical || 'general',
-                source: 'freemium_signup'
+                source: 'demo_request'
             };
 
             // Validate form
@@ -675,17 +675,17 @@
                 });
 
                 if (response.ok) {
-                    showFormStatus('success', '🎉 Welcome to LocalTranscribe! Your free account signup has been received. Check your email for next steps to access your account.');
+                    showFormStatus('success', '🎉 Thank you! Your demo request has been received. We\'ll contact you within 24 hours to schedule your personalized demonstration.');
                     form.reset();
-                    trackEvent('conversion', 'signup_form_success', selectedVertical || 'general');
+                    trackEvent('conversion', 'demo_request_success', selectedVertical || 'general');
                 } else {
-                    throw new Error('Signup submission failed');
+                    throw new Error('Demo request submission failed');
                 }
 
             } catch (error) {
                 console.error('Signup error:', error);
-                showFormStatus('error', '❌ Sorry, there was an error creating your account. Please try again or contact us at hello@lexopoly.com for assistance.');
-                trackEvent('error', 'signup_form_error', error.message);
+                showFormStatus('error', '❌ Sorry, there was an error submitting your demo request. Please try again or contact us at hello@lexopoly.com for assistance.');
+                trackEvent('error', 'demo_request_error', error.message);
             } finally {
                 setLoadingState(false);
             }
