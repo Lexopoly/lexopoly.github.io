@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalTranscribe Visual Testing Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: #1a365d;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .page-header {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .page-header h2 {
+            color: #1a365d;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-url {
+            color: #666;
+            font-family: monospace;
+            background: #e2e8f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .viewports {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .viewport {
+            text-align: center;
+        }
+
+        .viewport h3 {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .screenshot {
+            width: 100%;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+
+        .viewport-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .test-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .test-summary h2 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3182ce;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .findings {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .findings h3 {
+            color: #e53e3e;
+            margin-bottom: 0.5rem;
+        }
+
+        .findings ul {
+            margin-left: 1.5rem;
+        }
+
+        .findings li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .viewports {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>LocalTranscribe Visual Testing Gallery</h1>
+        <p>Comprehensive website testing across devices and pages</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">Generated: September 28, 2025</p>
+    </div>
+
+    <div class="container">
+        <div class="test-summary">
+            <h2>🎯 Test Summary</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Pages Tested</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Device Sizes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Screenshots</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">~550ms</div>
+                    <div class="stat-label">Avg Load Time</div>
+                </div>
+            </div>
+
+            <div class="findings">
+                <h3>🚨 Key Findings</h3>
+                <ul>
+                    <li><strong>Demo Page Issue:</strong> Shows "Interactive Demo Coming Soon" placeholder</li>
+                    <li><strong>Business Model Confusion:</strong> Signup page still shows "Free Account" messaging</li>
+                    <li><strong>Emoji Overuse:</strong> Professional site using consumer-style emoji icons</li>
+                    <li><strong>Navigation Works:</strong> All CTAs and flows function correctly</li>
+                    <li><strong>Performance Good:</strong> All pages load under 600ms</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Homepage -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>📄 Homepage</h2>
+                <span class="page-url">https://www.lexopoly.com/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop (1920x1080)</h3>
+                    <img src="screenshots/homepage-desktop-chromium.png" class="screenshot" alt="Homepage Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">Primary conversion entry point</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet (768x1024)</h3>
+                    <img src="screenshots/homepage-tablet-chromium.png" class="screenshot" alt="Homepage Tablet" onclick="openModal(this)">
+                    <div class="viewport-info">Mid-size device experience</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile (375x667)</h3>
+                    <img src="screenshots/homepage-mobile-chromium.png" class="screenshot" alt="Homepage Mobile" onclick="openModal(this)">
+                    <div class="viewport-info">Mobile-first design check</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>🎥 Demo Page</h2>
+                <span class="page-url">https://www.lexopoly.com/demo/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/demo-desktop-chromium.png" class="screenshot" alt="Demo Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">⚠️ Shows "Coming Soon" placeholder</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/demo-tablet-chromium.png" class="screenshot" alt="Demo Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/demo-mobile-chromium.png" class="screenshot" alt="Demo Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>✍️ Signup Page</h2>
+                <span class="page-url">https://www.lexopoly.com/signup/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/signup-desktop-chromium.png" class="screenshot" alt="Signup Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">⚠️ Still shows "Free Account" messaging</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/signup-tablet-chromium.png" class="screenshot" alt="Signup Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/signup-mobile-chromium.png" class="screenshot" alt="Signup Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>💰 Pricing Page</h2>
+                <span class="page-url">https://www.lexopoly.com/pricing/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/pricing-desktop-chromium.png" class="screenshot" alt="Pricing Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">✅ Improved competitive section</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/pricing-tablet-chromium.png" class="screenshot" alt="Pricing Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/pricing-mobile-chromium.png" class="screenshot" alt="Pricing Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Lawyers Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>⚖️ Lawyers Page</h2>
+                <span class="page-url">https://www.lexopoly.com/lawyers/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/lawyers-desktop-chromium.png" class="screenshot" alt="Lawyers Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">Primary vertical market</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/lawyers-tablet-chromium.png" class="screenshot" alt="Lawyers Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/lawyers-mobile-chromium.png" class="screenshot" alt="Lawyers Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Journalists Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>📰 Journalists Page</h2>
+                <span class="page-url">https://www.lexopoly.com/journalists/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/journalists-desktop-chromium.png" class="screenshot" alt="Journalists Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">Secondary vertical market</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/journalists-tablet-chromium.png" class="screenshot" alt="Journalists Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/journalists-mobile-chromium.png" class="screenshot" alt="Journalists Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <h2>ℹ️ About Page</h2>
+                <span class="page-url">https://www.lexopoly.com/about/</span>
+            </div>
+            <div class="viewports">
+                <div class="viewport">
+                    <h3>🖥️ Desktop</h3>
+                    <img src="screenshots/about-desktop-chromium.png" class="screenshot" alt="About Desktop" onclick="openModal(this)">
+                    <div class="viewport-info">Company information</div>
+                </div>
+                <div class="viewport">
+                    <h3>📱 Tablet</h3>
+                    <img src="screenshots/about-tablet-chromium.png" class="screenshot" alt="About Tablet" onclick="openModal(this)">
+                </div>
+                <div class="viewport">
+                    <h3>📱 Mobile</h3>
+                    <img src="screenshots/about-mobile-chromium.png" class="screenshot" alt="About Mobile" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for full-size images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
