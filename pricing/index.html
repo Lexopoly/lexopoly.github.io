@@ -435,6 +435,58 @@
                 padding: 0.5rem;
             }
         }
+
+        /* Competitive comparison section */
+        .competitive-comparison {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .competitive-comparison h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .competitive-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .summary-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .summary-card h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .summary-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .competitive-comparison {
+                padding: 2rem 1rem;
+            }
+
+            .competitive-summary {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
     </style>
 
     <!-- Pricing Structured Data -->
