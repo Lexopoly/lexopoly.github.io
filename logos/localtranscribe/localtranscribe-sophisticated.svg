@@ -1,0 +1,50 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="audioGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sophisticated frame -->
+  <rect x="20" y="50" width="260" height="180" fill="none" stroke="#1e40af" stroke-width="1" rx="12"/>
+
+  <!-- Subtle audio waveform pattern (sophisticated, not literal) -->
+  <g transform="translate(150, 140)">
+    <!-- Abstract waveform representation -->
+    <rect x="-80" y="-5" width="3" height="30" fill="url(#waveGrad)" rx="1"/>
+    <rect x="-70" y="-15" width="3" height="50" fill="url(#waveGrad)" rx="1"/>
+    <rect x="-60" y="-8" width="3" height="36" fill="url(#waveGrad)" rx="1"/>
+    <rect x="-50" y="-20" width="3" height="60" fill="url(#audioGrad)" rx="1"/>
+    <rect x="-40" y="-12" width="3" height="44" fill="url(#audioGrad)" rx="1"/>
+    <rect x="-30" y="-18" width="3" height="56" fill="url(#audioGrad)" rx="1"/>
+    <rect x="-20" y="-8" width="3" height="36" fill="url(#audioGrad)" rx="1"/>
+
+    <!-- Text transformation arrow (subtle) -->
+    <path d="M -10 0 L 10 0 M 5 -5 L 10 0 L 5 5" stroke="#d97706" stroke-width="2" fill="none"/>
+
+    <!-- Document lines representation -->
+    <rect x="20" y="-15" width="40" height="2" fill="#1e40af" rx="1"/>
+    <rect x="20" y="-8" width="35" height="2" fill="#3b82f6" rx="1"/>
+    <rect x="20" y="-1" width="42" height="2" fill="#3b82f6" rx="1"/>
+    <rect x="20" y="6" width="38" height="2" fill="#60a5fa" rx="1"/>
+    <rect x="20" y="13" width="33" height="2" fill="#60a5fa" rx="1"/>
+  </g>
+
+  <!-- Professional wordmark -->
+  <text x="150" y="260" font-family="system-ui, sans-serif"
+        font-size="24" font-weight="700" letter-spacing="0.5px" fill="#1e40af" text-anchor="middle">
+    LocalTranscribe
+  </text>
+
+  <!-- Sophisticated tagline -->
+  <text x="150" y="280" font-family="system-ui, sans-serif"
+        font-size="10" font-weight="500" letter-spacing="1.5px" fill="#64748b" text-anchor="middle">
+    PROFESSIONAL TRANSCRIPTION
+  </text>
+</svg>

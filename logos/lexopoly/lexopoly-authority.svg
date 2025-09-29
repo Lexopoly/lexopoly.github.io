@@ -1,0 +1,43 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="authorityGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Modern shield/pillar shape (subtle legal authority) -->
+  <path d="M 150 40 L 190 60 L 190 180 Q 190 200 170 210 L 150 220 L 130 210 Q 110 200 110 180 L 110 60 Z"
+        fill="url(#authorityGrad)" stroke="#1e40af" stroke-width="1"/>
+
+  <!-- Sophisticated "L" integrated into the authority symbol -->
+  <g transform="translate(150, 140)">
+    <!-- Vertical element of L -->
+    <rect x="-15" y="-50" width="8" height="70" fill="white" rx="1"/>
+    <!-- Horizontal element with authority styling -->
+    <rect x="-15" y="12" width="30" height="8" fill="white" rx="1"/>
+    <!-- Gold accent for premium feel -->
+    <rect x="18" y="12" width="2" height="8" fill="url(#goldAccent)" rx="0.5"/>
+  </g>
+
+  <!-- Premium typography with authority -->
+  <text x="150" y="250" font-family="system-ui, 'Trajan Pro', serif"
+        font-size="26" font-weight="600" letter-spacing="1px" fill="#1e40af" text-anchor="middle">
+    LEXOPOLY
+  </text>
+
+  <!-- Professional designation -->
+  <text x="150" y="270" font-family="system-ui, sans-serif"
+        font-size="9" font-weight="500" letter-spacing="2px" fill="#64748b" text-anchor="middle">
+    PROFESSIONAL SOFTWARE SOLUTIONS
+  </text>
+
+  <!-- Subtle accent lines for sophistication -->
+  <line x1="90" y1="275" x2="105" y2="275" stroke="url(#goldAccent)" stroke-width="1"/>
+  <line x1="195" y1="275" x2="210" y2="275" stroke="url(#goldAccent)" stroke-width="1"/>
+</svg>
