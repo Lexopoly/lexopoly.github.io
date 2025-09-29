@@ -170,7 +170,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-            margin-left: 6rem;
+            margin-left: 3rem;
         }
 
         .nav-links a {
@@ -197,7 +197,6 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s;
-            margin-left: 2rem;
         }
 
         .cta-nav:hover {
@@ -927,7 +926,7 @@
                 <li><a href="/education/">Education</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
             </ul>
-            <a href="/demo/" class="cta-nav">Download Demo</a>
+            <a href="/demo/" class="cta-nav">Watch Demo</a>
         </nav>
     </header>
 
@@ -941,7 +940,7 @@
                 Perfect for legal professionals, journalists, and anyone who values speed + privacy.
             </p>
             <div class="hero-cta">
-                <a href="/demo/" class="btn-primary">Download Demo</a>
+                <a href="/demo/" class="btn-primary">Watch Demo</a>
                 <a href="/signup/" class="btn-secondary">Start Trial</a>
             </div>
         </section>
@@ -1021,7 +1020,7 @@
                 <li>Team management features</li>
             </ul>
             <div class="hero-cta">
-                <a href="/demo/" class="btn-primary">Download Demo</a>
+                <a href="/demo/" class="btn-primary">Watch Demo</a>
                 <a href="/pricing/" class="btn-secondary">View Pricing</a>
             </div>
         </section>
