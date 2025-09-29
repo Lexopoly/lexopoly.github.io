@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- "L" letterform for 32px favicon -->
+  <g transform="translate(16, 16)">
+    <!-- Vertical bar -->
+    <rect x="-5" y="-10" width="3" height="16" fill="#1a365d" rx="1"/>
+    <!-- Horizontal bar -->
+    <rect x="-5" y="3" width="8" height="3" fill="#1a365d" rx="1"/>
+  </g>
+</svg>

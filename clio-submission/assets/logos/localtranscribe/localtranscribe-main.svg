@@ -1,0 +1,28 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Matching circular background with subtle variation -->
+  <circle cx="150" cy="150" r="130" fill="#1a365d"/>
+
+  <!-- LocalTranscribe "LT" letterform -->
+  <g transform="translate(150, 150)">
+    <!-- "L" vertical bar -->
+    <rect x="-35" y="-50" width="12" height="80" fill="white" rx="2"/>
+    <!-- "L" horizontal bar -->
+    <rect x="-35" y="18" width="35" height="12" fill="white" rx="2"/>
+    <!-- "T" top bar -->
+    <rect x="5" y="-48" width="35" height="12" fill="white" rx="2"/>
+    <!-- "T" vertical bar -->
+    <rect x="16" y="-36" width="12" height="66" fill="white" rx="2"/>
+  </g>
+
+  <!-- Product name -->
+  <text x="150" y="230" font-family="system-ui, -apple-system, sans-serif"
+        font-size="18" font-weight="600" fill="#1a365d" text-anchor="middle">
+    LocalTranscribe
+  </text>
+
+  <!-- Subtitle -->
+  <text x="150" y="250" font-family="system-ui, -apple-system, sans-serif"
+        font-size="12" font-weight="500" fill="#4a5568" text-anchor="middle">
+    by Lexopoly
+  </text>
+</svg>

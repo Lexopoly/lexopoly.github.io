@@ -1,0 +1,33 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal layout version -->
+  <!-- Icon circle -->
+  <circle cx="60" cy="60" r="45" fill="#2c5aa0"/>
+
+  <!-- Microphone icon -->
+  <g transform="translate(60, 60)">
+    <!-- Microphone capsule -->
+    <rect x="-6" y="-18" width="12" height="22" fill="white" rx="6"/>
+    <!-- Microphone stand -->
+    <rect x="-1" y="4" width="2" height="11" fill="white"/>
+    <!-- Base -->
+    <rect x="-8" y="15" width="16" height="2" fill="white" rx="1"/>
+  </g>
+
+  <!-- Product name -->
+  <text x="130" y="55" font-family="system-ui, -apple-system, sans-serif"
+        font-size="28" font-weight="700" fill="#1a365d">
+    LocalTranscribe
+  </text>
+
+  <!-- Tagline -->
+  <text x="130" y="75" font-family="system-ui, -apple-system, sans-serif"
+        font-size="14" font-weight="500" fill="#4a5568">
+    Private Legal Transcription
+  </text>
+
+  <!-- Powered by -->
+  <text x="130" y="95" font-family="system-ui, -apple-system, sans-serif"
+        font-size="12" font-weight="400" fill="#718096">
+    Powered by Lexopoly
+  </text>
+</svg>

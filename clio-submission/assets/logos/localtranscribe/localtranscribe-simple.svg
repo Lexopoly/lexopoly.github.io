@@ -1,0 +1,20 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple version with just circle and text -->
+  <circle cx="150" cy="150" r="130" fill="#2c5aa0"/>
+
+  <!-- Simplified microphone icon -->
+  <g transform="translate(150, 150)">
+    <!-- Microphone capsule -->
+    <rect x="-8" y="-25" width="16" height="30" fill="white" rx="8"/>
+    <!-- Microphone stand -->
+    <rect x="-1.5" y="5" width="3" height="15" fill="white"/>
+    <!-- Base -->
+    <rect x="-12" y="20" width="24" height="3" fill="white" rx="1.5"/>
+  </g>
+
+  <!-- Product wordmark -->
+  <text x="150" y="240" font-family="system-ui, -apple-system, sans-serif"
+        font-size="20" font-weight="600" fill="#1a365d" text-anchor="middle">
+    LocalTranscribe
+  </text>
+</svg>

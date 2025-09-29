@@ -1,0 +1,18 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- White circular background with subtle stroke -->
+  <circle cx="150" cy="150" r="130" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Dark "L" letterform -->
+  <g transform="translate(150, 150)">
+    <!-- Vertical bar -->
+    <rect x="-20" y="-50" width="14" height="80" fill="#1a365d" rx="3"/>
+    <!-- Horizontal bar -->
+    <rect x="-20" y="16" width="40" height="14" fill="#1a365d" rx="3"/>
+  </g>
+
+  <!-- Dark wordmark below -->
+  <text x="150" y="240" font-family="system-ui, -apple-system, sans-serif"
+        font-size="22" font-weight="600" fill="#1a365d" text-anchor="middle">
+    Lexopoly
+  </text>
+</svg>

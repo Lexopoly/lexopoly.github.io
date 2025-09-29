@@ -1,0 +1,18 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large circular background -->
+  <circle cx="300" cy="300" r="260" fill="#1a365d"/>
+
+  <!-- Clean "L" letterform scaled -->
+  <g transform="translate(300, 300)">
+    <!-- Vertical bar -->
+    <rect x="-40" y="-100" width="28" height="160" fill="white" rx="6"/>
+    <!-- Horizontal bar -->
+    <rect x="-40" y="32" width="80" height="28" fill="white" rx="6"/>
+  </g>
+
+  <!-- Company wordmark below -->
+  <text x="300" y="480" font-family="system-ui, -apple-system, sans-serif"
+        font-size="44" font-weight="600" fill="#1a365d" text-anchor="middle">
+    Lexopoly
+  </text>
+</svg>
