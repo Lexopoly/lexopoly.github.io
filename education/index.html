@@ -14,21 +14,27 @@
         }
 
         :root {
-            /* Education/Academic color scheme */
-            --edu-primary: #0d4a73;
-            --edu-secondary: #1565c0;
-            --edu-accent: #2196f3;
-            --edu-light: #42a5f5;
-            --academic-gradient: linear-gradient(135deg, #0d4a73 0%, #1976d2 100%);
+            /* Core brand colors */
             --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
+
+            /* UI colors */
             --bg-primary: #ffffff;
-            --bg-secondary: #f3f8ff;
+            --bg-secondary: #f7fafc;
             --text-primary: #2d3748;
             --text-secondary: #4a5568;
             --border: #e2e8f0;
-            --success: #388e3c;
-            --warning: #f57c00;
-            --accessible: #2e7d32;
+            --success: #38a169;
+            --warning: #d69e2e;
         }
 
         body {
@@ -64,7 +70,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
-            align-items: center;
+            list-style: none;
         }
 
         .nav-links a {
@@ -75,26 +81,31 @@
         }
 
         .nav-links a:hover {
-            color: var(--edu-accent);
+            color: var(--accent);
         }
 
-        .cta-button-nav {
-            background: var(--edu-accent);
+        .nav-links a.active {
+            color: var(--education);
+            font-weight: 600;
+        }
+
+        .cta-nav {
+            background: var(--education);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: background 0.3s;
         }
 
-        .cta-button-nav:hover {
-            background: var(--edu-secondary);
-            transform: translateY(-2px);
+        .cta-nav:hover {
+            background: var(--accent);
+            color: white;
         }
 
         .hero {
-            background: var(--academic-gradient);
+            background: linear-gradient(135deg, var(--education) 0%, var(--lexopoly-primary) 100%);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -139,7 +150,7 @@
         .cta-button-hero {
             display: inline-block;
             background: #e3f2fd;
-            color: var(--edu-primary);
+            color: var(--education);
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -180,7 +191,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--edu-primary);
+            color: var(--education);
             margin-bottom: 1rem;
         }
 
@@ -206,7 +217,7 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--edu-accent);
+            border-left: 4px solid var(--accent);
         }
 
         .pain-point-icon {
@@ -215,7 +226,7 @@
         }
 
         .pain-point h3 {
-            color: var(--edu-primary);
+            color: var(--education);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -238,7 +249,7 @@
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: var(--academic-gradient);
+            background: linear-gradient(135deg, var(--education) 0%, var(--lexopoly-primary) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -249,7 +260,7 @@
         }
 
         .feature h3 {
-            color: var(--edu-primary);
+            color: var(--education);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
@@ -270,18 +281,18 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--accessible);
+            border-top: 4px solid var(--success);
         }
 
         .accessibility-card h4 {
-            color: var(--edu-primary);
+            color: var(--education);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
 
         .accessibility-notice {
             background: #e8f5e8;
-            border: 2px solid var(--accessible);
+            border: 2px solid var(--success);
             border-radius: 12px;
             padding: 2rem;
             margin: 2rem 0;
@@ -289,7 +300,7 @@
         }
 
         .accessibility-notice h3 {
-            color: var(--edu-primary);
+            color: var(--education);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
@@ -318,7 +329,7 @@
         }
 
         .use-case h4 {
-            color: var(--edu-primary);
+            color: var(--education);
             margin: 1rem 0 0.5rem 0;
             font-size: 1.1rem;
         }
@@ -329,7 +340,7 @@
         }
 
         .pricing-section {
-            background: var(--edu-primary);
+            background: var(--education);
             color: white;
         }
 
@@ -399,7 +410,7 @@
 
         .final-cta-button {
             display: inline-block;
-            background: var(--edu-accent);
+            background: var(--accent);
             color: white;
             padding: 1.25rem 3rem;
             border-radius: 12px;
@@ -411,7 +422,7 @@
         }
 
         .final-cta-button:hover {
-            background: var(--edu-secondary);
+            background: var(--lexopoly-primary);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
@@ -419,8 +430,8 @@
         .demo-button {
             display: inline-block;
             background: transparent;
-            color: var(--edu-accent);
-            border: 2px solid var(--edu-accent);
+            color: var(--accent);
+            border: 2px solid var(--accent);
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -430,7 +441,7 @@
         }
 
         .demo-button:hover {
-            background: var(--edu-accent);
+            background: var(--accent);
             color: white;
         }
 
@@ -451,7 +462,7 @@
         }
 
         .footer {
-            background: var(--edu-primary);
+            background: var(--education);
             color: white;
             padding: 2rem;
             text-align: center;
@@ -527,13 +538,17 @@
     <header class="header">
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
-            <div class="nav-links">
-                <a href="/lawyers/">Legal</a>
-                <a href="/education/">Education</a>
-                <a href="/production/">A/V Production</a>
-                <a href="/#verticals">All Verticals</a>
-                <a href="/signup/" class="cta-button-nav">Start Free</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/" class="active">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/demo/" class="cta-nav">Watch Demo</a>
         </nav>
     </header>
 

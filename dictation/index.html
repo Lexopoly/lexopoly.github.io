@@ -14,14 +14,22 @@
         }
 
         :root {
-            /* Medical/Healthcare color scheme */
-            --medical-primary: #0d4f3c;
-            --medical-secondary: #1a5d4f;
-            --medical-accent: #16a085;
-            --medical-light: #48c9b0;
+            /* Core brand colors */
             --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
+
+            /* UI colors */
             --bg-primary: #ffffff;
-            --bg-secondary: #f0f9ff;
+            --bg-secondary: #f7fafc;
             --text-primary: #2d3748;
             --text-secondary: #4a5568;
             --border: #e2e8f0;
@@ -73,26 +81,36 @@
         }
 
         .nav-links a:hover {
-            color: var(--medical-accent);
+            color: var(--dictation);
         }
 
-        .cta-button-nav {
-            background: var(--medical-accent);
+        .nav-links a.active {
+            color: var(--dictation);
+            font-weight: 600;
+        }
+
+        .cta-nav {
+            background: var(--dictation);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: background 0.3s;
         }
 
-        .cta-button-nav:hover {
-            background: var(--medical-secondary);
+        .cta-nav:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .cta-nav:hover {
+            background: var(--accent);
             transform: translateY(-2px);
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--medical-primary) 0%, var(--medical-secondary) 100%);
+            background: linear-gradient(135deg, var(--lexopoly-primary) 0%, var(--accent) 100%);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -131,13 +149,13 @@
         }
 
         .hero-feature strong {
-            color: var(--medical-light);
+            color: var(--success);
         }
 
         .cta-button-hero {
             display: inline-block;
-            background: var(--medical-light);
-            color: var(--medical-primary);
+            background: var(--success);
+            color: var(--lexopoly-primary);
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -178,7 +196,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--medical-primary);
+            color: var(--lexopoly-primary);
             margin-bottom: 1rem;
         }
 
@@ -204,7 +222,7 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--medical-accent);
+            border-left: 4px solid var(--dictation);
         }
 
         .pain-point-icon {
@@ -213,7 +231,7 @@
         }
 
         .pain-point h3 {
-            color: var(--medical-primary);
+            color: var(--lexopoly-primary);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -236,7 +254,7 @@
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--medical-accent), var(--medical-light));
+            background: linear-gradient(135deg, var(--dictation), var(--success));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -247,7 +265,7 @@
         }
 
         .feature h3 {
-            color: var(--medical-primary);
+            color: var(--lexopoly-primary);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
@@ -268,18 +286,18 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--medical-accent);
+            border-top: 4px solid var(--dictation);
         }
 
         .compliance-card h4 {
-            color: var(--medical-primary);
+            color: var(--lexopoly-primary);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
 
         .hipaa-notice {
             background: #e6f9f5;
-            border: 2px solid var(--medical-accent);
+            border: 2px solid var(--dictation);
             border-radius: 12px;
             padding: 2rem;
             margin: 2rem 0;
@@ -287,13 +305,13 @@
         }
 
         .hipaa-notice h3 {
-            color: var(--medical-primary);
+            color: var(--lexopoly-primary);
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
 
         .pricing-section {
-            background: var(--medical-primary);
+            background: var(--lexopoly-primary);
             color: white;
         }
 
@@ -315,7 +333,7 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: var(--medical-light);
+            color: var(--success);
         }
 
         .price-subtitle {
@@ -338,7 +356,7 @@
 
         .pricing-features li:before {
             content: "✓";
-            color: var(--medical-light);
+            color: var(--success);
             font-weight: bold;
             margin-right: 0.5rem;
         }
@@ -355,7 +373,7 @@
 
         .final-cta-button {
             display: inline-block;
-            background: var(--medical-accent);
+            background: var(--dictation);
             color: white;
             padding: 1.25rem 3rem;
             border-radius: 12px;
@@ -367,7 +385,7 @@
         }
 
         .final-cta-button:hover {
-            background: var(--medical-secondary);
+            background: var(--accent);
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
@@ -389,7 +407,7 @@
         }
 
         .footer {
-            background: var(--medical-primary);
+            background: var(--lexopoly-primary);
             color: white;
             padding: 2rem;
             text-align: center;
@@ -410,7 +428,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--medical-light);
+            color: var(--success);
         }
 
         @media (max-width: 768px) {
