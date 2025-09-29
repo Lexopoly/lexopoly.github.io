@@ -77,8 +77,41 @@
             transition: color 0.3s;
         }
 
-        .nav-back:hover {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
             color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
         }
 
         /* Main container */
@@ -325,6 +358,11 @@
                 gap: 1rem;
             }
 
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .container {
                 padding: 1rem;
             }
@@ -347,7 +385,17 @@
     <header class="header">
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
-            <a href="/" class="nav-back">← Back to Home</a>
+            <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/demo/" class="cta-nav active">Watch Demo</a>
         </nav>
     </header>
 

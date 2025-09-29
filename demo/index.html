@@ -18,6 +18,14 @@
             --lexopoly-secondary: #2d3748;
             --accent: #3182ce;
 
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
+
             /* UI colors */
             --bg-primary: #ffffff;
             --bg-secondary: #f7fafc;
@@ -77,6 +85,11 @@
 
         .nav-links a:hover {
             color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .cta-nav {
@@ -205,9 +218,15 @@
 
         .demo-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .demo-stats {
+                grid-template-columns: 1fr;
+            }
         }
 
         .stat-card {
@@ -232,9 +251,21 @@
         /* Feature showcase */
         .features-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin: 2rem 0;
+        }
+
+        @media (min-width: 1200px) {
+            .features-showcase {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-showcase {
+                grid-template-columns: 1fr;
+            }
         }
 
         .feature-demo {
@@ -346,6 +377,7 @@
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
             <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
                 <li><a href="/lawyers/">Lawyers</a></li>
                 <li><a href="/journalists/">Journalists</a></li>
                 <li><a href="/dictation/">Dictation</a></li>
@@ -354,7 +386,7 @@
                 <li><a href="/education/">Education</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
             </ul>
-            <a href="/demo/" class="cta-nav">Watch Demo</a>
+            <a href="/demo/" class="cta-nav active">Watch Demo</a>
         </nav>
     </header>
 

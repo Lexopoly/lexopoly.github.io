@@ -18,6 +18,14 @@
             --lexopoly-secondary: #2d3748;
             --accent: #3182ce;
 
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #38a169;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #d69e2e;
+
             /* UI colors */
             --bg-primary: #ffffff;
             --bg-secondary: #f7fafc;
@@ -77,6 +85,11 @@
 
         .nav-links a:hover {
             color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .cta-nav {
@@ -512,6 +525,7 @@
         <nav class="nav">
             <a href="/" class="logo">LocalTranscribe</a>
             <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
                 <li><a href="/lawyers/">Lawyers</a></li>
                 <li><a href="/journalists/">Journalists</a></li>
                 <li><a href="/dictation/">Dictation</a></li>
