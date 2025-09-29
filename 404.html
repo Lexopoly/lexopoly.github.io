@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic SEO -->
+    <title>Page Not Found - LocalTranscribe | Professional Transcription Software</title>
+    <meta name="description" content="The page you're looking for couldn't be found. Explore LocalTranscribe professional transcription software with local processing and volume pricing.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="dns-prefetch" href="//formspree.io">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #3182ce;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #38a169;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            display: block;
+            margin-top: -0.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .navigation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .nav-option {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+            border-color: var(--accent);
+        }
+
+        .nav-option-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .nav-option-title {
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-option-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .help-section {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .help-title {
+            font-size: 1.3rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .help-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .error-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">
+                LocalTranscribe
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/signup/" class="cta-nav">Start Free (5 min/month)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                The page you're looking for seems to have vanished into the digital void.
+                But don't worry - our professional transcription software is still here and working perfectly!
+            </p>
+
+            <div class="navigation-options">
+                <a href="/" class="nav-option">
+                    <span class="nav-option-icon">🏠</span>
+                    <div class="nav-option-title">Homepage</div>
+                    <div class="nav-option-desc">Start fresh with our main page</div>
+                </a>
+
+                <a href="/pricing/" class="nav-option">
+                    <span class="nav-option-icon">💰</span>
+                    <div class="nav-option-title">Pricing</div>
+                    <div class="nav-option-desc">View our volume-based plans</div>
+                </a>
+
+                <a href="/demo/" class="nav-option">
+                    <span class="nav-option-icon">🎥</span>
+                    <div class="nav-option-title">Watch Demo</div>
+                    <div class="nav-option-desc">See LocalTranscribe in action</div>
+                </a>
+
+                <a href="/signup/" class="nav-option">
+                    <span class="nav-option-icon">🚀</span>
+                    <div class="nav-option-title">Start Free</div>
+                    <div class="nav-option-desc">Get 5 minutes free monthly</div>
+                </a>
+            </div>
+
+            <div class="help-section">
+                <h2 class="help-title">Need Help?</h2>
+                <p class="help-text">
+                    If you were looking for something specific or followed a broken link,
+                    our support team is here to help you find what you need.
+                </p>
+                <a href="/contact/" class="contact-link">Contact Support</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Lexopoly LLC. Professional transcription software that respects your privacy.</p>
+    </footer>
+
+    <!-- Analytics Integration -->
+    <script src="/js/analytics.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track 404 page view with referrer information
+        const referrer = document.referrer || 'direct';
+        const requestedUrl = window.location.pathname;
+
+        trackEvent('error', '404_page_view', requestedUrl);
+        trackEvent('navigation', '404_referrer', referrer);
+
+        // Track which navigation options users click
+        document.querySelectorAll('.nav-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const destination = option.getAttribute('href');
+                trackEvent('recovery', '404_navigation_click', destination);
+            });
+        });
+
+        // Track contact link clicks
+        document.querySelectorAll('.contact-link').forEach(link => {
+            link.addEventListener('click', () => {
+                trackEvent('recovery', '404_contact_click', 'support_request');
+            });
+        });
+    });
+    </script>
+</body>
+</html>
