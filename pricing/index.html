@@ -25,6 +25,11 @@
     <meta name="twitter:title" content="LocalTranscribe Pricing - Professional Transcription Plans">
     <meta name="twitter:description" content="Flexible volume pricing from $39-79/user monthly. Start free with 5 minutes. Local processing, HIPAA compliance, no per-minute fees.">
     <meta name="twitter:image" content="https://www.localtranscribe.com/images/og-pricing.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiMxYTM2NWQiIHJ4PSI0Ii8+CiAgPHRleHQgeD0iMTYiIHk9IjI0IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5MPC90ZXh0Pgo8L3N2Zz4K">
+
     <style>
         * {
             margin: 0;
@@ -494,6 +499,48 @@
       ]
     }
     </script>
+
+    <!-- Analytics Integration -->
+    <script src="/js/analytics.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track pricing page view
+        trackEvent('funnel', 'pricing_page_view');
+
+        // Track tier interest
+        document.querySelectorAll('.tier-card').forEach((card, index) => {
+            const tierName = card.querySelector('.tier-name')?.textContent || `tier-${index}`;
+
+            card.addEventListener('mouseenter', () => {
+                trackEvent('pricing', 'tier_hover', tierName);
+            });
+
+            card.addEventListener('click', () => {
+                trackEvent('pricing', 'tier_click', tierName);
+            });
+        });
+
+        // Track CTA clicks from pricing
+        document.querySelectorAll('a[href="/signup/"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('conversion', 'pricing_to_signup', btn.textContent.trim());
+            });
+        });
+
+        document.querySelectorAll('a[href="/contact/"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('conversion', 'enterprise_contact_click', btn.textContent.trim());
+            });
+        });
+
+        // Track FAQ interactions
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                trackEvent('engagement', 'faq_click', question.textContent.trim());
+            });
+        });
+    });
+    </script>
 </head>
 <body>
     <header class="header">
@@ -695,6 +742,96 @@
             </table>
         </section>
 
+        <section class="competitive-comparison">
+            <h2>LocalTranscribe vs Competitors</h2>
+            <div class="comp-table-container">
+                <table class="comparison-table competitive">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">LocalTranscribe</th>
+                            <th>Rev.com</th>
+                            <th>Otter.ai</th>
+                            <th>Whisper AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Processing Location</td>
+                            <td class="highlight"><span class="check">✓</span> 100% Local</td>
+                            <td><span class="cross">✗</span> Cloud Only</td>
+                            <td><span class="cross">✗</span> Cloud Only</td>
+                            <td><span class="partial">~</span> API/Cloud</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Transcription Speed</td>
+                            <td class="highlight"><strong>28x real-time</strong></td>
+                            <td>Manual (24hr)</td>
+                            <td>Real-time</td>
+                            <td>~3x real-time</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Privacy Control</td>
+                            <td class="highlight"><span class="check">✓</span> Complete</td>
+                            <td><span class="cross">✗</span> Cloud Storage</td>
+                            <td><span class="cross">✗</span> Cloud Storage</td>
+                            <td><span class="partial">~</span> API Dependent</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Accuracy</td>
+                            <td class="highlight">85-92%</td>
+                            <td>99% (Human)</td>
+                            <td>80-85%</td>
+                            <td>85-90%</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Pricing Model</td>
+                            <td class="highlight">Volume-based</td>
+                            <td>$1.50/minute</td>
+                            <td>$10-20/month</td>
+                            <td>API costs</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Professional Editing</td>
+                            <td class="highlight"><span class="check">✓</span> Built-in</td>
+                            <td><span class="check">✓</span> Manual</td>
+                            <td><span class="cross">✗</span> Basic</td>
+                            <td><span class="cross">✗</span> None</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Clio Integration</td>
+                            <td class="highlight"><span class="check">✓</span> Direct</td>
+                            <td><span class="cross">✗</span> Manual</td>
+                            <td><span class="cross">✗</span> Manual</td>
+                            <td><span class="cross">✗</span> Manual</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Cost for 16hrs/month</td>
+                            <td class="highlight"><strong>$79</strong></td>
+                            <td>$1,440</td>
+                            <td>$20</td>
+                            <td>~$50-100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="competitive-summary">
+                <div class="summary-card advantage">
+                    <h3>🔒 Privacy First</h3>
+                    <p>Only LocalTranscribe processes everything locally. No cloud upload = complete attorney-client privilege protection.</p>
+                </div>
+                <div class="summary-card advantage">
+                    <h3>⚡ Speed Champion</h3>
+                    <p>28x faster than real-time vs competitors' slow cloud processing or manual transcription delays.</p>
+                </div>
+                <div class="summary-card advantage">
+                    <h3>💰 Predictable Pricing</h3>
+                    <p>Volume pricing beats per-minute costs. Save $1,361/month vs Rev.com for typical usage.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="faq">
             <h2>Frequently Asked Questions</h2>
 
@@ -723,10 +860,6 @@
                 <div class="faq-answer">Your 5 free minutes include full LocalTranscribe quality (85-92% accuracy), local processing, and basic export formats. It's a complete demonstration of our professional features.</div>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">Does Clio integration cost extra?</div>
-                <div class="faq-answer">No! Unlike other providers, our Clio integration has zero revenue sharing or additional fees. You keep 100% of your revenue while getting seamless time entry and billing integration.</div>
-            </div>
         </section>
     </div>
 
