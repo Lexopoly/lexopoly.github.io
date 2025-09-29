@@ -12,6 +12,12 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.localtranscribe.com/">
 
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preload" href="/js/analytics.js" as="script">
+    <link rel="dns-prefetch" href="//formspree.io">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Professional Local Transcription Software | LocalTranscribe">
     <meta property="og:description" content="Professional-grade transcription software with local processing. 85-92% accuracy, 28x faster than real-time, complete privacy control.">
@@ -42,6 +48,31 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Performance optimizations */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Optimize font rendering */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Hardware acceleration for animations */
+        .fade-in, .feature-card, .vertical-card, .btn-primary, .btn-secondary {
+            will-change: transform;
+        }
+
+        /* Prevent layout shift */
+        .feature-icon, .trust-icon, .cert-icon {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
         }
 
         :root {
@@ -769,7 +800,7 @@
     </script>
 
     <!-- Analytics Integration -->
-    <script src="/js/analytics.js"></script>
+    <script src="/js/analytics.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Track homepage specific events
@@ -835,6 +866,20 @@
                 }
             });
         });
+
+        // Performance monitoring (optional)
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const loadTime = Math.round(performance.timing.loadEventEnd - performance.timing.navigationStart);
+                    if (loadTime > 3000) {
+                        console.log('Performance warning: Page load time:', loadTime + 'ms');
+                    }
+                    // Track page load performance
+                    trackEvent('performance', 'page_load_time', loadTime);
+                }, 100);
+            });
+        }
     });
     </script>
 </head>
