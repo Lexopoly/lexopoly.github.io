@@ -1,0 +1,24 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="#1a365d" stroke="#2c5aa0" stroke-width="4"/>
+
+  <!-- Main "L" letterform -->
+  <g transform="translate(150, 150)">
+    <!-- Vertical stroke of L -->
+    <rect x="-35" y="-60" width="18" height="100" fill="white" rx="2"/>
+
+    <!-- Horizontal stroke of L -->
+    <rect x="-35" y="22" width="50" fill="white" height="18" rx="2"/>
+
+    <!-- Small accent dot -->
+    <circle cx="25" cy="31" r="6" fill="#2c5aa0"/>
+  </g>
+
+  <!-- Company name text -->
+  <text x="150" y="220" font-family="Arial, sans-serif" font-size="24" font-weight="700"
+        fill="#1a365d" text-anchor="middle">Lexopoly</text>
+
+  <!-- Tagline -->
+  <text x="150" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="500"
+        fill="#4a5568" text-anchor="middle">Professional Software</text>
+</svg>
