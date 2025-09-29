@@ -1,0 +1,130 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Professional transcription gradient -->
+    <linearGradient id="transcriptionPro" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+
+    <!-- Document gradient -->
+    <linearGradient id="documentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+
+    <!-- Audio wave gradient -->
+    <linearGradient id="audioWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Premium gold accent -->
+    <linearGradient id="premiumAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c49e2e"/>
+      <stop offset="100%" stop-color="#e6b84b"/>
+    </linearGradient>
+
+    <!-- Professional shadow -->
+    <filter id="proShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="3" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Professional frame -->
+  <rect x="30" y="60" width="240" height="140"
+        fill="none"
+        stroke="url(#transcriptionPro)"
+        stroke-width="2"
+        rx="8"
+        filter="url(#proShadow)"/>
+
+  <!-- Sophisticated audio-to-text transformation visualization -->
+  <g transform="translate(150, 130)">
+
+    <!-- Audio waveform section (left side) -->
+    <g transform="translate(-80, 0)">
+      <!-- Professional waveform representation -->
+      <rect x="-25" y="-8" width="2" height="16" fill="url(#audioWave)" rx="1"/>
+      <rect x="-20" y="-15" width="2" height="30" fill="url(#audioWave)" rx="1"/>
+      <rect x="-15" y="-12" width="2" height="24" fill="url(#audioWave)" rx="1"/>
+      <rect x="-10" y="-20" width="2" height="40" fill="url(#audioWave)" rx="1"/>
+      <rect x="-5" y="-16" width="2" height="32" fill="url(#audioWave)" rx="1"/>
+      <rect x="0" y="-22" width="2" height="44" fill="url(#audioWave)" rx="1"/>
+      <rect x="5" y="-14" width="2" height="28" fill="url(#audioWave)" rx="1"/>
+      <rect x="10" y="-18" width="2" height="36" fill="url(#audioWave)" rx="1"/>
+      <rect x="15" y="-10" width="2" height="20" fill="url(#audioWave)" rx="1"/>
+      <rect x="20" y="-6" width="2" height="12" fill="url(#audioWave)" rx="1"/>
+
+      <!-- Audio symbol frame -->
+      <circle cx="0" cy="0" r="30" fill="none" stroke="url(#audioWave)" stroke-width="1.5" opacity="0.3"/>
+
+      <!-- Microphone icon -->
+      <rect x="-3" y="-8" width="6" height="12" fill="url(#audioWave)" rx="3"/>
+      <rect x="-1" y="4" width="2" height="6" fill="url(#audioWave)"/>
+      <rect x="-8" y="9" width="16" height="2" fill="url(#audioWave)" rx="1"/>
+    </g>
+
+    <!-- Transformation arrow -->
+    <g transform="translate(0, 0)">
+      <path d="M-20 0 L15 0 M10 -5 L15 0 L10 5"
+            stroke="url(#premiumAccent)"
+            stroke-width="2.5"
+            fill="none"/>
+      <!-- Privacy lock symbol above arrow -->
+      <rect x="-3" y="-15" width="6" height="4" fill="none" stroke="url(#premiumAccent)" stroke-width="1" rx="2"/>
+      <rect x="-2" y="-13" width="4" height="3" fill="url(#premiumAccent)" rx="1"/>
+    </g>
+
+    <!-- Document section (right side) -->
+    <g transform="translate(80, 0)">
+      <!-- Professional document -->
+      <rect x="-20" y="-25" width="40" height="50"
+            fill="url(#documentGrad)"
+            stroke="url(#transcriptionPro)"
+            stroke-width="1"
+            rx="3"/>
+
+      <!-- Document content lines (professional text representation) -->
+      <rect x="-15" y="-20" width="25" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="-15" width="28" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="-10" width="22" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="-5" width="30" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="0" width="26" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="5" width="24" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="10" width="28" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+      <rect x="-15" y="15" width="20" height="1.5" fill="url(#transcriptionPro)" rx="0.5"/>
+
+      <!-- Quality seal -->
+      <circle cx="25" cy="-15" r="8" fill="none" stroke="url(#premiumAccent)" stroke-width="1"/>
+      <text x="25" y="-12" font-family="system-ui, sans-serif" font-size="6" font-weight="600"
+            fill="url(#premiumAccent)" text-anchor="middle">HD</text>
+    </g>
+  </g>
+
+  <!-- Professional wordmark -->
+  <text x="150" y="235"
+        font-family="'Optima', 'Futura', system-ui, sans-serif"
+        font-size="22"
+        font-weight="600"
+        letter-spacing="1px"
+        fill="url(#transcriptionPro)"
+        text-anchor="middle">
+    LocalTranscribe
+  </text>
+
+  <!-- Professional tagline -->
+  <text x="150" y="255"
+        font-family="system-ui, sans-serif"
+        font-size="8"
+        font-weight="500"
+        letter-spacing="2px"
+        fill="#4a5568"
+        text-anchor="middle">
+    PROFESSIONAL TRANSCRIPTION
+  </text>
+
+  <!-- Sophisticated accent elements -->
+  <rect x="70" y="260" width="20" height="1" fill="url(#premiumAccent)" opacity="0.6" rx="0.5"/>
+  <rect x="210" y="260" width="20" height="1" fill="url(#premiumAccent)" opacity="0.6" rx="0.5"/>
+</svg>

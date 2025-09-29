@@ -1,0 +1,89 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Legal authority gradient -->
+    <linearGradient id="legalAuthority" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a202c"/>
+      <stop offset="30%" stop-color="#2d3748"/>
+      <stop offset="70%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+
+    <!-- Premium gold for accents -->
+    <linearGradient id="legalGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c49e2e"/>
+      <stop offset="50%" stop-color="#e6b84b"/>
+      <stop offset="100%" stop-color="#c49e2e"/>
+    </linearGradient>
+
+    <!-- Professional shadow -->
+    <filter id="authorityshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Text shadow for depth -->
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0.5" dy="1" stdDeviation="1" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Legal shield/crest foundation -->
+  <path d="M150 50
+           C130 50, 80 60, 80 100
+           L80 160
+           C80 190, 110 210, 150 220
+           C190 210, 220 190, 220 160
+           L220 100
+           C220 60, 170 50, 150 50 Z"
+        fill="url(#legalAuthority)"
+        filter="url(#authorityshadow)"
+        stroke="#4a5568"
+        stroke-width="1"/>
+
+  <!-- Sophisticated "L" integrated into shield design -->
+  <g transform="translate(150, 135)">
+    <!-- Custom "L" with legal proportions -->
+    <!-- Vertical element with authority weight -->
+    <rect x="-25" y="-45" width="12" height="70" fill="#f7fafc" rx="1"/>
+
+    <!-- Horizontal element with proper legal proportions -->
+    <rect x="-25" y="13" width="45" height="12" fill="#f7fafc" rx="1"/>
+
+    <!-- Premium accent detail -->
+    <rect x="23" y="13" width="2.5" height="12" fill="url(#legalGold)" rx="0.5"/>
+
+    <!-- Subtle serif details for sophistication -->
+    <rect x="-29" y="-47" width="20" height="2.5" fill="#f7fafc" rx="0.5"/>
+    <rect x="-29" y="23" width="15" height="2.5" fill="#f7fafc" rx="0.5"/>
+  </g>
+
+  <!-- Professional typography with legal industry standards -->
+  <text x="150" y="250"
+        font-family="'Trajan Pro', 'Optima', 'Futura', sans-serif"
+        font-size="24"
+        font-weight="600"
+        letter-spacing="3px"
+        fill="#1a202c"
+        text-anchor="middle"
+        filter="url(#textShadow)">
+    LEXOPOLY
+  </text>
+
+  <!-- Professional legal tagline -->
+  <text x="150" y="270"
+        font-family="system-ui, 'Gill Sans', sans-serif"
+        font-size="8"
+        font-weight="500"
+        letter-spacing="4px"
+        fill="#4a5568"
+        text-anchor="middle">
+    PROFESSIONAL LEGAL TECHNOLOGY
+  </text>
+
+  <!-- Subtle professional accent elements -->
+  <circle cx="90" cy="275" r="1.5" fill="url(#legalGold)" opacity="0.6"/>
+  <circle cx="210" cy="275" r="1.5" fill="url(#legalGold)" opacity="0.6"/>
+
+  <!-- Fine accent lines for sophistication -->
+  <line x1="95" y1="275" x2="115" y2="275" stroke="url(#legalGold)" stroke-width="0.8" opacity="0.5"/>
+  <line x1="185" y1="275" x2="205" y2="275" stroke="url(#legalGold)" stroke-width="0.8" opacity="0.5"/>
+</svg>

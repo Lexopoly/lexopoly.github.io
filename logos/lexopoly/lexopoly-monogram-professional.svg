@@ -1,0 +1,106 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Professional monogram gradient -->
+    <linearGradient id="monogramGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a202c"/>
+      <stop offset="50%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+
+    <!-- Premium gold details -->
+    <linearGradient id="goldDetail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b8860b"/>
+      <stop offset="50%" stop-color="#daa520"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+
+    <!-- Sophisticated shadow -->
+    <filter id="monogramShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Inner shadow for depth -->
+    <filter id="innerDepth" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Professional hexagonal frame (legal authority symbol) -->
+  <path d="M150 50
+           L200 80
+           L200 140
+           L150 170
+           L100 140
+           L100 80 Z"
+        fill="url(#monogramGrad)"
+        filter="url(#monogramShadow)"
+        stroke="#4a5568"
+        stroke-width="1.5"/>
+
+  <!-- Inner professional frame -->
+  <path d="M150 65
+           L185 85
+           L185 125
+           L150 145
+           L115 125
+           L115 85 Z"
+        fill="none"
+        stroke="url(#goldDetail)"
+        stroke-width="0.8"
+        opacity="0.6"/>
+
+  <!-- Sophisticated "L" monogram -->
+  <g transform="translate(150, 110)">
+    <!-- Custom "L" with professional serif details -->
+    <!-- Main vertical stroke -->
+    <rect x="-18" y="-30" width="8" height="45" fill="#f7fafc" rx="1"/>
+
+    <!-- Horizontal stroke with authority proportions -->
+    <rect x="-18" y="10" width="28" height="8" fill="#f7fafc" rx="1"/>
+
+    <!-- Serif details for sophistication -->
+    <rect x="-22" y="-32" width="16" height="3" fill="#f7fafc" rx="0.5"/>
+    <rect x="-22" y="15" width="12" height="3" fill="#f7fafc" rx="0.5"/>
+
+    <!-- Premium gold accent -->
+    <rect x="12" y="10" width="2" height="8" fill="url(#goldDetail)" rx="0.5"/>
+
+    <!-- Sophisticated detail line -->
+    <line x1="-18" y1="-10" x2="10" y2="-10" stroke="url(#goldDetail)" stroke-width="0.5" opacity="0.7"/>
+  </g>
+
+  <!-- Premium typography -->
+  <text x="150" y="210"
+        font-family="'Trajan Pro', 'Optima', serif"
+        font-size="24"
+        font-weight="600"
+        letter-spacing="3px"
+        fill="url(#monogramGrad)"
+        text-anchor="middle"
+        filter="url(#innerDepth)">
+    LEXOPOLY
+  </text>
+
+  <!-- Professional tagline -->
+  <text x="150" y="230"
+        font-family="'Gill Sans', system-ui, sans-serif"
+        font-size="9"
+        font-weight="500"
+        letter-spacing="4px"
+        fill="#4a5568"
+        text-anchor="middle">
+    PROFESSIONAL SOFTWARE
+  </text>
+
+  <!-- Legal profession accent elements -->
+  <g opacity="0.6">
+    <!-- Scales of justice inspiration (subtle) -->
+    <circle cx="90" cy="240" r="2" fill="none" stroke="url(#goldDetail)" stroke-width="0.8"/>
+    <circle cx="210" cy="240" r="2" fill="none" stroke="url(#goldDetail)" stroke-width="0.8"/>
+    <line x1="92" y1="240" x2="208" y2="240" stroke="url(#goldDetail)" stroke-width="0.5"/>
+  </g>
+
+  <!-- Professional corner accents -->
+  <rect x="75" y="245" width="8" height="1" fill="url(#goldDetail)" opacity="0.5" rx="0.5"/>
+  <rect x="217" y="245" width="8" height="1" fill="url(#goldDetail)" opacity="0.5" rx="0.5"/>
+</svg>

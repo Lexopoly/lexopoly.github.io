@@ -1,0 +1,71 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Professional legal color palette -->
+    <linearGradient id="legalProfessional" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c1c39"/>
+      <stop offset="50%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0c1c39"/>
+    </linearGradient>
+
+    <!-- Premium gold accent -->
+    <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b8860b"/>
+      <stop offset="50%" stop-color="#daa520"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+
+    <!-- Subtle shadow -->
+    <filter id="professionalShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Legal authority foundation (subtle pillar/column base) -->
+  <path d="M60 220 L240 220 Q250 220 250 210 L250 80 Q250 70 240 70 L60 70 Q50 70 50 80 L50 210 Q50 220 60 220"
+        fill="url(#legalProfessional)"
+        filter="url(#professionalShadow)"
+        stroke="#2d4a6b"
+        stroke-width="0.5"/>
+
+  <!-- Sophisticated "L" with legal proportions -->
+  <g transform="translate(150, 145)">
+    <!-- Main vertical element (pillar-inspired) -->
+    <rect x="-35" y="-55" width="14" height="85" fill="white" rx="1.5"/>
+
+    <!-- Horizontal element with authority proportions -->
+    <rect x="-35" y="18" width="60" height="14" fill="white" rx="1.5"/>
+
+    <!-- Premium accent detail -->
+    <rect x="28" y="18" width="3" height="14" fill="url(#premiumGold)" rx="0.5"/>
+
+    <!-- Subtle serif detail for sophistication -->
+    <rect x="-39" y="-57" width="22" height="3" fill="white" rx="0.5"/>
+    <rect x="-39" y="28" width="22" height="3" fill="white" rx="0.5"/>
+  </g>
+
+  <!-- Professional typography with proper kerning -->
+  <text x="150" y="250"
+        font-family="'Times New Roman', 'Trajan Pro', serif"
+        font-size="28"
+        font-weight="600"
+        letter-spacing="2px"
+        fill="#0c1c39"
+        text-anchor="middle">
+    LEXOPOLY
+  </text>
+
+  <!-- Refined tagline with legal market positioning -->
+  <text x="150" y="270"
+        font-family="system-ui, sans-serif"
+        font-size="9"
+        font-weight="500"
+        letter-spacing="3px"
+        fill="#4a5568"
+        text-anchor="middle">
+    PROFESSIONAL LEGAL SOFTWARE
+  </text>
+
+  <!-- Subtle professional accent lines -->
+  <line x1="80" y1="275" x2="100" y2="275" stroke="url(#premiumGold)" stroke-width="1" opacity="0.7"/>
+  <line x1="200" y1="275" x2="220" y2="275" stroke="url(#premiumGold)" stroke-width="1" opacity="0.7"/>
+</svg>
