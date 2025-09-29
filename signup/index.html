@@ -500,7 +500,7 @@
                 </div>
             </div>
 
-            <form class="signup-form" id="signupForm">
+            <form class="signup-form" id="signupForm" action="https://formspree.io/f/xdorjbyv" method="POST">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" id="firstName" name="firstName" required>
@@ -525,8 +525,17 @@
                     <div class="error-message" id="passwordError"></div>
                 </div>
 
+                <!-- Hidden fields for form processing -->
+                <input type="hidden" name="_subject" value="LocalTranscribe Account Signup">
+                <input type="hidden" name="_next" value="https://lexopoly.com/signup/?success=true">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="vertical" id="hiddenVertical" value="">
+
+                <div class="form-status" id="form-status" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
+
                 <button type="submit" class="submit-btn" id="submitBtn">
-                    Create Free Account (5 min/month)
+                    <span class="btn-text">Create Free Account (5 min/month)</span>
+                    <span class="btn-spinner" style="display: none;">Creating Account...</span>
                 </button>
             </form>
 
@@ -542,6 +551,34 @@
             </div>
         </section>
     </div>
+
+    <!-- Analytics Integration -->
+    <script src="/js/analytics.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track signup page view
+        trackEvent('funnel', 'signup_page_view');
+
+        // Track vertical selection
+        document.querySelectorAll('.vertical-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const vertical = option.dataset.vertical;
+                trackEvent('engagement', 'vertical_selection', vertical);
+            });
+        });
+
+        // Track form field interactions
+        document.querySelectorAll('#signupForm input').forEach(field => {
+            let focused = false;
+            field.addEventListener('focus', () => {
+                if (!focused) {
+                    trackEvent('engagement', 'signup_field_focus', field.name || field.id);
+                    focused = true;
+                }
+            });
+        });
+    });
+    </script>
 
     <script>
         // Vertical selection handling
@@ -577,7 +614,8 @@
         const submitBtn = document.getElementById('submitBtn');
 
         function updateSubmitButton() {
-            if (selectedVertical) {
+            const btnText = submitBtn.querySelector('.btn-text');
+            if (selectedVertical && btnText) {
                 const verticalMessages = {
                     'lawyers': 'Create Legal Account (5 min/month free)',
                     'journalists': 'Create Journalist Account (5 min/month free)',
@@ -589,8 +627,13 @@
                     'general': 'Create Free Account (5 min/month)'
                 };
 
-                submitBtn.textContent = verticalMessages[selectedVertical] || 'Create Free Account (5 min/month)';
+                btnText.textContent = verticalMessages[selectedVertical] || 'Create Free Account (5 min/month)';
             }
+        }
+
+        // Check for success parameter and show success message
+        if (urlParams.get('success') === 'true') {
+            showFormStatus('success', '🎉 Welcome to LocalTranscribe! Your free account signup has been received. Check your email for next steps to access your account.');
         }
 
         form.addEventListener('submit', async (e) => {
@@ -615,28 +658,76 @@
                 return;
             }
 
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Creating Account...';
+            // Set the hidden vertical field
+            document.getElementById('hiddenVertical').value = selectedVertical || 'general';
+
+            // Show loading state
+            setLoadingState(true);
 
             try {
-                // TODO: Replace with actual API endpoint
-                console.log('Creating account:', userData);
+                // Submit to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-                // Simulate API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
-
-                // Success - redirect to dashboard or confirmation
-                window.location.href = '/dashboard/';
+                if (response.ok) {
+                    showFormStatus('success', '🎉 Welcome to LocalTranscribe! Your free account signup has been received. Check your email for next steps to access your account.');
+                    form.reset();
+                    trackEvent('conversion', 'signup_form_success', selectedVertical || 'general');
+                } else {
+                    throw new Error('Signup submission failed');
+                }
 
             } catch (error) {
                 console.error('Signup error:', error);
-                showError('email', 'Unable to create account. Please try again.');
+                showFormStatus('error', '❌ Sorry, there was an error creating your account. Please try again or contact us at hello@lexopoly.com for assistance.');
+                trackEvent('error', 'signup_form_error', error.message);
             } finally {
-                submitBtn.disabled = false;
-                updateSubmitButton();
+                setLoadingState(false);
             }
         });
+
+        function setLoadingState(loading) {
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnSpinner = submitBtn.querySelector('.btn-spinner');
+
+            if (loading) {
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnSpinner.style.display = 'inline';
+                submitBtn.style.opacity = '0.7';
+            } else {
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnSpinner.style.display = 'none';
+                submitBtn.style.opacity = '1';
+            }
+        }
+
+        function showFormStatus(type, message) {
+            const formStatus = document.getElementById('form-status');
+            formStatus.style.display = 'block';
+            formStatus.textContent = message;
+
+            if (type === 'success') {
+                formStatus.style.backgroundColor = '#d4edda';
+                formStatus.style.color = '#155724';
+                formStatus.style.borderLeft = '4px solid #28a745';
+            } else if (type === 'error') {
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.color = '#721c24';
+                formStatus.style.borderLeft = '4px solid #dc3545';
+            }
+
+            // Auto-hide after 15 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 15000);
+        }
 
         function validateForm(data) {
             let isValid = true;

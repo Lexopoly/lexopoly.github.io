@@ -386,6 +386,126 @@
             }
         }
     </style>
+
+    <!-- Analytics Integration -->
+    <script src="/js/analytics.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track contact page view
+        trackEvent('funnel', 'contact_page_view');
+
+        // Check for success parameter and show success message
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            showFormStatus('success', '✅ Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
+        }
+
+        // Enhanced form submission handling
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnSpinner = submitBtn.querySelector('.btn-spinner');
+        const formStatus = document.getElementById('form-status');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validate form
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Show loading state
+            setLoadingState(true);
+
+            // Track analytics
+            const inquiryType = document.getElementById('inquiry-type').value;
+            trackEvent('conversion', 'contact_form_submit', inquiryType);
+
+            // Create form data
+            const formData = new FormData(form);
+
+            // Submit to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showFormStatus('success', '✅ Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
+                    form.reset();
+                    trackEvent('conversion', 'contact_form_success', inquiryType);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+                showFormStatus('error', '❌ Sorry, there was an error sending your message. Please try again or email us directly at hello@lexopoly.com');
+                trackEvent('error', 'contact_form_error', error.message);
+            })
+            .finally(() => {
+                setLoadingState(false);
+            });
+        });
+
+        function setLoadingState(loading) {
+            if (loading) {
+                submitBtn.disabled = true;
+                btnText.style.display = 'none';
+                btnSpinner.style.display = 'inline';
+                submitBtn.style.opacity = '0.7';
+            } else {
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnSpinner.style.display = 'none';
+                submitBtn.style.opacity = '1';
+            }
+        }
+
+        function showFormStatus(type, message) {
+            formStatus.style.display = 'block';
+            formStatus.textContent = message;
+
+            if (type === 'success') {
+                formStatus.style.backgroundColor = '#d4edda';
+                formStatus.style.color = '#155724';
+                formStatus.style.borderLeft = '4px solid #28a745';
+            } else if (type === 'error') {
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.color = '#721c24';
+                formStatus.style.borderLeft = '4px solid #dc3545';
+            }
+
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 10000);
+        }
+
+        // Track contact method clicks
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                trackEvent('engagement', 'email_click', link.href);
+            });
+        });
+
+        // Track form field interactions
+        document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select').forEach(field => {
+            let focused = false;
+            field.addEventListener('focus', () => {
+                if (!focused) {
+                    trackEvent('engagement', 'form_field_focus', field.name || field.id);
+                    focused = true;
+                }
+            });
+        });
+    });
+    </script>
 </head>
 <body>
     <header class="header">
@@ -456,7 +576,7 @@
 
             <div class="contact-form">
                 <div class="form-section">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xkndgzqr" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -501,7 +621,17 @@
                             <textarea id="message" name="message" class="form-control textarea" required placeholder="Please provide details about your inquiry..."></textarea>
                         </div>
 
-                        <button type="submit" class="btn-submit">Send Message</button>
+                        <!-- Hidden field for analytics tracking -->
+                        <input type="hidden" name="_subject" id="form-subject" value="LocalTranscribe Contact Form">
+                        <input type="hidden" name="_next" value="https://lexopoly.com/contact/?success=true">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="form-status" id="form-status" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
+
+                        <button type="submit" class="btn-submit" id="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-spinner" style="display: none;">Sending...</span>
+                        </button>
                     </form>
                 </div>
 
