@@ -506,19 +506,43 @@
         <section class="demo-section">
             <h2>Product Demo</h2>
 
-            <div class="demo-video-container">
-                <h3>🎥 5-Minute Professional Demo</h3>
-                <p>Watch LocalTranscribe process real legal audio with complete workflow demonstration</p>
+            <div class="demo-signup-container">
+                <h3>📝 Get Demo Access</h3>
+                <p>Request access to the LocalTranscribe professional demo. Video being finalized - get notified when ready.</p>
 
-                <div class="video-player">
-                    <div class="video-placeholder">
-                        <div class="play-button">▶</div>
-                        <h4>Professional Interactive Demo</h4>
-                        <p>Real legal audio processing: williams_v_washington_audio.mp3</p>
-                        <p class="video-specs">5-minute HD demonstration • Complete workflow • 1920x1080</p>
-                        <p class="video-note">Shows upload → processing → transcription → export → Clio integration</p>
+                <form class="demo-signup-form" action="https://formspree.io/f/xdorjbyv" method="POST" style="max-width: 400px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="demoName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Name</label>
+                        <input type="text" id="demoName" name="name" required placeholder="Your full name" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
                     </div>
-                </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="demoEmail" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Email Address</label>
+                        <input type="email" id="demoEmail" name="email" required placeholder="your.email@company.com" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="demoRole" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Professional Role</label>
+                        <select id="demoRole" name="role" required style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                            <option value="">Select your role...</option>
+                            <option value="lawyer">Lawyer/Attorney</option>
+                            <option value="journalist">Journalist</option>
+                            <option value="court-reporter">Court Reporter</option>
+                            <option value="government">Government Employee</option>
+                            <option value="education">Education Professional</option>
+                            <option value="medical">Medical Professional</option>
+                            <option value="other">Other Professional</option>
+                        </select>
+                    </div>
+
+                    <!-- Hidden fields for form processing -->
+                    <input type="hidden" name="_subject" value="LocalTranscribe Demo Access Request">
+                    <input type="hidden" name="_next" value="https://lexopoly.com/demo/?demo-requested=true">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <button type="submit" style="background: var(--accent); color: white; padding: 1rem 2rem; border-radius: 8px; border: none; font-weight: 600; font-size: 1.1rem; width: 100%; cursor: pointer; transition: background 0.3s;">Request Demo Access</button>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); text-align: center;">We'll notify you when the demo video is ready (estimated: 1-2 weeks)</p>
+                </form>
 
                 <div class="demo-cta">
                     <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
