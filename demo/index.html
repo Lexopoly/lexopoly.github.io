@@ -216,6 +216,106 @@
             font-size: 1.1rem;
         }
 
+        /* Video player styles */
+        .demo-video-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .demo-video-container h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .demo-video-container > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .video-player {
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .video-player:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--lexopoly-primary), var(--accent));
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .play-button {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .video-placeholder h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .video-placeholder p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .video-specs {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .video-note {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .demo-cta {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .demo-cta .btn-primary {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-note {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
         .demo-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -386,7 +486,7 @@
                 <li><a href="/education/">Education</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
             </ul>
-            <a href="/demo/" class="cta-nav active">Watch Demo</a>
+            <a href="/signup/" class="cta-nav">Start Trial</a>
         </nav>
     </header>
 
@@ -398,19 +498,31 @@
                 for professional legal transcription. See our unique local processing and editing workflow.
             </p>
             <div class="hero-cta">
-                <a href="/signup/" class="btn-primary">Try Demo</a>
-                <a href="/signup/" class="btn-secondary">Start Trial</a>
+                <a href="/signup/" class="btn-primary">Get Started</a>
+                <a href="/buy/" class="btn-secondary">Buy Now - $79</a>
             </div>
         </section>
 
         <section class="demo-section">
             <h2>Product Demo</h2>
 
-            <div class="demo-placeholder">
-                <h3>🎥 5-Minute Self-Serve Demo</h3>
-                <p>Experience LocalTranscribe's unique local processing workflow, editing tools, and Clio integration in a quick, self-guided demonstration.</p>
-                <div class="hero-cta">
-                    <a href="/signup/" class="btn-primary">Try Demo Now</a>
+            <div class="demo-video-container">
+                <h3>🎥 5-Minute Professional Demo</h3>
+                <p>Watch LocalTranscribe process real legal audio with complete workflow demonstration</p>
+
+                <div class="video-player">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                        <h4>Professional Interactive Demo</h4>
+                        <p>Real legal audio processing: williams_v_washington_audio.mp3</p>
+                        <p class="video-specs">5-minute HD demonstration • Complete workflow • 1920x1080</p>
+                        <p class="video-note">Shows upload → processing → transcription → export → Clio integration</p>
+                    </div>
+                </div>
+
+                <div class="demo-cta">
+                    <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
+                    <p class="cta-note">Ready to get started? Professional transcription software with local processing</p>
                 </div>
             </div>
 
@@ -531,7 +643,7 @@
             </div>
 
             <div class="hero-cta">
-                <a href="/signup/" class="btn-primary">Start Demo</a>
+                <a href="/signup/" class="btn-primary">Get Started</a>
                 <a href="/contact/" class="btn-secondary">Questions? Contact Us</a>
             </div>
         </section>

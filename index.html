@@ -10,7 +10,7 @@
     <meta name="keywords" content="transcription software, local processing, privacy, legal transcription, journalism transcription, HIPAA compliant, court reporting, professional transcription">
     <meta name="author" content="Lexopoly LLC">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.localtranscribe.com/">
+    <link rel="canonical" href="https://lexopoly.com/">
 
     <!-- Performance optimizations -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,9 +21,9 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Professional Local Transcription Software | LocalTranscribe">
     <meta property="og:description" content="Professional-grade transcription software with local processing. 85-92% accuracy, 28x faster than real-time, complete privacy control.">
-    <meta property="og:url" content="https://www.localtranscribe.com/">
+    <meta property="og:url" content="https://lexopoly.com/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.localtranscribe.com/images/og-homepage.png">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-homepage.png">
     <meta property="og:image:alt" content="LocalTranscribe - Professional Local Transcription Software">
     <meta property="og:site_name" content="LocalTranscribe">
     <meta property="og:locale" content="en_US">
@@ -32,7 +32,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Professional Local Transcription Software | LocalTranscribe">
     <meta name="twitter:description" content="Professional-grade transcription software with local processing. 85-92% accuracy, 28x faster than real-time, complete privacy control.">
-    <meta name="twitter:image" content="https://www.localtranscribe.com/images/og-homepage.png">
+    <meta name="twitter:image" content="https://lexopoly.com/assets/og-homepage.png">
     <meta name="twitter:site" content="@LocalTranscribe">
 
     <!-- Additional SEO Meta Tags -->
@@ -203,6 +203,28 @@
         .cta-nav:hover {
             background: #2c5aa0;
             color: white;
+        }
+
+        .cta-nav.cta-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .cta-nav.cta-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .cta-nav.cta-primary {
+            background: var(--accent);
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .cta-nav.cta-primary:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
         }
 
         /* Main content container */
@@ -909,6 +931,98 @@
         }
     });
     </script>
+
+    <!-- Structured Data for AI Discovery -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LocalTranscribe Professional",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": ["Windows", "Linux", "macOS"],
+      "description": "Professional transcription software with 100% local processing for legal professionals, journalists, and businesses requiring complete privacy control.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "79",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "billingIncrement": 1,
+          "unitText": "user/month"
+        }
+      },
+      "featureList": [
+        "100% Local Processing",
+        "85-92% Accuracy Rate",
+        "28x Faster Than Real-Time",
+        "Clio Integration",
+        "HIPAA Compliant"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lexopoly LLC",
+      "url": "https://lexopoly.com",
+      "logo": "https://lexopoly.com/assets/logos/lexopoly-large.svg",
+      "description": "Professional software solutions for legal and business professionals",
+      "foundingDate": "2024",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Software Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareApplication",
+              "name": "LocalTranscribe Professional"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does LocalTranscribe ensure privacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LocalTranscribe processes all audio files directly on your computer using local processing technology. No audio data is transmitted to cloud servers, ensuring complete compliance with attorney-client privilege and HIPAA requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What accuracy can I expect from LocalTranscribe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LocalTranscribe delivers 85-92% accuracy using professional-grade transcription models optimized for legal and business content, with Smart Review tools for quality enhancement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does LocalTranscribe integrate with Clio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LocalTranscribe provides seamless integration with Clio practice management software, allowing direct import of transcripts into client matters while maintaining local processing for complete privacy control."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -927,7 +1041,8 @@
                 <li><a href="/education/">Education</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
             </ul>
-            <a href="/demo/" class="cta-nav">Download Demo</a>
+            <a href="/demo/" class="cta-nav cta-primary">Watch Demo</a>
+            <a href="/buy/" class="cta-nav cta-primary">Buy LocalTranscribe</a>
         </nav>
     </header>
 
@@ -937,12 +1052,12 @@
             <p class="tagline">With 100% Local Privacy Control</p>
             <p class="subtitle">
                 Professional-grade transcription that processes entirely on your computer.
-                <strong>85-92% accuracy</strong> • <strong>No cloud upload</strong> • <strong>Volume pricing from $39/month</strong><br>
+                <strong>85-92% accuracy</strong> • <strong>No cloud upload</strong> • <strong>$79 one-time purchase</strong><br>
                 Perfect for legal professionals, journalists, and anyone who values speed + privacy.
             </p>
             <div class="hero-cta">
-                <a href="/demo/" class="btn-primary">Download Demo</a>
-                <a href="/signup/" class="btn-secondary">Start Trial</a>
+                <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
+                <a href="/demo/" class="btn-primary">Watch Demo</a>
             </div>
         </section>
 
@@ -1021,8 +1136,8 @@
                 <li>Team management features</li>
             </ul>
             <div class="hero-cta">
-                <a href="/demo/" class="btn-primary">Download Demo</a>
-                <a href="/pricing/" class="btn-secondary">View Pricing</a>
+                <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
+                <a href="/demo/" class="btn-primary">Watch Demo</a>
             </div>
         </section>
 

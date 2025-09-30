@@ -395,7 +395,7 @@
                 <li><a href="/education/">Education</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
             </ul>
-            <a href="/demo/" class="cta-nav active">Watch Demo</a>
+            <a href="/demo/" class="cta-nav">Watch Demo</a>
         </nav>
     </header>
 
@@ -681,7 +681,7 @@
 
         // Check for success parameter and show success message
         if (urlParams.get('success') === 'true') {
-            showFormStatus('success', '🎉 Thank you! Your demo request has been received. We\'ll contact you within 24 hours to schedule your personalized demonstration.');
+            showFormStatus('success', '🎉 Thank you! Your demo request has been submitted. We\'ll email you download instructions and demo details within 24 hours.');
         }
 
         form.addEventListener('submit', async (e) => {
@@ -723,7 +723,7 @@
                 });
 
                 if (response.ok) {
-                    showFormStatus('success', '🎉 Thank you! Your demo request has been received. We\'ll contact you within 24 hours to schedule your personalized demonstration.');
+                    showFormStatus('success', '🎉 Thank you! Your demo request has been submitted. We\'ll email you download instructions and demo details within 24 hours.');
                     form.reset();
                     trackEvent('conversion', 'demo_request_success', selectedVertical || 'general');
                 } else {

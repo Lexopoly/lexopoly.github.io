@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lexopoly.com/sitemap.xml
+
+# Optimize crawl budget - disallow development files
+Disallow: /node_modules/
+Disallow: /*.backup
+Disallow: /*.tar.gz
+Disallow: /test-results/
+Disallow: /clio-submission/
+Disallow: /screenshots/
+
+# Allow important resources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+Allow: /buy/
+Allow: /demo/
+Allow: /lawyers/
+Allow: /journalists/
+Allow: /dictation/
+Allow: /court-reporters/
+Allow: /government/
+Allow: /education/
+Allow: /pricing/
+Allow: /about/
+Allow: /support/
+Allow: /contact/
+Allow: /terms/
+Allow: /privacy/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
