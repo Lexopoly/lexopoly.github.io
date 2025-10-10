@@ -600,6 +600,104 @@
             opacity: 0.8;
         }
 
+        /* Portfolio section */
+        .portfolio {
+            margin-bottom: 4rem;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            color: white;
+            opacity: 0.9;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .product-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            list-style: none;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .product-link {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            background: #2c5aa0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+        }
+
         /* Trust signals */
         .trust-signals {
             background: white;
@@ -1173,6 +1271,42 @@
             <div class="hero-cta">
                 <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
                 <a href="/demo/" class="btn-primary">Watch Demo</a>
+            </div>
+        </section>
+
+        <section class="portfolio fade-in">
+            <h2>More from Lexopoly</h2>
+            <p class="portfolio-subtitle">Professional tools designed to make your work easier</p>
+            <div class="portfolio-grid">
+                <div class="product-card">
+                    <span class="product-icon">📋</span>
+                    <h3>QuoteCreator</h3>
+                    <p class="product-tagline">Professional estimates in 60 seconds</p>
+                    <p>Create professional estimates on Android and upload them directly to Clio matters with one tap. Built for legal professionals and service providers.</p>
+                    <ul class="product-features">
+                        <li>Fast mobile estimate creation</li>
+                        <li>One-tap Clio upload</li>
+                        <li>Professional PDF generation</li>
+                        <li>Works offline</li>
+                        <li>$12.99 one-time purchase</li>
+                    </ul>
+                    <a href="/quotecreator/" class="product-link">Learn More →</a>
+                </div>
+
+                <div class="product-card">
+                    <span class="product-icon">🎙️</span>
+                    <h3>LocalTranscribe</h3>
+                    <p class="product-tagline">28x faster transcription with local privacy</p>
+                    <p>Professional-grade transcription software with 100% local processing. Perfect for lawyers, journalists, and anyone who values privacy and speed.</p>
+                    <ul class="product-features">
+                        <li>85-92% accuracy</li>
+                        <li>28x faster than real-time</li>
+                        <li>Complete privacy control</li>
+                        <li>Clio integration</li>
+                        <li>$79 one-time purchase</li>
+                    </ul>
+                    <a href="/" class="product-link">Learn More →</a>
+                </div>
             </div>
         </section>
 
