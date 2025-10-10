@@ -899,6 +899,109 @@
                 font-size: 2rem;
             }
         }
+
+        /* Trust Guarantee Styles */
+        .trust-guarantee {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6f9ed 100%);
+            border-left: 4px solid var(--success);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .guarantee-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .badge-content h3 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .badge-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .trust-points {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .trust-point {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .trust-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .trust-guarantee {
+                padding: 2rem 1.5rem;
+            }
+
+            .guarantee-badge {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .badge-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .badge-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .badge-content p {
+                font-size: 1rem;
+            }
+
+            .trust-points {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .trust-point {
+                justify-content: center;
+            }
+        }
     </style>
 
     <!-- Pricing Structured Data -->
@@ -1155,6 +1258,33 @@
                         <li>Dedicated customer success manager</li>
                     </ul>
                     <a href="/contact/" class="tier-cta secondary">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Guarantee Section -->
+        <section class="trust-guarantee">
+            <div class="guarantee-container">
+                <div class="guarantee-badge">
+                    <div class="badge-icon">✓</div>
+                    <div class="badge-content">
+                        <h3>30-Day Money-Back Guarantee</h3>
+                        <p>Try LocalTranscribe risk-free. If you're not completely satisfied within 30 days, we'll refund your purchase—no questions asked.</p>
+                    </div>
+                </div>
+                <div class="trust-points">
+                    <div class="trust-point">
+                        <span class="trust-icon">🔒</span>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">✉️</span>
+                        <span>Email Support</span>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">⚡</span>
+                        <span>Instant Access</span>
+                    </div>
                 </div>
             </div>
         </section>
