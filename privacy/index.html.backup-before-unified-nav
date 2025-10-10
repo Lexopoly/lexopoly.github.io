@@ -44,25 +44,23 @@
             min-height: 100vh;
         }
 
-        /* Unified Navigation Template */
+        /* Header */
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 100;
         }
 
-        .nav-container {
-            max-width: 1400px;
+        .nav {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 70px;
+            align-items: center;
         }
 
         .logo {
@@ -70,153 +68,43 @@
             font-weight: 700;
             color: var(--lexopoly-primary);
             text-decoration: none;
-            white-space: nowrap;
-            z-index: 1001;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            color: var(--lexopoly-primary);
-            z-index: 1001;
-        }
-
-        .nav-main {
+        .nav-links {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown > a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: var(--text-secondary);
+        .nav-links a {
             text-decoration: none;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .nav-dropdown > a:hover {
-            color: var(--accent);
-        }
-
-        .dropdown-arrow {
-            font-size: 0.7em;
-            margin-left: 0.3rem;
-            transition: transform 0.3s;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-            z-index: 1000;
-        }
-
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
             color: var(--text-secondary);
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--bg-secondary);
-            color: var(--accent);
-        }
-
-        .dropdown-header {
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            opacity: 0.7;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .dropdown-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 0.5rem 0;
-        }
-
-        .nav-main > a {
-            padding: 0.75rem 1rem;
-            color: var(--text-secondary);
-            text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            white-space: nowrap;
         }
 
-        .nav-main > a:hover {
+        .nav-links a:hover {
             color: var(--accent);
         }
 
-        .nav-actions {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-            margin-left: 1rem;
-        }
-
-        .btn-secondary {
-            padding: 0.5rem 1.25rem;
-            border: 2px solid var(--accent);
-            background: transparent;
+        .nav-links a.active {
             color: var(--accent);
-            text-decoration: none;
-            border-radius: 6px;
             font-weight: 600;
-            transition: all 0.3s;
-            white-space: nowrap;
         }
 
-        .btn-secondary:hover {
+        .cta-nav {
             background: var(--accent);
             color: white;
-        }
-
-        .btn-primary {
-            padding: 0.5rem 1.25rem;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
+            padding: 0.5rem 1.5rem;
             border-radius: 6px;
+            text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-            white-space: nowrap;
+            transition: background 0.3s;
         }
 
-        .btn-primary:hover {
+        .cta-nav:hover {
             background: #2c5aa0;
-            transform: translateY(-2px);
+            color: white;
         }
 
         /* Main content container */
@@ -430,86 +318,15 @@
         }
 
         /* Responsive design */
-        @media (max-width: 968px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-main {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
+        @media (max-width: 768px) {
+            .nav {
                 flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                gap: 1rem;
             }
 
-            .nav-main.show {
-                max-height: 600px;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-dropdown {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-dropdown > a {
-                padding: 1rem 2rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                min-height: 44px;
-            }
-
-            .nav-dropdown.mobile-open > a .dropdown-arrow {
-                transform: rotate(180deg);
-            }
-
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-                background: var(--bg-secondary);
-            }
-
-            .nav-dropdown.mobile-open .dropdown-menu {
-                max-height: 500px;
-            }
-
-            .dropdown-menu a {
-                padding: 0.75rem 3rem;
-                min-height: 44px;
-            }
-
-            .nav-main > a {
-                padding: 1rem 2rem;
-                border-bottom: 1px solid var(--border);
-                min-height: 44px;
-            }
-
-            .nav-actions {
-                flex-direction: column;
-                margin: 0;
-                padding: 1rem 2rem;
-                gap: 0.5rem;
-            }
-
-            .nav-actions a {
-                width: 100%;
-                text-align: center;
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero h1 {
@@ -532,51 +349,19 @@
 </head>
 <body>
     <header class="header">
-        <nav class="nav-container">
-            <a href="/" class="logo">Lexopoly</a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
-
-            <div class="nav-main" id="nav-main">
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>Products <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">Our Products</div>
-                        <a href="/localtranscribe/">LocalTranscribe</a>
-                        <a href="/quotecreator/">QuoteCreator</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="/#products">View All Products →</a>
-                    </div>
-                </div>
-
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>Solutions <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">By Industry</div>
-                        <a href="/lawyers/">Lawyers</a>
-                        <a href="/journalists/">Journalists</a>
-                        <a href="/dictation/">Dictation</a>
-                        <a href="/court-reporters/">Court Reporters</a>
-                        <a href="/government/">Government</a>
-                        <a href="/education/">Education</a>
-                    </div>
-                </div>
-
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>About <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <a href="/about/">About Lexopoly</a>
-                        <a href="/support/">Support</a>
-                        <a href="/contact/">Contact Us</a>
-                    </div>
-                </div>
-
-                <a href="/pricing/">Pricing</a>
-
-                <div class="nav-actions">
-                    <a href="/signup/" class="btn-secondary">Sign Up Free</a>
-                    <a href="/demo/" class="btn-primary">Watch Demo</a>
-                </div>
-            </div>
+        <nav class="nav">
+            <a href="/" class="logo">LocalTranscribe</a>
+            <ul class="nav-links">
+                <li><a href="/">All Services</a></li>
+                <li><a href="/lawyers/">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+            <a href="/demo/" class="cta-nav">Watch Demo</a>
         </nav>
     </header>
 
@@ -945,39 +730,5 @@
             Professional transcription software that respects your privacy.
         </p>
     </footer>
-
-    <script>
-        // Unified Navigation Functions
-        function toggleMobileMenu() {
-            const navMain = document.getElementById('nav-main');
-            navMain.classList.toggle('show');
-        }
-
-        function toggleMobileDropdown(element) {
-            if (window.innerWidth <= 968) {
-                element.classList.toggle('mobile-open');
-            }
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMain = document.getElementById('nav-main');
-            const mobileBtn = document.querySelector('.mobile-menu-btn');
-
-            if (!event.target.closest('.nav-main') && !event.target.closest('.mobile-menu-btn')) {
-                navMain.classList.remove('show');
-            }
-        });
-
-        // Close mobile menu on window resize to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 968) {
-                document.getElementById('nav-main').classList.remove('show');
-                document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('mobile-open');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
