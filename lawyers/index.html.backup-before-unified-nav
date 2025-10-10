@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Software Solutions - Practice Management Tools for Lawyers | Lexopoly</title>
+    <meta name="description" content="Professional software built for legal professionals. Protect attorney-client privilege with local transcription, generate legal estimates and upload to Clio. Privacy-first tools designed for lawyers.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #2f7d32;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #8b5a00;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #8b5a00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--lawyers) 0%, var(--accent) 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--lawyers);
+            font-weight: 600;
+        }
+
+        .cta-nav {
+            background: var(--lawyers);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Mobile hamburger menu */
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--lawyers);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--lawyers);
+        }
+
+        /* Pain points section */
+        .pain-points {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .pain-points h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lawyers);
+        }
+
+        .pain-points .subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning);
+            background: #fffbf0;
+        }
+
+        .pain-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+        }
+
+        .pain-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Solution section */
+        .solution {
+            margin-bottom: 4rem;
+        }
+
+        .solution h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--success);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .solution-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--lawyers);
+        }
+
+        .solution-card p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Legal specific features */
+        .legal-features {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .legal-features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lawyers);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: var(--bg-secondary);
+        }
+
+        .feature-icon-small {
+            font-size: 1.5rem;
+            color: var(--lawyers);
+            margin-top: 0.2rem;
+        }
+
+        .feature-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Proof section */
+        .proof {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .proof h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--lawyers);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--lawyers);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA section */
+        .final-cta {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lawyers);
+        }
+
+        .final-cta p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .risk-reduction {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .risk-reduction h3 {
+            margin-bottom: 1rem;
+            color: var(--lawyers);
+        }
+
+        .risk-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .risk-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .risk-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav {
+                position: relative;
+                padding: 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin: 0.5rem;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                flex-direction: column;
+                gap: 0.5rem;
+                z-index: 1000;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 1rem;
+                border-radius: 4px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .cta-nav {
+                margin-top: 1rem;
+                text-align: center;
+                padding: 1rem 2rem;
+                min-height: 44px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.4rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .pain-points, .legal-features, .proof, .final-cta {
+                padding: 2rem 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Lexopoly</a>
+            <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">All Services</a></li>
+                <li><a href="/lawyers/" class="active">Lawyers</a></li>
+                <li><a href="/journalists/">Journalists</a></li>
+                <li><a href="/dictation/">Dictation</a></li>
+                <li><a href="/court-reporters/">Court Reporters</a></li>
+                <li><a href="/government/">Government</a></li>
+                <li><a href="/education/">Education</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+                <li><a href="/demo/" class="cta-nav">Watch Demo</a></li>
+            </ul>
+            <a href="/demo/" class="cta-nav">Watch Demo</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-badge">👨‍⚖️ For Legal Professionals</div>
+            <h1>Professional Software Built for Lawyers</h1>
+            <p class="tagline">Privacy-First Tools for Your Practice</p>
+            <p class="subtitle">
+                We build software specifically designed for legal professionals. From secure transcription
+                to client estimates, our tools integrate with Clio and protect attorney-client privilege.
+            </p>
+            <div class="hero-cta">
+                <a href="#products" class="btn-primary">Explore Legal Solutions</a>
+                <a href="/contact/" class="btn-secondary">Contact Us</a>
+            </div>
+        </section>
+
+        <section class="legal-features" id="products">
+            <h2>Legal Software Solutions from Lexopoly</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="solution-icon">🎙️</span>
+                    <h3>LocalTranscribe</h3>
+                    <p class="product-tagline" style="color: var(--lawyers); font-weight: 600; margin-bottom: 1rem;">Secure Legal Transcription with Attorney-Client Privilege Protection</p>
+                    <p>Professional-grade transcription with 100% local processing. Your client conversations never leave your computer. Perfect for depositions, client meetings, court proceedings, and legal research.</p>
+                    <ul class="risk-list" style="text-align: left; margin: 1.5rem 0;">
+                        <li>85-92% accuracy on legal terminology</li>
+                        <li>28x faster than real-time processing</li>
+                        <li>Direct Clio integration for matter files</li>
+                        <li>Complete privacy control - local only</li>
+                        <li>$79 one-time purchase</li>
+                    </ul>
+                    <a href="/localtranscribe/" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Learn More →</a>
+                </div>
+
+                <div class="solution-card">
+                    <span class="solution-icon">📋</span>
+                    <h3>QuoteCreator</h3>
+                    <p class="product-tagline" style="color: var(--lawyers); font-weight: 600; margin-bottom: 1rem;">Professional Legal Estimates with One-Tap Clio Upload</p>
+                    <p>Generate professional fee estimates on your Android device and upload them directly to Clio client matters with one tap. Built for attorneys who need fast, professional estimates for retainers, flat fees, and project quotes.</p>
+
+                    <figure style="margin: 1.5rem 0; text-align: center;">
+                        <img src="/quotecreator/assets/clio-integration-screenshot.png"
+                             alt="QuoteCreator showing Clio customer and matter selection"
+                             style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; object-fit: contain;">
+                        <figcaption style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); font-style: italic;">
+                            Select Clio customer and matter directly in the app
+                        </figcaption>
+                    </figure>
+
+                    <ul class="risk-list" style="text-align: left; margin: 1.5rem 0;">
+                        <li>Create estimates in 60 seconds</li>
+                        <li>One-tap upload to Clio matters</li>
+                        <li>Professional PDF generation</li>
+                        <li>Works offline (court, client sites)</li>
+                        <li>$12.99 one-time purchase</li>
+                    </ul>
+                    <a href="/quotecreator/" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Learn More →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="pain-points">
+            <h2>Legal Transcription Challenges</h2>
+            <p class="subtitle">Every law firm faces these critical issues with traditional transcription services</p>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>⚠️ Confidentiality Risk</h3>
+                    <p>Cloud-based transcription services expose sensitive attorney-client communications to data breaches, subpoenas, and unauthorized access by third parties.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>💸 Unpredictable Costs</h3>
+                    <p>Per-minute pricing creates budget uncertainty. Long depositions, client meetings, and court proceedings lead to surprise bills that eat into firm profitability.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>🔄 Workflow Disruption</h3>
+                    <p>Manual file uploads, download delays, and format incompatibilities disrupt legal workflows. Time spent managing transcription reduces billable hours.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>📝 Quality Inconsistency</h3>
+                    <p>Generic transcription services struggle with legal terminology, case names, and procedural language, requiring extensive editing and review time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="solution">
+            <h2>Why Lawyers Choose Lexopoly</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="solution-icon">🔒</span>
+                    <h3>Complete Confidentiality</h3>
+                    <p>Local transcription processing keeps your audio on your computer during transcription. Attorney-client privilege protected - you control what data goes where.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">💰</span>
+                    <h3>Predictable Pricing</h3>
+                    <p>Volume pricing from $39-79/user monthly. No per-minute fees, no usage limits. Lower costs as your firm grows.</p>
+                </div>
+                <div class="solution-card">
+                    <span class="solution-icon">⚡</span>
+                    <h3>Seamless Workflow</h3>
+                    <p>Direct Clio integration, standard export formats, and instant processing. Transcripts integrate with client matters seamlessly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-features">
+            <h2>LocalTranscribe Features for Lawyers</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon-small">⚖️</span>
+                    <div class="feature-content">
+                        <h4>Legal Terminology Recognition</h4>
+                        <p>Trained on legal vocabulary, case citations, procedural terms, and common Latin phrases used in legal practice.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon-small">🏛️</span>
+                    <div class="feature-content">
+                        <h4>Court-Ready Accuracy</h4>
+                        <p>Professional-grade transcription suitable for court filings, depositions, and official legal documentation.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon-small">🔄</span>
+                    <div class="feature-content">
+                        <h4>Clio Integration</h4>
+                        <p>Transcripts automatically sync to client matters in Clio with proper categorization and billable time tracking.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon-small">📋</span>
+                    <div class="feature-content">
+                        <h4>Multiple Export Formats</h4>
+                        <p>Word documents, PDFs, plain text, and structured formats compatible with legal document management systems.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon-small">🛡️</span>
+                    <div class="feature-content">
+                        <h4>Audit Trail</h4>
+                        <p>Complete processing logs for compliance, with timestamps and integrity verification for court admissibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <h2>Professional Software for Your Legal Practice</h2>
+            <p>Join law firms using Lexopoly's privacy-first tools for transcription, estimates, and Clio integration.</p>
+
+            <div class="risk-reduction">
+                <h3>Our Legal Solutions:</h3>
+                <ul class="risk-list">
+                    <li><strong>LocalTranscribe</strong> - Secure transcription with attorney-client privilege protection ($79 one-time)</li>
+                    <li><strong>QuoteCreator</strong> - Professional estimates with Clio integration ($12.99 one-time)</li>
+                    <li>Direct Clio integration for both products</li>
+                    <li>Privacy-first architecture (local processing)</li>
+                    <li>No subscriptions, no per-minute fees</li>
+                </ul>
+            </div>
+
+            <div class="hero-cta">
+                <a href="/localtranscribe/" class="btn-primary">Explore LocalTranscribe</a>
+                <a href="/quotecreator/" class="btn-primary" style="background: var(--lawyers); color: white; border-color: var(--lawyers);">Explore QuoteCreator</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/legal-compliance/">Legal Compliance</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            Professional legal transcription that protects attorney-client privilege.
+        </p>
+    </footer>
+    <script>
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.nav');
+            const navLinks = document.getElementById('nav-links');
+
+            if (!nav.contains(event.target) && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('nav-links').classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

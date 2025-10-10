@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic SEO -->
+    <title>Professional Estimate & Quote App | QuoteCreator</title>
+    <meta name="description" content="Create professional estimates in 60 seconds. Perfect for contractors, consultants, lawyers, and service professionals. $12.99 one-time, no subscription. Works offline.">
+    <meta name="keywords" content="estimate app, quote generator, contractor estimates, invoice app, professional quotes, small business, handyman quotes, consultant estimates, mobile quote app">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/quotecreator/">
+
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="dns-prefetch" href="//play.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Professional Estimate & Quote App | QuoteCreator">
+    <meta property="og:description" content="Create professional estimates in 60 seconds. $12.99 one-time, no subscription. Perfect for contractors, consultants, lawyers, and all service professionals.">
+    <meta property="og:url" content="https://lexopoly.com/quotecreator/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+    <meta property="og:site_name" content="QuoteCreator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Estimate & Quote App | QuoteCreator">
+    <meta name="twitter:description" content="Create professional estimates in 60 seconds. $12.99 one-time, no subscription.">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
+    <meta name="application-name" content="QuoteCreator">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #2c5aa0;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--lexopoly-primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--lexopoly-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Target Audiences */
+        .audiences {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .audiences h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .audiences p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .audience-badge {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .audience-badge:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+        }
+
+        /* Features */
+        .features {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .pricing h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            list-style: none;
+            padding: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Bonus Section */
+        .bonus {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5aa0 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .bonus h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .bonus p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .bonus-features {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bonus-features li {
+            list-style: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .bonus-features li::before {
+            content: "⭐";
+            margin-right: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Section (More from Lexopoly) */
+        .portfolio {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tagline {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .product-features li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .product-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: color 0.3s;
+        }
+
+        .product-link:hover {
+            color: var(--lexopoly-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .features, .pricing, .audiences, .bonus, .portfolio {
+                padding: 2rem 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .features-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "QuoteCreator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "description": "Professional estimate and quote generation app for contractors, consultants, lawyers, and service professionals. Create estimates in 60 seconds with professional PDF output.",
+      "url": "https://lexopoly.com/quotecreator/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "12.99",
+        "priceCurrency": "USD",
+        "description": "One-time purchase, no subscription"
+      },
+      "featureList": [
+        "60-second estimate creation",
+        "Professional PDF generation",
+        "Customer database",
+        "Automatic tax calculations",
+        "Works offline",
+        "Clio integration for legal professionals"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">
+                QuoteCreator
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Lexopoly Home</a></li>
+                <li><a href="/quotecreator/privacy/">Privacy</a></li>
+                <li><a href="/support/">Support</a></li>
+                <li><a href="#" class="cta-nav">Download (Coming Soon)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Professional Estimates in 60 Seconds</h1>
+            <p class="tagline">Fast, Mobile, Professional</p>
+            <p class="subtitle">
+                Create estimates on your phone, generate PDFs instantly, get paid faster.
+                <strong>$12.99 one-time</strong> • <strong>No subscription</strong> • <strong>Works offline</strong><br>
+                Perfect for contractors, consultants, lawyers, and any professional who sends quotes.
+            </p>
+            <div class="hero-cta">
+                <a href="#pricing" class="btn-primary">See Pricing</a>
+                <a href="/quotecreator/privacy/" class="btn-secondary">Privacy Policy</a>
+            </div>
+        </section>
+
+        <section class="audiences">
+            <h2>Works for Every Professional</h2>
+            <p>From plumbers to lawyers—anyone who sends estimates and quotes</p>
+            <div class="audience-grid">
+                <div class="audience-badge">🔧 Contractors</div>
+                <div class="audience-badge">💡 Consultants</div>
+                <div class="audience-badge">⚖️ Lawyers</div>
+                <div class="audience-badge">🎨 Designers</div>
+                <div class="audience-badge">💻 Developers</div>
+                <div class="audience-badge">🍽️ Caterers</div>
+                <div class="audience-badge">📸 Photographers</div>
+                <div class="audience-badge">🏠 Real Estate</div>
+                <div class="audience-badge">🚗 Mechanics</div>
+                <div class="audience-badge">🔌 Electricians</div>
+                <div class="audience-badge">🪴 Landscapers</div>
+                <div class="audience-badge">🎯 Event Planners</div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why QuoteCreator?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p>Create professional estimates in 60 seconds. Customer database, line items, tax calculations—all built-in.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📄</span>
+                    <h3>Professional PDFs</h3>
+                    <p>Clean, branded PDF estimates generated instantly on your device. Email, text, or print on the spot.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>Customer Management</h3>
+                    <p>Build your customer database. Save contact info, track estimates, and follow up faster.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3>Smart Calculations</h3>
+                    <p>Automatic tax calculations, subtotals, and final totals. Hourly rates, project fees, or materials pricing.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h3>Mobile-First</h3>
+                    <p>Built for Android phones and tablets. Create estimates on-site, at meetings, or anywhere you work.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📴</span>
+                    <h3>Works Offline</h3>
+                    <p>No internet required. Create estimates in basements, job sites, or anywhere your work takes you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <h2>Simple Pricing</h2>
+            <div class="price">$12.99</div>
+            <p class="price-subtitle">One-time purchase • No subscription • Own it forever</p>
+            <ul class="pricing-features">
+                <li>Unlimited estimates</li>
+                <li>Unlimited customers</li>
+                <li>Professional PDF generation</li>
+                <li>Automatic tax calculations</li>
+                <li>Customer database</li>
+                <li>Works offline</li>
+                <li>Custom branding</li>
+                <li>Email support</li>
+                <li>All future v0.x updates included</li>
+            </ul>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary">Download on Google Play (Coming Soon)</a>
+            </div>
+        </section>
+
+        <section class="bonus">
+            <h2>Bonus: Clio Integration for Lawyers</h2>
+            <p>Legal professionals get one-tap upload to Clio matters</p>
+            <ul class="bonus-features">
+                <li>OAuth 2.0 secure authentication (no password storage)</li>
+                <li>Browse and search your Clio matters</li>
+                <li>One-tap upload estimates directly to client files</li>
+                <li>Works alongside Clio's built-in tools</li>
+                <li>Mobile-optimized for attorneys on the go</li>
+            </ul>
+        </section>
+
+        <section class="portfolio">
+            <h2>More from Lexopoly</h2>
+            <p class="portfolio-subtitle">Professional tools designed to make your work easier</p>
+            <div class="portfolio-grid">
+                <div class="product-card">
+                    <span class="product-icon">🎙️</span>
+                    <h3>LocalTranscribe</h3>
+                    <p class="product-tagline">28x faster transcription with local privacy</p>
+                    <p>Professional-grade transcription software with 100% local processing. Perfect for lawyers, journalists, and anyone who values privacy and speed.</p>
+                    <ul class="product-features">
+                        <li>85-92% accuracy</li>
+                        <li>28x faster than real-time</li>
+                        <li>Complete privacy control</li>
+                        <li>Clio integration</li>
+                        <li>$79 one-time purchase</li>
+                    </ul>
+                    <a href="/localtranscribe/" class="product-link">Learn More →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuoteCreator</h4>
+                <div class="footer-links">
+                    <a href="/quotecreator/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/support/">Support</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <div class="footer-links">
+                    <a href="/">Lexopoly Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>More Products</h4>
+                <div class="footer-links">
+                    <a href="/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
