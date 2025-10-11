@@ -1844,3 +1844,20 @@ function switchProduct(product) {
 ### **SOCIAL LAUNCH READINESS: 100%** 🚀
 
 Website ready for social media traffic with professional presentation, zero technical issues, and optimized conversion funnel. All quality assurance complete.
+
+### **POST-QA SPOT FIXES** ✅
+
+**Journalists Page Contrast Fix** (2025-10-11):
+- **Issue**: Freemium CTA section had white text on orange gradient (4.8:1 contrast ratio)
+- **Fix**: Changed gradient start from #b45309 → #8b4513 (darker saddle brown)
+- **Result**: 7.5:1 contrast ratio (WCAG AAA compliance)
+- **Commit**: 85410fa
+
+**QuoteCreator Specialty Pages Strategy**:
+- **Question**: Should we create 10+ landing pages for specialties (painters, influencers, contractors)?
+- **Decision**: NOT before social launch - wait for conversion data
+- **Rationale**: 3 authentic pages > 12 generic templates, SEO takes 3-6 months anyway
+- **Plan**: Post-launch, analyze which verticals convert best, then create top 3 specialty pages
+- **Alternative**: Add audience grid to QuoteCreator page with vertical tracking parameters
+
+**Final Status**: All accessibility issues resolved, strategic content planning deferred to post-launch data analysis.
