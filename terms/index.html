@@ -515,8 +515,13 @@
     <div class="container">
         <div class="legal-header">
             <h1>Terms of Service & Legal Disclaimer</h1>
-            <p class="subtitle">Professional transcription services, privacy protection, and legal compliance information</p>
+            <p class="subtitle">Professional software services, privacy protection, and legal compliance information</p>
             <div class="last-updated">Last Updated: September 28, 2025</div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="switchProduct('localtranscribe')" id="btn-localtranscribe" style="padding: 0.75rem 1.5rem; background: var(--accent); color: white; border: 2px solid var(--accent); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;">LocalTranscribe Terms</button>
+                <button onclick="switchProduct('quotecreator')" id="btn-quotecreator" style="padding: 0.75rem 1.5rem; background: transparent; color: var(--accent); border: 2px solid var(--accent); border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s;">QuoteCreator Terms</button>
+            </div>
         </div>
 
         <div class="toc">
@@ -748,6 +753,33 @@
     </div>
 
     <script>
+        // Product Switcher
+        function switchProduct(product) {
+            // Update button states
+            const buttons = document.querySelectorAll('[id^="btn-"]');
+            buttons.forEach(btn => {
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--accent)';
+            });
+
+            const activeBtn = document.getElementById('btn-' + product);
+            activeBtn.style.background = 'var(--accent)';
+            activeBtn.style.color = 'white';
+
+            // Update page title
+            const productName = product === 'localtranscribe' ? 'LocalTranscribe' : 'QuoteCreator';
+            document.title = `Terms of Service - ${productName}`;
+
+            // For now, both products share the same terms
+            // In the future, you can add product-specific content here
+            const subtitle = document.querySelector('.subtitle');
+            if (product === 'localtranscribe') {
+                subtitle.textContent = 'Professional transcription services, privacy protection, and legal compliance information';
+            } else {
+                subtitle.textContent = 'Professional estimation software, data handling, and legal compliance information';
+            }
+        }
+
         // Unified Navigation Functions
         function toggleMobileMenu() {
             const navMain = document.getElementById('nav-main');
