@@ -94,28 +94,26 @@ class LocalTranscribeAnalytics {
     }
 
     showCookieConsent() {
-        // Create cookie consent banner
+        // Create subtle cookie consent popup
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
         banner.innerHTML = `
-            <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #1a365d; color: white; padding: 1rem; z-index: 10000; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);">
-                <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <p style="margin: 0; font-size: 0.9rem;">
-                            🍪 We use essential cookies to improve your experience and understand how our site performs.
-                            <a href="/privacy/" style="color: #a0d5f7; text-decoration: underline;">Learn more</a>
-                        </p>
-                    </div>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <button onclick="localTranscribeAnalytics.rejectCookies()"
-                                style="background: transparent; border: 1px solid white; color: white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
-                            Decline
-                        </button>
-                        <button onclick="localTranscribeAnalytics.acceptCookies()"
-                                style="background: white; border: none; color: #1a365d; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.9rem;">
-                            Accept
-                        </button>
-                    </div>
+            <div style="position: fixed; bottom: 1.5rem; right: 1.5rem; background: white; color: #2d3748; padding: 1.25rem; z-index: 10000; box-shadow: 0 4px 20px rgba(0,0,0,0.15); border-radius: 12px; max-width: 420px; border: 1px solid #e2e8f0;">
+                <div style="margin-bottom: 1rem;">
+                    <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: #4a5568;">
+                        We use cookies to improve your experience and measure site performance.
+                        <a href="/privacy/" style="color: #2c5aa0; text-decoration: underline; font-weight: 500;">Privacy Policy</a>
+                    </p>
+                </div>
+                <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                    <button onclick="localTranscribeAnalytics.rejectCookies()"
+                            style="background: transparent; border: 1px solid #cbd5e0; color: #4a5568; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;">
+                        Decline
+                    </button>
+                    <button onclick="localTranscribeAnalytics.acceptCookies()"
+                            style="background: #2c5aa0; border: none; color: white; padding: 0.5rem 1.25rem; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: all 0.2s;">
+                        Accept
+                    </button>
                 </div>
             </div>
         `;
