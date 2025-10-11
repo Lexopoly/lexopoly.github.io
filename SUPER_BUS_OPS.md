@@ -1884,6 +1884,15 @@ Website ready for social media traffic with professional presentation, zero tech
 - Purpose: Company announcements, product updates, customer engagement
 - Launch Date: 2025-10-11
 
+**Reddit**: [u/Lexopoly](https://reddit.com/u/Lexopoly)
+- Username: u/Lexopoly
+- Platform: Reddit
+- Status: Active
+- Purpose: Product education, community engagement, Reddit tour strategy
+- Launch Date: 2025-10-11
+- Strategy: Official business account for product announcements, AMAs, Show & Tell posts
+- Note: Started with auto-generated username (Cheap_Warthog_5142), recreated with professional handle
+
 **Website Social Integration Points**:
 - Contact page: Add X handle for customer support
 - About page: Link to social media profiles
@@ -1901,7 +1910,10 @@ Website ready for social media traffic with professional presentation, zero tech
 
 **Social Media Infrastructure**:
 - ✅ X account created (@lexopoly)
+- ✅ Reddit account created (u/Lexopoly)
 - ✅ Company branding established
+- ⏳ LinkedIn company page (pending - Tier 1 priority)
+- ⏳ YouTube channel (pending - Tier 2 priority)
 - ⏳ Content calendar (pending)
 - ⏳ Launch announcement drafts (pending)
 - ⏳ Social media cross-links on website (pending)
@@ -1925,6 +1937,74 @@ Website ready for social media traffic with professional presentation, zero tech
 - Influencer partnerships
 - Paid social advertising (if budget allocated)
 - Community-driven content
+
+### **REDDIT TOUR STRATEGY** 🎯
+
+**Account Setup**: u/Lexopoly (professional business account)
+**Launch Date**: 2025-10-11
+
+**Phase 1: Karma Building (Week 1)**:
+- Join 10-15 target subreddits
+- Read community rules (identify which allow self-promotion)
+- Engage authentically with comments (NOT posting yet)
+- Build karma to 50-100+ (required for posting in many subs)
+- Answer existing "looking for tool" questions helpfully
+
+**Phase 2: Community Engagement (Week 2-3)**:
+- Continue helpful comments on transcription/estimation questions
+- Share expertise without pitching (legal tech, journalism tools, privacy)
+- Identify best subreddits for product education posts
+- Monitor for "Show and Tell" / "I Made This" opportunities
+
+**Phase 3: Product Introduction (Week 4+)**:
+- Educational posts: "How local transcription works (and why it matters)"
+- "I built X because..." posts in subs that allow it
+- AMAs in r/SideProject or r/Entrepreneur
+- Technical deep-dives in privacy/tech subs
+
+**Target Subreddits**:
+
+**Legal Tech** (LocalTranscribe):
+- r/Lawyers - Legal professional community
+- r/LegalTech - Legal technology discussions
+- r/LawFirm - Firm management and operations
+- r/ParalegalStudies - Paralegal professional resources
+
+**Journalism** (LocalTranscribe):
+- r/Journalism - Journalism professionals
+- r/Freelance - Freelance writers and reporters
+- r/Reporters - Reporter community
+
+**Business Tools** (Both Products):
+- r/SmallBusiness - Small business owners
+- r/Entrepreneur - Entrepreneurs and startups
+- r/SideProject - Show and tell for side projects
+
+**Contractors** (QuoteCreator):
+- r/Contractor - Contractor community
+- r/Construction - Construction professionals
+- r/Freelance - Freelance service providers
+
+**Privacy/Tech** (LocalTranscribe):
+- r/Privacy - Privacy-focused users
+- r/DataHoarder - Data control enthusiasts
+- r/SelfHosted - Self-hosting community
+- r/LocalLLaMA - Local AI/ML community
+- r/OpenSource - Open source enthusiasts
+
+**Content Approach**:
+- Educational, not salesy
+- Solve problems first, mention product second
+- Engage authentically with ALL comments
+- Follow up on questions and feedback
+- Build relationships, not just traffic
+
+**Success Metrics**:
+- Karma: 100+ in first month
+- Subreddit participation: 10-15 communities
+- Quality posts: 1-2 per week (educational focus)
+- Comment engagement: Daily helpful responses
+- Traffic to website: Track ?utm_source=reddit conversions
 
 ### **WEBSITE TRAFFIC READINESS**
 
@@ -1988,4 +2068,4 @@ Website ready for social media traffic with professional presentation, zero tech
 **Super Bus Documentation**: Complete social media launch documentation
 **Next Phase**: Website social integration + content calendar creation
 
-**Status**: ✅ SOCIAL MEDIA ACCOUNT CREATED - WEBSITE 100% READY FOR TRAFFIC - LAUNCH SEQUENCE INITIATED 🚀
+**Status**: ✅ SOCIAL MEDIA ACCOUNTS CREATED (X + REDDIT) - WEBSITE 100% READY FOR TRAFFIC - REDDIT TOUR STRATEGY DOCUMENTED 🚀
