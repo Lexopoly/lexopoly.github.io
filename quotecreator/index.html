@@ -705,6 +705,75 @@
             color: var(--lexopoly-primary);
         }
 
+        /* Product Showcase */
+        .product-showcase {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .product-showcase h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .product-showcase p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .screenshot-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .screenshot-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .screenshot-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
         /* Mobile Styles */
         @media (max-width: 968px) {
             .mobile-menu-btn {
@@ -792,7 +861,7 @@
                 padding: 1rem;
             }
 
-            .features, .pricing, .audiences, .bonus, .portfolio {
+            .features, .pricing, .audiences, .bonus, .portfolio, .product-showcase {
                 padding: 2rem 1rem;
             }
 
@@ -806,8 +875,12 @@
                 max-width: 300px;
             }
 
-            .features-grid, .portfolio-grid {
+            .features-grid, .portfolio-grid, .screenshot-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .screenshot-card img {
+                max-width: 250px;
             }
         }
     </style>
@@ -981,6 +1054,28 @@
                     <span class="feature-icon">📴</span>
                     <h3>Works Offline</h3>
                     <p>No internet required. Create estimates in basements, job sites, or anywhere your work takes you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-showcase">
+            <h2>See It In Action</h2>
+            <p>Real screenshots from QuoteCreator showing the simple, professional workflow</p>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/01-home-estimates-list.png" alt="QuoteCreator home screen showing list of estimates" loading="lazy">
+                    <h3>Your Estimates</h3>
+                    <p>Clean, organized list of all your estimates. Quick access to edit, duplicate, or share</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/02-estimate-with-customer-and-matter.png" alt="Creating an estimate with customer and matter selection" loading="lazy">
+                    <h3>Create & Customize</h3>
+                    <p>Add line items, customers, and Clio matters in seconds. Automatic calculations included</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/04-pdf-preview.png" alt="Professional PDF preview of generated estimate" loading="lazy">
+                    <h3>Professional Output</h3>
+                    <p>Generate polished PDF estimates instantly. Email, text, or print on the spot</p>
                 </div>
             </div>
         </section>
