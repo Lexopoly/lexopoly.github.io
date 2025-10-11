@@ -13,6 +13,9 @@ class LocalTranscribeAnalytics {
     }
 
     init() {
+        // Capture UTM parameters BEFORE anything else
+        this.captureUTMParameters();
+
         // Check for existing consent
         this.consentGiven = localStorage.getItem('lt-analytics-consent') === 'true';
 
@@ -34,6 +37,60 @@ class LocalTranscribeAnalytics {
 
     generateSessionId() {
         return 'lt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    captureUTMParameters() {
+        const params = new URLSearchParams(window.location.search);
+        const utm = {
+            source: params.get('utm_source'),
+            medium: params.get('utm_medium'),
+            campaign: params.get('utm_campaign'),
+            content: params.get('utm_content'),
+            term: params.get('utm_term')
+        };
+
+        // Only proceed if we have at least a source
+        if (!utm.source) {
+            // Try to get existing attribution data
+            this.attribution = this.getStoredAttribution();
+            return;
+        }
+
+        // Store current UTM (last-touch attribution)
+        sessionStorage.setItem('lt-utm-current', JSON.stringify({
+            ...utm,
+            timestamp: Date.now(),
+            landing_page: window.location.pathname
+        }));
+
+        // Store first-touch attribution (only if not already set)
+        if (!localStorage.getItem('lt-utm-first')) {
+            localStorage.setItem('lt-utm-first', JSON.stringify({
+                ...utm,
+                timestamp: Date.now(),
+                landing_page: window.location.pathname
+            }));
+        }
+
+        // Update attribution object
+        this.attribution = {
+            firstTouch: JSON.parse(localStorage.getItem('lt-utm-first') || '{}'),
+            lastTouch: JSON.parse(sessionStorage.getItem('lt-utm-current') || '{}'),
+            current: utm
+        };
+
+        // Track attribution capture
+        if (this.consentGiven) {
+            this.trackEvent('attribution', 'utm_captured', utm.source, null);
+        }
+    }
+
+    getStoredAttribution() {
+        return {
+            firstTouch: JSON.parse(localStorage.getItem('lt-utm-first') || '{}'),
+            lastTouch: JSON.parse(sessionStorage.getItem('lt-utm-current') || '{}'),
+            current: {}
+        };
     }
 
     showCookieConsent() {
@@ -90,11 +147,39 @@ class LocalTranscribeAnalytics {
     initializeTracking() {
         if (!this.consentGiven) return;
 
-        // Initialize Google Analytics (when ready for production)
-        // gtag('config', 'GA_MEASUREMENT_ID');
+        // Initialize Google Analytics 4
+        const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with your GA4 measurement ID
+
+        if (typeof gtag !== 'undefined' && GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+            gtag('config', GA4_MEASUREMENT_ID, {
+                'send_page_view': false // We'll send pageviews manually with attribution
+            });
+
+            // Send initial pageview with attribution
+            this.sendGA4PageView();
+        }
 
         // Initialize any other tracking tools
         console.log('Analytics initialized for session:', this.sessionId);
+    }
+
+    sendGA4PageView() {
+        if (typeof gtag === 'undefined') return;
+
+        const attribution = this.attribution || this.getStoredAttribution();
+
+        gtag('event', 'page_view', {
+            page_path: window.location.pathname,
+            page_title: document.title,
+            // First-touch attribution
+            first_source: attribution.firstTouch.source || 'direct',
+            first_medium: attribution.firstTouch.medium || 'none',
+            first_campaign: attribution.firstTouch.campaign || '(not set)',
+            // Last-touch attribution
+            last_source: attribution.lastTouch.source || attribution.firstTouch.source || 'direct',
+            last_medium: attribution.lastTouch.medium || attribution.firstTouch.medium || 'none',
+            last_campaign: attribution.lastTouch.campaign || attribution.firstTouch.campaign || '(not set)'
+        });
     }
 
     trackPageView(path = window.location.pathname) {
@@ -154,14 +239,40 @@ class LocalTranscribeAnalytics {
     }
 
     trackConversion(conversionType, value = null) {
+        // Track conversion event with attribution
         this.trackEvent('conversion', conversionType, null, value);
 
-        // Store conversion for attribution
-        localStorage.setItem('lt-last-conversion', JSON.stringify({
+        // Also send as dedicated GA4 conversion event if available
+        if (typeof gtag !== 'undefined') {
+            const attribution = this.attribution || this.getStoredAttribution();
+
+            gtag('event', 'conversion', {
+                conversion_type: conversionType,
+                value: value,
+                currency: 'USD',
+                // Attribution context for conversion
+                first_source: attribution.firstTouch.source || 'direct',
+                first_medium: attribution.firstTouch.medium || 'none',
+                first_campaign: attribution.firstTouch.campaign || '(not set)',
+                last_source: attribution.lastTouch.source || attribution.firstTouch.source || 'direct',
+                last_medium: attribution.lastTouch.medium || attribution.firstTouch.medium || 'none',
+                last_campaign: attribution.lastTouch.campaign || attribution.firstTouch.campaign || '(not set)',
+                // Time to conversion (if first-touch exists)
+                time_to_conversion: attribution.firstTouch.timestamp
+                    ? Math.round((Date.now() - attribution.firstTouch.timestamp) / 1000)
+                    : null
+            });
+        }
+
+        // Store conversion with full attribution for later analysis
+        const conversionData = {
             type: conversionType,
             timestamp: Date.now(),
-            value: value
-        }));
+            value: value,
+            attribution: this.attribution || this.getStoredAttribution()
+        };
+
+        localStorage.setItem('lt-last-conversion', JSON.stringify(conversionData));
     }
 
     setupEventListeners() {
@@ -233,12 +344,21 @@ class LocalTranscribeAnalytics {
             this.storeOfflineEvent(event);
         });
 
-        // Also send to Google Analytics if available
+        // Also send to Google Analytics with attribution if available
         if (typeof gtag !== 'undefined') {
+            const attribution = this.attribution || this.getStoredAttribution();
+
             gtag('event', event.action, {
                 event_category: event.category,
                 event_label: event.label,
-                value: event.value
+                value: event.value,
+                // Include attribution context
+                first_source: attribution.firstTouch.source || 'direct',
+                first_medium: attribution.firstTouch.medium || 'none',
+                first_campaign: attribution.firstTouch.campaign || '(not set)',
+                last_source: attribution.lastTouch.source || attribution.firstTouch.source || 'direct',
+                last_medium: attribution.lastTouch.medium || attribution.firstTouch.medium || 'none',
+                last_campaign: attribution.lastTouch.campaign || attribution.firstTouch.campaign || '(not set)'
             });
         }
 
