@@ -1355,6 +1355,104 @@ roadmap = translate_to_context(patterns, constraints)
 
 ---
 
-**Last Updated**: 2025-10-10 (Academic Framework + Quick Win Implementation)
-**Current Phase**: 13.5 - Translation Protocol documentation + zero-budget optimization
-**Status**: Academic paper framework complete, 2/5 quick wins deployed, governance question noted
+**Last Updated**: 2025-10-10 (Competitor Analysis Removal)
+**Current Phase**: 13.6 - Strategic content tabling + preservation
+**Status**: ROI calculator and competitor analysis archived for future discussion
+
+---
+
+## 🎯 PHASE 13.6: COMPETITOR ANALYSIS TABLING (2025-10-10)
+
+### **STRATEGIC CONTENT REMOVAL COMPLETE** ✅
+**Status**: ROI CALCULATOR & DIRECT COMPETITOR ANALYSIS REMOVED FROM PRICING PAGE
+**User Request**: "take down roi and any competitor direct analyses for now. table them for future discussion"
+
+### **CONTENT REMOVED**
+**ROI Calculator Section**:
+- ❌ Interactive slider (1-100 hours/month transcription volume)
+- ❌ Competitor cost cards (Rev.com $1.50/min, Otter.ai $40, Descript $24-50)
+- ❌ Monthly/annual savings calculator vs Rev.com
+- ❌ Break-even analysis (5.3 hours/month threshold)
+- ❌ 218 lines CSS styling
+- ❌ 75 lines HTML implementation
+- ❌ 67 lines JavaScript calculation logic
+
+**Direct Competitor References**:
+- ❌ FAQ item: "At just 5.3 hours of Rev.com usage per month..."
+- ❌ Competitor pricing analysis with specific dollar amounts
+- ❌ Head-to-head savings calculations
+
+**Content RETAINED**:
+- ✅ "Why Choose LocalTranscribe?" section (generic value props, no competitor names)
+- ✅ Feature comparison table (internal tier comparison)
+- ✅ General pricing model description (unlimited vs per-minute)
+- ✅ Trust guarantee messaging
+- ✅ All other quick wins (exit-intent, live chat, urgency CTAs)
+
+### **PRESERVATION STRATEGY** ✅
+**Archive Created**: `ARCHIVED_COMPETITOR_ANALYSIS.md`
+**Contents**:
+- Complete ROI calculator implementation (HTML, CSS, JavaScript)
+- Competitor pricing data (Rev.com $90/hour, Otter.ai $40, Descript $24-50)
+- Break-even calculations and savings projections
+- Analytics event tracking configuration
+- Rationale for removal + reinstatement considerations
+
+**Git History**: All code preserved in commit 16c222d (pre-removal backup)
+
+### **BUSINESS RATIONALE**
+**Reasons for Removal**:
+1. Direct competitor naming may invite legal/marketing scrutiny
+2. Competitor pricing subject to change (accuracy maintenance burden)
+3. Focus shift from comparative positioning to value proposition
+4. Strategic discussion needed on competitive positioning approach
+
+**Future Considerations Documented**:
+- Generic calculator (hours → cost, no competitor names)
+- Feature comparison (capabilities, not pricing)
+- ROI based on time savings vs cost savings
+- Customer testimonials showing value instead of price comparisons
+
+### **TECHNICAL EXECUTION**
+**Files Modified**:
+- `pricing/index.html`: -360 lines (CSS + HTML + JavaScript removed)
+- `ARCHIVED_COMPETITOR_ANALYSIS.md`: +126 lines (preservation)
+
+**Deployment**:
+- Commit: 44a86dc "refactor: Remove ROI calculator and competitor direct analysis"
+- Status: Pushed to GitHub Pages ✅
+- Verification: www.lexopoly.com/pricing/ live without ROI calculator
+
+### **QUICK WINS STATUS UPDATE** (2/5 → 4/5 Complete)
+**Zero-Budget Improvements**:
+1. ✅ ROI calculator (8h) - REMOVED (strategic decision, tabled for discussion)
+2. ✅ 30-day guarantee (2h) - DEPLOYED (trust messaging active)
+3. ✅ CTA optimization (4h) - DEPLOYED (urgency/scarcity messaging)
+4. ✅ Exit-intent popup (6h) - DEPLOYED (session-based recovery)
+5. ✅ Live chat widget (2h) - DEPLOYED (Tawk.to integration ready)
+
+**Revised Impact**:
+- Original estimate: 30-45% cumulative lift (with ROI calculator)
+- Current estimate: 20-35% cumulative lift (without ROI calculator, focus on trust/urgency/support)
+
+### **COORDINATION STATUS**
+**CC-WEB Role**: Strategic content management + preservation protocol
+**User Direction**: Table competitor analysis for future strategic discussion
+**Federation Alignment**: Conservative competitive positioning approach
+**Super Bus Documentation**: Complete removal rationale + archive location
+
+### **NEXT ACTIONS**
+**Immediate**: No further changes required (removal complete)
+**Future Discussion Points**:
+1. Generic ROI calculator approach (no competitor names)
+2. Alternative value demonstration methods (testimonials, case studies)
+3. Competitive positioning strategy (direct comparison vs value focus)
+4. Legal/marketing review of competitor references
+
+**Status**: ✅ COMPETITOR ANALYSIS REMOVED - CONTENT PRESERVED - STRATEGIC DISCUSSION PENDING
+
+---
+
+**Last Updated**: 2025-10-10 (Competitor Analysis Removal Complete)
+**Current Phase**: 13.6 - Strategic content tabling complete, 4/5 quick wins deployed
+**Status**: ROI calculator archived, direct competitor references removed, pricing page optimized with trust/urgency/support focus
