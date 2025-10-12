@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+    </script>
+
+    <!-- Basic SEO -->
+    <title>QuoteCreator Blog | Estimate & Billing Tips for Professionals</title>
+    <meta name="description" content="Expert guides on creating professional estimates, legal billing with Clio, and business tips for contractors, lawyers, and service providers.">
+    <meta name="keywords" content="estimate tips, quote creation guide, legal billing, Clio integration, contractor estimates, professional invoicing">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/quotecreator/blog/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="QuoteCreator Blog | Estimate & Billing Tips">
+    <meta property="og:description" content="Expert guides on estimates, billing, and business tips for professionals.">
+    <meta property="og:url" content="https://lexopoly.com/quotecreator/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lexopoly">
+    <meta name="twitter:title" content="QuoteCreator Blog | Estimate & Billing Tips">
+    <meta name="twitter:description" content="Expert guides on estimates, billing, and business tips for professionals.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* UNIFIED NAVIGATION TEMPLATE */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 1rem 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        .nav-main > a:not(.btn-primary-nav) {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-main > a:not(.btn-primary-nav):hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .filter-tab {
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-tab.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Article Grid */
+        .articles-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .article-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+        }
+
+        .article-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .article-badge.legal {
+            background: #f0f4ff;
+            color: #2c5aa0;
+        }
+
+        .article-badge.service-provider {
+            background: #f0fdf4;
+            color: #15803d;
+        }
+
+        .article-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--lexopoly-primary);
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .article-read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5aa0 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: var(--lexopoly-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-cta:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-main {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin: 0.5rem;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-main.show {
+                display: flex;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+            }
+
+            .nav-dropdown > a {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 1rem;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary-nav {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .articles-section, .cta-section {
+                padding: 2rem 1rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "QuoteCreator Blog",
+      "description": "Expert guides on creating professional estimates, legal billing with Clio, and business tips for contractors, lawyers, and service providers.",
+      "url": "https://lexopoly.com/quotecreator/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/quotecreator/" class="logo">
+                QuoteCreator
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+            <div class="nav-main" id="nav-main">
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Products
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Solutions
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">By Industry</div>
+                        <a href="/lawyers/">For Lawyers</a>
+                        <a href="/journalists/">For Journalists</a>
+                        <a href="/dictation/">Dictation & Medical</a>
+                        <a href="/court-reporters/">For Court Reporters</a>
+                        <a href="/government/">For Government</a>
+                        <a href="/education/">For Education</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        About
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/about/">About Lexopoly</a>
+                        <a href="/contact/">Contact Us</a>
+                        <a href="/support/">Support</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/privacy/">Privacy Policy</a>
+                        <a href="/terms/">Terms of Service</a>
+                    </div>
+                </div>
+
+                <a href="/pricing/">Pricing</a>
+
+                <div class="nav-cta">
+                    <a href="/quotecreator/" class="btn-primary-nav">Get QuoteCreator</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>QuoteCreator Blog</h1>
+            <p class="subtitle">
+                Expert guides on estimates, billing, and business tips for legal professionals and service providers
+            </p>
+        </section>
+
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterArticles('all')">All Articles</button>
+            <button class="filter-tab" onclick="filterArticles('legal')">⚖️ Legal Professionals</button>
+            <button class="filter-tab" onclick="filterArticles('service-provider')">🔧 Service Providers</button>
+        </div>
+
+        <section class="articles-section">
+            <div class="articles-grid" id="articles-grid">
+                <!-- Article 1: QuoteCreator + Clio Integration (LEGAL) -->
+                <a href="/quotecreator/blog/quotecreator-clio-integration/" class="article-card" data-category="legal">
+                    <span class="article-badge legal">⚖️ Legal</span>
+                    <h3>QuoteCreator + Clio Integration: Seamless Estimates for Legal Professionals</h3>
+                    <p class="article-excerpt">
+                        Discover how QuoteCreator integrates with Clio to streamline legal estimates. Create quotes on mobile, auto-upload to client matters, and save hours on billing admin.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-read-time">📖 8 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 2: How to Create Professional Estimates (SERVICE PROVIDER) -->
+                <a href="/quotecreator/blog/create-professional-estimates/" class="article-card" data-category="service-provider">
+                    <span class="article-badge service-provider">🔧 Service Provider</span>
+                    <h3>How to Create Professional Estimates in 2 Minutes (Guide for Contractors & Service Providers)</h3>
+                    <p class="article-excerpt">
+                        Learn how contractors, handymen, painters and service providers create professional estimates in under 2 minutes with QuoteCreator's mobile-first workflow.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-read-time">📖 7 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 3: Legal Billing Made Simple (LEGAL) -->
+                <a href="/quotecreator/blog/legal-billing-made-simple/" class="article-card" data-category="legal">
+                    <span class="article-badge legal">⚖️ Legal</span>
+                    <h3>Legal Billing Made Simple: From Consultation to Invoice in One App</h3>
+                    <p class="article-excerpt">
+                        Simplify legal billing with QuoteCreator. Create estimates during consultations, track matters, and generate invoices - all in one app with Clio integration.
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-read-time">📖 6 min read</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Create Professional Estimates?</h2>
+            <p>Join thousands of professionals using QuoteCreator to save time and win more business</p>
+            <a href="/quotecreator/" class="btn-cta">Get QuoteCreator</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuoteCreator</h4>
+                <div class="footer-links">
+                    <a href="/quotecreator/">Home</a>
+                    <a href="/quotecreator/blog/">Blog</a>
+                    <a href="/quotecreator/privacy/">Privacy Policy</a>
+                    <a href="/quotecreator/setup/">Clio Setup Guide</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <div class="footer-links">
+                    <a href="/">Lexopoly Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/support/">Support</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>More Products</h4>
+                <div class="footer-links">
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-links">
+                    <a href="https://x.com/lexopoly" target="_blank" rel="noopener">𝕏 Follow on X</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMain = document.getElementById('nav-main');
+            navMain.classList.toggle('show');
+        }
+
+        function toggleMobileDropdown(element) {
+            if (window.innerWidth <= 968) {
+                element.classList.toggle('mobile-open');
+            }
+        }
+
+        function filterArticles(category) {
+            const articles = document.querySelectorAll('.article-card');
+            const tabs = document.querySelectorAll('.filter-tab');
+
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter articles
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const navMain = document.getElementById('nav-main');
+
+            if (!navContainer.contains(event.target) && navMain.classList.contains('show')) {
+                navMain.classList.remove('show');
+            }
+        });
+
+        // Close mobile dropdowns when resizing to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 968) {
+                document.querySelectorAll('.nav-dropdown.mobile-open').forEach(dropdown => {
+                    dropdown.classList.remove('mobile-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

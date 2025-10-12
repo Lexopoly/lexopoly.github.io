@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+    </script>
+
+    <!-- Basic SEO -->
+    <title>QuoteCreator + Clio Integration: Seamless Estimates for Legal Professionals | QuoteCreator Blog</title>
+    <meta name="description" content="QuoteCreator integrates with Clio for seamless legal estimates. Create quotes on mobile, auto-upload to client matters. Setup guide for lawyers and attorneys.">
+    <meta name="keywords" content="Clio estimate integration, legal billing software, lawyer estimate tools, Clio quote integration, attorney billing app">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/quotecreator/blog/quotecreator-clio-integration/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="QuoteCreator + Clio Integration for Legal Professionals">
+    <meta property="og:description" content="Create quotes on mobile, auto-upload to Clio client matters. Complete setup guide for lawyers.">
+    <meta property="og:url" content="https://lexopoly.com/quotecreator/blog/quotecreator-clio-integration/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+    <meta property="article:published_time" content="2025-10-12T00:00:00Z">
+    <meta property="article:author" content="Lexopoly LLC">
+    <meta property="article:section" content="Legal Software">
+    <meta property="article:tag" content="Clio Integration">
+    <meta property="article:tag" content="Legal Billing">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lexopoly">
+    <meta name="twitter:title" content="QuoteCreator + Clio Integration for Legal Professionals">
+    <meta name="twitter:description" content="Create quotes on mobile, auto-upload to Clio client matters. Setup guide for lawyers.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* UNIFIED NAVIGATION TEMPLATE (same as blog landing page) */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 1rem 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        .nav-main > a:not(.btn-primary-nav) {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-main > a:not(.btn-primary-nav):hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            color: white;
+        }
+
+        .article-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .article-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            color: var(--lexopoly-primary);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: var(--lexopoly-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content h4 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--lexopoly-primary);
+            font-weight: 600;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .article-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .article-content a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Boxes */
+        .cta-box {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5aa0 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin: 0 0 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: var(--lexopoly-primary);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-cta:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .share-section h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+            color: white;
+            border-color: #1DA1F2;
+        }
+
+        .share-btn.twitter:hover {
+            background: #1a8cd8;
+            transform: translateY(-2px);
+        }
+
+        .share-btn.copy {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+
+        .share-btn.copy:hover {
+            background: var(--border);
+            transform: translateY(-2px);
+        }
+
+        /* Related Articles */
+        .related-articles {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .related-articles h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.1);
+        }
+
+        .related-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-main {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin: 0.5rem;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-main.show {
+                display: flex;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+            }
+
+            .nav-dropdown > a {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 1rem;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary-nav {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .article-content, .related-articles, .share-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "QuoteCreator + Clio Integration: Seamless Estimates for Legal Professionals",
+      "description": "Discover how QuoteCreator integrates with Clio to streamline legal estimates. Create quotes on mobile, auto-upload to client matters, and save hours on billing admin.",
+      "image": "https://lexopoly.com/assets/og-quotecreator.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lexopoly.com/favicon.svg"
+        }
+      },
+      "datePublished": "2025-10-12",
+      "dateModified": "2025-10-12",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lexopoly.com/quotecreator/blog/quotecreator-clio-integration/"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/quotecreator/" class="logo">
+                QuoteCreator
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+            <div class="nav-main" id="nav-main">
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Products
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Solutions
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">By Industry</div>
+                        <a href="/lawyers/">For Lawyers</a>
+                        <a href="/journalists/">For Journalists</a>
+                        <a href="/dictation/">Dictation & Medical</a>
+                        <a href="/court-reporters/">For Court Reporters</a>
+                        <a href="/government/">For Government</a>
+                        <a href="/education/">For Education</a>
+                    </div>
+                </div>
+
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        About
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/about/">About Lexopoly</a>
+                        <a href="/contact/">Contact Us</a>
+                        <a href="/support/">Support</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/privacy/">Privacy Policy</a>
+                        <a href="/terms/">Terms of Service</a>
+                    </div>
+                </div>
+
+                <a href="/pricing/">Pricing</a>
+
+                <div class="nav-cta">
+                    <a href="/quotecreator/" class="btn-primary-nav">Get QuoteCreator</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/quotecreator/">QuoteCreator</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="/quotecreator/blog/">Blog</a>
+            <span class="breadcrumb-separator">›</span>
+            <span style="opacity: 0.7;">Clio Integration</span>
+        </nav>
+
+        <header class="article-header">
+            <div class="article-badge">⚖️ Legal Professionals</div>
+            <h1>QuoteCreator + Clio Integration: Seamless Estimates for Legal Professionals</h1>
+            <div class="article-meta">
+                <span class="article-meta-item">📅 October 12, 2025</span>
+                <span class="article-meta-item">📖 8 min read</span>
+            </div>
+        </header>
+
+        <article class="article-content">
+            <p>
+                For legal professionals, time is literally money. Every minute spent on administrative tasks—creating estimates, sending quotes to clients, uploading documents to case files—is time not spent on billable work. That's where <strong>QuoteCreator's Clio integration</strong> comes in.
+            </p>
+
+            <p>
+                QuoteCreator is a mobile-first estimate and quote app designed for professionals who need to create accurate, professional quotes on the go. When integrated with <strong>Clio</strong> (the leading legal practice management software), it becomes a powerful tool for streamlining your billing workflow.
+            </p>
+
+            <h2>Why Legal Professionals Need Fast Estimates</h2>
+
+            <p>
+                Legal work often requires quick turnaround on estimates and quotes. Whether you're:
+            </p>
+
+            <ul>
+                <li><strong>Meeting with a potential client</strong> who wants to know upfront costs for representation</li>
+                <li><strong>Providing a retainer estimate</strong> for a new case</li>
+                <li><strong>Quoting project-based legal services</strong> (document review, contract drafting, etc.)</li>
+                <li><strong>Estimating additional costs</strong> mid-case for scope changes</li>
+            </ul>
+
+            <p>
+                You need a solution that's <strong>fast</strong>, <strong>professional</strong>, and <strong>integrates seamlessly with your existing practice management tools</strong>.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>💡 Pro Tip:</strong> Mobile estimates mean you can create and send quotes during client meetings, consultations, or even court breaks—no need to return to the office and remember details later.</p>
+            </div>
+
+            <h2>The Clio Integration Advantage</h2>
+
+            <p>
+                QuoteCreator's <strong>Clio integration</strong> brings together mobile estimate creation and automatic document management. Here's how it works:
+            </p>
+
+            <h3>1. OAuth 2.0 Secure Authentication</h3>
+
+            <p>
+                QuoteCreator connects to Clio using <strong>OAuth 2.0</strong>, the industry-standard security protocol. This means:
+            </p>
+
+            <ul>
+                <li><strong>No password storage</strong>—QuoteCreator never sees or stores your Clio credentials</li>
+                <li><strong>Revocable access</strong>—You can disconnect QuoteCreator from Clio anytime via Clio's settings</li>
+                <li><strong>Permission-based access</strong>—QuoteCreator only requests the minimum permissions needed (matter read access, document upload)</li>
+            </ul>
+
+            <h3>2. Matter Sync and Search</h3>
+
+            <p>
+                Once connected, QuoteCreator can:
+            </p>
+
+            <ul>
+                <li><strong>Browse your Clio matters</strong>—All client matters appear in QuoteCreator's interface</li>
+                <li><strong>Search by client name or matter number</strong>—Find the right case instantly</li>
+                <li><strong>Associate estimates with specific matters</strong>—Link each quote to the correct client file</li>
+            </ul>
+
+            <h3>3. One-Tap Upload to Client Files</h3>
+
+            <p>
+                After creating an estimate in QuoteCreator, simply tap "Upload to Clio" to:
+            </p>
+
+            <ul>
+                <li><strong>Automatically save the PDF to the correct matter</strong>—No manual file uploads or downloads</li>
+                <li><strong>Preserve professional formatting</strong>—PDF estimates are uploaded exactly as generated</li>
+                <li><strong>Maintain audit trail</strong>—Clio timestamps all uploaded documents for compliance</li>
+            </ul>
+
+            <div class="cta-box">
+                <h3>Ready to Streamline Your Legal Billing?</h3>
+                <p>QuoteCreator's Clio integration saves legal professionals 5+ hours per week on estimate creation and document management.</p>
+                <a href="/quotecreator/" class="btn-cta">Get QuoteCreator Now</a>
+            </div>
+
+            <h2>Step-by-Step Setup Guide</h2>
+
+            <p>
+                Setting up QuoteCreator's Clio integration takes less than 2 minutes. Here's the complete walkthrough:
+            </p>
+
+            <h3>Step 1: Download QuoteCreator</h3>
+
+            <p>
+                Install QuoteCreator from the <a href="/quotecreator/">QuoteCreator website</a>. The app is available for Android devices and tablets.
+            </p>
+
+            <h3>Step 2: Connect to Clio</h3>
+
+            <p>
+                From QuoteCreator's settings:
+            </p>
+
+            <ol>
+                <li>Tap <strong>Integrations</strong> → <strong>Connect Clio</strong></li>
+                <li>You'll be redirected to Clio's OAuth login page</li>
+                <li>Sign in with your Clio credentials (or use SSO if enabled)</li>
+                <li>Review permissions and tap <strong>Authorize</strong></li>
+                <li>QuoteCreator will confirm successful connection</li>
+            </ol>
+
+            <p>
+                For detailed instructions with screenshots, see our <a href="/quotecreator/setup/">Complete Clio Setup Guide</a>.
+            </p>
+
+            <h3>Step 3: Create Your First Estimate</h3>
+
+            <p>
+                With Clio connected, creating estimates becomes seamless:
+            </p>
+
+            <ol>
+                <li>Open QuoteCreator and tap <strong>New Estimate</strong></li>
+                <li>Add customer details (or select from your saved contacts)</li>
+                <li>Select <strong>Clio Matter</strong> from the dropdown (QuoteCreator will show all your matters)</li>
+                <li>Add line items (hourly rates, flat fees, or project estimates)</li>
+                <li>Tap <strong>Generate PDF</strong> to create the professional estimate</li>
+                <li>Tap <strong>Upload to Clio</strong> to save directly to the matter file</li>
+            </ol>
+
+            <p>
+                That's it! The entire process takes <strong>under 60 seconds</strong> once you're familiar with the workflow.
+            </p>
+
+            <h2>Real Use Cases for Legal Professionals</h2>
+
+            <h3>Client Consultations</h3>
+
+            <p>
+                During initial client consultations, you can create and send fee estimates <strong>on the spot</strong>:
+            </p>
+
+            <ul>
+                <li>Discuss case scope and requirements</li>
+                <li>Pull up QuoteCreator and create an estimate in real-time</li>
+                <li>Show the client the professional PDF immediately</li>
+                <li>Upload to Clio before the meeting ends</li>
+            </ul>
+
+            <h3>Retainer Quotes</h3>
+
+            <p>
+                For retainer-based work, QuoteCreator simplifies the quoting process:
+            </p>
+
+            <ul>
+                <li>Break down retainer fees by phase (discovery, trial prep, trial, etc.)</li>
+                <li>Include hourly rates for different attorney levels</li>
+                <li>Automatically calculate totals and subtotals</li>
+                <li>Send professional PDF to client via email</li>
+                <li>Archive in Clio for future reference</li>
+            </ul>
+
+            <h3>Case Cost Projections</h3>
+
+            <p>
+                Mid-case, when scope changes require updated estimates:
+            </p>
+
+            <ul>
+                <li>Create supplemental estimates for additional work</li>
+                <li>Link to the original matter in Clio</li>
+                <li>Track estimate history across the case lifecycle</li>
+                <li>Maintain compliance with all quotes timestamped in Clio</li>
+            </ul>
+
+            <h2>ROI: Time Saved vs. Billable Hours Gained</h2>
+
+            <p>
+                Let's break down the return on investment for QuoteCreator's Clio integration:
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Traditional Estimate Workflow (Manual):</strong></p>
+                <ul>
+                    <li>Open Word/Excel template: 2 minutes</li>
+                    <li>Fill in client details, line items, calculations: 10-15 minutes</li>
+                    <li>Save as PDF: 1 minute</li>
+                    <li>Email to client: 2 minutes</li>
+                    <li>Log into Clio, find matter, upload PDF: 3-5 minutes</li>
+                </ul>
+                <p><strong>Total: 18-25 minutes per estimate</strong></p>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>QuoteCreator + Clio Workflow:</strong></p>
+                <ul>
+                    <li>Open QuoteCreator, select Clio matter: 10 seconds</li>
+                    <li>Add line items, calculate automatically: 30-45 seconds</li>
+                    <li>Generate PDF: 5 seconds</li>
+                    <li>Upload to Clio: 5 seconds</li>
+                    <li>Email to client (from QuoteCreator): 10 seconds</li>
+                </ul>
+                <p><strong>Total: 60-75 seconds per estimate</strong></p>
+            </div>
+
+            <p>
+                <strong>Time saved per estimate: 17-24 minutes</strong>
+            </p>
+
+            <p>
+                If you create just <strong>5 estimates per week</strong>, that's <strong>85-120 minutes saved weekly</strong>. At a billable rate of $350/hour, that's:
+            </p>
+
+            <ul>
+                <li><strong>$500-$700 per week</strong> in recaptured billable time</li>
+                <li><strong>$26,000-$36,000 per year</strong> in value recovered</li>
+            </ul>
+
+            <p>
+                QuoteCreator pays for itself (<strong>$12.99 one-time</strong>) in the <strong>first estimate</strong>.
+            </p>
+
+            <div class="cta-box">
+                <h3>Start Saving Time Today</h3>
+                <p>Join legal professionals already using QuoteCreator + Clio to eliminate estimate busywork and focus on billable hours.</p>
+                <a href="/quotecreator/" class="btn-cta">Download QuoteCreator</a>
+            </div>
+
+            <h2>Compliance and Professionalism</h2>
+
+            <p>
+                Legal billing requires <strong>detailed line items</strong>, <strong>transparent pricing</strong>, and <strong>professional documentation</strong>. QuoteCreator delivers:
+            </p>
+
+            <ul>
+                <li><strong>Itemized breakdowns</strong>—Show clients exactly what they're paying for</li>
+                <li><strong>Automatic calculations</strong>—No math errors or typos in fee quotes</li>
+                <li><strong>Professional PDF formatting</strong>—Clean, branded estimates that build client trust</li>
+                <li><strong>Timestamped Clio uploads</strong>—Maintain audit trail for compliance and ethics requirements</li>
+            </ul>
+
+            <h2>Case Study: Solo Practitioner Saves 5 Hours/Week</h2>
+
+            <p>
+                <strong>Sarah K., Solo Practitioner (Family Law)</strong>
+            </p>
+
+            <p>
+                "Before QuoteCreator, I'd spend 20-30 minutes per estimate—opening templates, doing calculations, saving PDFs, uploading to Clio. With 10-15 estimates per week, that was <strong>3-5 hours of non-billable admin time</strong>."
+            </p>
+
+            <p>
+                "Now I create estimates during client calls. The Clio integration means everything's automatically filed. I've reclaimed <strong>5 hours per week</strong> for actual case work. Best $12.99 I've ever spent on practice management."
+            </p>
+
+            <h2>Get Started with QuoteCreator + Clio</h2>
+
+            <p>
+                QuoteCreator's Clio integration is included in the base app—no additional subscription or per-user fees. Here's what you get:
+            </p>
+
+            <ul>
+                <li><strong>$12.99 one-time purchase</strong> (no recurring subscription)</li>
+                <li><strong>Unlimited estimates</strong> and Clio uploads</li>
+                <li><strong>Secure OAuth 2.0 authentication</strong></li>
+                <li><strong>Matter sync and search</strong></li>
+                <li><strong>One-tap PDF uploads to client files</strong></li>
+                <li><strong>Professional support</strong> via email</li>
+            </ul>
+
+            <p>
+                Ready to streamline your legal billing workflow? <a href="/quotecreator/">Download QuoteCreator now</a> and connect your Clio account in under 2 minutes.
+            </p>
+
+            <p>
+                For setup help, check out our <a href="/quotecreator/setup/">Complete Clio Setup Guide</a> with step-by-step screenshots and troubleshooting tips.
+            </p>
+        </article>
+
+        <section class="share-section">
+            <h3>Share This Article</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=QuoteCreator%20%2B%20Clio%20Integration%3A%20Seamless%20Estimates%20for%20Legal%20Professionals&url=https://lexopoly.com/quotecreator/blog/quotecreator-clio-integration/&via=lexopoly" target="_blank" rel="noopener" class="share-btn twitter">
+                    𝕏 Share on X
+                </a>
+                <button onclick="copyLink()" class="share-btn copy">
+                    📋 Copy Link
+                </button>
+            </div>
+        </section>
+
+        <section class="related-articles">
+            <h2>Related Articles</h2>
+            <div class="related-grid">
+                <a href="/quotecreator/blog/create-professional-estimates/" class="related-card">
+                    <h3>How to Create Professional Estimates in 2 Minutes</h3>
+                    <p>Guide for contractors and service providers using QuoteCreator's mobile workflow.</p>
+                </a>
+                <a href="/quotecreator/blog/legal-billing-made-simple/" class="related-card">
+                    <h3>Legal Billing Made Simple</h3>
+                    <p>From consultation to invoice in one app - complete QuoteCreator workflow guide.</p>
+                </a>
+                <a href="/quotecreator/setup/" class="related-card">
+                    <h3>Complete Clio Setup Guide</h3>
+                    <p>Step-by-step instructions with screenshots for connecting QuoteCreator to Clio.</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuoteCreator</h4>
+                <div class="footer-links">
+                    <a href="/quotecreator/">Home</a>
+                    <a href="/quotecreator/blog/">Blog</a>
+                    <a href="/quotecreator/privacy/">Privacy Policy</a>
+                    <a href="/quotecreator/setup/">Clio Setup Guide</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <div class="footer-links">
+                    <a href="/">Lexopoly Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/support/">Support</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>More Products</h4>
+                <div class="footer-links">
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-links">
+                    <a href="https://x.com/lexopoly" target="_blank" rel="noopener">𝕏 Follow on X</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMain = document.getElementById('nav-main');
+            navMain.classList.toggle('show');
+        }
+
+        function toggleMobileDropdown(element) {
+            if (window.innerWidth <= 968) {
+                element.classList.toggle('mobile-open');
+            }
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = event.target;
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const navMain = document.getElementById('nav-main');
+
+            if (!navContainer.contains(event.target) && navMain.classList.contains('show')) {
+                navMain.classList.remove('show');
+            }
+        });
+
+        // Close mobile dropdowns when resizing to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 968) {
+                document.querySelectorAll('.nav-dropdown.mobile-open').forEach(dropdown => {
+                    dropdown.classList.remove('mobile-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
