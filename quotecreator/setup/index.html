@@ -536,9 +536,12 @@
             </div>
 
             <div class="step-box">
-                <h3><span class="step-number">2</span> Authorize QuoteCreator</h3>
+                <h3><span class="step-number">2</span> Complete Manual OAuth Authorization</h3>
+                <p><strong>⚠️ Important:</strong> This is a manual copy/paste process. QuoteCreator will open your browser, then you'll need to copy the authorization code back to the app.</p>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2A: Authorize in Your Browser</h4>
                 <ol>
-                    <li>You'll be redirected to the <strong>Clio login page</strong> in your browser</li>
+                    <li>QuoteCreator automatically <strong>opens your browser</strong> to the Clio authorization page</li>
                     <li>Enter your <strong>Clio email and password</strong> (we never see this)</li>
                     <li>Review the permissions QuoteCreator is requesting:
                         <ul>
@@ -546,9 +549,46 @@
                             <li><strong>Write documents:</strong> To upload estimate PDFs to matters</li>
                         </ul>
                     </li>
-                    <li>Tap <strong>Allow Access</strong> to authorize the connection</li>
+                    <li>Click <strong>"Allow Access"</strong> to authorize</li>
                 </ol>
-                <p><strong>🔐 Security Note:</strong> Your Clio password stays with Clio—we only receive a secure access token that allows QuoteCreator to perform the actions you approve.</p>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2B: Copy Code from "Can't Reach This Site" Page</h4>
+                <ol start="5">
+                    <li>After clicking "Allow", your browser will show <strong>"Can't reach this site"</strong> or similar error</li>
+                    <li><strong>This is normal!</strong> Look at the <strong>URL in your browser's address bar</strong></li>
+                    <li>The URL will look like: <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">http://127.0.0.1:5001/callback?code=AbCdEf123...</code></li>
+                    <li><strong>Copy the entire URL</strong> from the address bar (or just the code after <code>code=</code>)</li>
+                </ol>
+
+                <div class="highlight-box" style="margin-top: 1.5rem; background: #fffbeb; border-left-color: var(--warning);">
+                    <p><strong>📱 What You'll See in Your Browser:</strong></p>
+                    <p style="margin-bottom: 0.5rem;">After clicking "Allow Access", the browser shows:</p>
+                    <ul style="margin-bottom: 0; margin-left: 1.5rem;">
+                        <li><strong>"This site can't be reached"</strong> or <strong>"Unable to connect"</strong></li>
+                        <li>URL in address bar: <code style="background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85rem;">http://127.0.0.1:5001/callback?code=...</code></li>
+                        <li><strong>Don't close this page yet!</strong> You need to copy the URL first</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2C: Paste Code Into QuoteCreator</h4>
+                <ol start="9">
+                    <li><strong>Switch back to QuoteCreator</strong> (use app switcher or tap QuoteCreator icon)</li>
+                    <li>You'll see <strong>"Paste Authorization Code"</strong> screen with a text field</li>
+                    <li><strong>Paste the URL or code</strong> into the field (QuoteCreator will extract the code automatically)</li>
+                    <li>Tap <strong>"Continue"</strong> to complete authorization</li>
+                </ol>
+
+                <div class="warning-box" style="margin-top: 1.5rem;">
+                    <p><strong>💡 Pro Tips:</strong></p>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Split-screen mode:</strong> If your device supports it, keep QuoteCreator and browser visible at once</li>
+                        <li><strong>Copy the entire URL:</strong> Don't worry about extracting just the code—paste the whole URL and QuoteCreator will parse it</li>
+                        <li><strong>Address bar, not error message:</strong> Copy from the address bar at the top, not the error text on the page</li>
+                        <li><strong>Codes expire quickly:</strong> If it doesn't work, start over from Step 1 within a few minutes</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 1.5rem;"><strong>🔐 Security Note:</strong> Your Clio password stays with Clio—we only receive a secure access token that allows QuoteCreator to perform the actions you approve.</p>
             </div>
 
             <div class="step-box">
