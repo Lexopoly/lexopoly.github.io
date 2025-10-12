@@ -901,15 +901,15 @@
             });
         });
 
-        // Track CTA clicks from pricing (with urgency messaging)
+        // Track CTA clicks from pricing
         document.querySelectorAll('a[href="/signup/"]').forEach(btn => {
             btn.addEventListener('click', () => {
-                trackEvent('conversion', 'pricing_to_signup_urgency', btn.textContent.trim());
+                trackEvent('conversion', 'pricing_to_signup', btn.textContent.trim());
             });
         });
 
         // Track urgency banner visibility
-        trackEvent('urgency', 'launch_pricing_banner_view', 'October_31_deadline');
+        // trackEvent('urgency', 'launch_pricing_banner_view', 'October_31_deadline');
 
         document.querySelectorAll('a[href="/contact/"]').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1061,19 +1061,20 @@
                 Start free with 5 minutes monthly. Scale with volume discounts. Professional local transcription with no hidden fees or per-minute charges.
             </p>
             <!-- Launch Pricing Banner -->
-            <div style="background: linear-gradient(135deg, #2f7d32 0%, #1b5e20 100%); color: white; padding: 1rem 2rem; border-radius: 12px; margin: 2rem auto; max-width: 700px; box-shadow: 0 8px 24px rgba(47,125,50,0.3);">
+            <!-- <div style="background: linear-gradient(135deg, #2f7d32 0%, #1b5e20 100%); color: white; padding: 1rem 2rem; border-radius: 12px; margin: 2rem auto; max-width: 700px; box-shadow: 0 8px 24px rgba(47,125,50,0.3);">
                 <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.9; margin-bottom: 0.25rem;">🎉 Launch Pricing - Limited Time</div>
                 <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;">Lock in founding member rates before prices increase</div>
                 <div style="font-size: 0.9rem; opacity: 0.9;">Current pricing guaranteed for life when you sign up by October 31, 2025</div>
-            </div>
+            </div> -->
         </div>
 
         <section class="pricing-tiers">
-            <div style="text-align: center; margin-bottom: 2rem; padding: 1rem; background: #fff9e6; border-left: 4px solid #d97706; border-radius: 8px;">
+            <!-- Early Adopter Banner -->
+            <!-- <div style="text-align: center; margin-bottom: 2rem; padding: 1rem; background: #fff9e6; border-left: 4px solid #d97706; border-radius: 8px;">
                 <p style="margin: 0; color: #92400e; font-weight: 500;">
                     ⏰ <strong>Early Adopter Advantage:</strong> Join the first 100 customers to lock in lifetime founding member pricing. <span style="color: #d97706; font-weight: 600;">23 spots remaining</span>
                 </p>
-            </div>
+            </div> -->
             <div class="tiers-grid">
                 <!-- Freemium Tier -->
                 <div class="tier-card">
@@ -1104,7 +1105,7 @@
                         <li>Email support</li>
                         <li>Local processing privacy</li>
                     </ul>
-                    <a href="/signup/" class="tier-cta">Lock In Founding Rate - Start Today →</a>
+                    <a href="/signup/" class="tier-cta">Start Professional Plan →</a>
                 </div>
 
                 <!-- Team Tier -->
@@ -1121,7 +1122,7 @@
                         <li>Dedicated account rep</li>
                     </ul>
                     <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">*Additional advanced features and optional plugins in development</p>
-                    <a href="/signup/" class="tier-cta">Save 13% Now - Start Your Team →</a>
+                    <a href="/signup/" class="tier-cta">Start Team Plan →</a>
                 </div>
 
                 <!-- Business Tier -->
@@ -1138,7 +1139,7 @@
                         <li>Quarterly business reviews</li>
                     </ul>
                     <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">*Additional advanced features and optional plugins in development</p>
-                    <a href="/signup/" class="tier-cta">Claim 25% Savings - Start Now →</a>
+                    <a href="/signup/" class="tier-cta">Start Business Plan →</a>
                 </div>
 
                 <!-- Enterprise Tier -->
@@ -1154,7 +1155,7 @@
                         <li>Advanced integration planning</li>
                         <li>Dedicated customer success manager</li>
                     </ul>
-                    <a href="/contact/" class="tier-cta secondary">Get Custom Quote - Limited Availability →</a>
+                    <a href="/contact/" class="tier-cta secondary">Get Custom Quote →</a>
                 </div>
             </div>
         </section>
