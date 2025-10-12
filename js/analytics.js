@@ -143,9 +143,9 @@ class LocalTranscribeAnalytics {
         if (!this.consentGiven) return;
 
         // Initialize Google Analytics 4
-        const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with your GA4 measurement ID
+        const GA4_MEASUREMENT_ID = 'G-N29Z7B6T5T';
 
-        if (typeof gtag !== 'undefined' && GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+        if (typeof gtag !== 'undefined') {
             gtag('config', GA4_MEASUREMENT_ID, {
                 'send_page_view': false // We'll send pageviews manually with attribution
             });
