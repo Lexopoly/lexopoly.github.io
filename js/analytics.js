@@ -30,9 +30,6 @@ class LocalTranscribeAnalytics {
 
         // Set up event listeners
         this.setupEventListeners();
-
-        // Try to sync any offline events
-        this.syncOfflineEvents();
     }
 
     generateSessionId() {
@@ -327,22 +324,7 @@ class LocalTranscribeAnalytics {
     }
 
     sendEvent(event) {
-        // Send to local Flask backend
-        const analyticsEndpoint = '/api/track';  // Adjust URL for production
-
-        fetch(analyticsEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(event)
-        }).catch(error => {
-            console.warn('Analytics tracking failed:', error);
-            // Store locally as fallback
-            this.storeOfflineEvent(event);
-        });
-
-        // Also send to Google Analytics with attribution if available
+        // Send to Google Analytics with attribution if available
         if (typeof gtag !== 'undefined') {
             const attribution = this.attribution || this.getStoredAttribution();
 
@@ -361,47 +343,6 @@ class LocalTranscribeAnalytics {
         }
 
         console.log('Analytics Event:', event);
-    }
-
-    storeOfflineEvent(event) {
-        // Store events locally if backend is unavailable
-        const offlineEvents = JSON.parse(localStorage.getItem('lt-offline-events') || '[]');
-        offlineEvents.push(event);
-
-        // Keep only last 100 events to prevent storage bloat
-        if (offlineEvents.length > 100) {
-            offlineEvents.splice(0, offlineEvents.length - 100);
-        }
-
-        localStorage.setItem('lt-offline-events', JSON.stringify(offlineEvents));
-    }
-
-    syncOfflineEvents() {
-        const offlineEvents = JSON.parse(localStorage.getItem('lt-offline-events') || '[]');
-        if (offlineEvents.length === 0) return;
-
-        const analyticsEndpoint = '/api/track';
-
-        // Try to send each offline event
-        offlineEvents.forEach(async (event, index) => {
-            try {
-                await fetch(analyticsEndpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(event)
-                });
-
-                // Remove successful events
-                offlineEvents.splice(index, 1);
-            } catch (error) {
-                console.warn('Failed to sync offline event:', error);
-            }
-        });
-
-        // Update localStorage
-        localStorage.setItem('lt-offline-events', JSON.stringify(offlineEvents));
     }
 
     // Utility methods for business intelligence
