@@ -12,8 +12,8 @@
         gtag('js', new Date());
         // Note: Config is called in analytics.js with attribution data
     </script>
-    <title>Contact LocalTranscribe - Get in Touch with Our Team</title>
-    <meta name="description" content="Contact LocalTranscribe for sales inquiries, technical support, partnerships, or general questions. Multiple ways to reach our professional transcription software team.">
+    <title>Contact Lexopoly - Get in Touch with Our Team</title>
+    <meta name="description" content="Contact Lexopoly for sales inquiries, technical support, partnerships, or questions about LocalTranscribe or QuoteCreator. Multiple ways to reach our team.">
     <style>
         * {
             margin: 0;
@@ -766,7 +766,7 @@
             <h1>Contact Us</h1>
             <p class="subtitle">
                 Get in touch with our team for sales inquiries, technical support, partnerships,
-                or any questions about LocalTranscribe professional transcription software.
+                or any questions about LocalTranscribe, QuoteCreator, or our other products.
             </p>
         </section>
 
@@ -777,7 +777,7 @@
                 <div class="contact-card">
                     <span class="contact-icon">💼</span>
                     <h3>Sales & Enterprise</h3>
-                    <p>Interested in LocalTranscribe for your organization? Questions about volume pricing, enterprise features, or custom solutions?</p>
+                    <p>Interested in Lexopoly products for your organization? Questions about volume pricing, enterprise features, or custom solutions?</p>
                     <div class="contact-details">sales@lexopoly.com</div>
                     <p style="font-size: 0.9rem; color: var(--success);">Response within 2 business hours</p>
                 </div>
@@ -785,7 +785,7 @@
                 <div class="contact-card">
                     <span class="contact-icon">🔧</span>
                     <h3>Technical Support</h3>
-                    <p>Need help with installation, troubleshooting, or technical questions about LocalTranscribe?</p>
+                    <p>Need help with installation, troubleshooting, or technical questions about our products?</p>
                     <div class="contact-details">support@lexopoly.com</div>
                     <p style="font-size: 0.9rem; color: var(--success);">Response within 4 business hours</p>
                 </div>
@@ -793,7 +793,7 @@
                 <div class="contact-card">
                     <span class="contact-icon">🤝</span>
                     <h3>Partnerships</h3>
-                    <p>Interested in partnering with LocalTranscribe? Integration opportunities, reseller programs, or strategic partnerships.</p>
+                    <p>Interested in partnering with Lexopoly? Integration opportunities, reseller programs, or strategic partnerships.</p>
                     <div class="contact-details">partnerships@lexopoly.com</div>
                     <p style="font-size: 0.9rem; color: var(--warning);">Response within 1-2 business days</p>
                 </div>
@@ -837,6 +837,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="product">Product *</label>
+                            <select id="product" name="product" class="form-select" required>
+                                <option value="">Select a product</option>
+                                <option value="localtranscribe">LocalTranscribe</option>
+                                <option value="quotecreator">QuoteCreator</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label for="inquiry-type">Inquiry Type *</label>
                             <select id="inquiry-type" name="inquiry-type" class="form-select" required>
                                 <option value="">Select an option</option>
@@ -861,7 +871,7 @@
                         </div>
 
                         <!-- Hidden field for analytics tracking -->
-                        <input type="hidden" name="_subject" id="form-subject" value="LocalTranscribe Contact Form">
+                        <input type="hidden" name="_subject" id="form-subject" value="Lexopoly Contact Form">
                         <input type="hidden" name="_next" value="https://lexopoly.com/contact/?success=true">
                         <input type="hidden" name="_captcha" value="false">
 
