@@ -1925,6 +1925,40 @@ Website ready for social media traffic with professional presentation, zero tech
 **Git Commits**:
 - 4d96d99: Complete X/Reddit social media integration and fix broken batch update
 - 2097189: Remove overpromising security statement from contact page
+- f0f46ad: Update SUPER_BUS_OPS Phase 13.9 documentation
+
+### **🔴 ACTIVE BLOCKER: REDDIT ACCOUNT BANNED (2025-10-12)**
+
+**Issue**: u/Lexopoly account banned immediately after creation
+- Status: Account banned (received welcome email, then banned on first login)
+- Impact: Reddit tour strategy blocked, social media launch partially delayed
+- Severity: Medium (X still active, Reddit was secondary channel)
+
+**Possible Causes**:
+1. New account automated spam detection
+2. IP/network flagged by Reddit anti-spam systems
+3. Username similarity to previous banned accounts
+4. Automated bot detection (account created too recently)
+
+**Resolution Steps**:
+1. **Check Ban Reason**:
+   - Check email for Reddit ban notification with reason
+   - Log in to reddit.com and check for suspension message details
+   - Look for automated messages in Reddit inbox
+
+2. **Appeal Process**:
+   - Visit: https://www.reddit.com/appeals
+   - Select "I want to appeal a suspension"
+   - Explain: Professional business account, not spam/bot
+   - Reference: Legitimate company (lexopoly.com), product announcements only
+
+3. **Alternative Approaches**:
+   - Wait 24-48 hours and appeal (some bans are auto-reversed)
+   - Create account from different IP/network if permanent
+   - Consider using Reddit ads instead of organic posting initially
+   - Focus on X (@lexopoly) as primary social channel
+
+**Workaround**: Proceed with X-only social launch, defer Reddit strategy until appeal resolved
 
 ### **PRE-LAUNCH PREPARATION COMPLETE** ✅
 
@@ -1937,8 +1971,8 @@ Website ready for social media traffic with professional presentation, zero tech
 - ✅ Conversion optimization complete
 
 **Social Media Infrastructure**:
-- ✅ X account created (@lexopoly)
-- ✅ Reddit account created (u/Lexopoly)
+- ✅ X account created (@lexopoly) - ACTIVE
+- 🔴 Reddit account created (u/Lexopoly) - BANNED (appeal pending)
 - ✅ Company branding established
 - ✅ Social media cross-links on website (12 pages integrated - subtle approach)
 - ⏳ LinkedIn company page (pending - Tier 1 priority)
