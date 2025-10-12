@@ -1864,9 +1864,9 @@ Website ready for social media traffic with professional presentation, zero tech
 
 ---
 
-**Last Updated**: 2025-10-11 (Social Media Presence Established)
+**Last Updated**: 2025-10-12 (Website Social Integration Complete)
 **Current Phase**: 13.9 - Social Media Launch
-**Status**: X account created, website 100% ready for traffic
+**Status**: X account active (@lexopoly), website social integration complete, ready for traffic
 
 ---
 
@@ -1893,10 +1893,38 @@ Website ready for social media traffic with professional presentation, zero tech
 - Strategy: Official business account for product announcements, AMAs, Show & Tell posts
 - Note: Started with auto-generated username (Cheap_Warthog_5142), recreated with professional handle
 
-**Website Social Integration Points**:
-- Contact page: Add X handle for customer support
-- About page: Link to social media profiles
-- Footer: Social media icon links (future enhancement)
+**Website Social Integration Points** ✅:
+- ✅ Contact page: X handle added to business info section (@lexopoly)
+- ✅ Meta tags: Twitter handle fixed (@Lexopoly → @lexopoly)
+- ✅ Unified template footers: Connect section with X + Reddit (homepage, localtranscribe, quotecreator)
+- ✅ Simple template footers: Social links added to 9 pages (pricing, about, court-reporters, support, demo, dictation, journalists, lawyers, privacy)
+- ✅ Security claims: Removed overpromising "confidential and secure" statement from contact page
+- ⏳ Additional pages: 8+ pages without social links (keeping subtle per strategy)
+
+### **BROKEN BATCH UPDATE REPAIR (2025-10-12)** ✅
+
+**Issue**: Previous sed batch update failed due to Unicode escape sequence incompatibility
+- sed doesn't support `\U` Unicode escapes → literal "U0001D54F" appeared in HTML
+- Pattern matching too broad → links inserted in nav dropdowns instead of just footers
+
+**7 Pages Fixed**:
+1. court-reporters/index.html - Removed nav dropdown links, fixed footer Unicode
+2. support/index.html - Removed nav dropdown links, fixed footer Unicode
+3. demo/index.html - Removed nav dropdown links, fixed footer Unicode
+4. dictation/index.html - Removed nav dropdown links, added footer links
+5. journalists/index.html - Removed nav dropdown links, fixed footer Unicode
+6. lawyers/index.html - Fixed footer Unicode only (no nav issue)
+7. privacy/index.html - Fixed footer Unicode only
+
+**Fix Applied**:
+- Replaced literal "U0001D54F" with actual 𝕏 Unicode character
+- Replaced literal "U0001F4F1" with actual 📱 Unicode character
+- Removed incorrectly placed nav dropdown social links
+- All links use security best practices: `target="_blank" rel="noopener"`
+
+**Git Commits**:
+- 4d96d99: Complete X/Reddit social media integration and fix broken batch update
+- 2097189: Remove overpromising security statement from contact page
 
 ### **PRE-LAUNCH PREPARATION COMPLETE** ✅
 
@@ -1912,11 +1940,11 @@ Website ready for social media traffic with professional presentation, zero tech
 - ✅ X account created (@lexopoly)
 - ✅ Reddit account created (u/Lexopoly)
 - ✅ Company branding established
+- ✅ Social media cross-links on website (12 pages integrated - subtle approach)
 - ⏳ LinkedIn company page (pending - Tier 1 priority)
 - ⏳ YouTube channel (pending - Tier 2 priority)
 - ⏳ Content calendar (pending)
 - ⏳ Launch announcement drafts (pending)
-- ⏳ Social media cross-links on website (pending)
 
 ### **SOCIAL LAUNCH STRATEGY**
 
