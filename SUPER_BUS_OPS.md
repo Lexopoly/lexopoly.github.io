@@ -1986,7 +1986,29 @@ Website ready for social media traffic with professional presentation, zero tech
 
 **Lesson Learned**: Reddit requires 2-4 weeks of authentic community engagement before ANY product mentions. FreeKarma subs = instant permanent ban.
 
-**Current Strategy**: Abandon Reddit organic growth, focus on X (@lexopoly) + consider Reddit ads later
+### **APPEAL STATUS** (2025-10-12)
+
+**Appeal Submitted**: October 12, 2025
+- Platform: reddit.com/appeals
+- Appeal Text: "Lexopoly LLC (lexopoly.com) - legitimate software company. New to Reddit, posted too quickly about our products without building karma first. Understand this triggered spam detection. Genuine business account for customer support. Will follow guidelines."
+- Confirmation Received: ✅ "Appeal received - We will review your submission and be in touch if the status of your account's restriction is changed."
+
+**Expected Timeline**:
+- Normal response: 2-5 business days
+- Can take up to 2 weeks for complex cases
+- 6-month window to appeal from ban date
+
+**Key Note from Confirmation**: "Please note that suspensions which were correctly issued will not be reversed or lifted prematurely."
+- Translation: If ban was legitimate (FreeKarma + commercial hunting), it will be upheld
+- Only reversed if Reddit determines it was incorrectly flagged
+
+**Next Steps**:
+1. Wait 3-5 business days for response
+2. Check support.reddit.com/contact for status updates
+3. If no response after 5 days: Submit ONE follow-up inquiry
+4. If denied: Wait 30+ days before attempting new account from different IP
+
+**Current Strategy**: Focus on X (@lexopoly) as primary channel while appeal pending. Prepare Reddit ads strategy as backup.
 
 ### **PRE-LAUNCH PREPARATION COMPLETE** ✅
 
