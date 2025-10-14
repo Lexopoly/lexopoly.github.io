@@ -45,13 +45,13 @@ First use of site switching protocol after creation. User making product changes
 
 **Rollback Command** (if needed):
 ```bash
-git show site-full-backup-20251012-174500:index.html > index.html
+git show site-full-backup-20251014-013626:index.html > index.html
 git add index.html
 git commit -m "fix: Rollback from construction mode (entry #1)"
 git push
 ```
 
-**Git Commit**: [To be filled after commit]
+**Git Commit**: `7de3e50` (feat: Switch to under-construction mode - Entry #1)
 
 ---
 
