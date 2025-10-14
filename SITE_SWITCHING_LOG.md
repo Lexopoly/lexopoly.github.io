@@ -9,19 +9,19 @@
 ## 🔴 SWITCH #1: SITE OFF - 2025-10-12 17:45 UTC
 
 **Action**: SITE_OFF (Full Site → Under Construction)
-**Timestamp**: 2025-10-12T17:45:00Z
+**Timestamp**: 2025-10-14T01:36:26Z
 **Operator**: Claude Code (user: rain)
 **Git State Before Switch**:
-- Commit: `99ff2cc` (feat: Add site switching protocol)
+- Commit: `b8f4a75` (feat: Add immutable ledger requirement)
 - Branch: `main`
 - Status: Clean working tree
 
-**Reason**: Visual testing of under-construction page. User requested site OFF to view construction mode appearance on live site.
+**Reason**: Visual testing of under-construction page. User requested site OFF to view construction mode appearance on live site. First use of site switching protocol after immutable ledger implementation.
 
 **Backup Created**:
-- Git Tag: `site-full-backup-20251012-174500`
-- Backup File: `index.full-backup.html` (1615 lines, 53847 bytes)
-- Tag Message: "Full site backup before construction mode - 2025-10-12T17:45:00Z"
+- Git Tag: `site-full-backup-20251014-013626`
+- Backup File: `index.full-backup.html` (will be created, ~53KB)
+- Tag Message: "Full site backup before construction mode - 2025-10-14T01:36:26Z"
 
 **State Transition**:
 - Previous: `index.html` = Full site (products, navigation, 6 verticals, blog)
