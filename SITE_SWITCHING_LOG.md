@@ -59,3 +59,57 @@ git push
 ---
 
 <!-- APPEND NEW ENTRIES BELOW - DO NOT EDIT ABOVE -->
+
+## 🟢 SWITCH #2: SITE ON - 2025-10-14 09:27 EST
+
+**Action**: SITE_ON (Under Construction → Full Site)
+**Timestamp**: 2025-10-14T13:27:00Z
+**Operator**: CC-WEB (Claude Code, user: rain)
+**Git State Before Switch**:
+- Commit: `68c2132` (chore: Switch to construction mode for legal review)
+- Branch: `main`
+- Status: Clean (1 untracked file: INTEGRATION_PLAYBOOK.md)
+
+**Reason** (required, short): Restore full site after ComplianceLogger legal review complete
+**Additional Info** (optional): ComplianceLogger legal framework implementation complete (Entry #15 in LEXOPOLY_SUPER_BUS.jsonl). Site was in construction mode for legal review period. Restoring full site with LocalTranscribe + QuoteCreator products. ComplianceLogger integration available but not yet added to public navigation pending beta launch completion (Stripe webhook implementation).
+
+**Restore Source**:
+- Backup File: `index.full-backup.html` (53KB)
+- Git Tag Reference: `site-full-backup-20251014-013626`
+
+**State Transition**:
+- Previous: `index.html` = Under construction (minimal page, 2 contact methods)
+- New: `index.html` = Full site (2 products: LocalTranscribe + QuoteCreator, 6 industry verticals, pricing, unified navigation)
+
+**Files Modified**:
+- `index.html` (restored from index.full-backup.html)
+- `SITE_SWITCHING_LOG.md` (this log entry added)
+
+**Verification Checklist**:
+- [ ] Full homepage displays correctly
+- [ ] Navigation dropdowns work (Products, Solutions, About)
+- [ ] Product cards visible (LocalTranscribe, QuoteCreator)
+- [ ] Mobile menu functional
+- [ ] Footer links operational
+- [ ] Analytics tracking active
+
+**Context**:
+Second site switch. CC-WEB (Webmaster) restoring site after legal review period complete. Full site includes professional navigation system (17/17 pages transformed per NAVIGATION_ROLLOUT_METRICS_20251010.md). ComplianceLogger product pages exist but not yet linked pending Stripe webhook implementation (Super Bus entry: WEBMASTER_REQUEST_STRIPE_WEBHOOK, HIGH priority, 30-45 min estimated).
+
+**Next Steps After Verification**:
+1. Test live site functionality
+2. Implement ComplianceLogger Stripe webhook (blocking beta launch)
+3. Add ComplianceLogger to public navigation after webhook complete
+4. Update webmaster bus ops with completion status
+
+**Rollback Command** (if needed):
+```bash
+cp index.construction.html index.html
+git add index.html SITE_SWITCHING_LOG.md
+git commit -m "fix: Rollback to construction mode (entry #2 rollback)"
+git push
+```
+
+**Git Commit**: _[To be filled after commit]_
+
+---
