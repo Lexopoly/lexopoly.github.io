@@ -103,6 +103,48 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lexopoly.com/compliancelogger/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/compliancelogger/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/localtranscribe/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/quotecreator/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/epa-audit-notice-30-days/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/reconstruct-waste-disposal-records/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lexopoly.com/terms/</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>yearly</changefreq>

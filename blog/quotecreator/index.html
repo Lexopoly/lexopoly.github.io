@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteCreator Articles | Professional Estimate & Quote Guides | Lexopoly Blog</title>
+    <meta name="description" content="Expert guides on professional estimates, quote creation best practices, mobile quoting workflows, and client communication strategies for contractors and service professionals.">
+    <meta name="keywords" content="QuoteCreator, professional estimates, quote creation, contractor quotes, service quotes, estimate best practices">
+    <link rel="canonical" href="https://lexopoly.com/blog/quotecreator/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="QuoteCreator Articles - Professional Estimate Guides">
+    <meta property="og:description" content="Expert guides on professional estimates, quote creation, and client communication for contractors and service professionals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lexopoly.com/blog/quotecreator/">
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+
+      function trackEvent(category, action, label) {
+          gtag('event', action, {
+              'event_category': category,
+              'event_label': label
+          });
+      }
+    </script>
+
+    <style>
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --compliancelogger: #2b6cb0;
+            --localtranscribe: #b45309;
+            --quotecreator: #2f7d32;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-main {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-main a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-main a:hover {
+            color: var(--accent);
+        }
+
+        .btn-primary-nav {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-nav:hover {
+            background: var(--lexopoly-primary);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .category-header {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: var(--quotecreator);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .category-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon h2 {
+            font-size: 1.8rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .topic-item {
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--quotecreator);
+        }
+
+        .topic-title {
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .topic-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--quotecreator) 0%, #1e5e23 100%);
+            color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta-primary {
+            background: white;
+            color: var(--quotecreator);
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-cta-secondary:hover {
+            background: white;
+            color: var(--quotecreator);
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.98);
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 968px) {
+            .nav-main {
+                display: none;
+            }
+
+            .category-title {
+                font-size: 1.8rem;
+            }
+
+            .coming-soon-topics {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                Lexopoly
+                <span class="logo-subtitle">Professional Software</span>
+            </a>
+            <div class="nav-main">
+                <a href="/blog/">Blog</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/demo/">Demo</a>
+                <a href="/#products" class="btn-primary-nav">Explore Products</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/blog/">Blog</a> / QuoteCreator
+        </div>
+
+        <div class="category-header">
+            <span class="category-badge">QuoteCreator</span>
+            <h1 class="category-title">Professional Estimate & Quote Guides</h1>
+            <p class="category-description">
+                Expert guides on creating professional estimates, quote best practices, mobile quoting workflows, client communication strategies, and pricing techniques for contractors, freelancers, and service professionals.
+            </p>
+        </div>
+
+        <div class="coming-soon">
+            <div class="coming-soon-icon">💼</div>
+            <h2>Articles Coming Soon</h2>
+            <p>We're creating in-depth guides on professional quote creation, pricing strategies, and client communication. Check back soon!</p>
+
+            <div class="coming-soon-topics">
+                <div class="topic-item">
+                    <div class="topic-title">📊 Professional Quote Best Practices</div>
+                    <div class="topic-description">How to structure quotes that win clients and protect your margins</div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-title">📱 Mobile Quoting Workflow</div>
+                    <div class="topic-description">Create and send professional quotes from the job site in under 60 seconds</div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-title">💰 Pricing Strategy Guide</div>
+                    <div class="topic-description">How to price services for profit without losing clients</div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-title">✉️ Client Communication Templates</div>
+                    <div class="topic-description">Email and text templates for quote follow-up and conversion</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Create Professional Quotes in 60 Seconds</h2>
+            <p>QuoteCreator helps contractors, freelancers, and service professionals create polished quotes on-site—no complex software, just fast results.</p>
+            <div class="cta-buttons">
+                <a href="https://quotecreator.gumroad.com/l/quotecreator" class="btn-cta btn-cta-primary" onclick="trackEvent('conversion', 'category_cta_click', 'quotecreator_buy')">Buy QuoteCreator - $12.99</a>
+                <a href="/demo/" class="btn-cta btn-cta-secondary" onclick="trackEvent('conversion', 'category_cta_click', 'quotecreator_demo')">Watch Demo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Lexopoly LLC. Professional software for professionals.</p>
+            <div class="footer-links">
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Service</a>
+                <a href="/support/">Support</a>
+                <a href="https://twitter.com/lexopoly">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
