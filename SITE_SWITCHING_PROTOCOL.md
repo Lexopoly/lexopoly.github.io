@@ -17,11 +17,39 @@ Before switching, ensure:
 2. Working directory is clean (`git status` shows no uncommitted changes)
 3. You have a recent backup tag (created automatically by this protocol)
 
+## 📖 Immutable Ledger Requirement
+
+**CRITICAL**: Every site switch MUST be logged in `SITE_SWITCHING_LOG.md`
+
+**Required Information**:
+- Timestamp (ISO 8601 format)
+- Action (SITE_OFF or SITE_ON)
+- Operator (who made the change)
+- Reason/Context (why switching)
+- Git commit hash (before switch)
+- Git tag created (backup reference)
+- Previous state → New state
+- Files modified
+- Verification checklist
+
+**Protocol**:
+- ✅ APPEND new entries only
+- ❌ NEVER edit existing entries
+- ✅ Each entry is permanent record
+- ✅ Includes rollback command for that specific switch
+
+See `SITE_SWITCHING_LOG.md` for complete ledger history.
+
 ## 🔄 Switching Procedures
 
 ### **SWITCH TO UNDER-CONSTRUCTION MODE**
 
 ```bash
+# 0. CREATE LOG ENTRY in SITE_SWITCHING_LOG.md
+# - Add new section with timestamp, reason, operator, git state
+# - Leave Git Commit field blank (fill after commit)
+# - Follow immutable ledger format (see existing entries)
+
 # 1. Verify clean working tree
 git status
 
@@ -35,18 +63,25 @@ cp index.html index.full-backup.html
 # 4. Switch to construction mode
 cp index.construction.html index.html
 
-# 5. Commit the switch
-git add index.html index.full-backup.html
+# 5. Commit the switch (includes log entry)
+git add index.html index.full-backup.html SITE_SWITCHING_LOG.md
 git commit -m "feat: Switch to under-construction mode
 
 Minimal holding page active while product changes in progress.
 Full site backed up as index.full-backup.html
 
+See SITE_SWITCHING_LOG.md for complete switch record.
+
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>"
 
-# 6. Push to GitHub Pages
+# 6. Update log entry with commit hash
+# - Edit SITE_SWITCHING_LOG.md
+# - Fill in "Git Commit" field with hash from previous commit
+# - Commit the log update
+
+# 7. Push to GitHub Pages
 git push
 git push --tags
 
@@ -54,32 +89,46 @@ git push --tags
 echo "✅ Site switched to UNDER-CONSTRUCTION mode"
 echo "Full site backed up: index.full-backup.html"
 echo "Backup tag: site-full-backup-$DATE"
+echo "⚠️  Remember to update Git Commit field in SITE_SWITCHING_LOG.md"
 ```
 
 ### **SWITCH TO FULL SITE MODE**
 
 ```bash
+# 0. CREATE LOG ENTRY in SITE_SWITCHING_LOG.md
+# - Add new section with timestamp, reason, operator, git state
+# - Leave Git Commit field blank (fill after commit)
+# - Follow immutable ledger format (see existing entries)
+
 # 1. Verify clean working tree
 git status
 
 # 2. Restore full site
 cp index.full-backup.html index.html
 
-# 3. Commit the switch
-git add index.html
+# 3. Commit the switch (includes log entry)
+git add index.html SITE_SWITCHING_LOG.md
 git commit -m "feat: Restore full site from construction mode
 
 Full site restored from backup.
+
+See SITE_SWITCHING_LOG.md for complete switch record.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>"
 
-# 4. Push to GitHub Pages
+# 4. Update log entry with commit hash
+# - Edit SITE_SWITCHING_LOG.md
+# - Fill in "Git Commit" field with hash from previous commit
+# - Commit the log update
+
+# 5. Push to GitHub Pages
 git push
 
 # Done! Full site is live
 echo "✅ Site switched to FULL SITE mode"
+echo "⚠️  Remember to update Git Commit field in SITE_SWITCHING_LOG.md"
 ```
 
 ## 🚨 Emergency Rollback
