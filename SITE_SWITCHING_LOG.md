@@ -16,7 +16,8 @@
 - Branch: `main`
 - Status: Clean working tree
 
-**Reason**: Visual testing of under-construction page. User requested site OFF to view construction mode appearance on live site. First use of site switching protocol after immutable ledger implementation.
+**Reason** (required, short): Visual testing of construction page
+**Additional Info** (optional): User requested site OFF to view construction mode appearance on live site. First use of site switching protocol after immutable ledger implementation.
 
 **Backup Created**:
 - Git Tag: `site-full-backup-20251014-013626`

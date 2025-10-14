@@ -25,7 +25,8 @@ Before switching, ensure:
 - Timestamp (ISO 8601 format)
 - Action (SITE_OFF or SITE_ON)
 - Operator (who made the change)
-- Reason/Context (why switching)
+- **Reason** (required, short) - One-line why
+- **Additional Info** (optional) - Longer context if needed
 - Git commit hash (before switch)
 - Git tag created (backup reference)
 - Previous state → New state
