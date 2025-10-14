@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Features | ComplianceLogger - EPA Waste Tracking</title>
+    <meta name="description" content="Dual-mode EPA compliance: Track waste proactively or reconstruct records for audits. Photo docs, confidence tracking, CSV exports, and more.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/compliancelogger/features/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --deep-blue: #003F88;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --success-green: #388E3C;
+            --warning-yellow: #FFC107;
+            --danger-red: #D32F2F;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+
+        .nav-main {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-main a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-main a:hover {
+            color: var(--primary-orange);
+        }
+
+        .btn-nav-cta {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav-cta:hover {
+            background: #e5612f;
+            transform: translateY(-1px);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #e5612f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* SECTION */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* FEATURE DETAIL */
+        .feature-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .feature-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 1.8rem;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-visual {
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* USE CASES */
+        .use-case-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-orange);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        .use-case-card h3 {
+            color: var(--deep-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card .scenario {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card .scenario strong {
+            color: var(--primary-orange);
+        }
+
+        .use-case-card .solution {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #0056b3 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--deep-blue);
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--deep-blue);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.8;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .feature-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .nav-main {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/compliancelogger/" class="logo">ComplianceLogger</a>
+            <div class="nav-main">
+                <a href="/compliancelogger/features/">Features</a>
+                <a href="/compliancelogger/pricing/">Pricing</a>
+                <a href="/compliancelogger/contact/">Contact</a>
+                <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-nav-cta">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Powerful Features for EPA Compliance</h1>
+        <p>Everything you need to track waste disposal and prepare for EPA audits</p>
+    </section>
+
+    <div class="container">
+        <!-- DUAL MODE DEEP DIVE -->
+        <section class="section">
+            <h2>Two Modes for Every Situation</h2>
+            <p class="section-subtitle">Whether you're organized or scrambling, ComplianceLogger adapts to your needs</p>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>Mode 1: Track Waste (Proactive)</h3>
+                    <p><strong>For the organized contractor:</strong> You track waste as projects complete. You want a digital system that's better than paper logs and Excel spreadsheets.</p>
+                    <ul class="feature-list">
+                        <li>Log disposal as it happens</li>
+                        <li>Upload manifest photos immediately</li>
+                        <li>Track costs for budgeting insights</li>
+                        <li>Generate quarterly compliance reports</li>
+                        <li>Build 3-year EPA-ready archive</li>
+                        <li>Always audit-ready</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📋
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>Mode 2: EPA Audit Assistant (Reactive)</h3>
+                    <p><strong>For the emergency situation:</strong> EPA audit notice arrived. You have 30 days. Your records are incomplete or non-existent. You need help NOW.</p>
+                    <ul class="feature-list">
+                        <li>Set audit deadline countdown tracker</li>
+                        <li>Reconstruct logs from invoices and memory</li>
+                        <li>Import data from hauler invoices</li>
+                        <li>Estimate gaps from crew notes</li>
+                        <li>Mark confidence levels (transparent to EPA)</li>
+                        <li>Generate defensive reports with disclaimers</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    ⚠️
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE FEATURES -->
+        <section class="section">
+            <h2>Core Features</h2>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>1. Waste Log Management</h3>
+                    <p>Complete waste disposal tracking with all fields EPA requires under RCRA regulations.</p>
+                    <ul class="feature-list">
+                        <li>Project name and address</li>
+                        <li>Waste type classification (construction debris, hazardous, recyclable, general)</li>
+                        <li>Quantity tracking (tons, cubic yards, count)</li>
+                        <li>Disposal date and time</li>
+                        <li>GPS coordinates (optional)</li>
+                        <li>Disposal site name and address</li>
+                        <li>Hauler information and manifest numbers</li>
+                        <li>RCRA waste codes</li>
+                        <li>Cost tracking (estimated vs actual)</li>
+                        <li>Notes field for additional context</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📝
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>2. Photo Documentation</h3>
+                    <p>Visual evidence is critical for EPA audits. Upload and organize photos securely.</p>
+                    <ul class="feature-list">
+                        <li>Upload photos of waste materials before disposal</li>
+                        <li>Capture disposal site photos</li>
+                        <li>Store manifest and receipt images</li>
+                        <li>Secure cloud storage (DigitalOcean Spaces)</li>
+                        <li>Attach multiple photos per waste log</li>
+                        <li>Photos included in CSV exports</li>
+                        <li>CDN-backed fast loading</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📸
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>3. Three-Tier Confidence System</h3>
+                    <p><strong>THE KILLER FEATURE:</strong> Show EPA transparency about record quality. Based on EPA's own Audit Policy.</p>
+                    <ul class="feature-list">
+                        <li><strong>DOCUMENTED:</strong> Based on invoices, receipts, manifests (best evidence)</li>
+                        <li><strong>ESTIMATED:</strong> Calculated from project records (reasonable approximation)</li>
+                        <li><strong>RECONSTRUCTED:</strong> Best guess from memory (honest recollection)</li>
+                        <li>Color-coded badges in interface</li>
+                        <li>Automatic confidence indicators in exports</li>
+                        <li>Transparent timestamping (EPA sees when records were created)</li>
+                        <li>Legal framework: EPA Audit Policy supports good faith reconstruction</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    🎯
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>4. Advanced Reporting & Export</h3>
+                    <p>Generate reports for EPA inspectors, accountants, and internal tracking.</p>
+                    <ul class="feature-list">
+                        <li>Filter logs by project, date range, waste type</li>
+                        <li>Export individual logs to CSV</li>
+                        <li>Bulk CSV export for audit packages</li>
+                        <li>Summary statistics and analytics</li>
+                        <li>Cost analysis by waste type and project</li>
+                        <li>Date range reports (quarterly, annual)</li>
+                        <li>Confidence level breakdowns</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📊
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>5. Audit Mode Workflow</h3>
+                    <p>Special features designed specifically for EPA audit preparation.</p>
+                    <ul class="feature-list">
+                        <li>Audit deadline countdown timer</li>
+                        <li>Tracks records created during reconstruction</li>
+                        <li>"Audit Mode" badge on reconstructed logs</li>
+                        <li>Progress tracking (logs completed vs needed)</li>
+                        <li>Estimation helpers for incomplete data</li>
+                        <li>Invoice import workflow</li>
+                        <li>Transparent to regulators (shows good faith effort)</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    ⚠️
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>6. Cost Tracking & Analysis</h3>
+                    <p>Bonus feature: Track disposal costs to improve bidding accuracy and find savings.</p>
+                    <ul class="feature-list">
+                        <li>Track estimated vs actual disposal costs</li>
+                        <li>Analyze costs by waste type</li>
+                        <li>Compare costs across projects</li>
+                        <li>Identify cost-saving opportunities</li>
+                        <li>Improve bidding accuracy over time</li>
+                        <li>Export cost reports for accounting</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    💰
+                </div>
+            </div>
+        </section>
+
+        <!-- USE CASES -->
+        <section class="section">
+            <h2>Real-World Use Cases</h2>
+
+            <div class="use-case-card">
+                <h3>Use Case 1: The Emergency Audit</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> ABC Construction receives EPA inspection notice with 30 days warning. They have no waste records for past 2 years. Multiple projects with hazardous waste. Facing potential $100K+ in penalties.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with ComplianceLogger:</strong></p>
+                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Enable Audit Mode (sets 30-day countdown)</li>
+                        <li>Gather invoices from haulers, crew notes, project files</li>
+                        <li>Reconstruct logs with confidence levels (mark estimates as ESTIMATED)</li>
+                        <li>Add reconstruction notes explaining methodology</li>
+                        <li>Export CSV report for EPA inspector</li>
+                        <li>Show transparency = good faith compliance effort</li>
+                    </ol>
+                    <p style="margin-top: 1rem;"><strong>Outcome:</strong> Penalty reduction under EPA Audit Policy. Contractor shows systematic discovery of violations and prompt correction efforts.</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Use Case 2: Proactive Compliance</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> XYZ Contractors wants to avoid audit problems. Currently using Excel (inconsistent). Photos scattered across phones. No systematic tracking.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with ComplianceLogger:</strong></p>
+                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Log waste as projects complete (takes 2-3 minutes per log)</li>
+                        <li>Upload manifest photos immediately</li>
+                        <li>Track costs for budgeting insights</li>
+                        <li>Generate quarterly compliance reports</li>
+                        <li>Build 3-year record archive automatically</li>
+                    </ol>
+                    <p style="margin-top: 1rem;"><strong>Outcome:</strong> Audit-ready at all times. Reduced stress. Better cost tracking improves project margins.</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Use Case 3: Cost Tracking Bonus</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> DEF Demolition wants to track disposal costs. Currently underestimating waste disposal in bids. Losing money on disposal costs. No data to improve estimates.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with ComplianceLogger:</strong></p>
+                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Track estimated vs actual disposal costs per project</li>
+                        <li>Analyze costs by waste type (demo debris vs hazardous)</li>
+                        <li>Compare costs across similar projects</li>
+                        <li>Identify patterns and cost-saving opportunities</li>
+                        <li>Improve bidding accuracy over time</li>
+                    </ol>
+                    <p style="margin-top: 1rem;"><strong>Outcome:</strong> Compliance + better project margins. Data-driven bidding reduces cost overruns.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Ready to Get EPA-Compliant?</h2>
+            <p>Start your 7-day free trial. No credit card required.</p>
+            <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-primary">Start Free Trial</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <a href="/compliancelogger/">Home</a>
+            <a href="/compliancelogger/pricing/">Pricing</a>
+            <a href="/compliancelogger/contact/">Contact</a>
+            <a href="/compliancelogger/privacy/">Privacy</a>
+            <a href="/compliancelogger/terms/">Terms</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

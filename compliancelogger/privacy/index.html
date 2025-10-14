@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ComplianceLogger</title>
+    <meta name="description" content="ComplianceLogger privacy policy. How we collect, use, and protect your waste tracking data.">
+    <link rel="canonical" href="https://lexopoly.com/compliancelogger/privacy/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-orange: #FF6B35;
+            --deep-blue: #003F88;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+        }
+        .header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+        .nav-main { display: flex; gap: 2rem; align-items: center; }
+        .nav-main a { color: var(--text-primary); text-decoration: none; font-weight: 500; }
+        .btn-nav-cta {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #e5612f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.95; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+        .legal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .legal-content h2 {
+            color: var(--deep-blue);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+        }
+        .legal-content h3 {
+            color: var(--deep-blue);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        .legal-content p, .legal-content li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .legal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .legal-content a {
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+        .effective-date {
+            background: #e8f5e9;
+            border-left: 4px solid #388E3C;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .effective-date strong {
+            color: #388E3C;
+        }
+
+        .footer {
+            background: var(--deep-blue);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .legal-content { padding: 2rem 1rem; }
+            .nav-main { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/compliancelogger/" class="logo">ComplianceLogger</a>
+            <div class="nav-main">
+                <a href="/compliancelogger/features/">Features</a>
+                <a href="/compliancelogger/pricing/">Pricing</a>
+                <a href="/compliancelogger/contact/">Contact</a>
+                <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-nav-cta">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Privacy Policy</h1>
+        <p>How we collect, use, and protect your data</p>
+    </section>
+
+    <div class="container">
+        <div class="legal-content">
+            <div class="effective-date">
+                <strong>Effective Date:</strong> October 13, 2025
+            </div>
+
+            <p>This Privacy Policy describes how Lexopoly LLC ("we," "us," or "our") collects, uses, and protects information when you use ComplianceLogger ("the Service").</p>
+
+            <h2>1. Information We Collect</h2>
+
+            <h3>Account Information</h3>
+            <p>When you create an account, we collect:</p>
+            <ul>
+                <li>Email address (required for login and communication)</li>
+                <li>Password (encrypted and hashed using bcrypt)</li>
+                <li>Company name (optional)</li>
+                <li>Account creation date</li>
+            </ul>
+
+            <h3>Waste Log Data</h3>
+            <p>When you use ComplianceLogger, you create waste disposal records containing:</p>
+            <ul>
+                <li>Project names and descriptions</li>
+                <li>Waste types, quantities, and classifications</li>
+                <li>Disposal locations and hauler information</li>
+                <li>Manifest numbers and EPA tracking data</li>
+                <li>Cost estimates and actual costs</li>
+                <li>Confidence levels (Documented/Estimated/Reconstructed)</li>
+                <li>Creation timestamps and modification history</li>
+                <li>Internal notes and reconstruction methodology</li>
+            </ul>
+
+            <h3>Photo Uploads</h3>
+            <p>Photos you upload are stored securely and may include:</p>
+            <ul>
+                <li>Waste material images</li>
+                <li>Disposal site photos</li>
+                <li>Manifest and receipt documentation</li>
+                <li>Equipment and container photos</li>
+            </ul>
+
+            <h3>Payment Information</h3>
+            <p>We use Stripe for payment processing. We store:</p>
+            <ul>
+                <li>Subscription status (active/cancelled)</li>
+                <li>Billing cycle dates</li>
+                <li>Payment history</li>
+            </ul>
+            <p><strong>We do NOT store credit card numbers.</strong> All payment card information is handled directly by Stripe in compliance with PCI-DSS standards.</p>
+
+            <h3>Technical Information</h3>
+            <p>We automatically collect:</p>
+            <ul>
+                <li>IP address (for security and fraud prevention)</li>
+                <li>Browser type and version</li>
+                <li>Device information (desktop/mobile/tablet)</li>
+                <li>Login timestamps and session data</li>
+                <li>Error logs and performance metrics</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+
+            <h3>Service Delivery</h3>
+            <ul>
+                <li>Provide access to ComplianceLogger features</li>
+                <li>Store and retrieve your waste tracking data</li>
+                <li>Generate compliance reports and exports</li>
+                <li>Process subscription payments via Stripe</li>
+            </ul>
+
+            <h3>Communication</h3>
+            <ul>
+                <li>Send account notifications (password resets, billing updates)</li>
+                <li>Respond to support requests</li>
+                <li>Notify you of service updates or maintenance</li>
+                <li>Send product announcements (you can opt out)</li>
+            </ul>
+
+            <h3>Improvement & Security</h3>
+            <ul>
+                <li>Monitor service performance and reliability</li>
+                <li>Detect and prevent fraud or abuse</li>
+                <li>Debug technical issues</li>
+                <li>Analyze usage patterns to improve features</li>
+            </ul>
+
+            <h2>3. Data Storage & Security</h2>
+
+            <h3>Infrastructure</h3>
+            <p>Your data is hosted on secure cloud infrastructure:</p>
+            <ul>
+                <li><strong>Database:</strong> DigitalOcean Managed PostgreSQL with encryption at rest</li>
+                <li><strong>Photo Storage:</strong> DigitalOcean Spaces (S3-compatible) with redundancy</li>
+                <li><strong>Application Hosting:</strong> DigitalOcean App Platform with SSL/TLS encryption</li>
+            </ul>
+
+            <h3>Security Measures</h3>
+            <ul>
+                <li><strong>Encryption in transit:</strong> All data transmitted over HTTPS (TLS 1.2+)</li>
+                <li><strong>Encryption at rest:</strong> Database and file storage encrypted</li>
+                <li><strong>Password security:</strong> Passwords hashed using bcrypt (never stored in plain text)</li>
+                <li><strong>Access control:</strong> Row-level security ensures you only see your own data</li>
+                <li><strong>Backups:</strong> Automatic daily backups with 3-year retention</li>
+            </ul>
+
+            <h3>Data Retention</h3>
+            <ul>
+                <li><strong>Active accounts:</strong> Data retained indefinitely while subscription is active</li>
+                <li><strong>Cancelled accounts:</strong> Data retained for 90 days after cancellation, then permanently deleted</li>
+                <li><strong>Trial accounts:</strong> Data deleted 30 days after trial expiration if not converted to paid</li>
+                <li><strong>Backups:</strong> Database backups retained for 3 years for disaster recovery</li>
+            </ul>
+
+            <h2>4. Data Sharing & Disclosure</h2>
+
+            <h3>We Do NOT Sell Your Data</h3>
+            <p><strong>We do not sell, rent, or trade your personal information or waste tracking data to third parties.</strong></p>
+
+            <h3>Third-Party Services</h3>
+            <p>We share limited data with trusted service providers:</p>
+            <ul>
+                <li><strong>Stripe:</strong> Payment processing (email, billing info)</li>
+                <li><strong>DigitalOcean:</strong> Hosting infrastructure (all data)</li>
+                <li><strong>Email service (future):</strong> Transactional emails only</li>
+            </ul>
+            <p>These providers are contractually bound to protect your data and use it only for services we request.</p>
+
+            <h3>Legal Requirements</h3>
+            <p>We may disclose information if required by law:</p>
+            <ul>
+                <li>In response to valid subpoenas or court orders</li>
+                <li>To comply with EPA or regulatory investigations</li>
+                <li>To protect our legal rights or prevent fraud</li>
+                <li>In connection with a business sale or merger (with notice)</li>
+            </ul>
+
+            <h2>5. Your Rights & Choices</h2>
+
+            <h3>Access & Export</h3>
+            <p>You can access and export your data at any time:</p>
+            <ul>
+                <li>View all waste logs via the dashboard</li>
+                <li>Export individual logs or bulk data to CSV</li>
+                <li>Download your uploaded photos</li>
+                <li>Request a complete data export by emailing <a href="mailto:support@lexopoly.com">support@lexopoly.com</a></li>
+            </ul>
+
+            <h3>Correction & Deletion</h3>
+            <ul>
+                <li>Edit or delete waste logs directly in the app</li>
+                <li>Update account information in settings</li>
+                <li>Request account deletion by emailing <a href="mailto:support@lexopoly.com">support@lexopoly.com</a></li>
+            </ul>
+
+            <h3>Marketing Communications</h3>
+            <ul>
+                <li>You can opt out of product announcements and marketing emails</li>
+                <li>You cannot opt out of transactional emails (billing, security alerts)</li>
+                <li>Unsubscribe links included in all marketing emails</li>
+            </ul>
+
+            <h2>6. Cookies & Tracking</h2>
+
+            <h3>Essential Cookies</h3>
+            <p>We use cookies to maintain your login session:</p>
+            <ul>
+                <li><strong>Session cookies:</strong> Required for authentication (expires on logout)</li>
+                <li><strong>Preference cookies:</strong> Remember your settings (optional)</li>
+            </ul>
+
+            <h3>Analytics (Future)</h3>
+            <p>We may add privacy-focused analytics in the future to understand usage patterns. If implemented, you will be notified and given opt-out options.</p>
+
+            <h2>7. Children's Privacy</h2>
+            <p>ComplianceLogger is not intended for users under 18. We do not knowingly collect information from children. If you believe a child has created an account, contact us immediately at <a href="mailto:support@lexopoly.com">support@lexopoly.com</a>.</p>
+
+            <h2>8. International Users</h2>
+            <p>ComplianceLogger is operated from the United States. If you access the Service from outside the US, your data will be transferred to and stored in the US. By using ComplianceLogger, you consent to this transfer.</p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy as the Service evolves. If we make material changes:</p>
+            <ul>
+                <li>We will notify you via email at least 30 days before changes take effect</li>
+                <li>The "Effective Date" at the top will be updated</li>
+                <li>Continued use of the Service constitutes acceptance of the new policy</li>
+            </ul>
+
+            <h2>10. Contact Us</h2>
+            <p>Questions about this Privacy Policy or how we handle your data?</p>
+            <p><strong>Email:</strong> <a href="mailto:support@lexopoly.com">support@lexopoly.com</a><br>
+            <strong>Company:</strong> Lexopoly LLC<br>
+            <strong>Support Hours:</strong> Monday–Friday, 9:00 AM – 5:00 PM MT</p>
+
+            <h2>11. California Privacy Rights (CCPA)</h2>
+            <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li><strong>Right to know:</strong> What personal information we collect and how we use it</li>
+                <li><strong>Right to delete:</strong> Request deletion of your personal information</li>
+                <li><strong>Right to opt-out:</strong> We do not sell personal information, so opt-out is not applicable</li>
+                <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising your rights</li>
+            </ul>
+            <p>To exercise these rights, email <a href="mailto:support@lexopoly.com">support@lexopoly.com</a> with "CCPA Request" in the subject line.</p>
+
+            <h2>12. European Users (GDPR)</h2>
+            <p>If you are in the European Economic Area (EEA), you have rights under the General Data Protection Regulation (GDPR):</p>
+            <ul>
+                <li><strong>Legal basis for processing:</strong> Contract fulfillment (providing the Service)</li>
+                <li><strong>Data portability:</strong> Export your data in CSV format</li>
+                <li><strong>Right to erasure:</strong> Request account deletion</li>
+                <li><strong>Right to object:</strong> Object to data processing (may result in service termination)</li>
+            </ul>
+            <p>To exercise these rights, contact <a href="mailto:support@lexopoly.com">support@lexopoly.com</a>.</p>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e2e8f0;">
+
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                <strong>Summary:</strong> We collect only what we need to run ComplianceLogger. We don't sell your data. We encrypt everything. You can export or delete your data anytime.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <a href="/compliancelogger/">Home</a>
+            <a href="/compliancelogger/features/">Features</a>
+            <a href="/compliancelogger/pricing/">Pricing</a>
+            <a href="/compliancelogger/contact/">Contact</a>
+            <a href="/compliancelogger/terms/">Terms</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
