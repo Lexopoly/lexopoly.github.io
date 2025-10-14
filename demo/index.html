@@ -10,10 +10,20 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        // Note: Config is called in analytics.js with attribution data
+        gtag('config', 'G-N29Z7B6T5T');
     </script>
-    <title>LocalTranscribe Demo - See Professional Transcription in Action</title>
-    <meta name="description" content="Try LocalTranscribe professional transcription software with our 5-minute self-serve demo. 28x faster than real-time, local processing, editing tools, and Clio integration.">
+
+    <title>Product Demos | See Lexopoly Software in Action</title>
+    <meta name="description" content="Try Lexopoly products with interactive demos. LocalTranscribe transcription, QuoteCreator estimates, and ComplianceLogger EPA compliance - see them in action.">
+    <meta name="keywords" content="software demo, LocalTranscribe demo, QuoteCreator demo, ComplianceLogger demo, product trial">
+    <link rel="canonical" href="https://lexopoly.com/demo/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Product Demos - See Lexopoly Software in Action">
+    <meta property="og:description" content="Try Lexopoly products with interactive demos and video walkthroughs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lexopoly.com/demo/">
+
     <style>
         * {
             margin: 0;
@@ -22,27 +32,17 @@
         }
 
         :root {
-            /* Core brand colors */
             --lexopoly-primary: #1a365d;
             --lexopoly-secondary: #2d3748;
             --accent: #2c5aa0;
-
-            /* Vertical-specific colors */
-            --lawyers: #2b6cb0;
-            --journalists: #b45309;
-            --dictation: #2f7d32;
-            --court: #553c9a;
-            --government: #4a5568;
-            --education: #8b5a00;
-
-            /* UI colors */
+            --localtranscribe: #b45309;
+            --quotecreator: #2f7d32;
+            --compliancelogger: #2b6cb0;
             --bg-primary: #ffffff;
             --bg-secondary: #f7fafc;
             --text-primary: #2d3748;
             --text-secondary: #4a5568;
             --border: #e2e8f0;
-            --success: #2f7d32;
-            --warning: #8b5a00;
         }
 
         body {
@@ -53,14 +53,15 @@
             min-height: 100vh;
         }
 
-        /* Header - Unified Navigation Template */
+        /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -77,144 +78,38 @@
             font-weight: 700;
             color: var(--lexopoly-primary);
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            cursor: pointer;
-            padding: 0.5rem;
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
         .nav-main {
             display: flex;
-            align-items: center;
             gap: 2rem;
-        }
-
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown > a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
             align-items: center;
-            gap: 0.3rem;
-            transition: color 0.3s;
         }
 
-        .nav-dropdown > a:hover {
-            color: var(--accent);
-        }
-
-        .dropdown-arrow {
-            font-size: 0.7rem;
-            transition: transform 0.2s;
-        }
-
-        .nav-dropdown:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            min-width: 220px;
-            padding: 0.5rem 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            z-index: 1000;
-        }
-
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1.25rem;
-            color: var(--text-secondary);
+        .nav-main a {
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .dropdown-menu a:hover {
-            background: var(--bg-secondary);
-            color: var(--accent);
-        }
-
-        .dropdown-header {
-            padding: 0.5rem 1.25rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        .dropdown-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 0.5rem 0;
-        }
-
-        .nav-main > a {
-            text-decoration: none;
-            color: var(--text-secondary);
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-main > a:hover {
+        .nav-main a:hover {
             color: var(--accent);
-        }
-
-        .nav-cta {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn-secondary-nav {
-            padding: 0.5rem 1.25rem;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary-nav:hover {
-            background: var(--accent);
-            color: white;
         }
 
         .btn-primary-nav {
-            padding: 0.5rem 1.25rem;
             background: var(--accent);
             color: white;
+            padding: 0.5rem 1.25rem;
             border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
             transition: background 0.3s;
         }
 
@@ -222,14 +117,14 @@
             background: var(--lexopoly-primary);
         }
 
-        /* Main content container */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Hero section */
+        /* Hero */
         .hero {
             text-align: center;
             padding: 3rem 0;
@@ -247,55 +142,144 @@
         .hero .subtitle {
             font-size: 1.3rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-            line-height: 1.5;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
-        .hero-cta {
+        /* Product Demo Cards */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid;
+        }
+
+        .demo-card.localtranscribe { border-left-color: var(--localtranscribe); }
+        .demo-card.quotecreator { border-left-color: var(--quotecreator); }
+        .demo-card.compliancelogger { border-left-color: var(--compliancelogger); }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .badge-localtranscribe { background: var(--localtranscribe); }
+        .badge-quotecreator { background: var(--quotecreator); }
+        .badge-compliancelogger { background: var(--compliancelogger); }
+
+        .product-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .demo-card h2 {
+            font-size: 1.8rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .demo-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .demo-features {
+            margin-bottom: 2rem;
+        }
+
+        .demo-features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .demo-features li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .localtranscribe .demo-features li::before { color: var(--localtranscribe); }
+        .quotecreator .demo-features li::before { color: var(--quotecreator); }
+        .compliancelogger .demo-features li::before { color: var(--compliancelogger); }
+
+        .demo-cta {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
 
-        .btn-primary {
-            background: white;
-            color: var(--lexopoly-primary);
-            padding: 1rem 2rem;
+        .btn-demo {
+            flex: 1;
+            min-width: 140px;
+            padding: 0.75rem 1.5rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            text-align: center;
             transition: all 0.3s;
-            border: 2px solid white;
+            border: 2px solid;
         }
 
-        .btn-primary:hover {
-            background: transparent;
+        .btn-demo-primary {
             color: white;
+            border-color: transparent;
         }
 
-        .btn-secondary {
+        .btn-demo-primary.localtranscribe { background: var(--localtranscribe); }
+        .btn-demo-primary.quotecreator { background: var(--quotecreator); }
+        .btn-demo-primary.compliancelogger { background: var(--compliancelogger); }
+
+        .btn-demo-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-demo-secondary {
             background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid white;
-            transition: all 0.3s;
+            color: var(--text-primary);
+            border-color: var(--border);
         }
 
-        .btn-secondary:hover {
-            background: white;
+        .btn-demo-secondary:hover {
+            border-color: var(--lexopoly-primary);
             color: var(--lexopoly-primary);
         }
 
-        /* Demo sections */
-        .demo-section {
+        /* Screenshots Section */
+        .screenshots-section {
             background: white;
             border-radius: 16px;
             padding: 3rem;
@@ -303,230 +287,52 @@
             margin-bottom: 3rem;
         }
 
-        .demo-section h2 {
+        .screenshots-section h2 {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
             color: var(--lexopoly-primary);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
         }
 
-        .demo-placeholder {
-            background: var(--bg-secondary);
-            border: 2px dashed var(--border);
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .screenshot-card {
             border-radius: 12px;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .demo-placeholder h3 {
-            color: var(--lexopoly-primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .demo-placeholder p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        /* Video player styles */
-        .demo-video-container {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .demo-video-container h3 {
-            color: var(--lexopoly-primary);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .demo-video-container > p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .video-player {
-            max-width: 800px;
-            margin: 2rem auto;
-            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
 
-        .video-player:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .screenshot-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
         }
 
-        .video-placeholder {
-            background: linear-gradient(135deg, var(--lexopoly-primary), var(--accent));
-            color: white;
-            padding: 4rem 2rem;
-            position: relative;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .play-button {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-        }
-
-        .video-placeholder:hover .play-button {
-            transform: scale(1.1);
-            opacity: 1;
-        }
-
-        .video-placeholder h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .video-placeholder p {
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
-        }
-
-        .video-specs {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            font-weight: 500;
-        }
-
-        .video-note {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        .demo-cta {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: var(--bg-secondary);
-            border-radius: 12px;
-        }
-
-        .demo-cta .btn-primary {
-            font-size: 1.2rem;
-            padding: 1rem 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-note {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-top: 1rem;
-        }
-
-        .demo-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .demo-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-secondary);
-            border-radius: 12px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Feature showcase */
-        .features-showcase {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 1200px) {
-            .features-showcase {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .features-showcase {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .feature-demo {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
             display: block;
         }
 
-        .feature-demo h3 {
-            margin-bottom: 1rem;
+        .screenshot-caption {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .screenshot-caption h3 {
             color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
 
-        .feature-demo p {
+        .screenshot-caption p {
             color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .demo-example {
-            background: var(--bg-secondary);
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            text-align: left;
-        }
-
-        /* Personal demo section */
-        .personal-demo {
-            background: linear-gradient(135deg, var(--accent) 0%, #2c5aa0 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .personal-demo h2 {
-            color: white;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Footer */
@@ -556,109 +362,26 @@
             opacity: 1;
         }
 
-        /* Mobile Navigation - Unified Template */
+        /* Mobile */
         @media (max-width: 968px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .nav-main {
-                position: fixed;
-                top: 73px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 1rem 0;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-                max-height: 0;
-                overflow: hidden;
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-
-            .nav-main.show {
-                max-height: 80vh;
-                overflow-y: auto;
-                opacity: 1;
-            }
-
-            .nav-dropdown {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-dropdown > a {
-                padding: 1rem 2rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                min-height: 44px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-                background: var(--bg-secondary);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                padding: 0;
-            }
-
-            .nav-dropdown.mobile-open .dropdown-menu {
-                max-height: 500px;
-                padding: 0.5rem 0;
-            }
-
-            .dropdown-menu a {
-                padding: 0.75rem 2rem 0.75rem 3rem;
-                min-height: 44px;
-            }
-
-            .nav-main > a {
-                padding: 1rem 2rem;
-                border-bottom: 1px solid var(--border);
-                min-height: 44px;
-            }
-
-            .nav-cta {
-                flex-direction: column;
-                padding: 1rem 2rem;
-                gap: 0.75rem;
-            }
-
-            .btn-secondary-nav,
-            .btn-primary-nav {
-                width: 100%;
-                text-align: center;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                display: none;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
-            .container {
-                padding: 1rem;
+            .demo-grid {
+                grid-template-columns: 1fr;
             }
 
-            .demo-section, .personal-demo {
-                padding: 2rem 1rem;
-            }
-
-            .hero-cta {
+            .demo-cta {
                 flex-direction: column;
-                align-items: center;
+            }
+
+            .btn-demo {
+                width: 100%;
             }
         }
     </style>
@@ -666,247 +389,111 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <a href="/" class="logo">Lexopoly</a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-
-            <div class="nav-main" id="nav-main">
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>Products <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">Our Products</div>
-                        <a href="/localtranscribe/">LocalTranscribe</a>
-                        <a href="/quotecreator/">QuoteCreator</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="/#products">View All Products →</a>
-                    </div>
-                </div>
-
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>Solutions <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-header">By Industry</div>
-                        <a href="/lawyers/">Lawyers</a>
-                        <a href="/journalists/">Journalists</a>
-                        <a href="/dictation/">Dictation Services</a>
-                        <a href="/court-reporters/">Court Reporters</a>
-                        <a href="/government/">Government</a>
-                        <a href="/education/">Education</a>
-                    </div>
-                </div>
-
-                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
-                    <a>About <span class="dropdown-arrow">▼</span></a>
-                    <div class="dropdown-menu">
-                        <a href="/about/">About Lexopoly</a>
-                        <a href="/support/">Support</a>
-                        <a href="/contact/">Contact</a>
-                    </div>
-                </div>
-
+            <a href="/" class="logo">
+                Lexopoly
+                <span class="logo-subtitle">Professional Software</span>
+            </a>
+            <div class="nav-main">
                 <a href="/pricing/">Pricing</a>
-
-                <div class="nav-cta">
-                    <a href="/demo/" class="btn-secondary-nav">Demo</a>
-                    <a href="/signup/" class="btn-primary-nav">Start Trial</a>
-                </div>
+                <a href="/#products">Products</a>
+                <a href="/contact/" class="btn-primary-nav">Contact Us</a>
             </div>
         </nav>
     </header>
 
     <div class="container">
         <section class="hero">
-            <h1>5-Minute Self-Serve Demo</h1>
+            <h1>See Our Products in Action</h1>
             <p class="subtitle">
-                Experience the speed, privacy, and quality that makes LocalTranscribe the choice
-                for professional legal transcription. See our unique local processing and editing workflow.
+                Interactive demos and video walkthroughs for all Lexopoly products.<br>
+                Choose a product below to explore features and see how it works.
             </p>
-            <div class="hero-cta">
-                <a href="/signup/" class="btn-primary">Get Started</a>
-                <a href="/buy/" class="btn-secondary">Buy Now - $79</a>
-            </div>
         </section>
 
-        <section class="demo-section">
-            <h2>Product Demo</h2>
-
-            <div class="demo-signup-container">
-                <h3>📝 Get Demo Access</h3>
-                <p>Request access to the LocalTranscribe professional demo.</p>
-
-                <form class="demo-signup-form" action="https://formspree.io/f/xdorjbyv" method="POST" style="max-width: 400px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
-                    <div style="margin-bottom: 1.5rem;">
-                        <label for="demoName" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Name</label>
-                        <input type="text" id="demoName" name="name" required placeholder="Your full name" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
-                    </div>
-
-                    <div style="margin-bottom: 1.5rem;">
-                        <label for="demoEmail" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Email Address</label>
-                        <input type="email" id="demoEmail" name="email" required placeholder="your.email@company.com" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
-                    </div>
-
-                    <div style="margin-bottom: 1.5rem;">
-                        <label for="demoRole" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Professional Role</label>
-                        <select id="demoRole" name="role" required style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
-                            <option value="">Select your role...</option>
-                            <option value="lawyer">Lawyer/Attorney</option>
-                            <option value="journalist">Journalist</option>
-                            <option value="court-reporter">Court Reporter</option>
-                            <option value="government">Government Employee</option>
-                            <option value="education">Education Professional</option>
-                            <option value="medical">Medical Professional</option>
-                            <option value="other">Other Professional</option>
-                        </select>
-                    </div>
-
-                    <!-- Hidden fields for form processing -->
-                    <input type="hidden" name="_subject" value="LocalTranscribe Demo Access Request">
-                    <input type="hidden" name="_next" value="https://lexopoly.com/demo/?demo-requested=true">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <button type="submit" style="background: var(--accent); color: white; padding: 1rem 2rem; border-radius: 8px; border: none; font-weight: 600; font-size: 1.1rem; width: 100%; cursor: pointer; transition: background 0.3s;">Request Demo Access</button>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary); text-align: center;">Get instant access to the LocalTranscribe demo experience</p>
-                </form>
-
-                <div class="demo-cta">
-                    <a href="/buy/" class="btn-primary">Buy LocalTranscribe - $79</a>
-                    <p class="cta-note">Ready to get started? Professional transcription software with local processing</p>
-                </div>
-            </div>
-
-            <div class="demo-stats">
-                <div class="stat-card">
-                    <div class="stat-number">28x</div>
-                    <div class="stat-label">Faster than real-time</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">85-92%</div>
-                    <div class="stat-label">Base accuracy + editing tools</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Local processing privacy</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="demo-section">
-            <h2>How LocalTranscribe Works</h2>
-
-            <div class="features-showcase">
-                <div class="feature-demo">
-                    <span class="feature-icon">⚡</span>
-                    <h3>1. Lightning-Fast Processing</h3>
-                    <p>Upload your audio file and watch as LocalTranscribe processes it 28x faster than real-time.</p>
-                    <div class="demo-example">
-                        16-minute audio file →
-                        Processed in 35 seconds
-                    </div>
-                </div>
-
-                <div class="feature-demo">
-                    <span class="feature-icon">🔒</span>
-                    <h3>2. 100% Local Privacy</h3>
-                    <p>Your audio never leaves your computer. Complete attorney-client privilege protection.</p>
-                    <div class="demo-example">
-                        Your Computer Only
-                        ↓
-                        No Cloud Upload
-                        ↓
-                        Complete Privacy
-                    </div>
-                </div>
-
-                <div class="feature-demo">
-                    <span class="feature-icon">✏️</span>
-                    <h3>3. Professional Editing</h3>
-                    <p>Built-in editing tools and review workflow for court-ready documentation.</p>
-                    <div class="demo-example">
-                        [00:15] "The plaintiff argues..."
-                        [FLAG] (unclear section)
-                        [00:23] "...summary judgment"
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="demo-section">
-            <h2>See It In Action</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
-                Watch how LocalTranscribe transforms audio into professional transcripts in three simple steps
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="/screenshots/localtranscribe/01-upload-ready.png" alt="LocalTranscribe Upload Interface - File selection ready" style="width: 100%; height: auto; display: block;">
-                    <div style="padding: 1.5rem;">
-                        <h3 style="color: var(--lexopoly-primary); margin-bottom: 0.75rem; font-size: 1.3rem;">1. Upload Your Audio</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">Drag and drop or select your audio file. Supports all major formats with instant file validation and preview.</p>
-                    </div>
-                </div>
-
-                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="/screenshots/localtranscribe/02-processing.png" alt="LocalTranscribe Processing - AI transcription in progress with real-time status" style="width: 100%; height: auto; display: block;">
-                    <div style="padding: 1.5rem;">
-                        <h3 style="color: var(--lexopoly-primary); margin-bottom: 0.75rem; font-size: 1.3rem;">2. Lightning-Fast Processing</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">Watch your audio process 28x faster than real-time. Full progress tracking with detailed status updates.</p>
-                    </div>
-                </div>
-
-                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-                    <img src="/screenshots/localtranscribe/03-results.png" alt="LocalTranscribe Results - Professional transcript output with editing tools" style="width: 100%; height: auto; display: block;">
-                    <div style="padding: 1.5rem;">
-                        <h3 style="color: var(--lexopoly-primary); margin-bottom: 0.75rem; font-size: 1.3rem;">3. Review & Export</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">Get your professional transcript with built-in editing tools, timestamps, and multiple export formats.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="demo-section">
-            <h2>What You'll See in the 5-Minute Demo</h2>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-                <div style="padding: 1.5rem; border-left: 4px solid var(--accent); background: var(--bg-secondary);">
-                    <h4 style="color: var(--lexopoly-primary); margin-bottom: 0.5rem;">Speed Demonstration</h4>
-                    <p style="color: var(--text-secondary);">Watch a real 16-minute deposition get transcribed in under 40 seconds</p>
-                </div>
-
-                <div style="padding: 1.5rem; border-left: 4px solid var(--success); background: var(--bg-secondary);">
-                    <h4 style="color: var(--lexopoly-primary); margin-bottom: 0.5rem;">Privacy Protection</h4>
-                    <p style="color: var(--text-secondary);">See how no data leaves your computer during the entire process</p>
-                </div>
-
-                <div style="padding: 1.5rem; border-left: 4px solid var(--warning); background: var(--bg-secondary);">
-                    <h4 style="color: var(--lexopoly-primary); margin-bottom: 0.5rem;">Editing Workflow</h4>
-                    <p style="color: var(--text-secondary);">Experience the review system for professional quality control</p>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="demo-section personal-demo" id="self-serve">
-            <h2>Self-Serve Demo Experience</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                Get started immediately with our 5-minute self-guided demonstration.
-                Perfect for busy professionals who want to evaluate LocalTranscribe quickly.
-            </p>
-
-            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
-                <h3 style="margin-bottom: 1rem;">Demo Features:</h3>
-                <ul style="text-align: left; display: inline-block; margin: 0;">
-                    <li>5-minute guided walkthrough</li>
-                    <li>Real transcription processing</li>
-                    <li>Local privacy demonstration</li>
-                    <li>Editing tools showcase</li>
-                    <li>Export format examples</li>
-                    <li>Immediate trial access</li>
+        <div class="demo-grid">
+            <!-- LocalTranscribe Demo Card -->
+            <div class="demo-card localtranscribe">
+                <span class="product-badge badge-localtranscribe">LocalTranscribe</span>
+                <span class="product-icon">🎙️</span>
+                <h2>Transcription Demo</h2>
+                <p class="product-tagline">28x faster with local privacy</p>
+                <p>Experience professional transcription software with 100% local processing. See how LocalTranscribe handles legal audio with complete privacy control.</p>
+                <ul class="demo-features">
+                    <li>Upload and process demo audio file</li>
+                    <li>Watch real-time transcription (28x speed)</li>
+                    <li>Try professional editing tools</li>
+                    <li>See Clio integration workflow</li>
                 </ul>
+                <div class="demo-cta">
+                    <a href="/localtranscribe/" class="btn-demo btn-demo-primary localtranscribe">Try Demo</a>
+                    <a href="/localtranscribe/" class="btn-demo btn-demo-secondary">Learn More</a>
+                </div>
             </div>
 
-            <div class="hero-cta">
-                <a href="/signup/" class="btn-primary">Get Started</a>
-                <a href="/contact/" class="btn-secondary">Questions? Contact Us</a>
+            <!-- QuoteCreator Demo Card -->
+            <div class="demo-card quotecreator">
+                <span class="product-badge badge-quotecreator">QuoteCreator</span>
+                <span class="product-icon">📋</span>
+                <h2>Quote Creator Demo</h2>
+                <p class="product-tagline">Professional estimates in 60 seconds</p>
+                <p>See how contractors and service professionals create polished quotes on mobile devices and upload them to Clio with one tap.</p>
+                <ul class="demo-features">
+                    <li>Mobile estimate creation walkthrough</li>
+                    <li>Professional PDF generation preview</li>
+                    <li>One-tap Clio upload demonstration</li>
+                    <li>Offline mode capabilities</li>
+                </ul>
+                <div class="demo-cta">
+                    <a href="/quotecreator/" class="btn-demo btn-demo-primary quotecreator">Try Demo</a>
+                    <a href="/quotecreator/" class="btn-demo btn-demo-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- ComplianceLogger Demo Card -->
+            <div class="demo-card compliancelogger">
+                <span class="product-badge badge-compliancelogger">ComplianceLogger</span>
+                <span class="product-icon">📊</span>
+                <h2>Compliance Demo</h2>
+                <p class="product-tagline">EPA waste compliance made simple</p>
+                <p>Explore how contractors track waste disposal and reconstruct missing records for EPA audits using the 4-tier evidence framework.</p>
+                <ul class="demo-features">
+                    <li>Waste tracking workflow demonstration</li>
+                    <li>Photo + manifest documentation</li>
+                    <li>4-tier evidence reconstruction</li>
+                    <li>Audit-ready CSV export preview</li>
+                </ul>
+                <div class="demo-cta">
+                    <a href="/compliancelogger/" class="btn-demo btn-demo-primary compliancelogger">Try Demo</a>
+                    <a href="/compliancelogger/" class="btn-demo btn-demo-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screenshots Section -->
+        <section class="screenshots-section">
+            <h2>LocalTranscribe in Action</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="/screenshots/localtranscribe/01-upload-ready.png" alt="LocalTranscribe upload interface">
+                    <div class="screenshot-caption">
+                        <h3>1. Upload Your Audio</h3>
+                        <p>Drag and drop audio files with instant validation and preview.</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/localtranscribe/02-processing.png" alt="LocalTranscribe processing">
+                    <div class="screenshot-caption">
+                        <h3>2. Lightning-Fast Processing</h3>
+                        <p>Watch transcription happen 28x faster than real-time on your computer.</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/localtranscribe/03-results.png" alt="LocalTranscribe results">
+                    <div class="screenshot-caption">
+                        <h3>3. Review & Export</h3>
+                        <p>Professional editing tools with timestamps and export options.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -919,51 +506,11 @@
             <a href="/terms/">Terms</a>
             <a href="/contact/">Contact</a>
             <a href="https://x.com/lexopoly" target="_blank" rel="noopener">𝕏 Follow on X</a>
-            <!-- REDDIT BANNED: <a href="https://reddit.com/u/Lexopoly" target="_blank" rel="noopener">📱 Join us on Reddit</a> -->
         </div>
         <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
         <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-            Professional transcription software that respects your privacy.
+            Professional software that respects your privacy.
         </p>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const navMain = document.getElementById('nav-main');
-            navMain.classList.toggle('show');
-        }
-
-        function toggleMobileDropdown(element) {
-            if (window.innerWidth <= 968) {
-                element.classList.toggle('mobile-open');
-            }
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const nav = document.querySelector('.nav-container');
-            const navMain = document.getElementById('nav-main');
-            if (!nav.contains(event.target) && navMain.classList.contains('show')) {
-                navMain.classList.remove('show');
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-main a[href]').forEach(link => {
-            link.addEventListener('click', function() {
-                const navMain = document.getElementById('nav-main');
-                navMain.classList.remove('show');
-            });
-        });
-
-        // Clear mobile dropdown states when resizing to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 968) {
-                document.querySelectorAll('.nav-dropdown.mobile-open').forEach(dropdown => {
-                    dropdown.classList.remove('mobile-open');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
