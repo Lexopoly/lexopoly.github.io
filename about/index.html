@@ -13,7 +13,7 @@
         // Note: Config is called in analytics.js with attribution data
     </script>
     <title>About Lexopoly - Professional Software for Legal & Business Professionals</title>
-    <meta name="description" content="Lexopoly builds professional software that solves real business problems. LocalTranscribe for transcription, QuoteCreator for estimates - tools that respect your privacy and save you time.">
+    <meta name="description" content="Lexopoly builds professional software that solves real business problems. LocalTranscribe for transcription, QuoteCreator for estimates, ComplianceLogger for EPA compliance - tools that respect your privacy and save you time.">
     <style>
         * {
             margin: 0;
@@ -303,7 +303,7 @@
         /* Product cards */
         .products-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -612,6 +612,7 @@
                         <div class="dropdown-header">Our Products</div>
                         <a href="/localtranscribe/">LocalTranscribe</a>
                         <a href="/quotecreator/">QuoteCreator</a>
+                        <a href="/compliancelogger/">ComplianceLogger</a>
                         <div class="dropdown-divider"></div>
                         <a href="/#products">View All Products →</a>
                     </div>
@@ -685,6 +686,15 @@
                     </p>
                     <a href="/quotecreator/" class="product-link">Learn more about QuoteCreator →</a>
                 </div>
+
+                <div class="product-card">
+                    <span class="product-icon">📊</span>
+                    <h4>ComplianceLogger</h4>
+                    <p>
+                        EPA waste compliance software for construction companies. Track waste disposal proactively or reconstruct records legally during audits. $149/year with 7-day free trial—peace of mind for compliance professionals.
+                    </p>
+                    <a href="/compliancelogger/" class="product-link">Learn more about ComplianceLogger →</a>
+                </div>
             </div>
         </section>
 
@@ -750,6 +760,7 @@
                 <div class="cta-buttons">
                     <a href="/localtranscribe/" class="btn-primary">Try LocalTranscribe</a>
                     <a href="/quotecreator/" class="btn-secondary">Try QuoteCreator</a>
+                    <a href="/compliancelogger/" class="btn-secondary">Try ComplianceLogger</a>
                 </div>
             </div>
         </section>
