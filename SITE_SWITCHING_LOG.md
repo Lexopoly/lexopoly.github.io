@@ -167,3 +167,65 @@ git push
 **Git Commit**: `d685876` (feat: Switch to construction mode - Entry #3)
 
 ---
+
+<!-- APPEND NEW ENTRIES BELOW - DO NOT EDIT ABOVE -->
+
+## 🟢 SWITCH #4: SITE ON - 2025-10-14 18:10 UTC
+
+**Action**: SITE_ON (Under Construction → Full Site)
+**Timestamp**: 2025-10-14T18:10:00Z
+**Operator**: CC-WEB (Claude Code, user: rain)
+**Git State Before Switch**:
+- Commit: `d685876` (feat: Switch to construction mode - Entry #3)
+- Branch: `main`
+- Status: Clean (multiple docs in /ops/, WEBMASTER_BUS_OPS.md modified)
+
+**Reason** (required, short): FCO status assessment complete - return to production
+**Additional Info** (optional): Comprehensive Federation status assessment completed (FCO_STATUS_REPORT_20251014_1230_AGENT_BOUNDARIES.md + Bootstrap Marketing Plan review). Site switching during deep-dive analysis of FCO recommendations and CC-CL handoff tasks. ComplianceLogger at 95% complete with agent boundaries formalized. Site restored to full production with 3-product portfolio while ComplianceLogger work continues in si9 repo.
+
+**Restore Source**:
+- Backup File: `index.full-backup.html` (1630 lines)
+- Created: Entry #3 (2025-10-14T22:45:00Z)
+
+**State Transition**:
+- Previous: `index.html` = Under construction (minimal page, 2 contact methods)
+- New: `index.html` = Full site (3 products: LocalTranscribe/QuoteCreator/ComplianceLogger, unified navigation, blog integration, 6 industry verticals)
+
+**Files Modified**:
+- `index.html` (restored from index.full-backup.html, 1630 lines)
+- `SITE_SWITCHING_LOG.md` (this log entry added)
+
+**Verification Checklist**:
+- [ ] Full homepage displays correctly
+- [ ] Navigation dropdowns work (Products, Solutions, About)
+- [ ] 3 product cards visible (LocalTranscribe, QuoteCreator, ComplianceLogger)
+- [ ] Mobile menu functional
+- [ ] Footer links operational
+- [ ] Analytics tracking active
+
+**Context**:
+Fourth site switch. Restoring full site after reviewing Federation status reports (FCO Oct 13-14 comprehensive assessments). Site contains 3-product portfolio with ComplianceLogger now visible alongside LocalTranscribe and QuoteCreator. Multi-product messaging (Flexible Pricing) and professional navigation (17/17 pages) deployed. ComplianceLogger beta launch pending homepage refactor (CC-WEB 2-hour task per FCO agent boundary decision).
+
+**Federation Context**:
+- CC-CL: 95% complete, awaiting homepage refactor
+- CC-QC: 95% complete, blocked by user App Platform setup
+- CC-FCO: Published agent boundary decision + bootstrap marketing plan (Oct 14)
+- Timeline: CL beta Oct 15, QC launch Oct 17 (on track)
+
+**Next Steps After Verification**:
+1. Test live site (all 3 products visible)
+2. Verify navigation system (Products/Solutions/About dropdowns)
+3. Monitor analytics (homepage view, CTA clicks)
+4. Continue ComplianceLogger homepage refactor in si9 repo (separate from marketing site)
+
+**Rollback Command** (if needed):
+```bash
+cp index.construction.html index.html
+git add index.html SITE_SWITCHING_LOG.md
+git commit -m "fix: Rollback to construction mode (entry #4 rollback)"
+git push
+```
+
+**Git Commit**: TBD (will be generated in next step)
+
+---
