@@ -2790,9 +2790,148 @@ Follow @lexopoly for updates, tips & product launches 👋
 
 ---
 
-**Last Updated**: 2025-10-12 (Reddit Strategy + X Profile Launch Readiness)
-**Current Phase**: 13.11-13.18 - Professional Launch Execution
-**Status**: Product ready, website polished, blog live, X profile prepped, Reddit strategy evaluated - ready for social launch
+## 🔄 PHASE 13.19: SITE SWITCHING INFRASTRUCTURE - IMMUTABLE LEDGER (2025-10-14)
+
+### **PURPOSE**: Enable fast, reversible site ON/OFF switching with complete audit trail
+
+**Context**: Created infrastructure to switch between full site and under-construction mode while making product changes. Immutable ledger tracks every switch for complete accountability.
+
+### **Infrastructure Created**
+
+**1. Under-Construction Page** (`index.construction.html`)
+- Minimal modern holding page (135 lines vs 1615 lines full site)
+- Purple gradient matching brand (#667eea → #764ba2)
+- Animated loading spinner
+- 2 contact methods: support@lexopoly.com + @lexopoly X
+- Fully responsive, zero tracking, zero analytics
+- **Design philosophy**: Minimal, modern, on-brand
+
+**2. Site Switching Protocol** (`SITE_SWITCHING_PROTOCOL.md`)
+- Step-by-step procedures for SITE_OFF and SITE_ON
+- Automatic git tag backup system (site-full-backup-YYYYMMDD-HHMMSS)
+- Emergency rollback instructions
+- Verification checklists
+- Safety features: Git tags, backup files, instant rollback
+
+**3. Immutable Ledger** (`SITE_SWITCHING_LOG.md`)
+- **CRITICAL**: Append-only, never edit existing entries
+- Required info: Timestamp, action, operator, reason, git state, backup tag
+- Complete audit trail for every site state change
+- Rollback command for each switch
+- Permanent record of all ON/OFF switches
+
+### **Ledger Requirements (ENFORCED)**
+
+Every site switch MUST log:
+- ✅ Timestamp (ISO 8601 format)
+- ✅ Action (SITE_OFF or SITE_ON)
+- ✅ Operator (who made the change)
+- ✅ **Reason** (required, short) - One-line why
+- ➕ **Additional Info** (optional) - Longer context if needed
+- ✅ Git commit hash (before switch)
+- ✅ Git tag created (backup reference)
+- ✅ Previous state → New state
+- ✅ Files modified
+- ✅ Verification checklist
+- ✅ Rollback command for that specific switch
+
+**Protocol**:
+- 🟢 APPEND new entries only
+- 🔴 NEVER edit existing entries
+- 🟢 Each entry is permanent record
+- 🟢 Complete traceability
+
+### **Current State**
+
+**Site Status**: 🔴 UNDER CONSTRUCTION (as of 2025-10-14T01:36:26Z)
+
+**Active Files**:
+- `index.html` → Under construction page (135 lines)
+- `index.full-backup.html` → Full site backup (53KB, 1615 lines)
+- `index.construction.html` → Construction template
+
+**Backup Tag**: `site-full-backup-20251014-013626`
+
+**Log Entry**: Switch #1 (SITE_OFF) - Visual testing
+- Commit: `7de3e50`
+- Reason: Visual testing of construction page
+- Status: Complete with verification pending
+
+### **Quick Reference Commands**
+
+**Switch to Construction Mode**:
+```bash
+# See SITE_SWITCHING_PROTOCOL.md for full procedure
+# Must create log entry FIRST
+DATE=$(date -u +%Y%m%d-%H%M%S)
+git tag -a "site-full-backup-$DATE" -m "Backup before construction"
+cp index.html index.full-backup.html
+cp index.construction.html index.html
+# Add log entry to SITE_SWITCHING_LOG.md
+git add index.html index.full-backup.html SITE_SWITCHING_LOG.md
+git commit -m "feat: Switch to under-construction mode"
+git push && git push --tags
+```
+
+**Switch to Full Site**:
+```bash
+# See SITE_SWITCHING_PROTOCOL.md for full procedure
+# Must create log entry FIRST
+cp index.full-backup.html index.html
+# Add log entry to SITE_SWITCHING_LOG.md
+git add index.html SITE_SWITCHING_LOG.md
+git commit -m "feat: Restore full site"
+git push
+```
+
+**Emergency Rollback**:
+```bash
+git show site-full-backup-20251014-013626:index.html > index.html
+git add index.html
+git commit -m "fix: Emergency rollback"
+git push
+```
+
+### **Safety Features**
+
+1. **Git Tag Backup**: Every switch creates timestamped git tag
+2. **Backup File**: `index.full-backup.html` preserved in repo
+3. **Immutable Log**: Complete audit trail, never edited
+4. **Instant Rollback**: Can restore from any backup tag
+5. **Zero Data Loss**: Full site always preserved
+
+### **When to Use**
+
+**Construction Mode (SITE_OFF)**:
+- Major product changes in progress
+- Re-evaluating positioning/messaging
+- Infrastructure work
+- Legal/compliance reviews
+- Pre-launch preparation
+
+**Full Site Mode (SITE_ON)**:
+- Minor copy tweaks (can do live)
+- Adding blog posts
+- SEO optimizations
+- Visual polish
+
+### **Verification Checklist** (User Action Required)
+
+After SITE_OFF (construction mode):
+- [ ] Visit https://lexopoly.com - shows minimal page
+- [ ] Spinner animation works
+- [ ] support@lexopoly.com link works
+- [ ] @lexopoly X link works
+- [ ] Mobile responsive
+- [ ] Favicon loads
+
+**Status**: ✅ INFRASTRUCTURE COMPLETE - SITE OFF FOR VISUAL TESTING
+
+---
+
+**Last Updated**: 2025-10-14 (Site Switching Infrastructure + Immutable Ledger)
+**Current Phase**: 13.11-13.19 - Professional Launch Execution
+**Status**: Site switched to construction mode for visual testing. Full site backed up with complete audit trail. X profile ready, Reddit tabled.
 
 ---
 
