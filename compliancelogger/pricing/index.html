@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing | ComplianceLogger - $149/Year</title>
+    <meta name="description" content="$149/year for unlimited waste logs, photo uploads, and full EPA compliance features. 7-day free trial, no credit card required.">
+    <link rel="canonical" href="https://lexopoly.com/compliancelogger/pricing/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-orange: #FF6B35;
+            --deep-blue: #003F88;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --success-green: #388E3C;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+        }
+        .header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+        .nav-main { display: flex; gap: 2rem; align-items: center; }
+        .nav-main a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-main a:hover { color: var(--primary-orange); }
+        .btn-nav-cta {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #e5612f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto; opacity: 0.95; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            margin: 3rem auto;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 3px solid var(--primary-orange);
+        }
+        .pricing-badge {
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .price {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin: 1rem 0;
+        }
+        .price-period { font-size: 1.5rem; color: var(--text-secondary); }
+        .trial-badge {
+            background: var(--success-green);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-secondary);
+        }
+        .features-list li::before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: #e5612f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .faq-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .faq-section h2 {
+            text-align: center;
+            color: var(--deep-blue);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            color: var(--deep-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .footer {
+            background: var(--deep-blue);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.8;
+        }
+        .footer a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .price { font-size: 3rem; }
+            .pricing-card { padding: 2rem 1rem; }
+            .nav-main { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/compliancelogger/" class="logo">ComplianceLogger</a>
+            <div class="nav-main">
+                <a href="/compliancelogger/features/">Features</a>
+                <a href="/compliancelogger/pricing/">Pricing</a>
+                <a href="/compliancelogger/contact/">Contact</a>
+                <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-nav-cta">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Simple, Affordable Pricing</h1>
+        <p>One plan. All features. No hidden fees.</p>
+    </section>
+
+    <div class="container">
+        <div class="pricing-card">
+            <span class="pricing-badge">BEST VALUE</span>
+            <div class="price">$149<span class="price-period">/year</span></div>
+            <div class="trial-badge">7-Day Free Trial • No Credit Card Required</div>
+
+            <ul class="features-list">
+                <li>Unlimited waste logs</li>
+                <li>Unlimited photo uploads</li>
+                <li>Both proactive & reactive modes</li>
+                <li>3-tier confidence tracking (documented/estimated/reconstructed)</li>
+                <li>CSV export & bulk reports</li>
+                <li>Audit mode with deadline tracking</li>
+                <li>Secure cloud storage (DigitalOcean)</li>
+                <li>Photo documentation with manifests</li>
+                <li>Cost tracking & analysis</li>
+                <li>Project filtering & search</li>
+                <li>Email support</li>
+                <li>Cancel anytime</li>
+            </ul>
+
+            <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-primary">Start Free Trial</a>
+
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem;">
+                After 7-day trial: $149/year charged annually via Stripe
+            </p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Is it legal to reconstruct records?</h3>
+                <p><strong>Yes</strong>, with transparency. ComplianceLogger is based on EPA's own Audit Policy (1995, revised 2000), which provides penalty reduction for systematic discovery and prompt correction of violations. The key is transparency: our confidence level system (DOCUMENTED/ESTIMATED/RECONSTRUCTED) and transparent timestamping show EPA you're making a good faith effort, not falsifying records. Creating backdated records = illegal. Creating timestamped reconstruction notes = legal.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What if EPA asks when records were created?</h3>
+                <p>ComplianceLogger shows <strong>transparent timestamps</strong> on all records. If you create a log today about last year's disposal, the system shows it was created today. This is intentional and legal. EPA's Audit Policy specifically encourages systematic discovery of violations followed by prompt correction. Our "Audit Mode" badge explicitly shows records were reconstructed during audit preparation. This transparency is your protection.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do I need this if I already track waste?</h3>
+                <p>Maybe. If you're using Excel or paper logs, ComplianceLogger provides: (1) secure cloud storage with backup, (2) photo documentation capability, (3) structured reports EPA expects, (4) confidence level tracking for uncertain data. Plus, <strong>Audit Mode is your insurance policy</strong>—even organized contractors have gaps in records. When EPA shows up, you'll be glad you have the reconstruction tools ready.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does the free trial work?</h3>
+                <p><strong>7 days, full access, no credit card required.</strong> Create an account, explore both modes, upload test data, generate reports. If you decide ComplianceLogger isn't for you, do nothing—trial expires automatically. If you want to continue, add payment method before trial ends. Simple.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>All major credit cards via Stripe (Visa, Mastercard, American Express, Discover). Payments are processed securely and PCI-compliant. Annual billing only ($149/year). No monthly option to keep costs low.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I cancel anytime?</h3>
+                <p><strong>Yes.</strong> No contracts, no cancellation fees. Cancel from your account settings anytime. Access continues until end of current billing period, then auto-renewal stops. No questions asked.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you offer enterprise pricing?</h3>
+                <p>Not yet. Current version is single-user accounts ($149/year each). <strong>Enterprise features coming in v2.0:</strong> multi-user accounts, role-based access, priority support, custom reporting ($499/year). If you need enterprise features now, contact us at <a href="mailto:support@lexopoly.com" style="color: var(--primary-orange);">support@lexopoly.com</a></p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data secure?</h3>
+                <p><strong>Yes.</strong> Your data is encrypted in transit (HTTPS) and at rest. Photos stored on DigitalOcean Spaces (S3-compatible) with redundancy and backups. Database hosted on DigitalOcean Managed PostgreSQL with automatic backups and 3-year retention. We don't sell your data, share it with third parties, or use it for marketing. See our <a href="/compliancelogger/privacy/" style="color: var(--primary-orange);">Privacy Policy</a> for details.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How much does an EPA penalty cost?</h3>
+                <p><strong>$25,000–$75,000+ per violation.</strong> Criminal liability possible for falsified records. ComplianceLogger costs $149/year = 0.2%–0.6% of a single penalty. Even if you only use Audit Mode once in 10 years, it pays for itself 100x over.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 3rem 0;">
+            <h2 style="color: var(--deep-blue); margin-bottom: 1rem;">Ready to Get EPA-Compliant?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">Start your 7-day free trial today</p>
+            <a href="https://compliancelogger-prod-jykbd.ondigitalocean.app" class="btn-primary">Start Free Trial</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <a href="/compliancelogger/">Home</a>
+            <a href="/compliancelogger/features/">Features</a>
+            <a href="/compliancelogger/contact/">Contact</a>
+            <a href="/compliancelogger/privacy/">Privacy</a>
+            <a href="/compliancelogger/terms/">Terms</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.8;">
+            ComplianceLogger is a record-keeping tool, not legal advice. Consult environmental attorneys for audit situations.
+        </p>
+    </footer>
+</body>
+</html>
