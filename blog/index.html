@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Lexopoly Blog | Professional Software Insights & Best Practices</title>
+    <meta name="description" content="Expert insights on transcription, compliance, and professional software. Learn best practices for LocalTranscribe, ComplianceLogger, and QuoteCreator from the Lexopoly team.">
+    <meta name="keywords" content="transcription tips, EPA compliance, construction waste, legal software, professional tools, software blog">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/blog/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lexopoly Blog | Professional Software Insights">
+    <meta property="og:description" content="Expert insights on transcription, compliance, and professional software best practices.">
+    <meta property="og:url" content="https://lexopoly.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lexopoly">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lexopoly Blog | Professional Software Insights">
+    <meta name="twitter:description" content="Expert insights on transcription, compliance, and professional software best practices.">
+    <meta name="twitter:site" content="@lexopoly">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
+    <meta name="application-name" content="Lexopoly Blog">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Performance optimizations */
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Optimize font rendering */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Hardware acceleration for animations */
+        .fade-in, .article-card, .btn-primary, .btn-secondary {
+            will-change: transform;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+
+            /* Product colors */
+            --compliancelogger: #2b6cb0;
+            --localtranscribe: #b45309;
+            --quotecreator: #2f7d32;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays */
+        .fade-in:nth-child(1) { transition-delay: 0.1s; }
+        .fade-in:nth-child(2) { transition-delay: 0.2s; }
+        .fade-in:nth-child(3) { transition-delay: 0.3s; }
+        .fade-in:nth-child(4) { transition-delay: 0.4s; }
+        .fade-in:nth-child(5) { transition-delay: 0.5s; }
+        .fade-in:nth-child(6) { transition-delay: 0.6s; }
+
+        /* UNIFIED NAVIGATION TEMPLATE */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        /* Main Navigation */
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Dropdown Container */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 1rem 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Buttons */
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary-nav {
+            padding: 0.5rem 1.25rem;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary-nav:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        /* Non-dropdown nav links (like Pricing, Blog) */
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav) {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav):hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Blog Hero section */
+        .blog-hero {
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .blog-hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Category Filters */
+        .category-filters {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            display: inline-block;
+        }
+
+        .filter-buttons {
+            display: inline-flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .filter-btn.compliancelogger.active {
+            background: var(--compliancelogger);
+            border-color: var(--compliancelogger);
+        }
+
+        .filter-btn.localtranscribe.active {
+            background: var(--localtranscribe);
+            border-color: var(--localtranscribe);
+        }
+
+        .filter-btn.quotecreator.active {
+            background: var(--quotecreator);
+            border-color: var(--quotecreator);
+        }
+
+        /* Articles Grid */
+        .articles-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+
+        .article-card.hidden {
+            display: none;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .product-badge.compliancelogger {
+            background: var(--compliancelogger);
+        }
+
+        .product-badge.localtranscribe {
+            background: var(--localtranscribe);
+        }
+
+        .product-badge.quotecreator {
+            background: var(--quotecreator);
+        }
+
+        .article-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .article-card h2 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .article-card h2 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .article-card h2 a:hover {
+            color: var(--accent);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .article-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .article-link:hover {
+            gap: 0.75rem;
+        }
+
+        .article-link::after {
+            content: '→';
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-trust {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .trust-badge {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .company-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-main {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin: 0.5rem;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-main.show {
+                display: flex;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+            }
+
+            .nav-dropdown > a {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 1rem;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-secondary-nav,
+            .btn-primary-nav {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+
+            .blog-hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .articles-section {
+                padding: 1.5rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .filter-label {
+                display: block;
+                margin-bottom: 0.75rem;
+            }
+
+            .filter-buttons {
+                width: 100%;
+            }
+
+            .filter-btn {
+                flex: 1;
+                min-width: 100px;
+            }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD for Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Lexopoly Blog",
+      "description": "Expert insights on transcription, compliance, and professional software best practices",
+      "url": "https://lexopoly.com/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "blogPost": []
+    }
+    </script>
+
+    <!-- Analytics Integration -->
+    <script src="/js/analytics.js" defer></script>
+</head>
+<body>
+    <!-- UNIFIED NAVIGATION TEMPLATE -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                Lexopoly
+                <span class="logo-subtitle">Professional Software</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+            <div class="nav-main" id="nav-main">
+                <!-- Products Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Products
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <a href="/compliancelogger/">ComplianceLogger</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Solutions
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">By Industry</div>
+                        <a href="/lawyers/">For Lawyers</a>
+                        <a href="/journalists/">For Journalists</a>
+                        <a href="/dictation/">Dictation & Medical</a>
+                        <a href="/court-reporters/">For Court Reporters</a>
+                        <a href="/government/">For Government</a>
+                        <a href="/education/">For Education</a>
+                    </div>
+                </div>
+
+                <!-- About Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        About
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/about/">About Lexopoly</a>
+                        <a href="/contact/">Contact Us</a>
+                        <a href="/support/">Support</a>
+                        <a href="/blog/">Blog</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/privacy/">Privacy Policy</a>
+                        <a href="/terms/">Terms of Service</a>
+                    </div>
+                </div>
+
+                <!-- Pricing Link (non-dropdown) -->
+                <a href="/pricing/">Pricing</a>
+
+                <!-- CTAs -->
+                <div class="nav-cta">
+                    <a href="/demo/" class="btn-secondary-nav">Watch Demo</a>
+                    <a href="/#products" class="btn-primary-nav">Explore Products</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="blog-hero">
+            <h1>Lexopoly Blog</h1>
+            <p class="subtitle">
+                Expert insights, best practices, and guides for professional software users.
+                Learn how to get the most from LocalTranscribe, ComplianceLogger, and QuoteCreator.
+            </p>
+        </section>
+
+        <!-- Category Filters -->
+        <div class="category-filters fade-in">
+            <span class="filter-label">Filter by Product:</span>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all" onclick="filterArticles('all')">All Articles</button>
+                <button class="filter-btn compliancelogger" data-category="compliancelogger" onclick="filterArticles('compliancelogger')">ComplianceLogger</button>
+                <button class="filter-btn localtranscribe" data-category="localtranscribe" onclick="filterArticles('localtranscribe')">LocalTranscribe</button>
+                <button class="filter-btn quotecreator" data-category="quotecreator" onclick="filterArticles('quotecreator')">QuoteCreator</button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <section class="articles-section fade-in">
+            <div class="articles-grid" id="articles-grid">
+                <!-- Article 1: EPA Audit Notice -->
+                <article class="article-card fade-in" data-category="compliancelogger">
+                    <div class="article-image">📋</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge compliancelogger">ComplianceLogger</span>
+                            <span class="article-date">2025-10-14</span>
+                        </div>
+                        <h2><a href="/blog/epa-audit-notice-30-days/">EPA Audit Notice: What Construction Companies Need to Do in 30 Days</a></h2>
+                        <p class="article-excerpt">
+                            Just received an EPA audit notice? Here's your 30-day action plan with crisis-mode guidance, record reconstruction strategies, and exactly what auditors expect to see.
+                        </p>
+                        <a href="/blog/epa-audit-notice-30-days/" class="article-link">Read Full Article</a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Reconstruct Waste Records -->
+                <article class="article-card fade-in" data-category="compliancelogger">
+                    <div class="article-image">🗄️</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge compliancelogger">ComplianceLogger</span>
+                            <span class="article-date">2025-10-14</span>
+                        </div>
+                        <h2><a href="/blog/reconstruct-waste-disposal-records/">How to Reconstruct Waste Disposal Records for EPA Audit</a></h2>
+                        <p class="article-excerpt">
+                            Legal framework for reconstructing missing waste disposal records. Learn the 4-tier evidence system and how to build legally defensible documentation from incomplete records.
+                        </p>
+                        <a href="/blog/reconstruct-waste-disposal-records/" class="article-link">Read Full Article</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Product Category Links -->
+        <section class="articles-section fade-in">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--lexopoly-primary);">Browse by Product</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">📊</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge compliancelogger">ComplianceLogger</span>
+                        </div>
+                        <h2><a href="/blog/compliancelogger/">ComplianceLogger Articles</a></h2>
+                        <p class="article-excerpt">
+                            EPA compliance guides, waste tracking best practices, and audit preparation strategies for construction contractors.
+                        </p>
+                        <a href="/blog/compliancelogger/" class="article-link">View All ComplianceLogger Articles</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">🎙️</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge localtranscribe">LocalTranscribe</span>
+                        </div>
+                        <h2><a href="/blog/localtranscribe/">LocalTranscribe Articles</a></h2>
+                        <p class="article-excerpt">
+                            Transcription tips, privacy best practices, and workflow optimization for legal, medical, and professional users.
+                        </p>
+                        <a href="/blog/localtranscribe/" class="article-link">View All LocalTranscribe Articles</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">📝</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge quotecreator">QuoteCreator</span>
+                        </div>
+                        <h2><a href="/blog/quotecreator/">QuoteCreator Articles</a></h2>
+                        <p class="article-excerpt">
+                            Professional estimate creation, mobile workflow tips, and Clio integration guides for service professionals.
+                        </p>
+                        <a href="/blog/quotecreator/" class="article-link">View All QuoteCreator Articles</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <div class="footer-links">
+                    <a href="/about/">About Lexopoly</a>
+                    <a href="/contact/">Contact Us</a>
+                    <a href="/support/">Support</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <div class="footer-links">
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Trust & Security</h4>
+                <div class="footer-trust">
+                    <div class="trust-badge">🔒 Local Processing</div>
+                    <div class="trust-badge">🏥 HIPAA Ready</div>
+                    <div class="trust-badge">⚖️ Legal Grade</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-links">
+                    <a href="https://x.com/lexopoly" target="_blank" rel="noopener">𝕏 Follow on X</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lexopoly LLC. All rights reserved. | Professional software that respects your privacy.</p>
+            <div class="company-info">
+                <span>🏢 Lexopoly LLC</span>
+                <span>🇺🇸 United States</span>
+                <span>🛡️ Privacy-First Since 2025</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMain = document.getElementById('nav-main');
+            navMain.classList.toggle('show');
+        }
+
+        function toggleMobileDropdown(element) {
+            if (window.innerWidth <= 968) {
+                element.classList.toggle('mobile-open');
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const navMain = document.getElementById('nav-main');
+
+            if (!navContainer.contains(event.target) && navMain.classList.contains('show')) {
+                navMain.classList.remove('show');
+            }
+        });
+
+        // Close mobile menu dropdowns when resizing to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 968) {
+                document.querySelectorAll('.nav-dropdown.mobile-open').forEach(dropdown => {
+                    dropdown.classList.remove('mobile-open');
+                });
+            }
+        });
+
+        // Category filtering
+        function filterArticles(category) {
+            const articles = document.querySelectorAll('.article-card[data-category]');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Show/hide articles
+            articles.forEach(article => {
+                if (category === 'all' || article.dataset.category === category) {
+                    article.classList.remove('hidden');
+                } else {
+                    article.classList.add('hidden');
+                }
+            });
+
+            // Track filter event
+            if (typeof trackEvent === 'function') {
+                trackEvent('blog', 'filter_click', category);
+            }
+        }
+
+        // Fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Track page view
+            if (typeof trackEvent === 'function') {
+                trackEvent('funnel', 'blog_homepage_view');
+            }
+
+            // Track article clicks
+            document.querySelectorAll('.article-link, .article-card h2 a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const articleTitle = link.closest('.article-card').querySelector('h2').textContent.trim();
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('engagement', 'blog_article_click', articleTitle);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
