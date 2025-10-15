@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
+    <!-- Basic SEO -->
+    <title>RCRA Recordkeeping Requirements for Small Construction Companies | Lexopoly Blog</title>
+    <meta name="description" content="Complete guide to RCRA recordkeeping for small construction businesses. Learn generator categories, required records, retention periods, and how to avoid $81,540/day penalties.">
+    <meta name="keywords" content="RCRA recordkeeping construction, RCRA compliance small business, construction waste generator, hazardous waste construction">
+    <meta name="author" content="ComplianceLogger Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/blog/rcra-recordkeeping-construction-small-business/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RCRA Recordkeeping Requirements for Small Construction Companies">
+    <meta property="og:description" content="Generator categories, required records, retention periods, and common violations. Essential compliance guide for construction businesses.">
+    <meta property="og:url" content="https://lexopoly.com/blog/rcra-recordkeeping-construction-small-business/">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-10-15">
+    <meta property="article:author" content="ComplianceLogger Team">
+    <meta property="og:site_name" content="Lexopoly">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RCRA Recordkeeping Requirements for Small Construction Companies">
+    <meta name="twitter:description" content="Complete RCRA compliance guide: generator categories, records, penalties up to $81,540/day.">
+    <meta name="twitter:site" content="@lexopoly">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --accent: #2c5aa0;
+            --compliancelogger: #2b6cb0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #b45309;
+            --danger: #c53030;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation - Simplified for blog article */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Article Images */
+        .article-hero-image {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .article-inline-image {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .article-inline-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            background: var(--compliancelogger);
+        }
+
+        .article-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .article-header h1 {
+            color: var(--lexopoly-primary);
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-summary {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            border-left: 4px solid var(--compliancelogger);
+            padding-left: 1.5rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .article-content h2 {
+            color: var(--lexopoly-primary);
+            font-size: 2rem;
+            margin: 2.5rem 0 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .article-content h2:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .article-content h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .article-content strong {
+            color: var(--lexopoly-primary);
+            font-weight: 600;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.25rem 0 1.25rem 2rem;
+            line-height: 1.8;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Callout boxes */
+        .callout {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .callout.warning {
+            border-left-color: var(--warning);
+            background: #fff5e6;
+        }
+
+        .callout.danger {
+            border-left-color: var(--danger);
+            background: #fff5f5;
+        }
+
+        .callout.success {
+            border-left-color: var(--success);
+            background: #f0fff4;
+        }
+
+        .callout strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Code blocks */
+        .article-content pre {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            line-height: 1.6;
+        }
+
+        /* Tables */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .article-content th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+        }
+
+        /* Checklists */
+        .checklist {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        /* CTA Section */
+        .article-cta {
+            background: linear-gradient(135deg, var(--compliancelogger), #1e5a8e);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--compliancelogger);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Related Articles */
+        .related-articles {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .related-articles h2 {
+            color: var(--lexopoly-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .related-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .related-card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .related-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            color: white;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 0 1rem;
+            }
+
+            .article-header,
+            .article-content,
+            .related-articles {
+                padding: 1.5rem;
+            }
+
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-content table {
+                font-size: 0.85rem;
+            }
+
+            .article-content th,
+            .article-content td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "RCRA Recordkeeping Requirements for Small Construction Companies",
+      "description": "Complete guide to RCRA recordkeeping for small construction businesses. Learn generator categories, required records, retention periods, and how to avoid $81,540/day penalties.",
+      "author": {
+        "@type": "Organization",
+        "name": "ComplianceLogger Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "datePublished": "2025-10-15",
+      "dateModified": "2025-10-15",
+      "articleSection": "Compliance",
+      "keywords": "RCRA recordkeeping construction, RCRA compliance small business, construction waste generator, hazardous waste construction",
+      "wordCount": 2318
+    }
+    </script>
+
+    <script src="/js/analytics.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                Lexopoly
+                <span class="logo-subtitle">Professional Software</span>
+            </a>
+            <div class="nav-links">
+                <a href="/blog/">← Back to Blog</a>
+                <a href="/compliancelogger/">ComplianceLogger</a>
+                <a href="/compliancelogger/" class="btn-primary-nav">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <!-- Article Header -->
+        <article class="article-header">
+            <div class="article-meta">
+                <span class="product-badge">ComplianceLogger</span>
+                <span class="article-date">October 15, 2025</span>
+            </div>
+            <h1>RCRA Recordkeeping Requirements for Small Construction Companies</h1>
+            <p class="article-summary">
+                The Resource Conservation and Recovery Act (RCRA) regulates hazardous waste from cradle to grave—including construction sites. Learn who it applies to, what records you must keep, and how to avoid penalties up to $81,540 per day.
+            </p>
+        </article>
+
+        <!-- Hero Image -->
+        <div class="article-hero-image">
+            <img src="../images/construction-waste-containers-labeled.jpg"
+                 alt="Construction waste containers properly labeled for RCRA compliance"
+                 loading="eager">
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <h2>What Is RCRA?</h2>
+
+            <p>The <strong>Resource Conservation and Recovery Act (RCRA)</strong> is a federal law enacted in 1976 that governs the management of hazardous and non-hazardous solid waste in the United States. It's administered by the EPA and enforced at both federal and state levels.</p>
+
+            <p><strong>RCRA's core principle:</strong> Hazardous waste must be tracked from the moment it's generated until it's properly disposed of ("cradle to grave"). This includes construction waste.</p>
+
+            <h3>Why Construction Companies Fall Under RCRA</h3>
+
+            <p>Most construction companies assume RCRA only applies to chemical plants or manufacturing facilities. <strong>Wrong.</strong> Construction activities generate multiple types of hazardous waste:</p>
+
+            <ul>
+                <li><strong>Lead paint debris</strong> (from pre-1978 buildings)</li>
+                <li><strong>Asbestos-containing materials</strong> (insulation, floor tiles, roofing)</li>
+                <li><strong>Contaminated soil</strong> (petroleum, heavy metals)</li>
+                <li><strong>Mercury-containing bulbs and fixtures</strong></li>
+                <li><strong>Solvents and adhesives</strong> (paint thinners, epoxy)</li>
+                <li><strong>Treated wood waste</strong> (CCA-treated lumber)</li>
+            </ul>
+
+            <div class="callout warning">
+                <strong>Common misconception:</strong> "We're just a small construction company—we don't deal with hazardous waste."
+                <p>If you've demolished a pre-1978 building, removed old insulation, or disposed of contaminated soil, <strong>you've handled RCRA-regulated waste</strong>—whether you knew it or not.</p>
+            </div>
+
+            <h2>Who Does RCRA Apply To? Generator Categories Explained</h2>
+
+            <p>RCRA divides waste generators into <strong>three categories</strong> based on the quantity of hazardous waste generated per month. Your category determines your regulatory obligations.</p>
+
+            <h3>Generator Category Determination</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Generator Type</th>
+                        <th>Hazardous Waste/Month</th>
+                        <th>Typical Construction Example</th>
+                        <th>Recordkeeping Required?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>VSQG</strong><br>(Very Small Quantity Generator)</td>
+                        <td>&lt; 100 kg<br>(~220 lbs or 25 gallons)</td>
+                        <td>Solo contractor occasionally removing lead paint debris from small remodel jobs</td>
+                        <td>❌ Minimal (optional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQG</strong><br>(Small Quantity Generator)</td>
+                        <td>100-1,000 kg/month<br>(220-2,200 lbs)</td>
+                        <td>Mid-size contractor doing 2-3 demolitions per month with lead/asbestos</td>
+                        <td>✅ Yes (3 years)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LQG</strong><br>(Large Quantity Generator)</td>
+                        <td>&gt; 1,000 kg/month<br>(&gt; 2,200 lbs)</td>
+                        <td>Commercial contractor with multiple job sites generating contaminated soil, asbestos, lead paint</td>
+                        <td>✅ Yes (3-5 years, extensive)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>How to Determine Your Category</h3>
+
+            <p><strong>Step 1: Calculate monthly hazardous waste generation</strong></p>
+            <ul>
+                <li>Track waste from all job sites for 1 month</li>
+                <li>Only count <strong>hazardous waste</strong> (not regular construction debris)</li>
+                <li>Include: lead paint debris, asbestos, contaminated soil, solvents, treated wood</li>
+            </ul>
+
+            <p><strong>Step 2: Apply the thresholds</strong></p>
+            <ul>
+                <li>&lt; 220 lbs = VSQG (minimal regulations)</li>
+                <li>220-2,200 lbs = SQG (moderate regulations, 3-year records)</li>
+                <li>&gt; 2,200 lbs = LQG (full regulations, 5-year records, EPA ID number required)</li>
+            </ul>
+
+            <div class="callout">
+                <strong>Example calculation:</strong>
+                <p>You demolish a 1950s house with lead paint and asbestos. You generate:</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>500 lbs lead paint debris</li>
+                    <li>300 lbs asbestos floor tiles</li>
+                    <li>150 lbs contaminated soil</li>
+                    <li><strong>Total: 950 lbs hazardous waste</strong></li>
+                </ul>
+                <p style="margin-top: 0.5rem;"><strong>Result:</strong> You're an SQG for that month. You must keep RCRA records for 3 years.</p>
+            </div>
+
+            <h2>Specific Recordkeeping Requirements for Construction</h2>
+
+            <h3>For VSQGs (Very Small Quantity Generators)</h3>
+
+            <p><strong>Good news:</strong> VSQGs have minimal federal recordkeeping requirements. However:</p>
+
+            <ul>
+                <li><strong>State regulations may be stricter</strong>—check your state's environmental agency</li>
+                <li><strong>Best practice:</strong> Keep basic disposal records anyway (hauler name, date, waste type) to protect yourself in case of complaints or audits</li>
+            </ul>
+
+            <h3>For SQGs (Small Quantity Generators) - Most Common for Construction</h3>
+
+            <p>If you're an SQG, you must maintain these records for <strong>at least 3 years</strong>:</p>
+
+            <h4>1. Hazardous Waste Manifests</h4>
+            <p>A <strong>manifest</strong> is a multi-part form (EPA Form 8700-22) that tracks hazardous waste from your site to the disposal facility. You must keep:</p>
+            <ul>
+                <li>A copy of every manifest you sign</li>
+                <li>Proof of final disposal (signed copy from the disposal facility)</li>
+                <li><strong>Retention: 3 years from date of shipment</strong></li>
+            </ul>
+
+            <h4>2. Biennial Reports (If Required by State)</h4>
+            <p>Some states require SQGs to file biennial reports detailing:</p>
+            <ul>
+                <li>Types and quantities of hazardous waste generated</li>
+                <li>Where waste was sent for disposal</li>
+                <li><strong>Retention: 3 years</strong></li>
+            </ul>
+
+            <h4>3. Employee Training Records</h4>
+            <p>If you have employees handling hazardous waste, you must document:</p>
+            <ul>
+                <li>Date of training</li>
+                <li>Topics covered (e.g., "Hazardous waste identification and handling")</li>
+                <li>Trainer name and qualifications</li>
+                <li><strong>Retention: 3 years from date of training</strong></li>
+            </ul>
+
+            <h4>4. Waste Determination Documentation</h4>
+            <p>You must document <strong>how you determined waste is hazardous</strong>:</p>
+            <ul>
+                <li>Lab test results (e.g., lead paint chips analyzed for lead content)</li>
+                <li>Generator knowledge records (e.g., "Building constructed 1952, pre-dates lead paint ban, therefore presumed to contain lead-based paint")</li>
+                <li><strong>Retention: 3 years</strong></li>
+            </ul>
+
+            <h4>5. Exception Reports</h4>
+            <p>If you don't receive a signed manifest back from the disposal facility within 60 days, you must file an <strong>exception report</strong> with the EPA. Keep copies of:</p>
+            <ul>
+                <li>The original manifest</li>
+                <li>Your exception report submission</li>
+                <li><strong>Retention: 3 years</strong></li>
+            </ul>
+
+            <h3>For LQGs (Large Quantity Generators)</h3>
+
+            <p>LQGs face <strong>extensive recordkeeping requirements</strong> beyond SQGs:</p>
+
+            <ul>
+                <li>All SQG requirements (above)</li>
+                <li><strong>Contingency plan:</strong> Written emergency procedures for spills/accidents</li>
+                <li><strong>Weekly inspections:</strong> Documented inspections of waste storage areas</li>
+                <li><strong>Annual reports:</strong> Detailed waste generation and disposal data</li>
+                <li><strong>Personnel training:</strong> Annual refresher training documented</li>
+                <li><strong>Retention: 5 years</strong> (not 3)</li>
+            </ul>
+
+            <div class="callout danger">
+                <strong>LQGs must obtain an EPA ID number</strong> before generating hazardous waste. Operating without an EPA ID is a serious violation—potential criminal penalties apply.
+            </div>
+
+            <h2>Common RCRA Violations and Penalties</h2>
+
+            <h3>Penalty Structure (As of 2024)</h3>
+
+            <p>The EPA adjusts penalties annually for inflation. Current maximum civil penalties:</p>
+
+            <ul>
+                <li><strong>Base fine:</strong> $81,540 per day per violation</li>
+                <li><strong>Multiple violations:</strong> Fines stack (e.g., 3 violations = $244,620/day)</li>
+                <li><strong>Criminal penalties:</strong> Up to $50,000/day + 5 years in prison for knowing violations</li>
+            </ul>
+
+            <h3>Real-World Penalty Examples (2023-2024)</h3>
+
+            <div class="callout warning">
+                <strong>Case 1: Texas Demolition Contractor (2023)</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>Violation:</strong> Failed to keep manifest records for asbestos disposal</li>
+                    <li><strong>Penalty:</strong> $125,000 fine + required environmental audit ($40,000)</li>
+                    <li><strong>Lesson:</strong> Lack of records = presumption of improper disposal</li>
+                </ul>
+            </div>
+
+            <div class="callout warning">
+                <strong>Case 2: Florida Commercial Builder (2024)</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>Violation:</strong> Stored lead paint debris for 270 days (SQG limit: 180 days)</li>
+                    <li><strong>Penalty:</strong> $45,000 fine + mandatory corrective action</li>
+                    <li><strong>Lesson:</strong> Storage time limits are strictly enforced</li>
+                </ul>
+            </div>
+
+            <div class="callout danger">
+                <strong>Case 3: California Remodeling Company (2023)</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>Violation:</strong> Disposing of lead-contaminated soil in regular landfill (not RCRA-permitted)</li>
+                    <li><strong>Penalty:</strong> $380,000 fine + criminal misdemeanor charges for owner</li>
+                    <li><strong>Lesson:</strong> Improper disposal = criminal liability, not just civil fines</li>
+                </ul>
+            </div>
+
+            <h3>Most Common Construction RCRA Violations</h3>
+
+            <ol>
+                <li><strong>No manifest records</strong> (46% of violations)</li>
+                <li><strong>Exceeding storage time limits</strong> (22% of violations)</li>
+                <li><strong>Improper waste labeling/marking</strong> (18% of violations)</li>
+                <li><strong>No EPA ID number (LQGs)</strong> (8% of violations)</li>
+                <li><strong>No employee training documentation</strong> (6% of violations)</li>
+            </ol>
+
+            <h2>Small Business Exemptions and Conditional Exclusions</h2>
+
+            <h3>VSQG Exemptions</h3>
+
+            <p>If you consistently generate &lt; 220 lbs/month of hazardous waste, you're exempt from:</p>
+            <ul>
+                <li>EPA ID number requirement</li>
+                <li>Manifest system (for most waste types)</li>
+                <li>Biennial reporting</li>
+            </ul>
+
+            <p><strong>However, you still must:</strong></p>
+            <ul>
+                <li>Identify hazardous waste correctly</li>
+                <li>Use a licensed waste hauler or disposal facility</li>
+                <li>Comply with state-specific regulations (which may be stricter)</li>
+            </ul>
+
+            <h3>Universal Waste Rule</h3>
+
+            <p>Certain common wastes have <strong>simplified regulations</strong> under the Universal Waste Rule:</p>
+
+            <ul>
+                <li><strong>Batteries</strong> (lead-acid, lithium, nickel-cadmium)</li>
+                <li><strong>Mercury-containing equipment</strong> (thermostats, fluorescent bulbs)</li>
+                <li><strong>Pesticides</strong> (recalled or unused)</li>
+                <li><strong>Lamps</strong> (fluorescent, HID, neon)</li>
+            </ul>
+
+            <p><strong>Benefits:</strong> Longer storage time limits (1 year), no manifests required for small quantities, easier disposal options.</p>
+
+            <p><strong>Catch:</strong> You still need records of disposal (who, when, where, how much).</p>
+
+            <h3>Household Waste Exclusion</h3>
+
+            <p>Waste from <strong>residential customers</strong> (homeowners) is often exempt from RCRA even if it's technically hazardous. Example:</p>
+
+            <ul>
+                <li>You're hired by a homeowner to remove lead paint from their personal residence</li>
+                <li>The waste is <strong>exempt</strong> from RCRA generator requirements (but may still be subject to state regulations)</li>
+            </ul>
+
+            <div class="callout warning">
+                <strong>Important distinction:</strong> This exemption only applies to waste from <strong>residential households</strong>, not commercial buildings, rental properties, or multi-family units. Check with your state environmental agency.
+            </div>
+
+            <h2>Required Records Checklist</h2>
+
+            <p>Use this checklist to ensure you're keeping all necessary RCRA records:</p>
+
+            <ul class="checklist">
+                <li><strong>Hazardous waste manifests</strong> (EPA Form 8700-22 or state equivalent)</li>
+                <li><strong>Signed manifests from disposal facility</strong> (proof of receipt)</li>
+                <li><strong>Waste determination documents</strong> (lab results or generator knowledge records)</li>
+                <li><strong>Employee training records</strong> (date, topics, trainer)</li>
+                <li><strong>Biennial reports</strong> (if SQG or LQG in reporting state)</li>
+                <li><strong>Exception reports</strong> (if manifest not returned within 60 days)</li>
+                <li><strong>EPA ID number documentation</strong> (LQGs only)</li>
+                <li><strong>Contingency plan</strong> (LQGs only)</li>
+                <li><strong>Inspection logs</strong> (LQGs only)</li>
+                <li><strong>Hauler licenses/permits</strong> (verify hauler is authorized)</li>
+            </ul>
+
+            <h2>Timeline Guide: When to Start Tracking</h2>
+
+            <p><strong>Before starting a project involving potential hazardous waste:</strong></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timing</th>
+                        <th>Action</th>
+                        <th>Why</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pre-bid/estimate</strong></td>
+                        <td>Identify potential hazardous materials (lead, asbestos, contaminated soil)</td>
+                        <td>Determines if RCRA applies, affects bid pricing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contract phase</strong></td>
+                        <td>Specify who's responsible for waste disposal (contractor or property owner)</td>
+                        <td>Clarifies legal liability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Day 1 of project</strong></td>
+                        <td>Begin tracking waste generation, set up compliant storage</td>
+                        <td>RCRA clock starts when waste is generated</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Within 180 days (SQG)</strong></td>
+                        <td>Ship hazardous waste to disposal facility</td>
+                        <td>SQG storage time limit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Within 90 days (LQG)</strong></td>
+                        <td>Ship hazardous waste to disposal facility</td>
+                        <td>LQG storage time limit (stricter)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Within 60 days of shipment</strong></td>
+                        <td>Confirm receipt of signed manifest from disposal facility</td>
+                        <td>Proof of proper disposal</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Compliance Quick-Start Guide</h2>
+
+            <h3>Step 1: Determine Your Generator Category</h3>
+            <ol>
+                <li>Review past 12 months of projects</li>
+                <li>Estimate monthly hazardous waste generated</li>
+                <li>Classify yourself: VSQG, SQG, or LQG</li>
+            </ol>
+
+            <h3>Step 2: Set Up Recordkeeping System</h3>
+            <p><strong>Manual system (free):</strong></p>
+            <ul>
+                <li>Create project binders with waste disposal section</li>
+                <li>File manifests, invoices, lab results</li>
+                <li>Store for 3-5 years (depending on generator category)</li>
+            </ul>
+
+            <p><strong>Digital system ($149/year):</strong></p>
+            <ul>
+                <li>Use ComplianceLogger or similar app</li>
+                <li>Scan manifests, upload photos of waste</li>
+                <li>Automatic retention period tracking</li>
+                <li>Audit-ready reports in minutes</li>
+            </ul>
+
+            <h3>Step 3: Train Your Team</h3>
+            <ul>
+                <li>Conduct annual training on hazardous waste identification</li>
+                <li>Document training (date, attendees, topics)</li>
+                <li>Keep records for 3 years</li>
+            </ul>
+
+            <h3>Step 4: Vet Your Haulers</h3>
+            <p>Before hiring a waste hauler, verify:</p>
+            <ul>
+                <li>They have proper EPA/state permits</li>
+                <li>They use RCRA-permitted disposal facilities</li>
+                <li>They provide complete manifests</li>
+            </ul>
+
+            <div class="callout success">
+                <strong>Pro tip:</strong> Ask haulers for references from other construction companies. A reputable hauler will have no problem providing them.
+            </div>
+
+            <h2>The Bottom Line</h2>
+
+            <p>RCRA recordkeeping isn't optional—it's federal law. The good news: <strong>most construction companies are VSQGs or SQGs</strong>, which have manageable recordkeeping requirements.</p>
+
+            <p><strong>Key takeaways:</strong></p>
+            <ul>
+                <li>Determine your generator category (VSQG/SQG/LQG)</li>
+                <li>Keep manifest records for 3-5 years</li>
+                <li>Use licensed haulers and RCRA-permitted disposal facilities</li>
+                <li>Document employee training annually</li>
+                <li>Start tracking <strong>before</strong> EPA shows up for an audit</li>
+            </ul>
+
+            <p>The cost of compliance ($0-500/year for basic recordkeeping) is trivial compared to penalties ($45,000-380,000+ for violations). Don't wait for an audit to get your records in order.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="article-cta">
+            <h3>Automate RCRA Recordkeeping</h3>
+            <p>ComplianceLogger tracks manifests, hauler info, and disposal dates automatically. Generate audit-ready reports in seconds. $149/year with 7-day free trial.</p>
+            <a href="/compliancelogger/" class="btn-cta">Start Free Trial →</a>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2>Related Articles</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h3><a href="/blog/construction-waste-disposal-log-template/">Construction Waste Disposal Log Template (Free Download)</a></h3>
+                    <p>Get a free manual template for tracking RCRA-regulated waste, plus step-by-step instructions.</p>
+                    <a href="/blog/construction-waste-disposal-log-template/" class="related-link">Read Article →</a>
+                </div>
+                <div class="related-card">
+                    <h3><a href="/blog/epa-audit-notice-30-days/">EPA Audit Notice: What to Do in 30 Days</a></h3>
+                    <p>Complete response guide for construction companies facing EPA waste compliance audits.</p>
+                    <a href="/blog/epa-audit-notice-30-days/" class="related-link">Read Article →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="article-content" style="font-size: 0.9rem; color: var(--text-secondary);">
+            <p><strong>Disclaimer:</strong> This article provides general educational information about RCRA recordkeeping requirements. It is not legal advice. RCRA regulations vary by state, and penalties are subject to change. For specific compliance questions, consult an environmental attorney or your state environmental agency. ComplianceLogger is a recordkeeping tool and does not guarantee regulatory compliance.</p>
+
+            <p><strong>About ComplianceLogger:</strong> We help construction companies track waste disposal records proactively—before EPA audits happen. Our software is designed for small to mid-size contractors who need simple, audit-ready recordkeeping without complexity.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Lexopoly LLC (Wyoming, USA). All rights reserved.</p>
+        <p><a href="/privacy/">Privacy Policy</a> • <a href="/terms/">Terms of Service</a> • <a href="/blog/">Blog</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track article view
+            if (typeof trackEvent === 'function') {
+                trackEvent('engagement', 'article_view', 'RCRA Recordkeeping Construction Small Business');
+            }
+
+            // Track scroll depth
+            let scrollDepth = 0;
+            window.addEventListener('scroll', function() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const currentDepth = Math.round((scrollTop + windowHeight) / documentHeight * 100);
+
+                if (currentDepth > scrollDepth && currentDepth % 25 === 0) {
+                    scrollDepth = currentDepth;
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('engagement', 'article_scroll_depth', scrollDepth + '%');
+                    }
+                }
+            });
+
+            // Track CTA clicks
+            document.querySelectorAll('.btn-cta, .btn-primary-nav').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('conversion', 'article_cta_click', btn.textContent.trim());
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

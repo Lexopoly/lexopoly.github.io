@@ -2,8 +2,11 @@
  * Exit-Intent Popup System
  * Detects when users are about to leave and shows targeted value proposition
  * Following elite company patterns (Stripe, Vercel minimal overlays)
+ *
+ * TEMPORARILY DISABLED - 2025-10-15
  */
 
+/* COMMENTED OUT - Remove popup per user request
 (function() {
     'use strict';
 
@@ -290,3 +293,4 @@
     }
 
 })();
+END COMMENTED OUT SECTION */
