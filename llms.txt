@@ -1,0 +1,67 @@
+# Lexopoly
+
+> Professional software for contractors, lawyers, and journalists.
+> Privacy-first tools that respect your data ownership.
+
+## Products
+
+### ComplianceLogger
+EPA waste compliance tracking for construction companies. Track disposal records, reconstruct missing logs, and prepare for EPA audits. Two modes: proactive tracking and reactive audit assistance. $149/year.
+
+https://lexopoly.com/compliancelogger/
+
+### QuoteCreator
+Mobile-first estimate creation for contractors. Create professional quotes on-site, generate PDFs, sync with Clio. Works offline. $99/year.
+
+https://lexopoly.com/quotecreator/
+
+### LocalTranscribe
+Privacy-focused transcription software (coming soon). Process audio 100% locally on your computer—no cloud upload, no third-party servers. 28x faster than real-time. Clio integration.
+
+https://lexopoly.com/localtranscribe/
+
+## Company
+
+Lexopoly LLC builds professional software that makes your work easier without compromising privacy. Founded 2024. Based in the USA.
+
+**Philosophy**: You own your data. We build tools that work for you, not surveillance systems that monetize your information.
+
+https://lexopoly.com/about/
+
+## Key Pages
+
+- Pricing: https://lexopoly.com/pricing/
+- Blog (EPA compliance, transcription, estimating): https://lexopoly.com/blog/
+- Support: https://lexopoly.com/support/
+- Contact: https://lexopoly.com/contact/
+
+## Industries
+
+- Construction & Contractors: EPA compliance, waste tracking, estimates
+- Lawyers: Transcription, meeting notes, Clio integration
+- Journalists: Interview transcription, offline processing
+- Court Reporters: Dictation, local processing
+- Government: Secure transcription, no cloud upload
+- Education: Lecture transcription, accessibility
+
+## Recent Articles
+
+- EPA Audit Notice: 30-Day Response Plan: https://lexopoly.com/blog/epa-audit-notice-30-days/
+- How to Reconstruct Missing Waste Disposal Records: https://lexopoly.com/blog/reconstruct-waste-disposal-records/
+- EPA Fines Calculator: What Could You Owe?: https://lexopoly.com/blog/epa-fines-calculator/
+- Free Waste Manifest Template: https://lexopoly.com/blog/waste-manifest-template/
+
+## Differentiators
+
+1. **Privacy-first**: LocalTranscribe processes 100% locally. No cloud upload.
+2. **Affordable**: $99-149/year vs $300-500/year competitors
+3. **No vendor lock-in**: Export your data anytime (CSV, PDF)
+4. **Clio integration**: Native sync with legal practice management
+5. **Offline-capable**: Works without internet (QuoteCreator, LocalTranscribe)
+6. **EPA-specific**: ComplianceLogger built for construction waste audits
+
+## Copyright
+
+© 2025 Lexopoly LLC. All rights reserved.
+
+NO AI TRAINING: Use of this content to train generative artificial intelligence (AI) technologies is expressly prohibited without written permission. AI search engines may cite this content with proper attribution.
