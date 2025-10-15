@@ -556,8 +556,99 @@
             text-align: center;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--primary-orange);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #e5612f 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
         /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-item {
+                padding: 1.25rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -616,6 +707,111 @@
         "description": "$149/year subscription",
         "availability": "https://schema.org/OnlineOnly"
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does ComplianceLogger help if I've already lost waste disposal records?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ComplianceLogger includes a record reconstruction tool that uses invoices, photos, and hauler testimony to rebuild missing documentation using EPA's 4-tier evidence framework. Legally defensible for audits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is $149/year really enough for EPA compliance software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ComplianceLogger is designed for small/mid-size contractors who need compliance without enterprise pricing. One avoided fine ($81,540/day) pays for 547 years of the software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I get audited? Can ComplianceLogger generate reports for the EPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. One-click export of all waste records in EPA-compliant format. Includes manifests, invoices, photos, and disposal site confirmations organized by project and date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be a tech expert to use this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. ComplianceLogger is designed for contractors, not IT staff. Log waste in 30 seconds: take photo of dumpster, enter quantity, done. Simple mobile interface."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track waste for multiple job sites at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Unlimited projects. Each project gets its own waste log. Filter by date, site, waste type, or hauler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What waste types does ComplianceLogger track?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Construction debris, hazardous waste (asbestos, lead, contaminated soil), universal waste (batteries, electronics), and special waste (medical, chemical). Covers RCRA and state regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will ComplianceLogger work if my crew isn't good with technology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mobile app has big buttons, photo-first interface, and minimal typing. If your crew can take a phone photo, they can log waste."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to my data if I cancel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You keep it. Export all records as PDF or CSV before canceling. Your data is yours forever. We don't hold it hostage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ComplianceLogger guarantee I won't get fined?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No software can guarantee zero fines (that depends on your actual practices), but ComplianceLogger ensures you have the documentation the EPA requires. Good records dramatically reduce penalties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try it before committing to $149/year?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 7-day free trial with full features. Test it on your current projects. No credit card required until you decide to subscribe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What states does this work in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All 50 states. ComplianceLogger covers federal EPA requirements (RCRA, CERCLA) plus state-specific regulations. Regulations database updated monthly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does ComplianceLogger keep records?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minimum 5 years (EPA requirement). You can keep records longer if needed. Export and archive anytime."
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -830,6 +1026,106 @@
             </div>
         </section>
     </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Everything you need to know about ComplianceLogger</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">How does ComplianceLogger help if I've already lost waste disposal records?</h3>
+                    <div class="faq-answer">
+                        <p>ComplianceLogger includes a record reconstruction tool that uses invoices, photos, and hauler testimony to rebuild missing documentation using EPA's 4-tier evidence framework. Legally defensible for audits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is $149/year really enough for EPA compliance software?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. ComplianceLogger is designed for small/mid-size contractors who need compliance without enterprise pricing. One avoided fine ($81,540/day) pays for 547 years of the software.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I get audited? Can ComplianceLogger generate reports for the EPA?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. One-click export of all waste records in EPA-compliant format. Includes manifests, invoices, photos, and disposal site confirmations organized by project and date.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need to be a tech expert to use this?</h3>
+                    <div class="faq-answer">
+                        <p>No. ComplianceLogger is designed for contractors, not IT staff. Log waste in 30 seconds: take photo of dumpster, enter quantity, done. Simple mobile interface.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I track waste for multiple job sites at once?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Unlimited projects. Each project gets its own waste log. Filter by date, site, waste type, or hauler.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What waste types does ComplianceLogger track?</h3>
+                    <div class="faq-answer">
+                        <p>Construction debris, hazardous waste (asbestos, lead, contaminated soil), universal waste (batteries, electronics), and special waste (medical, chemical). Covers RCRA and state regulations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Will ComplianceLogger work if my crew isn't good with technology?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Mobile app has big buttons, photo-first interface, and minimal typing. If your crew can take a phone photo, they can log waste.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What happens to my data if I cancel?</h3>
+                    <div class="faq-answer">
+                        <p>You keep it. Export all records as PDF or CSV before canceling. Your data is yours forever. We don't hold it hostage.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Does ComplianceLogger guarantee I won't get fined?</h3>
+                    <div class="faq-answer">
+                        <p>No software can guarantee zero fines (that depends on your actual practices), but ComplianceLogger ensures you have the documentation the EPA requires. Good records dramatically reduce penalties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I try it before committing to $149/year?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. 7-day free trial with full features. Test it on your current projects. No credit card required until you decide to subscribe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What states does this work in? I'm in [State].</h3>
+                    <div class="faq-answer">
+                        <p>All 50 states. ComplianceLogger covers federal EPA requirements (RCRA, CERCLA) plus state-specific regulations. Regulations database updated monthly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does ComplianceLogger keep records?</h3>
+                    <div class="faq-answer">
+                        <p>Minimum 5 years (EPA requirement). You can keep records longer if needed. Export and archive anytime.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us for personalized answers.</p>
+                <a href="/compliancelogger/contact/" class="btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
