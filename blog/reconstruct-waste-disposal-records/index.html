@@ -198,6 +198,42 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Article Images */
+        .article-hero-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .article-inline-image {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .article-inline-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
         .article-category {
             display: inline-block;
             background: var(--compliancelogger);
@@ -630,6 +666,13 @@
             </div>
         </article>
 
+        <!-- Hero Image -->
+        <div class="article-hero-image">
+            <img src="../images/flipping through a red rope folder for paperwork.jpg"
+                 alt="Professional reviewing and organizing waste disposal records for EPA audit reconstruction"
+                 loading="eager">
+        </div>
+
         <!-- Article Content -->
         <div class="article-content">
             <p><strong>Your EPA auditor just asked for 3 years of waste disposal records. You dig through filing cabinets, check email, call your waste hauler... and find gaps. Big ones.</strong></p>
@@ -687,6 +730,14 @@
                 <p><strong>Why it works:</strong> Financial records are auditable and third-party verified. Banks don't lie.</p>
             </div>
 
+            <!-- Inline Image: Financial Records -->
+            <div class="article-inline-image">
+                <img src="../images/person marking up spreadsheets.jpg"
+                     alt="Financial analyst reviewing expense spreadsheets for waste disposal record reconstruction"
+                     loading="lazy">
+                <p class="image-caption">Financial records provide strong Tier 2 evidence for reconstructing missing waste disposal documentation</p>
+            </div>
+
             <div class="evidence-tier">
                 <div class="tier-header">
                     <div class="tier-title">Tier 3: Visual/Physical Evidence</div>
@@ -719,6 +770,14 @@
             <div class="callout info">
                 <div class="callout-title">💡 The Golden Rule</div>
                 <p><strong>Always combine multiple evidence tiers.</strong> An invoice (Tier 2) + photos of dumpsters (Tier 3) + reasonable volume estimate (Tier 4) = defensible reconstruction. An estimate alone (Tier 4) = "we guessed."</p>
+            </div>
+
+            <!-- Inline Image: Documentation Challenge -->
+            <div class="article-inline-image">
+                <img src="../images/female office manager stressed with paperwork and folders.jpg"
+                     alt="Office manager overwhelmed with paperwork showing the challenge of missing waste disposal records"
+                     loading="lazy">
+                <p class="image-caption">Missing records can be overwhelming, but systematic reconstruction following EPA guidelines provides a defensible solution</p>
             </div>
 
             <h2>7-Step Reconstruction Process</h2>
@@ -1150,6 +1209,18 @@ DATE: October 14, 2025
             </ul>
 
             <p><strong>Final advice:</strong> If you're facing reconstruction, work systematically through the 7-step process, be radically transparent about gaps, and document every decision. Auditors respect honesty and reasonable efforts far more than perfect-looking fabrications.</p>
+        </div>
+
+        <!-- Photo Credits -->
+        <div class="article-content" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--text-secondary);">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Photo Credits</h3>
+            <p>Photos in this article are used under CC0/free licenses from Unsplash and Pexels:</p>
+            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                <li>Hero image: Document organization and review (Unsplash/Pexels)</li>
+                <li>Financial records: Spreadsheet analysis (Unsplash/Pexels)</li>
+                <li>Documentation challenge: Paperwork management (Unsplash/Pexels)</li>
+            </ul>
+            <p style="margin-top: 0.5rem;">All photos verified as CC0 (Creative Commons Zero) at time of download and free for commercial use.</p>
         </div>
 
         <!-- Related Articles -->

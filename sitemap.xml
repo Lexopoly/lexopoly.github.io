@@ -145,6 +145,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lexopoly.com/blog/epa-fines-calculator/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/waste-manifest-template/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lexopoly.com/terms/</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>yearly</changefreq>

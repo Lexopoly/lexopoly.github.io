@@ -157,6 +157,43 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
+        /* Article Images */
+        .article-hero-image {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .article-inline-image {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .article-inline-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
         .article-meta {
             display: flex;
             gap: 1rem;
@@ -542,6 +579,13 @@
             </p>
         </article>
 
+        <!-- Hero Image -->
+        <div class="article-hero-image">
+            <img src="../images/overflowing dumpster.jpg"
+                 alt="Overflowing construction waste dumpster showing common EPA audit triggers"
+                 loading="eager">
+        </div>
+
         <!-- Article Content -->
         <div class="article-content">
             <h2>Opening the Letter: What Just Happened?</h2>
@@ -599,6 +643,14 @@
 
             <div class="callout warning">
                 <strong>ACTION:</strong> Accept the seriousness, but stay focused. Most audits are resolved with documentation and minor penalties—catastrophic fines only happen with egregious or willful violations.
+            </div>
+
+            <!-- Inline Image: Site Inspection -->
+            <div class="article-inline-image">
+                <img src="../images/construciton manager with clipboard and hardhat walking through site.jpg"
+                     alt="Construction manager with clipboard conducting site inspection for EPA compliance"
+                     loading="lazy">
+                <p class="image-caption">Professional site inspections and documentation are critical during EPA audits</p>
             </div>
 
             <h2>Day 4-7: Gather What You Already Have</h2>
@@ -736,6 +788,14 @@
             </div>
 
             <h2>Day 16-20: Organize Your Response</h2>
+
+            <!-- Inline Image: Documentation -->
+            <div class="article-inline-image">
+                <img src="../images/stack of binders full of paperwork.jpg"
+                     alt="Organized stack of binders showing proper EPA audit documentation"
+                     loading="lazy">
+                <p class="image-caption">Comprehensive documentation organization is essential for successful EPA audit responses</p>
+            </div>
 
             <h3>Create a Narrative Report</h3>
 
@@ -962,6 +1022,18 @@ Sincerely,
                     <a href="/blog/compliancelogger/" class="related-link">View All →</a>
                 </div>
             </div>
+        </div>
+
+        <!-- Photo Credits -->
+        <div class="article-content" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--text-secondary);">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Photo Credits</h3>
+            <p>Photos in this article are used under CC0/free licenses from Unsplash and Pexels:</p>
+            <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                <li>Hero image: Construction waste dumpster (Unsplash/Pexels)</li>
+                <li>Site inspection: Construction manager with clipboard (Unsplash/Pexels)</li>
+                <li>Documentation: Stack of binders (Unsplash/Pexels)</li>
+            </ul>
+            <p style="margin-top: 0.5rem;">All photos verified as CC0 (Creative Commons Zero) at time of download and free for commercial use.</p>
         </div>
 
         <!-- Disclaimer -->

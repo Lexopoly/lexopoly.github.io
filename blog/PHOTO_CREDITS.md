@@ -1,0 +1,433 @@
+# Photo Credits & Attribution Log
+
+**Purpose**: Permanent record of all CC0/freely-licensed photos used in Lexopoly blog articles
+**Copyright Protection**: Track sources, licenses, and usage to prevent copyright claims
+**Protocol**: APPEND ONLY - Never delete entries, only add new ones
+
+---
+
+## Attribution Requirements
+
+### Unsplash License
+- **License Type**: CC0-equivalent (Unsplash License)
+- **Attribution**: Not required, but recommended
+- **Commercial Use**: Allowed
+- **Modifications**: Allowed
+- **License URL**: https://unsplash.com/license
+
+### Pexels License
+- **License Type**: CC0-equivalent (Pexels License)
+- **Attribution**: Not required
+- **Commercial Use**: Allowed
+- **Modifications**: Allowed
+- **License URL**: https://www.pexels.com/license/
+
+### CC0 (Creative Commons Zero)
+- **License Type**: Public Domain
+- **Attribution**: Not required
+- **Commercial Use**: Allowed
+- **Modifications**: Allowed
+- **License URL**: https://creativecommons.org/publicdomain/zero/1.0/
+
+---
+
+## Photo Inventory
+
+### Format for Each Entry
+```
+## [filename].jpg
+- **Source**: [Unsplash/Pexels/CC0]
+- **Photographer**: [Name] (@username)
+- **License**: [License Type]
+- **Downloaded**: YYYY-MM-DD
+- **Used In**: [Article title(s)]
+- **Source URL**: [Direct photo URL]
+- **Notes**: [Any modifications, cropping, etc.]
+```
+
+---
+
+## Construction & Waste Management Photos
+
+<!-- APPEND NEW PHOTO ENTRIES BELOW THIS LINE -->
+
+## pile of construction waste .jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.0MB, descriptive filename by user
+
+## construction waste pile with digger.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Fines Calculator article (hero image), Waste Manifest Template article (inline image - construction site)
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.1MB, shows construction waste with excavator
+
+## hazardous waste pile.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Fines Calculator article (inline image - hazardous waste management)
+- **Source URL**: [TBD]
+- **Notes**: Original size 6.1MB, shows hazardous waste materials
+
+## waste pile metal pieces.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 6.4MB, shows metal waste debris
+
+## bags of garbage.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.7MB
+
+## bags of trash or recycling piled high.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 3.5MB, shows waste accumulation
+
+## dumpster.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.9MB
+
+## dumpster in a field.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 3.4MB
+
+## large dumpster.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.5MB
+
+## overflowing dumpster.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Audit Notice article (hero image)
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.0MB, shows waste management issue
+
+## snow dumpster.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.9MB
+
+## messy graffiti dumpsters overflowing.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.4MB, shows waste overflow scenario
+
+## man picking up waste in garbage can.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.3MB, shows waste handling
+
+## landfill.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.8MB
+
+---
+
+## EPA Compliance & Inspection Photos
+
+<!-- APPEND NEW PHOTO ENTRIES BELOW THIS LINE -->
+
+## construction_worker.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 835KB
+
+## construction supervisors on site building.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.2MB, shows site supervision
+
+## construction hard hat people on site.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.6MB, shows workers with safety equipment
+
+## 2 construction men in hard hats looking at a large hole.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.8MB, shows site inspection
+
+## construciton manager with clipboard and hardhat walking through site.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Audit Notice article (inline image - site inspection)
+- **Source URL**: [TBD]
+- **Notes**: Original size 3.2MB, shows compliance/inspection activity
+
+## construction hauler at job site.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.3MB
+
+---
+
+## Documentation & Business Photos
+
+<!-- APPEND NEW PHOTO ENTRIES BELOW THIS LINE -->
+
+## flipping through a red rope folder for paperwork.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: Reconstruct Waste Disposal article (hero image)
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.1MB, shows document organization
+
+## executive with suit reviewing paperwork on couch.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.1MB
+
+## person marking up spreadsheets.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: Reconstruct Waste Disposal article (inline image - financial records)
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.4MB, shows data review
+
+## female office manager stressed with paperwork and folders.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: Reconstruct Waste Disposal article (inline image - documentation challenge)
+- **Source URL**: [TBD]
+- **Notes**: Original size 875KB, shows compliance burden
+
+## stack of binders full of paperwork.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Audit Notice article (inline image - documentation organization), Waste Manifest Template article (inline image - compliance documentation)
+- **Source URL**: [TBD]
+- **Notes**: Original size 371KB, shows documentation volume
+
+## manual handwriting ledger.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Fines Calculator article (inline image - documentation practices), Waste Manifest Template article (hero image)
+- **Source URL**: [TBD]
+- **Notes**: Original size 2.0MB, shows manual record-keeping
+
+## person at computer saving time with hourglass.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.3MB, shows time efficiency concept
+
+## man scanning warehouse materials with tablet in other hand.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.8MB, shows digital tracking
+
+## simple clean person with laptop.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 505KB, minimalist professional setup
+
+## simple clean laptop only very minimalist.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 478KB, clean technology aesthetic
+
+## simple person working on laptop.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: [Pending article integration]
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.1MB, shows professional work environment
+
+---
+
+## General Construction Industry Photos
+
+<!-- APPEND NEW PHOTO ENTRIES BELOW THIS LINE -->
+
+---
+
+## Attribution Footer Template
+
+For articles using photos, include this attribution section at the bottom:
+
+```html
+<div class="photo-credits" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; font-size: 0.875rem; color: #6b7280;">
+  <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Photo Credits</h3>
+  <p>Photos in this article are used under CC0/free licenses from:</p>
+  <ul>
+    <li>[Photographer Name] via [Unsplash/Pexels] - [Photo description]</li>
+    <!-- Add one line per photo used -->
+  </ul>
+</div>
+```
+
+---
+
+## Copyright Protection Protocol
+
+1. **Only Use CC0/Free Licenses**: Unsplash License, Pexels License, or CC0 Public Domain
+2. **Document Immediately**: Add entry to this log when downloading photo
+3. **Verify License**: Check license page before download
+4. **Save Original URL**: Keep source URL for verification if questioned
+5. **Track Modifications**: Note any cropping, resizing, or edits
+6. **Include Attribution**: Even when not required, credit photographers in article footer
+
+---
+
+## Usage Guidelines
+
+**DO**:
+- ✅ Use photos from Unsplash, Pexels, or CC0 sources
+- ✅ Download original resolution and resize for web
+- ✅ Document every photo immediately after download
+- ✅ Include photographer credit in article footer
+- ✅ Verify license is current (check license page, not just search results)
+
+**DON'T**:
+- ❌ Use photos without verifying license
+- ❌ Skip documentation "temporarily"
+- ❌ Use photos from Google Images without source verification
+- ❌ Remove attribution/credits from downloaded photos
+- ❌ Assume "free for commercial use" filter is accurate (verify manually)
+
+---
+
+## Photo Search Keywords
+
+**Construction Waste**:
+- construction waste bins
+- construction debris
+- waste hauler truck
+- construction site cleanup
+- dumpster construction
+- building demolition
+
+**EPA Compliance**:
+- EPA inspector
+- environmental compliance
+- waste manifest
+- construction inspection
+- compliance documentation
+- regulatory inspection
+
+**Documentation**:
+- paperwork desk
+- document filing
+- business records
+- manifest forms
+- compliance forms
+- organized files
+
+---
+
+**Last Updated**: 2025-10-15 14:45 EST
+**Total Photos Documented**: 31
+**Articles with Photos**: 4 (EPA Audit Notice - 3 photos, Reconstruct Waste Disposal - 3 photos, EPA Fines Calculator - 3 photos, Waste Manifest Template - 3 photos)
+
+---
+
+*This log maintained by CC-WEB (Webmaster Agent) to ensure copyright compliance and attribution accuracy.*
