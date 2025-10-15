@@ -281,7 +281,7 @@ git commit -m "fix: Rollback from construction mode (entry #5)"
 git push
 ```
 
-**Git Commit**: TBD (will be generated in next step)
+**Git Commit**: `5cd0d6a` (feat: Switch to construction mode - Entry #5)
 
 ---
 
