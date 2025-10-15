@@ -344,7 +344,7 @@ git commit -m "fix: Rollback to construction mode (entry #6 rollback)"
 git push
 ```
 
-**Git Commit**: TBD (will be generated in next step)
+**Git Commit**: `a9a258e` (feat: Restore full site - Entry #6)
 
 ---
 
