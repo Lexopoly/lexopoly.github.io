@@ -910,8 +910,99 @@
             color: var(--text-secondary);
         }
 
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, #2c5aa0 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
         /* Mobile Styles */
         @media (max-width: 968px) {
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-item {
+                padding: 1.25rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
             .mobile-menu-btn {
                 display: block;
             }
@@ -1254,26 +1345,82 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How does LocalTranscribe ensure privacy?",
+          "name": "Is LocalTranscribe really 100% offline?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LocalTranscribe processes all audio files directly on your computer using local processing technology. No audio data is transmitted to cloud servers, ensuring complete compliance with attorney-client privilege and HIPAA requirements."
+            "text": "Yes. All processing happens on your device. No audio ever leaves your computer. You can disconnect from the internet and still transcribe."
           }
         },
         {
           "@type": "Question",
-          "name": "What accuracy can I expect from LocalTranscribe?",
+          "name": "What audio file formats does LocalTranscribe support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LocalTranscribe delivers 85-92% accuracy using professional-grade transcription models optimized for legal and business content, with Smart Review tools for quality enhancement."
+            "text": "MP3, WAV, M4A, FLAC, OGG, and most other common formats. Files up to 4 hours long."
           }
         },
         {
           "@type": "Question",
-          "name": "How does LocalTranscribe integrate with Clio?",
+          "name": "How accurate is the transcription compared to cloud services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LocalTranscribe provides seamless integration with Clio practice management software, allowing direct import of transcripts into client matters while maintaining local processing for complete privacy control."
+            "text": "LocalTranscribe uses the same AI models as leading cloud services (Whisper by OpenAI), so accuracy is identical - typically 95-98% for clear audio. The difference is privacy, not quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use LocalTranscribe for attorney-client privileged communications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many law firms use LocalTranscribe specifically because it doesn't upload audio to third parties, preserving attorney-client privilege. Cloud transcription services may waive privilege."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the system requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Windows 10/11, macOS 10.15+, or Linux. 8GB RAM minimum (16GB recommended). 2GB free disk space. No GPU required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a volume limit or per-minute charge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Unlimited transcription for your $39-79/user monthly plan. Transcribe 1 hour or 1,000 hours - same price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer a free trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 7-day free trial with full features. No credit card required. Cancel anytime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need to transcribe in a language other than English?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LocalTranscribe supports 90+ languages including Spanish, French, German, Mandarin, Japanese, and more. Same accuracy, same offline processing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can multiple users share transcriptions in our office?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each user needs their own license, but you can export transcripts as text files to share. Volume discounts available for 10+ users."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I need help or technical support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email support typically responds within 4 business hours. Live chat available for urgent issues during business hours (9am-5pm EST)."
           }
         }
       ]
@@ -1535,6 +1682,92 @@
             </div>
         </section>
     </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Everything you need to know about LocalTranscribe</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Is LocalTranscribe really 100% offline?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. All processing happens on your device. No audio ever leaves your computer. You can disconnect from the internet and still transcribe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What audio file formats does LocalTranscribe support?</h3>
+                    <div class="faq-answer">
+                        <p>MP3, WAV, M4A, FLAC, OGG, and most other common formats. Files up to 4 hours long.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How accurate is the transcription compared to cloud services?</h3>
+                    <div class="faq-answer">
+                        <p>LocalTranscribe uses the same AI models as leading cloud services (Whisper by OpenAI), so accuracy is identical - typically 95-98% for clear audio. The difference is privacy, not quality.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I use LocalTranscribe for attorney-client privileged communications?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Many law firms use LocalTranscribe specifically because it doesn't upload audio to third parties, preserving attorney-client privilege. Cloud transcription services may waive privilege.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What are the system requirements?</h3>
+                    <div class="faq-answer">
+                        <p>Windows 10/11, macOS 10.15+, or Linux. 8GB RAM minimum (16GB recommended). 2GB free disk space. No GPU required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a volume limit or per-minute charge?</h3>
+                    <div class="faq-answer">
+                        <p>No. Unlimited transcription for your $39-79/user monthly plan. Transcribe 1 hour or 1,000 hours - same price.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer a free trial?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. 7-day free trial with full features. No credit card required. Cancel anytime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I need to transcribe in a language other than English?</h3>
+                    <div class="faq-answer">
+                        <p>LocalTranscribe supports 90+ languages including Spanish, French, German, Mandarin, Japanese, and more. Same accuracy, same offline processing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can multiple users share transcriptions in our office?</h3>
+                    <div class="faq-answer">
+                        <p>Each user needs their own license, but you can export transcripts as text files to share. Volume discounts available for 10+ users.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What happens if I need help or technical support?</h3>
+                    <div class="faq-answer">
+                        <p>Email support typically responds within 4 business hours. Live chat available for urgent issues during business hours (9am-5pm EST).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us for personalized answers.</p>
+                <a href="/contact/" class="btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">

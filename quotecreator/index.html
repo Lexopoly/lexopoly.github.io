@@ -783,8 +783,99 @@
             margin-bottom: 0;
         }
 
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, #2c5aa0 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
         /* Mobile Styles */
         @media (max-width: 968px) {
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-item {
+                padding: 1.25rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
             .mobile-menu-btn {
                 display: block;
             }
@@ -922,6 +1013,95 @@
         "Automatic tax calculations",
         "Works offline",
         "Clio integration for legal professionals"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is QuoteCreator really a one-time purchase with no subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pay $12.99 once, use forever. No monthly fees, no per-quote charges, no hidden costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use QuoteCreator on my phone while at a job site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. QuoteCreator works on iOS and Android. Create estimates on-site, email them to clients immediately from your phone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work offline? I often lose signal at construction sites.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. QuoteCreator works 100% offline. Create, save, and edit estimates without internet. Email them when you're back in range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the estimate template with my company logo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add your logo, company info, terms & conditions, payment instructions, and custom branding colors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does QuoteCreator integrate with Clio for lawyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Create estimates in QuoteCreator, sync them to Clio client files automatically. Saves 10-15 minutes per estimate for legal professionals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need to make changes to an estimate after sending it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edit anytime. QuoteCreator saves all estimates locally. Revise and resend updated versions - no limit on revisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track which estimates were accepted vs rejected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mark estimates as Pending, Accepted, or Declined. View conversion rates and follow up on pending quotes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on how many estimates I can create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Create unlimited estimates. The $12.99 one-time purchase includes unlimited use forever."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What formats can I export estimates to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF (most popular), email directly from app, or print. PDFs work on any device and look professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer a money-back guarantee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 30-day full refund if you're not satisfied. No questions asked."
+          }
+        }
       ]
     }
     </script>
@@ -1142,6 +1322,92 @@
             </div>
         </section>
     </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Everything you need to know about QuoteCreator</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Is QuoteCreator really a one-time purchase with no subscription?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Pay $12.99 once, use forever. No monthly fees, no per-quote charges, no hidden costs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I use QuoteCreator on my phone while at a job site?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. QuoteCreator works on iOS and Android. Create estimates on-site, email them to clients immediately from your phone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Does it work offline? I often lose signal at construction sites.</h3>
+                    <div class="faq-answer">
+                        <p>Yes. QuoteCreator works 100% offline. Create, save, and edit estimates without internet. Email them when you're back in range.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I customize the estimate template with my company logo?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Add your logo, company info, terms & conditions, payment instructions, and custom branding colors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Does QuoteCreator integrate with Clio for lawyers?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Create estimates in QuoteCreator, sync them to Clio client files automatically. Saves 10-15 minutes per estimate for legal professionals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I need to make changes to an estimate after sending it?</h3>
+                    <div class="faq-answer">
+                        <p>Edit anytime. QuoteCreator saves all estimates locally. Revise and resend updated versions - no limit on revisions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I track which estimates were accepted vs rejected?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Mark estimates as "Pending", "Accepted", or "Declined". View conversion rates and follow up on pending quotes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a limit on how many estimates I can create?</h3>
+                    <div class="faq-answer">
+                        <p>No. Create unlimited estimates. The $12.99 one-time purchase includes unlimited use forever.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What formats can I export estimates to?</h3>
+                    <div class="faq-answer">
+                        <p>PDF (most popular), email directly from app, or print. PDFs work on any device and look professional.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer a money-back guarantee?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. 30-day full refund if you're not satisfied. No questions asked.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us for personalized answers.</p>
+                <a href="/contact/" class="btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
