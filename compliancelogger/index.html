@@ -404,6 +404,59 @@
             line-height: 1.6;
         }
 
+        /* SCREENSHOT GALLERY SECTION */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.2);
+            border-color: var(--primary-orange);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
+
+        .screenshot-card:hover img {
+            border-bottom-color: var(--primary-orange);
+        }
+
+        .screenshot-caption {
+            padding: 1.5rem;
+        }
+
+        .screenshot-caption h4 {
+            font-size: 1.2rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .screenshot-caption p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* PRICING SECTION */
         .pricing {
             background: linear-gradient(135deg, var(--deep-blue) 0%, #0056b3 100%);
@@ -637,6 +690,70 @@
                         <li>Transparent timestamping for EPA</li>
                         <li>Generate defensive reports with disclaimers</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREENSHOT GALLERY SECTION -->
+        <section class="section">
+            <h2>See ComplianceLogger in Action</h2>
+            <p class="section-subtitle">Real screenshots from the production app</p>
+
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/mode-selection.png" alt="ComplianceLogger Mode Selection - Choose between Track Waste or EPA Audit Assistant" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Mode Selection</h4>
+                        <p>Choose Track Waste (proactive) or EPA Audit Assistant (reactive) on the homepage</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/waste-log-form.png" alt="Waste Log Form - Complete waste disposal entry form with all fields" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Waste Log Form</h4>
+                        <p>Full-featured form with project name, waste type, quantity, disposal site, hauler, dates, and costs</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/logs-dashboard.png" alt="Waste Logs Dashboard - List view with filters, confidence badges, and CSV export" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Waste Logs Dashboard</h4>
+                        <p>View all logs with filters, confidence badges (DOCUMENTED/ESTIMATED), and CSV export button</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/reports-analytics.png" alt="Reports and Analytics - Summary stats, charts, and export options" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Reports & Analytics</h4>
+                        <p>Summary statistics, visual charts, and comprehensive export options for EPA compliance</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/audit-mode.png" alt="Audit Mode Active - Red banner with countdown timer and progress tracker" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Audit Mode Active</h4>
+                        <p>Red banner shows countdown to EPA audit deadline with progress tracking</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/confidence-reconstructed.png" alt="3-Tier Confidence System - RECONSTRUCTED badge example" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Confidence Tracking (Reconstructed)</h4>
+                        <p>Yellow RECONSTRUCTED badge for records created from memory during audit prep</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <img src="/compliancelogger/screenshots/confidence-documented.png" alt="3-Tier Confidence System - DOCUMENTED badge example" loading="lazy">
+                    <div class="screenshot-caption">
+                        <h4>Confidence Tracking (Documented)</h4>
+                        <p>Green DOCUMENTED badge for records with manifest receipts and photo evidence</p>
+                    </div>
                 </div>
             </div>
         </section>
