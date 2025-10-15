@@ -286,3 +286,66 @@ git push
 ---
 
 <!-- APPEND NEW ENTRIES BELOW - DO NOT EDIT ABOVE -->
+## 🟢 SWITCH #6: SITE ON - 2025-10-15 04:45 EST
+
+**Action**: SITE_ON (Under Construction → Full Site)
+**Timestamp**: 2025-10-15T08:45:00Z
+**Operator**: CC-WEB (Claude Code, user: rain)
+**Git State Before Switch**:
+- Commit: `cb617e6` (docs: Update Entry #5 with git commit hash)
+- Branch: `main`
+- Status: Construction mode active
+
+**Reason** (required, short): Testing/planning complete - restore full 3-product site
+**Additional Info** (optional): CC-WEB operations session complete. Legal pages deployed (ComplianceLogger), homepage pricing fix applied, Integration Playbook expanded (+106%), Super Bus operations synchronized. DOCK-016 petition submitted (remove AGENT_SHUTDOWN requirement). Restoring full site with 3-product portfolio (LocalTranscribe, QuoteCreator, ComplianceLogger).
+
+**Restore Source**:
+- Backup Tag: `pre-construction-v5-legal-playbook-complete`
+- Backup File: `index.full-backup.html` (1612 lines)
+- Created: Entry #5 (2025-10-15T08:15:00Z)
+
+**State Transition**:
+- Previous: `index.html` = Under construction (minimal page, 2 contact methods)
+- New: `index.html` = Full site (3 products, unified navigation, blog infrastructure, 6 industry verticals)
+
+**Files Modified**:
+- `index.html` (restored from backup tag, 1612 lines)
+- `SITE_SWITCHING_LOG.md` (this log entry added)
+
+**Verification Checklist**:
+- [ ] Full homepage displays correctly
+- [ ] Navigation dropdowns work (Products, Solutions, About)
+- [ ] 3 product cards visible (LocalTranscribe, QuoteCreator, ComplianceLogger)
+- [ ] Mobile menu functional
+- [ ] Footer links operational
+- [ ] Analytics tracking active
+
+**Context**:
+Sixth site switch. Construction mode duration: ~30 minutes (Entry #5 → Entry #6). Full site restoration includes all recent improvements: legal pages for ComplianceLogger (beta launch ready), homepage pricing messaging (multi-product consistent), unified blog infrastructure (2 SEO articles live), comprehensive navigation (17/17 pages). Federation status: CC-WEB 100% communication health, legal docs handoff complete, Super Bus digest updated.
+
+**Federation Context**:
+- CC-CL: Legal pages deployed, 95% beta ready, awaiting homepage refactor
+- CC-QC: 98% complete, Stripe TEST environment ready
+- CC-WEB: Legal docs handoff complete ✅, playbook expansion complete ✅
+- DOCK-016: Petition submitted to remove AGENT_SHUTDOWN requirement
+- Super Bus: 946 entries (SB-946: DOCK_016_PETITION)
+
+**Next Steps After Verification**:
+1. Verify site live at lexopoly.com (allow 5-10 min CDN propagation)
+2. Test 3-product navigation and functionality
+3. Update WEBMASTER_BUS_OPS.md with Site Switch Entry #6
+4. Continue CC-WEB pending work (BuyNowButton integration, homepage refactor)
+
+**Rollback Command** (if needed):
+```bash
+cp index.construction.html index.html
+git add index.html SITE_SWITCHING_LOG.md
+git commit -m "fix: Rollback to construction mode (entry #6 rollback)"
+git push
+```
+
+**Git Commit**: TBD (will be generated in next step)
+
+---
+
+<!-- APPEND NEW ENTRIES BELOW - DO NOT EDIT ABOVE -->
