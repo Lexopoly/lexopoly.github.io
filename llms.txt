@@ -11,7 +11,7 @@ EPA waste compliance tracking for construction companies. Track disposal records
 https://lexopoly.com/compliancelogger/
 
 ### QuoteCreator
-Mobile-first estimate creation for contractors. Create professional quotes on-site, generate PDFs, sync with Clio. Works offline. $99/year.
+Mobile-first estimate creation for contractors. Create professional quotes on-site, generate PDFs, sync with Clio. Works offline. $12.99 one-time purchase.
 
 https://lexopoly.com/quotecreator/
 
@@ -22,7 +22,7 @@ https://lexopoly.com/localtranscribe/
 
 ## Company
 
-Lexopoly LLC builds professional software that makes your work easier without compromising privacy. Founded 2024. Based in the USA.
+Lexopoly LLC builds professional software that makes your work easier without compromising privacy. Founded 2025. Based in Wyoming, USA.
 
 **Philosophy**: You own your data. We build tools that work for you, not surveillance systems that monetize your information.
 
@@ -54,7 +54,7 @@ https://lexopoly.com/about/
 ## Differentiators
 
 1. **Privacy-first**: LocalTranscribe processes 100% locally. No cloud upload.
-2. **Affordable**: $99-149/year vs $300-500/year competitors
+2. **Affordable**: $12.99-149/year vs $300-500/year competitors
 3. **No vendor lock-in**: Export your data anytime (CSV, PDF)
 4. **Clio integration**: Native sync with legal practice management
 5. **Offline-capable**: Works without internet (QuoteCreator, LocalTranscribe)
