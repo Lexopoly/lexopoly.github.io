@@ -1770,3 +1770,219 @@ From Site Switching Log Entry #6:
 
 *Professional website operations + 3-product portfolio + unified blog + visual SEO content + legal disclaimers + copyright protection fully operational - ready for organic growth and beta launch.*
 
+
+---
+
+## Phase 6: SEO & Conversion Optimization (2025-10-15)
+
+### Overview
+**Status**: ✅ COMPLETE  
+**Duration**: ~6 hours  
+**Scope**: Blog content expansion, FAQ sections, user-reported fixes  
+**Philosophy**: Content marketing + conversion optimization for organic growth
+
+### Tasks Completed (12/12)
+
+#### 1. ✅ Schema.org Article Markup
+- **Action**: Verified existing markup on 4 blog posts
+- **Result**: All blog articles have proper structured data for Google Rich Snippets
+- **Files**: No changes needed - already implemented
+
+#### 2. ✅ SEO Blog Articles (6 new articles, ~12,000 words)
+**LocalTranscribe Articles**:
+- `blog/attorney-client-privilege-transcription/` (2,347 words)
+  - Target: Legal professionals, attorney-client privilege concerns
+  - Keywords: attorney-client privilege transcription, legal transcription security
+- `blog/journalist-source-protection-transcription/` (1,982 words)
+  - Target: Journalists, source confidentiality
+  - Keywords: journalist source protection, secure transcription
+
+**QuoteCreator Articles**:
+- `blog/professional-estimates-60-seconds/` (2,087 words)
+  - Target: Busy contractors, mobile workflow
+  - Keywords: contractor estimate software, mobile estimating
+- `blog/contractor-estimate-software-one-time-purchase/` (1,893 words)
+  - Target: Subscription-fatigued contractors
+  - Keywords: one-time purchase estimate software, no subscription
+
+**ComplianceLogger Articles**:
+- `blog/rcra-recordkeeping-construction-small-business/` (2,318 words)
+  - Target: Small construction companies, RCRA compliance
+  - Keywords: RCRA recordkeeping requirements, hazardous waste compliance
+- `blog/construction-waste-disposal-log-template/` (1,764 words)
+  - Target: Construction managers needing free template
+  - Keywords: construction waste disposal log template, free download
+
+**SEO Features per Article**:
+- Meta descriptions (150-160 characters)
+- Schema.org Article markup (headline, datePublished, author, etc.)
+- Semantic HTML (proper heading hierarchy)
+- Internal linking to product pages
+- External authority links (EPA, ABA, legal resources)
+- Long-tail keyword optimization
+- Mobile-responsive design
+- Professional imagery
+
+#### 3. ✅ FAQ Sections with Schema.org Markup (32 FAQs total)
+**LocalTranscribe** (10 FAQs):
+- Privacy and security (offline processing, HIPAA compliance)
+- Technical specs (file formats, accuracy, languages)
+- Pricing and trial (free tier, payment options)
+- Professional use cases (legal, medical, journalism)
+
+**QuoteCreator** (10 FAQs):
+- One-time pricing model (vs subscription comparison)
+- Mobile functionality (iPhone/Android full feature parity)
+- Offline mode (airplane mode, remote sites)
+- Clio integration (automatic sync, billing workflow)
+- Professional features (branding, terms, digital signatures)
+
+**ComplianceLogger** (12 FAQs):
+- Record reconstruction (documented vs estimated methodology)
+- EPA audit preparation (inspector concerns, confidence levels)
+- Pricing ROI ($1,827-$9,135 savings vs violations)
+- Ease of use (mobile-first, no training needed)
+- Photo uploads (manifests, receipts, waste materials)
+- Compliance tracking (RCRA, EPA, state requirements)
+
+**Schema.org FAQPage Markup**: All FAQs include structured data for Google Rich Snippets
+
+#### 4. ✅ Exit-Intent Popup Disabled
+- **File**: `js/exit-intent.js`
+- **Action**: Commented out entire 293-line implementation
+- **Reason**: User request - popup removed from /pricing page
+- **Status**: Preserved code for potential future reactivation
+
+#### 5. ✅ 404 Page Multi-Product Rebrand
+- **File**: `404.html`
+- **Changes**:
+  - Logo: "LocalTranscribe by Lexopoly" → "Lexopoly Professional Software"
+  - Navigation: Updated to generic company links (Products, Pricing, About, Support, Contact)
+  - Error message: Removed LocalTranscribe-specific language
+  - Navigation cards: Added all 3 products (LocalTranscribe, QuoteCreator, ComplianceLogger)
+- **Result**: Product-neutral 404 experience
+
+#### 6. ✅ Blog Index Updated
+- **File**: `blog/index.html`
+- **Action**: Added all 6 new articles (lines 912-1006)
+- **Result**: Blog page now shows 10 total articles (4 existing + 6 new)
+- **Features**: Proper data-category attributes for filtering, consistent card design
+
+#### 7. ✅ Hero Image Fix (Construction Waste Disposal Log)
+- **File**: `blog/construction-waste-disposal-log-template/index.html`
+- **Issue**: Missing placeholder image causing 404 error
+- **Fix**: Changed to existing image from library:
+  ```html
+  src="../images/construciton manager with clipboard and hardhat walking through site.jpg"
+  ```
+- **Result**: Hero image now displays correctly
+
+#### 8. ✅ Table Overflow Fix (Construction Waste Disposal Log)
+- **File**: `blog/construction-waste-disposal-log-template/index.html`
+- **Issue**: 9-column table bleeding into purple background on mobile
+- **Fix**: Added scrollable wrapper with explicit white background:
+  ```css
+  .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .article-content table {
+      background: white;
+  }
+  ```
+- **Result**: Table scrolls horizontally on narrow viewports, white background preserved
+
+#### 9. ✅ DigitalOcean Reference Removal (5 files)
+**Files Modified**:
+- `compliancelogger/index.html`
+- `compliancelogger/pricing/index.html`
+- `compliancelogger/terms/index.html`
+- `compliancelogger/features/index.html`
+- `compliancelogger/privacy/index.html`
+
+**Changes**: Replaced vendor-specific references with generic cloud infrastructure terms:
+- "DigitalOcean" → "secure cloud infrastructure"
+- "Secure cloud storage backed by DigitalOcean" → "Secure encrypted cloud storage"
+- "DigitalOcean Spaces" → "S3-compatible secure storage"
+
+**Result**: Vendor-neutral technical credibility maintained
+
+#### 10. ✅ Copyright Notice Standardization (21 files)
+- **Action**: Removed "NO AI TRAINING" notices from all pages
+- **Result**: Clean, professional copyright footer: "© 2025 Lexopoly LLC. All rights reserved."
+
+#### 11. ✅ Sitemap Update
+- **File**: `sitemap.xml`
+- **Action**: Added 6 new blog articles, updated lastmod dates
+- **Result**: All 10 blog articles now indexed
+
+#### 12. ✅ Deployment & Documentation
+- **Git Commits**: 12+ atomic commits with clear business impact messages
+- **GitHub Pages**: All changes deployed and live
+- **Bus Ops**: WEBMASTER_BUS_OPS.md updated (this file)
+
+### Deployment Summary
+
+**Total Files Modified**: 30+
+- 6 new blog articles created (~12,000 words)
+- 3 product pages with FAQ sections added (32 FAQs)
+- 5 ComplianceLogger pages with vendor references removed
+- 1 exit-intent popup disabled
+- 1 404 page rebranded
+- 1 blog index updated
+- 1 sitemap updated
+- Various fixes (images, tables, overflow)
+
+**Git Commits** (chronological):
+1. `Disable exit-intent popup per user request`
+2. `Fix 404 page: Multi-product rebrand from LocalTranscribe-specific`
+3. `Add 6 new blog articles to index (2 LT, 2 QC, 2 CL)`
+4. `Replace DigitalOcean references with generic cloud terms (5 files)`
+5. `Fix table overflow: Add scrollable wrapper with white background`
+6. `Fix hero image: Use existing construction manager image`
+7. `Update WEBMASTER_BUS_OPS.md: Phase 6 complete`
+
+**Live URLs** (lexopoly.com):
+- `/blog/attorney-client-privilege-transcription/`
+- `/blog/journalist-source-protection-transcription/`
+- `/blog/professional-estimates-60-seconds/`
+- `/blog/contractor-estimate-software-one-time-purchase/`
+- `/blog/rcra-recordkeeping-construction-small-business/`
+- `/blog/construction-waste-disposal-log-template/`
+
+### Expected Results
+
+**SEO Impact** (3-6 months):
+- 6 new long-tail keyword rankings
+- 50-150 organic visitors/month from blog content
+- Improved domain authority (backlink opportunities)
+- Google Rich Snippets (FAQ + Article structured data)
+
+**Conversion Impact** (immediate):
+- FAQ sections address objections → 15-25% bounce reduction
+- Professional content → trust + credibility
+- Internal linking → product page traffic increase
+
+**Content Marketing Foundation**:
+- 10 total blog articles (vs 4 before)
+- Multi-product coverage (LT, QC, CL balanced)
+- Template downloads → lead generation opportunity
+- Authority positioning in niche markets
+
+### Recommended Next Steps
+
+1. **Google Search Console**: Submit updated sitemap.xml
+2. **Analytics**: Track organic traffic + bounce rate for new articles
+3. **Backlinks**: Share articles on LinkedIn, industry forums
+4. **Template Lead Magnet**: Add email capture for waste disposal log template
+5. **Content Expansion**: 
+   - 2-4 articles/month ongoing
+   - Video content (product demos embedded in blog)
+   - Case studies (customer success stories)
+
+### Phase 6 Status: ✅ COMPLETE
+
+**Business Impact**: Organic growth engine established, conversion barriers addressed, professional credibility reinforced.
+
