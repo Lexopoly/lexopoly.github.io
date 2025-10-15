@@ -229,3 +229,60 @@ git push
 **Git Commit**: TBD (will be generated in next step)
 
 ---
+## 🔴 SWITCH #5: SITE OFF - 2025-10-15 04:15 EST
+
+**Action**: SITE_OFF (Full Site → Under Construction)
+**Timestamp**: 2025-10-15T08:15:00Z
+**Operator**: CC-WEB (Claude Code, user: rain)
+**Git State Before Switch**:
+- Commit: `d29f1f4` (docs: Expand Integration Playbook)
+- Branch: `main`
+- Status: Clean working tree (site fully operational with 3 products)
+
+**Reason** (required, short): Legal docs handoff complete - temporary hold for strategic planning
+**Additional Info** (optional): CC-WEB operations session complete. Legal pages deployed to ComplianceLogger (3 pages: terms/privacy/disclaimers), homepage pricing fix applied (removed LT-specific section), Integration Playbook expanded 455→936 lines (+106%). Site switching to construction while user evaluates next marketing priorities. Recent work: Legal framework (beta launch unblocked), multi-product positioning (consistent messaging), comprehensive playbook (products 4-30 onboarding standardized).
+
+**Backup Created**:
+- Git Tag: `pre-construction-v5-legal-playbook-complete`
+- Backup File: `index.full-backup.html` (1612 lines)
+- Tag Message: "Backup: Legal pages + playbook expansion complete before construction mode switch #5"
+
+**State Transition**:
+- Previous: `index.html` = Full site (3 products, unified navigation, homepage pricing fix)
+- New: `index.html` = Under construction (minimal page, 2 contact methods)
+
+**Files Modified**:
+- `index.html` (replaced with index.construction.html template)
+- `index.full-backup.html` (created from previous index.html, 1612 lines)
+- `SITE_SWITCHING_LOG.md` (this log entry added)
+
+**Verification Checklist**:
+- [ ] Construction page displays correctly
+- [ ] Spinner animation works
+- [ ] support@lexopoly.com link functional
+- [ ] @lexopoly X link functional
+- [ ] Mobile responsive
+- [ ] Favicon loads
+
+**Context**:
+Fifth site switch. Following successful CC-WEB operations (legal docs handoff SB-940, homepage pricing fix SB-941, playbook expansion SB-942). ComplianceLogger now has full legal framework (Step-Saver compliant), homepage multi-product positioning consistent, Integration Playbook provides systematic procedures for products 4-30. Construction mode enabled while user determines next strategic direction (homepage refactor, SEO articles, YouTube Shorts per Bootstrap Marketing Plan).
+
+**Federation Context**:
+- CC-CL: Legal pages deployed, awaiting homepage refactor
+- CC-QC: 98% complete, Stripe integration done
+- CC-WEB: 100% communication health (5/5 events), 3 completions Oct 15
+- Super Bus: 942 entries, digest updated with CC-WEB activity
+
+**Rollback Command** (if needed):
+```bash
+git show pre-construction-v5-legal-playbook-complete:index.html > index.html
+git add index.html
+git commit -m "fix: Rollback from construction mode (entry #5)"
+git push
+```
+
+**Git Commit**: TBD (will be generated in next step)
+
+---
+
+<!-- APPEND NEW ENTRIES BELOW - DO NOT EDIT ABOVE -->
