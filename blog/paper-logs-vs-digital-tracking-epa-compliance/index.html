@@ -157,6 +157,43 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
+        /* Article Images */
+        .article-hero-image {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .article-inline-image {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .article-inline-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
         .article-meta {
             display: flex;
             gap: 1rem;
@@ -513,6 +550,13 @@
             </p>
         </article>
 
+        <!-- Hero Image -->
+        <div class="article-hero-image">
+            <img src="../images/manual handwriting ledger.jpg"
+                 alt="Manual handwritten ledger representing traditional paper waste logs for construction compliance"
+                 loading="eager">
+        </div>
+
         <!-- Article Content -->
         <div class="article-content">
             <h2>The Scene Every Contractor Knows</h2>
@@ -586,6 +630,14 @@
 
             <div class="callout warning">
                 <strong>Real contractor story:</strong> "We had 3 years of manifests in a filing cabinet. Office flooded during a storm. 80% of our compliance records were destroyed in 4 hours. EPA audit was already scheduled. Cost us $18,000 in fines and 3 months of stress."
+            </div>
+
+            <!-- Inline Image: Paper System Stress -->
+            <div class="article-inline-image">
+                <img src="../images/female office manager stressed with paperwork and folders.jpg"
+                     alt="Office manager overwhelmed with stacks of paper waste logs and folders - illustrating the pain of paper-based compliance systems"
+                     loading="lazy">
+                <p class="image-caption">Paper-based waste tracking systems often lead to organizational chaos and compliance stress</p>
             </div>
 
             <p><strong>2. They Get Lost</strong></p>
@@ -677,6 +729,14 @@
 
             <div class="callout success">
                 <strong>Real contractor story:</strong> "Truck was stolen with my laptop and job files inside. Lost $8K in tools. But my waste logs? Safe in the cloud. Opened the app on my phone, exported 3 years of records for the insurance claim. Saved me from a compliance nightmare."
+            </div>
+
+            <!-- Inline Image: Digital Workflow -->
+            <div class="article-inline-image">
+                <img src="../images/man scanning warehouse materials with tablet in other hand.jpg"
+                     alt="Construction professional using tablet to digitally track waste materials - modern compliance workflow"
+                     loading="lazy">
+                <p class="image-caption">Digital tracking enables real-time waste documentation directly from the job site</p>
             </div>
 
             <p><strong>2. Faster EPA Response</strong></p>
