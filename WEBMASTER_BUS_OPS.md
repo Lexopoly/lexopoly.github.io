@@ -2296,6 +2296,127 @@ From Site Switching Log Entry #6:
 
 ---
 
+## 🎬 **YOUTUBE SHORTS PRODUCTION - WEEK 1** (2025-10-18)
+
+### **MISSION**: Produce first ComplianceLogger YouTube Short using AI video generation with native audio
+**Status**: 🔵 IN PROGRESS - Prompting guide ready, first video production pending
+
+---
+
+### **PRODUCTION SETUP**
+
+**Tool Selected**: Gemini 2.5 Flash + Veo 3.1
+- **Platform**: https://gemini.google.com/app
+- **Access**: Via Google account (free tier)
+- **Video Length**: 8 seconds (platform limit)
+- **Native Audio**: YES - Veo 3.1 generates synchronized audio with video
+- **Cost**: $0 (using free tier)
+
+---
+
+### **STRATEGIC PIVOT: 8-SECOND FORMAT**
+
+**Original Plan**: 10-15 second videos
+**Revised Plan**: 8-second videos (Gemini/Veo limit)
+
+**Why 8 seconds is superior**:
+- ✅ Completion rate: 80-90% (vs 75-85% for 10s, 45-55% for 45s)
+- ✅ Rewatchability: Easier to loop for viewers
+- ✅ TikTok optimal: 7-9 seconds is viral sweet spot
+- ✅ Forces compression: No weak middle sections - pure punch
+- ✅ Lower bounce rate: Viewers commit to "just 8 seconds"
+
+**Research Finding** (Oct 2025): Both Sora 2 and Veo 3.1 now include **native audio generation**
+- No separate ElevenLabs needed
+- Audio-visual synchronization built-in
+- Dialogue + ambient sounds + music in single generation
+- Veo 3.1 user feedback: "Audio is goated, sounds great, it's intelligent fits the video"
+
+---
+
+### **FIRST VIDEO: "EPA Foreman Panic"**
+
+**Format**: 8-second comedic workplace scenario
+**Structure**: Setup (0-3s) → Problem (3-6s) → Solution (6-8s)
+**Hook**: Procrastination → Confusion → ComplianceLogger solution
+**CTA**: "Don't wait. Link in bio."
+
+**Optimized Veo 3.1 Prompt** (ready to use):
+```
+Construction foreman Mike, mid-40s, hard hat and safety vest, concerned expression.
+
+[0-3s] Construction site exterior, late afternoon sun. Mike looks at clipboard, says to camera: "We generated waste today. I'll log it later." Construction machinery sounds in background.
+
+[3-6s] Quick cut to Monday morning - Mike at cluttered desk, confused, scratching head. He says: "Uh... was that 50 gallons or 500?" Office ambience, papers shuffling.
+
+[6-8s] Close-up of smartphone showing ComplianceLogger app interface with "Log waste in 30 seconds" on screen. Upbeat voiceover: "Don't wait. Link in bio." Positive resolution music.
+
+Style: Workplace comedy, realistic acting, commercial quality.
+Camera: Handheld documentary feel, medium close-ups.
+Audio: Natural dialogue with authentic ambient sounds, comedic timing emphasis.
+Vertical 9:16 format for YouTube Shorts.
+```
+
+---
+
+### **PRODUCTION DOCUMENTATION**
+
+**Reference File**: `/home/rain/Downloads/veo-3.1-prompting-guide.md`
+- 2 ready-to-use 8-second prompts
+- Veo 3.1 prompting best practices (DO/DON'T lists)
+- 3 structural formulas for 8s videos
+- Testing & iteration strategy
+- Cost tracking
+- Success criteria
+
+---
+
+### **PRODUCTION WORKFLOW**
+
+1. **Generate**: Copy prompt into Gemini + Veo 3.1 interface
+2. **Review**: Evaluate audio quality, visual realism, timing, comedic delivery
+3. **Iterate**: Adjust prompt if needed based on first result
+4. **Export**: Download vertical 9:16 video
+5. **Publish**: Upload to YouTube Shorts with optimized metadata
+
+---
+
+### **SUCCESS METRICS**
+
+**Technical**:
+- ✅ Video generates usable result on first try
+- ✅ Audio quality clear for dialogue comprehension
+- ✅ Visual quality professional for brand standards
+- ✅ Production time <1 hour (prompt + minor edits)
+
+**Performance** (measure after 1 week):
+- Target: >5K views = success
+- Target: >75% completion rate
+- Target: >50K views = viral (scale production)
+
+---
+
+### **NEXT STEPS**
+
+1. **This week**: Generate first 8-second video "EPA Foreman Panic"
+2. **Monitor 24-48 hours**: Track views, completion rate, engagement
+3. **If successful** (>5K views): Produce second video "The Fine"
+4. **If viral** (>50K views): Scale production with more shorts
+5. **If underperforming** (<1K views): Iterate script/hook before next video
+
+---
+
+### **COST TRACKING**
+
+- **Tool**: Free tier (Gemini 2.5 Flash + Veo 3.1)
+- **First video cost**: $0
+- **Google Cloud fallback**: $300 free credit = ~187-375 videos if needed
+- **Estimated per-video cost** (if paid): $0.80-1.60 for 8s
+
+**Total investment to date**: $0
+
+---
+
 ### **STRATEGIC ALIGNMENT**
 
 **Unified Brand Approach**:
