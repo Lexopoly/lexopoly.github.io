@@ -213,14 +213,14 @@
         </ul>
 
         <h3>What We Do Collect</h3>
-        <p>The only data that leaves your device is:</p>
+        <p>The only data that leaves your browser is:</p>
         <ul>
-            <li><strong>Payment transaction data:</strong> When you purchase the app via Google Play, Google processes your payment (we never see your credit card details)</li>
-            <li><strong>Clio OAuth tokens:</strong> When you connect to Clio (optional), OAuth tokens are stored encrypted on your device and used to authenticate API requests</li>
+            <li><strong>Payment transaction data:</strong> When you purchase the app via Stripe, Stripe processes your payment (we never see your credit card details)</li>
+            <li><strong>Clio OAuth tokens:</strong> When you connect to Clio (optional), OAuth tokens are stored encrypted in your browser and used to authenticate API requests</li>
         </ul>
 
         <h2 id="data-storage">Data Storage</h2>
-        <p>All business data you create in QuoteCreator is stored <strong>exclusively on your Android device</strong> using SQLite database:</p>
+        <p>All business data you create in QuoteCreator is stored <strong>exclusively in your browser</strong> using IndexedDB:</p>
         <ul>
             <li>Estimates and quotes</li>
             <li>Line items and pricing</li>
@@ -228,9 +228,9 @@
             <li>Company settings and branding preferences</li>
             <li>Clio OAuth tokens (encrypted, when connected)</li>
         </ul>
-        <p><strong>Your data never leaves your device</strong> unless you explicitly:</p>
+        <p><strong>Your data never leaves your browser</strong> unless you explicitly:</p>
         <ul>
-            <li>Generate and share a PDF file using Android's share feature</li>
+            <li>Generate and download a PDF file</li>
             <li>Upload an estimate to Clio (optional feature, requires your explicit action)</li>
         </ul>
 
@@ -241,10 +241,10 @@
         <p>When you connect to Clio:</p>
         <ul>
             <li><strong>Secure authentication:</strong> We never see or store your Clio password</li>
-            <li><strong>Access tokens:</strong> Encrypted and stored on your device only</li>
+            <li><strong>Access tokens:</strong> Encrypted and stored in your browser only</li>
             <li><strong>Requested permissions:</strong> "Read matters" and "Write documents" (to browse your matters and upload PDFs)</li>
-            <li><strong>Data transmission:</strong> Only when you tap "Upload to Clio" - we send the PDF and matter ID to Clio's API</li>
-            <li><strong>Disconnection:</strong> You can disconnect at any time via Settings, which deletes all Clio tokens from your device</li>
+            <li><strong>Data transmission:</strong> Only when you click "Upload to Clio" - we send the PDF and matter ID to Clio's API</li>
+            <li><strong>Disconnection:</strong> You can disconnect at any time via Settings, which deletes all Clio tokens from your browser</li>
         </ul>
 
         <h3>What We Send to Clio</h3>
@@ -275,50 +275,43 @@
             <li><strong>Privacy:</strong> <a href="https://www.clio.com/company/privacy-policy/" target="_blank" rel="noopener">Clio Privacy Policy</a></li>
         </ul>
 
-        <h3>Google Play Billing</h3>
+        <h3>Stripe Payment Processing</h3>
         <ul>
-            <li><strong>Purpose:</strong> In-app purchase processing ($12.99 one-time payment)</li>
-            <li><strong>Data shared:</strong> Payment transaction data (handled by Google)</li>
-            <li><strong>Privacy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+            <li><strong>Purpose:</strong> Secure payment processing ($12.99 one-time payment)</li>
+            <li><strong>Data shared:</strong> Payment transaction data (handled by Stripe)</li>
+            <li><strong>Privacy:</strong> <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe Privacy Policy</a></li>
         </ul>
 
         <h3>Local Libraries (No Data Transmission)</h3>
         <ul>
-            <li><strong>iText 7 Community:</strong> PDF generation (operates locally, no network calls)</li>
-            <li><strong>Jetpack Compose:</strong> Android UI framework (operates locally)</li>
-            <li><strong>SQLite:</strong> Local database (operates locally)</li>
+            <li><strong>PDF generation:</strong> Client-side PDF creation (operates locally, no network calls)</li>
+            <li><strong>IndexedDB:</strong> Browser storage API (operates locally)</li>
         </ul>
         <p><strong>No analytics, crash reporting, or cloud services.</strong></p>
 
         <h2 id="permissions">Permissions</h2>
-        <p>QuoteCreator requests the following Android permissions:</p>
+        <p>QuoteCreator is a web application and uses standard browser capabilities. No special permissions are required for basic functionality.</p>
 
-        <h3>INTERNET</h3>
+        <h3>Network Access (Automatic)</h3>
         <ul>
             <li><strong>Purpose:</strong> Clio OAuth authentication and document upload (optional feature)</li>
             <li><strong>Usage:</strong> Only used when you connect to Clio or upload documents</li>
-            <li><strong>Background access:</strong> No</li>
+            <li><strong>Browser control:</strong> All network requests are controlled by standard browser security policies (HTTPS, CORS)</li>
         </ul>
 
-        <h3>WRITE_EXTERNAL_STORAGE (Android 10 and below)</h3>
+        <h3>File Downloads (Browser-Controlled)</h3>
         <ul>
-            <li><strong>Purpose:</strong> Save generated PDF files to your device's Downloads folder</li>
-            <li><strong>Usage:</strong> Only when you tap "Generate PDF"</li>
-            <li><strong>Data access:</strong> Only writes PDF files you explicitly create</li>
-        </ul>
-
-        <h3>MANAGE_EXTERNAL_STORAGE (Android 11+)</h3>
-        <ul>
-            <li><strong>Purpose:</strong> Save PDF files to scoped storage (Downloads)</li>
-            <li><strong>Usage:</strong> Modern scoped storage - app cannot access other apps' files</li>
+            <li><strong>Purpose:</strong> Save generated PDF files to your Downloads folder</li>
+            <li><strong>Usage:</strong> Only when you click "Generate PDF"</li>
+            <li><strong>Browser control:</strong> Your browser's download settings determine where files are saved</li>
         </ul>
 
         <h2 id="data-security">Data Security</h2>
         <p>Your data is protected by multiple layers of security:</p>
         <ul>
-            <li><strong>Device encryption:</strong> All Android 11+ devices encrypt data at rest by default</li>
+            <li><strong>Browser security:</strong> Modern browsers protect IndexedDB data with origin-based isolation</li>
             <li><strong>Local-only storage:</strong> No cloud sync = no cloud breaches</li>
-            <li><strong>Encrypted OAuth tokens:</strong> Clio access tokens stored with Android KeyStore encryption</li>
+            <li><strong>Encrypted OAuth tokens:</strong> Clio access tokens stored using browser Credential Management API</li>
             <li><strong>HTTPS only:</strong> All Clio API requests use TLS 1.2+ encryption</li>
             <li><strong>No password storage:</strong> We never see or store your Clio password (OAuth handles authentication)</li>
         </ul>
@@ -328,18 +321,18 @@
         <h3>Your Rights (GDPR, CCPA, etc.)</h3>
         <p>Under privacy laws like GDPR (EU), CCPA (California), and PIPEDA (Canada), you have rights to:</p>
         <ul>
-            <li><strong>Access your data:</strong> All your data is in your device's app storage (Settings → Apps → QuoteCreator → Storage)</li>
-            <li><strong>Delete your data:</strong> Uninstall the app or clear app data (see below)</li>
+            <li><strong>Access your data:</strong> All your data is stored in your browser's IndexedDB storage</li>
+            <li><strong>Delete your data:</strong> Clear browser data for the QuoteCreator site (see below)</li>
             <li><strong>Export your data:</strong> Generate PDFs and save to any location you choose</li>
             <li><strong>Opt-out of collection:</strong> Nothing to opt out of - we collect no business data</li>
             <li><strong>Revoke Clio access:</strong> Disconnect Clio in Settings to delete all OAuth tokens</li>
         </ul>
 
         <h3>How to Delete Your Data</h3>
-        <p>To permanently delete all your QuoteCreator data from your device:</p>
+        <p>To permanently delete all your QuoteCreator data from your browser:</p>
         <ol>
-            <li><strong>Option 1 - Uninstall:</strong> Uninstall QuoteCreator from your device (deletes all app data)</li>
-            <li><strong>Option 2 - Clear data:</strong> Android Settings → Apps → QuoteCreator → Storage → Clear Data</li>
+            <li><strong>Option 1 - Clear site data:</strong> Use QuoteCreator Settings → Clear All Data (recommended)</li>
+            <li><strong>Option 2 - Browser settings:</strong> Clear browsing data for quotecreator-web-kr6aj.ondigitalocean.app in your browser's privacy settings</li>
         </ol>
         <p>This permanently deletes:</p>
         <ul>
