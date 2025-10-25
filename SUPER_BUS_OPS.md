@@ -6,6 +6,86 @@
 
 ---
 
+## 🔧 BLOG INDEX + GUMROAD LINK FIXES (2025-10-25)
+
+### **CRITICAL SITE CORRECTIONS** ✅
+**Mission**: Fix empty blog indexes and broken Gumroad payment links
+
+**BUSINESS CONTEXT**
+**Problem Discovery**: User reported professional estimate templates article not showing in blog, Gumroad links present but non-functional
+**Root Cause Analysis**:
+- QuoteCreator blog index: "Coming Soon" placeholder despite published article
+- Gumroad links: 5 instances across site (QuoteCreator + LocalTranscribe) pointing to non-existent products
+- LocalTranscribe: Product in final testing but buy buttons linking to broken Gumroad URLs
+
+**STRATEGIC DECISION**
+- **QuoteCreator**: Full fix (web app is live, article published)
+- **LocalTranscribe**: Minimal fix only (launch pending, avoid major refactoring per user directive)
+
+**FILES MODIFIED** (3 files)
+1. **`/blog/quotecreator/index.html`** - Fixed blog index + Gumroad link
+   - **Blog Index Fix** (lines 373-395):
+     - ❌ REMOVED: "Articles Coming Soon" placeholder
+     - ✅ ADDED: Featured article card for "Professional Estimate Templates: Complete 2025 Guide"
+     - ✅ ADDED: "More Articles Coming Soon" notice (condensed to single topic item)
+     - Article metadata: Best Practices badge, October 25 2025, 8 min read
+     - Link: `/blog/quotecreator/professional-estimate-templates/`
+
+   - **Gumroad Link Fix** (line 401):
+     - ❌ BEFORE: `https://quotecreator.gumroad.com/l/quotecreator` (broken - product doesn't exist)
+     - ✅ AFTER: `https://quotecreator.lexopoly.com` (live web app demo)
+     - Button text: "Buy QuoteCreator - $12.99" → "Try QuoteCreator Free"
+     - Analytics event: `quotecreator_buy` → `quotecreator_try`
+
+2. **`/blog/localtranscribe/index.html`** - Disabled broken Gumroad buy button
+   - **Minimal Fix** (line 402):
+     - ❌ BEFORE: `https://localtranscribe.gumroad.com/l/localtranscribe` (broken)
+     - ✅ AFTER: Disabled button with inline styles
+     - Button text: "Buy LocalTranscribe - $79" → "LocalTranscribe - Launching Soon"
+     - Style: `opacity: 0.7; cursor: not-allowed; pointer-events: none;`
+     - href: `#` (onclick returns false)
+     - Kept "Coming Soon" article placeholder (no articles published yet)
+
+3. **`/buy/index.html`** - Added launch notice + disabled download buttons
+   - **Launch Notice Banner** (lines 646-649):
+     - Orange warning border (`var(--warning)`)
+     - Heading: "⏳ LocalTranscribe Launch Pending"
+     - Message: "LocalTranscribe is in final testing and will be available soon..."
+
+   - **Download Buttons Disabled** (3 platforms: Windows, Mac, Linux):
+     - ❌ BEFORE: Gumroad links (`.com/l/localtranscribe-{platform}`)
+     - ✅ AFTER: Disabled buttons with inline styles
+     - Platform options: `opacity: 0.6` (dimmed)
+     - Buttons: `opacity: 0.5; cursor: not-allowed; pointer-events: none;`
+     - Text: "Purchase Full Version ($79)" → "Coming Soon"
+     - Upgrade note: "Instant download after purchase" → "Launch pending final testing"
+
+**GUMROAD LINK AUDIT RESULTS**
+**Total Found**: 5 instances
+- QuoteCreator: 1 (blog index CTA)
+- LocalTranscribe: 4 (blog index + 3 buy page platform downloads)
+**All Addressed**: ✅ 100% coverage
+
+**VERIFICATION**
+✅ Article LIVE: `https://lexopoly.com/blog/quotecreator/professional-estimate-templates/` (HTTP 200)
+✅ Article deployed: Commit 4e99aef (Oct 25 00:17:32) - 2,900 words, 8 images, Schema.org
+✅ QuoteCreator web app: `https://quotecreator.lexopoly.com` (functional demo link)
+✅ LocalTranscribe status: Launch pending (per user guidance)
+
+**BUSINESS IMPACT**
+- **User Experience**: QuoteCreator article now discoverable via blog index
+- **Conversion Path**: Broken Gumroad links → Working demo link (QuoteCreator)
+- **Launch Messaging**: Clear expectations set for LocalTranscribe pending status
+- **Risk Mitigation**: No major LocalTranscribe refactoring (per user directive - "on launchpad pending final tests")
+
+**GIT COMMITS**
+- Commit 1: QuoteCreator fixes (blog index + Gumroad link)
+- Commit 2: LocalTranscribe minimal fixes (disabled buy buttons + launch notice)
+
+**PHILOSOPHY APPLIED**: Minimal effective change > comprehensive refactoring when product status uncertain
+
+---
+
 ## 📈 STRATEGIC BREAKTHROUGH ACHIEVED
 
 ### **Interdisciplinary Synthesis Applied**

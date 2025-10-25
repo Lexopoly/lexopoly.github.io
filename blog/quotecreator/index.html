@@ -370,28 +370,27 @@
             </p>
         </div>
 
-        <div class="coming-soon">
-            <div class="coming-soon-icon">💼</div>
-            <h2>Articles Coming Soon</h2>
-            <p>We're creating in-depth guides on professional quote creation, pricing strategies, and client communication. Check back soon!</p>
+        <div class="articles-grid" style="display: grid; gap: 2rem; margin: 2rem 0;">
+            <article class="article-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <div class="article-meta" style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    <span class="category-badge" style="background: var(--quotecreator); color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600;">Best Practices</span>
+                    <time datetime="2025-10-25">October 25, 2025</time>
+                </div>
+                <h2 style="font-size: 1.8rem; color: var(--lexopoly-primary); margin-bottom: 1rem;">
+                    <a href="/blog/quotecreator/professional-estimate-templates/" style="color: inherit; text-decoration: none; transition: color 0.3s;">Professional Estimate Templates: Complete 2025 Guide</a>
+                </h2>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">Industry-specific estimate templates for contractors, consultants, designers, and trade services. Create winning quotes in 60 seconds with proven formats that close deals.</p>
+                <div class="article-footer" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <span class="read-time" style="color: var(--text-secondary); font-size: 0.9rem;">📖 8 min read</span>
+                    <a href="/blog/quotecreator/professional-estimate-templates/" class="read-more" style="color: var(--quotecreator); text-decoration: none; font-weight: 600; transition: color 0.3s;">Read Article →</a>
+                </div>
+            </article>
+        </div>
 
-            <div class="coming-soon-topics">
-                <div class="topic-item">
-                    <div class="topic-title">📊 Professional Quote Best Practices</div>
-                    <div class="topic-description">How to structure quotes that win clients and protect your margins</div>
-                </div>
-                <div class="topic-item">
-                    <div class="topic-title">📱 Mobile Quoting Workflow</div>
-                    <div class="topic-description">Create and send professional quotes from the job site in under 60 seconds</div>
-                </div>
-                <div class="topic-item">
-                    <div class="topic-title">💰 Pricing Strategy Guide</div>
-                    <div class="topic-description">How to price services for profit without losing clients</div>
-                </div>
-                <div class="topic-item">
-                    <div class="topic-title">✉️ Client Communication Templates</div>
-                    <div class="topic-description">Email and text templates for quote follow-up and conversion</div>
-                </div>
+        <div class="coming-soon-topics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 3rem 0 2rem 0;">
+            <div class="topic-item" style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid var(--quotecreator);">
+                <div class="topic-title" style="font-weight: 600; color: var(--lexopoly-primary); margin-bottom: 0.3rem;">📊 More Articles Coming Soon</div>
+                <div class="topic-description" style="font-size: 0.9rem; color: var(--text-secondary);">Mobile quoting workflows, pricing strategies, and client communication guides in development</div>
             </div>
         </div>
 
@@ -399,7 +398,7 @@
             <h2>Create Professional Quotes in 60 Seconds</h2>
             <p>QuoteCreator helps contractors, freelancers, and service professionals create polished quotes on-site—no complex software, just fast results.</p>
             <div class="cta-buttons">
-                <a href="https://quotecreator.gumroad.com/l/quotecreator" class="btn-cta btn-cta-primary" onclick="trackEvent('conversion', 'category_cta_click', 'quotecreator_buy')">Buy QuoteCreator - $12.99</a>
+                <a href="https://quotecreator.lexopoly.com" class="btn-cta btn-cta-primary" onclick="trackEvent('conversion', 'category_cta_click', 'quotecreator_try')">Try QuoteCreator Free</a>
                 <a href="/demo/" class="btn-cta btn-cta-secondary" onclick="trackEvent('conversion', 'category_cta_click', 'quotecreator_demo')">Watch Demo</a>
             </div>
         </div>
