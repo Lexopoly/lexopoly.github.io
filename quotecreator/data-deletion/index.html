@@ -167,17 +167,17 @@
         <header>
             <h1>QuoteCreator Data Deletion</h1>
             <p class="meta">
-                <strong>Page Purpose:</strong> Instructions for deleting your QuoteCreator data from your Android device<br>
-                <strong>Last Updated:</strong> October 10, 2025
+                <strong>Page Purpose:</strong> Instructions for deleting your QuoteCreator data from your browser<br>
+                <strong>Last Updated:</strong> October 25, 2025
             </p>
         </header>
 
         <div class="highlight">
-            <p><strong>Local-First App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally on your Android device. To delete your data, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+            <p><strong>Browser-Based App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally in your browser. To delete your data, simply clear site data through QuoteCreator settings or your browser's privacy settings. No server-side data exists to delete.</p>
         </div>
 
         <h2>What Data Does QuoteCreator Store?</h2>
-        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively on your Android device in a SQLite database:</p>
+        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively in your browser using IndexedDB:</p>
         <ul>
             <li>Estimates and quotes you've created</li>
             <li>Line items and pricing information</li>
@@ -185,34 +185,34 @@
             <li>Company settings and branding preferences</li>
             <li>Clio OAuth tokens (encrypted, if you've connected to Clio)</li>
         </ul>
-        <p><strong>Important:</strong> We do NOT store any of your business data on our servers. Everything stays on your device.</p>
+        <p><strong>Important:</strong> We do NOT store any of your business data on our servers. Everything stays in your browser.</p>
 
         <h2>How to Delete Your Data</h2>
-        <p>Choose one of the following methods to permanently delete all QuoteCreator data from your Android device:</p>
+        <p>Choose one of the following methods to permanently delete all QuoteCreator data from your browser:</p>
 
         <div class="step-box">
-            <h3>Method 1: Uninstall the App (Recommended)</h3>
+            <h3>Method 1: Clear Site Data via QuoteCreator Settings (Recommended)</h3>
             <ol>
-                <li>Open your Android device's <strong>Settings</strong></li>
-                <li>Navigate to <strong>Apps</strong> (or <strong>Applications</strong>)</li>
-                <li>Find and tap <strong>QuoteCreator</strong></li>
-                <li>Tap <strong>Uninstall</strong></li>
-                <li>Confirm the uninstallation</li>
+                <li>Open <strong>QuoteCreator</strong> in your browser</li>
+                <li>Click <strong>Settings</strong></li>
+                <li>Scroll to the <strong>Data Management</strong> section</li>
+                <li>Click <strong>Clear All Data</strong></li>
+                <li>Confirm the action when prompted</li>
             </ol>
-            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted from your device, including estimates, settings, and Clio OAuth tokens.</p>
+            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted from your browser, including estimates, settings, and Clio OAuth tokens. You can continue using QuoteCreator with a fresh start.</p>
         </div>
 
         <div class="step-box">
-            <h3>Method 2: Clear App Data (Keep the App Installed)</h3>
+            <h3>Method 2: Clear Browser Data via Browser Settings</h3>
             <ol>
-                <li>Open your Android device's <strong>Settings</strong></li>
-                <li>Navigate to <strong>Apps</strong> (or <strong>Applications</strong>)</li>
-                <li>Find and tap <strong>QuoteCreator</strong></li>
-                <li>Tap <strong>Storage</strong> (or <strong>Storage & cache</strong>)</li>
-                <li>Tap <strong>Clear Data</strong> (or <strong>Clear Storage</strong>)</li>
-                <li>Confirm the action</li>
+                <li>Open your browser's <strong>Settings</strong> or <strong>Preferences</strong></li>
+                <li>Navigate to <strong>Privacy</strong> or <strong>Privacy & Security</strong></li>
+                <li>Find <strong>Clear browsing data</strong> or <strong>Site data</strong></li>
+                <li>Select <strong>Cookies and site data</strong></li>
+                <li>Filter or search for <strong>quotecreator-web-kr6aj.ondigitalocean.app</strong></li>
+                <li>Clear data for that specific site</li>
             </ol>
-            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted, but the app remains installed. You can start fresh as if you just downloaded it.</p>
+            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted from your browser. You can access QuoteCreator again with a fresh start.</p>
         </div>
 
         <div class="warning">
@@ -222,18 +222,18 @@
         <h2>What About PDFs and Clio Data?</h2>
 
         <h3>PDF Files</h3>
-        <p>If you've generated and saved PDF files to your device's Downloads folder, these files are stored <strong>separately</strong> from the app:</p>
+        <p>If you've generated and downloaded PDF files, these files are stored <strong>separately</strong> from QuoteCreator's browser data:</p>
         <ul>
-            <li>Uninstalling or clearing app data does NOT delete PDF files</li>
-            <li>To delete PDFs, open your <strong>Files</strong> app and manually delete them from the <strong>Downloads</strong> folder</li>
+            <li>Clearing browser data does NOT delete downloaded PDF files</li>
+            <li>To delete PDFs, open your <strong>Downloads</strong> folder and manually delete them</li>
         </ul>
 
         <h3>Clio Uploaded Documents</h3>
         <p>If you've used the "Upload to Clio" feature, those documents now exist in your Clio account:</p>
         <ul>
-            <li>Deleting QuoteCreator data does NOT delete documents already uploaded to Clio</li>
+            <li>Deleting QuoteCreator browser data does NOT delete documents already uploaded to Clio</li>
             <li>To delete documents from Clio, log in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a> and delete them from the relevant matter</li>
-            <li>To disconnect QuoteCreator from your Clio account, go to QuoteCreator Settings → Disconnect Clio (before uninstalling)</li>
+            <li>To disconnect QuoteCreator from your Clio account, go to QuoteCreator Settings → Disconnect Clio (before clearing data)</li>
         </ul>
 
         <h3>Revoking Clio Access</h3>
@@ -243,26 +243,26 @@
             <li>Go to <strong>Settings</strong> → <strong>Integrations</strong> → <strong>Connected Apps</strong></li>
             <li>Find <strong>QuoteCreator</strong> and click <strong>Revoke Access</strong></li>
         </ol>
-        <p>This permanently prevents QuoteCreator from accessing your Clio account, even if you reinstall the app.</p>
+        <p>This permanently prevents QuoteCreator from accessing your Clio account, even if you use the app again in the future.</p>
 
         <h2>Verification</h2>
         <p>To verify that your data has been deleted:</p>
         <ul>
-            <li><strong>If you uninstalled:</strong> QuoteCreator will no longer appear in your app list</li>
-            <li><strong>If you cleared data:</strong> Open QuoteCreator and you'll see the initial setup screen (as if it's a fresh install)</li>
+            <li><strong>After clearing site data:</strong> Open QuoteCreator and you'll see the initial welcome screen (as if you're using it for the first time)</li>
+            <li><strong>Browser developer tools:</strong> Open browser DevTools → Application → Storage to confirm IndexedDB for quotecreator-web-kr6aj.ondigitalocean.app is empty</li>
         </ul>
         <p><strong>Server-side verification not needed:</strong> Since we don't store your business data on any servers, there's no server-side data to check or delete.</p>
 
         <h2>What We Delete (From Our Side)</h2>
         <p>Lexopoly does not store QuoteCreator user data on our servers, so there's nothing for us to delete. However:</p>
         <ul>
-            <li><strong>Google Play purchase records:</strong> Managed by Google (not us). See <a href="https://support.google.com/googleplay/answer/9474086" target="_blank" rel="noopener">Google's data deletion policy</a></li>
+            <li><strong>Stripe purchase records:</strong> Managed by Stripe (not us). See <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a></li>
             <li><strong>Support emails:</strong> If you've contacted support@lexopoly.com, we may have records of your support requests. Email us to request deletion of support correspondence</li>
         </ul>
 
         <h2>Data Deletion Timeframe</h2>
         <ul>
-            <li><strong>Device data:</strong> Deleted immediately upon uninstall or clearing app data</li>
+            <li><strong>Browser data:</strong> Deleted immediately upon clearing site data or browser storage</li>
             <li><strong>Support correspondence:</strong> Deleted within 30 days of your email request to support@lexopoly.com</li>
             <li><strong>Clio OAuth tokens:</strong> Immediately invalidated when you disconnect or revoke access</li>
         </ul>
@@ -270,7 +270,7 @@
         <h2>Your Rights</h2>
         <p>Under privacy laws like GDPR (EU), CCPA (California), and PIPEDA (Canada), you have the right to:</p>
         <ul>
-            <li><strong>Access your data:</strong> All your data is in your device's app storage (Settings → Apps → QuoteCreator → Storage)</li>
+            <li><strong>Access your data:</strong> All your data is stored in your browser's IndexedDB storage</li>
             <li><strong>Delete your data:</strong> Use the methods described above</li>
             <li><strong>Export your data:</strong> Generate PDFs of your estimates and save them to any location</li>
             <li><strong>Revoke third-party access:</strong> Disconnect Clio integration at any time</li>
@@ -285,7 +285,7 @@
         <p>We're happy to help you delete any server-side data we may have (like support emails) or answer questions about the deletion process.</p>
 
         <div class="highlight">
-            <p><strong>Summary:</strong> QuoteCreator is a local-first app. All your business data is stored on your device. To delete it, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+            <p><strong>Summary:</strong> QuoteCreator is a browser-based app. All your business data is stored in your browser. To delete it, simply clear site data through QuoteCreator settings or your browser's privacy settings. No server-side data exists to delete.</p>
         </div>
 
         <footer>
