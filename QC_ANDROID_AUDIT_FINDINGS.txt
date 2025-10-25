@@ -1,0 +1,96 @@
+=========================================
+QuoteCreator Web Presence Android Audit
+=========================================
+
+Searching for Android-specific references that need updating for web app...
+
+=== Searching for: 'android' ===
+quotecreator/blog/quotecreator-clio-integration/index.html:888:                Install QuoteCreator from the <a href="/quotecreator/">QuoteCreator website</a>. The app is available for Android devices and tablets.
+quotecreator/privacy/index.html:223:        <p>All business data you create in QuoteCreator is stored <strong>exclusively on your Android device</strong> using SQLite database:</p>
+quotecreator/privacy/index.html:233:            <li>Generate and share a PDF file using Android's share feature</li>
+quotecreator/privacy/index.html:288:            <li><strong>Jetpack Compose:</strong> Android UI framework (operates locally)</li>
+quotecreator/privacy/index.html:294:        <p>QuoteCreator requests the following Android permissions:</p>
+quotecreator/privacy/index.html:303:        <h3>WRITE_EXTERNAL_STORAGE (Android 10 and below)</h3>
+quotecreator/privacy/index.html:310:        <h3>MANAGE_EXTERNAL_STORAGE (Android 11+)</h3>
+quotecreator/privacy/index.html:319:            <li><strong>Device encryption:</strong> All Android 11+ devices encrypt data at rest by default</li>
+quotecreator/privacy/index.html:321:            <li><strong>Encrypted OAuth tokens:</strong> Clio access tokens stored with Android KeyStore encryption</li>
+quotecreator/privacy/index.html:342:            <li><strong>Option 2 - Clear data:</strong> Android Settings → Apps → QuoteCreator → Storage → Clear Data</li>
+quotecreator/setup/index.html:516:                <li>✅ <strong>QuoteCreator installed</strong> on your Android device (<a href="https://play.google.com/store/apps/details?id=com.lexopoly.quotecreator" target="_blank" rel="noopener">Download from Google Play</a>)</li>
+quotecreator/setup/index.html:531:                    <li>Open the <strong>QuoteCreator</strong> app on your Android device</li>
+quotecreator/setup/index.html:700:                    <li>Your Android device model and OS version</li>
+quotecreator/setup/index.html:735:                <li><strong>Encrypted tokens:</strong> Access tokens stored with Android KeyStore encryption</li>
+quotecreator/data-deletion/index.html:7:    <meta name="description" content="How to delete your QuoteCreator data from your Android device. Complete data removal instructions for local app data.">
+quotecreator/data-deletion/index.html:170:                <strong>Page Purpose:</strong> Instructions for deleting your QuoteCreator data from your Android device<br>
+quotecreator/data-deletion/index.html:176:            <p><strong>Local-First App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally on your Android device. To delete your data, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+quotecreator/data-deletion/index.html:180:        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively on your Android device in a SQLite database:</p>
+quotecreator/data-deletion/index.html:191:        <p>Choose one of the following methods to permanently delete all QuoteCreator data from your Android device:</p>
+quotecreator/data-deletion/index.html:196:                <li>Open your Android device's <strong>Settings</strong></li>
+quotecreator/data-deletion/index.html:208:                <li>Open your Android device's <strong>Settings</strong></li>
+quotecreator/data-deletion/index.html:288:            <p><strong>Summary:</strong> QuoteCreator is a local-first app. All your business data is stored on your device. To delete it, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+blog/professional-estimates-60-seconds/index.html:689:                <li><strong>Phone:</strong> Any smartphone (iOS or Android) with 4G/5G</li>
+
+=== Searching for: 'google play' ===
+quotecreator/privacy/index.html:218:            <li><strong>Payment transaction data:</strong> When you purchase the app via Google Play, Google processes your payment (we never see your credit card details)</li>
+quotecreator/privacy/index.html:278:        <h3>Google Play Billing</h3>
+quotecreator/setup/index.html:516:                <li>✅ <strong>QuoteCreator installed</strong> on your Android device (<a href="https://play.google.com/store/apps/details?id=com.lexopoly.quotecreator" target="_blank" rel="noopener">Download from Google Play</a>)</li>
+quotecreator/data-deletion/index.html:259:            <li><strong>Google Play purchase records:</strong> Managed by Google (not us). See <a href="https://support.google.com/googleplay/answer/9474086" target="_blank" rel="noopener">Google's data deletion policy</a></li>
+
+=== Searching for: 'app store' ===
+
+=== Searching for: 'mobile app' ===
+quotecreator/privacy/index.html:7:    <meta name="description" content="QuoteCreator Privacy Policy - Local-first mobile app with optional Clio integration. Your data stays on your device.">
+quotecreator/privacy/index.html:175:            <p><strong>Privacy-First by Design:</strong> QuoteCreator is a local-first mobile application. Your estimate data stays on your device. We do not collect, store, or transmit your business data to any servers.</p>
+blog/contractor-estimate-software-one-time-purchase/index.html:930:                        <td><strong>Mobile app</strong></td>
+
+=== Searching for: 'uninstall' ===
+quotecreator/privacy/index.html:332:            <li><strong>Delete your data:</strong> Uninstall the app or clear app data (see below)</li>
+quotecreator/privacy/index.html:341:            <li><strong>Option 1 - Uninstall:</strong> Uninstall QuoteCreator from your device (deletes all app data)</li>
+quotecreator/data-deletion/index.html:176:            <p><strong>Local-First App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally on your Android device. To delete your data, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+quotecreator/data-deletion/index.html:194:            <h3>Method 1: Uninstall the App (Recommended)</h3>
+quotecreator/data-deletion/index.html:199:                <li>Tap <strong>Uninstall</strong></li>
+quotecreator/data-deletion/index.html:200:                <li>Confirm the uninstallation</li>
+quotecreator/data-deletion/index.html:227:            <li>Uninstalling or clearing app data does NOT delete PDF files</li>
+quotecreator/data-deletion/index.html:236:            <li>To disconnect QuoteCreator from your Clio account, go to QuoteCreator Settings → Disconnect Clio (before uninstalling)</li>
+quotecreator/data-deletion/index.html:251:            <li><strong>If you uninstalled:</strong> QuoteCreator will no longer appear in your app list</li>
+quotecreator/data-deletion/index.html:265:            <li><strong>Device data:</strong> Deleted immediately upon uninstall or clearing app data</li>
+quotecreator/data-deletion/index.html:288:            <p><strong>Summary:</strong> QuoteCreator is a local-first app. All your business data is stored on your device. To delete it, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+
+=== Searching for: 'sqlite' ===
+quotecreator/privacy/index.html:223:        <p>All business data you create in QuoteCreator is stored <strong>exclusively on your Android device</strong> using SQLite database:</p>
+quotecreator/privacy/index.html:289:            <li><strong>SQLite:</strong> Local database (operates locally)</li>
+quotecreator/data-deletion/index.html:180:        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively on your Android device in a SQLite database:</p>
+
+=== Searching for: 'smartphone' ===
+blog/professional-estimates-60-seconds/index.html:689:                <li><strong>Phone:</strong> Any smartphone (iOS or Android) with 4G/5G</li>
+
+=== Searching for: 'download.*app' ===
+quotecreator/data-deletion/index.html:225:        <p>If you've generated and saved PDF files to your device's Downloads folder, these files are stored <strong>separately</strong> from the app:</p>
+blog/professional-estimates-60-seconds/index.html:972:                <li><strong>Download QuoteCreator</strong> (or your chosen app) on your phone</li>
+
+=== Searching for: 'install.*app' ===
+quotecreator/blog/quotecreator-clio-integration/index.html:888:                Install QuoteCreator from the <a href="/quotecreator/">QuoteCreator website</a>. The app is available for Android devices and tablets.
+quotecreator/privacy/index.html:332:            <li><strong>Delete your data:</strong> Uninstall the app or clear app data (see below)</li>
+quotecreator/privacy/index.html:341:            <li><strong>Option 1 - Uninstall:</strong> Uninstall QuoteCreator from your device (deletes all app data)</li>
+quotecreator/setup/index.html:516:                <li>✅ <strong>QuoteCreator installed</strong> on your Android device (<a href="https://play.google.com/store/apps/details?id=com.lexopoly.quotecreator" target="_blank" rel="noopener">Download from Google Play</a>)</li>
+quotecreator/setup/index.html:728:            <p>This prevents QuoteCreator from accessing your Clio account, even if you reinstall the app. You'll need to re-authorize if you want to reconnect later.</p>
+quotecreator/data-deletion/index.html:176:            <p><strong>Local-First App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally on your Android device. To delete your data, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+quotecreator/data-deletion/index.html:194:            <h3>Method 1: Uninstall the App (Recommended)</h3>
+quotecreator/data-deletion/index.html:227:            <li>Uninstalling or clearing app data does NOT delete PDF files</li>
+quotecreator/data-deletion/index.html:246:        <p>This permanently prevents QuoteCreator from accessing your Clio account, even if you reinstall the app.</p>
+quotecreator/data-deletion/index.html:251:            <li><strong>If you uninstalled:</strong> QuoteCreator will no longer appear in your app list</li>
+quotecreator/data-deletion/index.html:265:            <li><strong>Device data:</strong> Deleted immediately upon uninstall or clearing app data</li>
+quotecreator/data-deletion/index.html:288:            <p><strong>Summary:</strong> QuoteCreator is a local-first app. All your business data is stored on your device. To delete it, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+
+=========================================
+Audit Complete
+=========================================
+
+=== HOMEPAGE AUDIT (2025-10-25) ===
+index.html:1394:                    <p>Create professional estimates on Android and upload them directly to Clio matters with one tap. Built for legal professionals and service providers.</p>
+index.html:1396:                        <li>Fast mobile estimate creation</li>
+index.html:1399:                        <li>Works offline</li>
+
+CRITICAL: Homepage product description explicitly mentions "on Android" - needs update to "in your browser" or "on the web"
+MINOR: "Fast mobile estimate creation" should be "Fast estimate creation" (works on desktop too)
+MINOR: "Works offline" is technically accurate for PWA but may confuse users expecting Android app
+

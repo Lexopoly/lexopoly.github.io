@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Instructions | QuoteCreator by Lexopoly</title>
+    <meta name="description" content="How to delete your QuoteCreator data from your Android device. Complete data removal instructions for local app data.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 3px solid #1a365d;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #1a365d;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2c5aa0;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #edf2f7;
+            border-left: 3px solid #2c5aa0;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning {
+            background: #fff5f5;
+            border-left: 3px solid #e53e3e;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning p:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-box {
+            background: #f7fafc;
+            border: 2px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: #2c5aa0;
+        }
+
+        a {
+            color: #2c5aa0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2c5aa0;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2c5aa0;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QuoteCreator Data Deletion</h1>
+            <p class="meta">
+                <strong>Page Purpose:</strong> Instructions for deleting your QuoteCreator data from your Android device<br>
+                <strong>Last Updated:</strong> October 10, 2025
+            </p>
+        </header>
+
+        <div class="highlight">
+            <p><strong>Local-First App = Easy Data Deletion:</strong> QuoteCreator stores ALL your data locally on your Android device. To delete your data, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+        </div>
+
+        <h2>What Data Does QuoteCreator Store?</h2>
+        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively on your Android device in a SQLite database:</p>
+        <ul>
+            <li>Estimates and quotes you've created</li>
+            <li>Line items and pricing information</li>
+            <li>Customer information (if you've entered any)</li>
+            <li>Company settings and branding preferences</li>
+            <li>Clio OAuth tokens (encrypted, if you've connected to Clio)</li>
+        </ul>
+        <p><strong>Important:</strong> We do NOT store any of your business data on our servers. Everything stays on your device.</p>
+
+        <h2>How to Delete Your Data</h2>
+        <p>Choose one of the following methods to permanently delete all QuoteCreator data from your Android device:</p>
+
+        <div class="step-box">
+            <h3>Method 1: Uninstall the App (Recommended)</h3>
+            <ol>
+                <li>Open your Android device's <strong>Settings</strong></li>
+                <li>Navigate to <strong>Apps</strong> (or <strong>Applications</strong>)</li>
+                <li>Find and tap <strong>QuoteCreator</strong></li>
+                <li>Tap <strong>Uninstall</strong></li>
+                <li>Confirm the uninstallation</li>
+            </ol>
+            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted from your device, including estimates, settings, and Clio OAuth tokens.</p>
+        </div>
+
+        <div class="step-box">
+            <h3>Method 2: Clear App Data (Keep the App Installed)</h3>
+            <ol>
+                <li>Open your Android device's <strong>Settings</strong></li>
+                <li>Navigate to <strong>Apps</strong> (or <strong>Applications</strong>)</li>
+                <li>Find and tap <strong>QuoteCreator</strong></li>
+                <li>Tap <strong>Storage</strong> (or <strong>Storage & cache</strong>)</li>
+                <li>Tap <strong>Clear Data</strong> (or <strong>Clear Storage</strong>)</li>
+                <li>Confirm the action</li>
+            </ol>
+            <p><strong>Result:</strong> All QuoteCreator data is permanently deleted, but the app remains installed. You can start fresh as if you just downloaded it.</p>
+        </div>
+
+        <div class="warning">
+            <p><strong>⚠️ Warning:</strong> Both methods permanently delete all your estimates, quotes, customer information, and settings. <strong>This action cannot be undone.</strong> We recommend exporting important estimates as PDFs before deleting data.</p>
+        </div>
+
+        <h2>What About PDFs and Clio Data?</h2>
+
+        <h3>PDF Files</h3>
+        <p>If you've generated and saved PDF files to your device's Downloads folder, these files are stored <strong>separately</strong> from the app:</p>
+        <ul>
+            <li>Uninstalling or clearing app data does NOT delete PDF files</li>
+            <li>To delete PDFs, open your <strong>Files</strong> app and manually delete them from the <strong>Downloads</strong> folder</li>
+        </ul>
+
+        <h3>Clio Uploaded Documents</h3>
+        <p>If you've used the "Upload to Clio" feature, those documents now exist in your Clio account:</p>
+        <ul>
+            <li>Deleting QuoteCreator data does NOT delete documents already uploaded to Clio</li>
+            <li>To delete documents from Clio, log in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a> and delete them from the relevant matter</li>
+            <li>To disconnect QuoteCreator from your Clio account, go to QuoteCreator Settings → Disconnect Clio (before uninstalling)</li>
+        </ul>
+
+        <h3>Revoking Clio Access</h3>
+        <p>If you want to revoke QuoteCreator's access to your Clio account:</p>
+        <ol>
+            <li>Log in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a></li>
+            <li>Go to <strong>Settings</strong> → <strong>Integrations</strong> → <strong>Connected Apps</strong></li>
+            <li>Find <strong>QuoteCreator</strong> and click <strong>Revoke Access</strong></li>
+        </ol>
+        <p>This permanently prevents QuoteCreator from accessing your Clio account, even if you reinstall the app.</p>
+
+        <h2>Verification</h2>
+        <p>To verify that your data has been deleted:</p>
+        <ul>
+            <li><strong>If you uninstalled:</strong> QuoteCreator will no longer appear in your app list</li>
+            <li><strong>If you cleared data:</strong> Open QuoteCreator and you'll see the initial setup screen (as if it's a fresh install)</li>
+        </ul>
+        <p><strong>Server-side verification not needed:</strong> Since we don't store your business data on any servers, there's no server-side data to check or delete.</p>
+
+        <h2>What We Delete (From Our Side)</h2>
+        <p>Lexopoly does not store QuoteCreator user data on our servers, so there's nothing for us to delete. However:</p>
+        <ul>
+            <li><strong>Google Play purchase records:</strong> Managed by Google (not us). See <a href="https://support.google.com/googleplay/answer/9474086" target="_blank" rel="noopener">Google's data deletion policy</a></li>
+            <li><strong>Support emails:</strong> If you've contacted support@lexopoly.com, we may have records of your support requests. Email us to request deletion of support correspondence</li>
+        </ul>
+
+        <h2>Data Deletion Timeframe</h2>
+        <ul>
+            <li><strong>Device data:</strong> Deleted immediately upon uninstall or clearing app data</li>
+            <li><strong>Support correspondence:</strong> Deleted within 30 days of your email request to support@lexopoly.com</li>
+            <li><strong>Clio OAuth tokens:</strong> Immediately invalidated when you disconnect or revoke access</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>Under privacy laws like GDPR (EU), CCPA (California), and PIPEDA (Canada), you have the right to:</p>
+        <ul>
+            <li><strong>Access your data:</strong> All your data is in your device's app storage (Settings → Apps → QuoteCreator → Storage)</li>
+            <li><strong>Delete your data:</strong> Use the methods described above</li>
+            <li><strong>Export your data:</strong> Generate PDFs of your estimates and save them to any location</li>
+            <li><strong>Revoke third-party access:</strong> Disconnect Clio integration at any time</li>
+        </ul>
+
+        <h2>Need Help?</h2>
+        <p>If you have questions about data deletion or need assistance:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@lexopoly.com">support@lexopoly.com</a></li>
+            <li><strong>Subject line:</strong> "QuoteCreator Data Deletion Request"</li>
+        </ul>
+        <p>We're happy to help you delete any server-side data we may have (like support emails) or answer questions about the deletion process.</p>
+
+        <div class="highlight">
+            <p><strong>Summary:</strong> QuoteCreator is a local-first app. All your business data is stored on your device. To delete it, simply uninstall the app or clear app data through Android settings. No server-side data exists to delete.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+            <p>
+                <a href="/">Lexopoly Home</a> |
+                <a href="/quotecreator/">QuoteCreator Home</a> |
+                <a href="/quotecreator/privacy/">Privacy Policy</a> |
+                <a href="/terms/">Terms of Service</a> |
+                <a href="/support/">Support</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

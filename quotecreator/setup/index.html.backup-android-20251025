@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clio Integration Setup | QuoteCreator by Lexopoly</title>
+    <meta name="description" content="Step-by-step guide to connect QuoteCreator to your Clio account. Secure OAuth authentication for seamless estimate uploads.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T02NTBBG96"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-T02NTBBG96');
+    </script>
+
+    <style>
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #d97706;
+            --error: #c53030;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Unified Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+        }
+
+        .nav-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, #1a365d 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            min-width: 200px;
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            display: block;
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            color: var(--lexopoly-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #edf2f7 0%, #e6f2ff 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .step-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 90, 160, 0.3);
+        }
+
+        .button-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .button-secondary:hover {
+            background: var(--bg-secondary);
+        }
+
+        .troubleshooting-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .troubleshooting-item h4 {
+            color: var(--error);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .troubleshooting-item .solution {
+            color: var(--success);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .toc {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .toc ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: white;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 0.75rem;
+            opacity: 0.9;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            border-bottom-color: white;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .step-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Unified Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">L</div>
+                <span class="nav-logo-text">Lexopoly</span>
+            </a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <div class="nav-dropdown-toggle">
+                        Products ▾
+                    </div>
+                    <div class="nav-dropdown-menu">
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <a href="/lawyers/">LocalTranscribe for Lawyers</a>
+                        <a href="/journalists/">LocalTranscribe for Journalists</a>
+                        <a href="/dictation/">LocalTranscribe Dictation</a>
+                        <a href="/court-reporters/">LocalTranscribe for Court Reporters</a>
+                    </div>
+                </li>
+                <li><a href="/pricing/">Pricing</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/support/">Support</a></li>
+                <li><a href="/signup/" class="nav-cta">Get Started →</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-card">
+            <header>
+                <h1>Clio Integration Setup</h1>
+                <p class="subtitle">Connect QuoteCreator to your Clio account in minutes with secure OAuth authentication.</p>
+            </header>
+
+            <div class="highlight-box">
+                <p><strong>🔒 Secure by Design:</strong> We use industry-standard OAuth 2.0 authentication. We never see or store your Clio password—authentication happens directly between you and Clio.</p>
+            </div>
+
+            <div class="toc">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#setup-steps">Setup Steps</a></li>
+                    <li><a href="#using-integration">Using the Integration</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#disconnect">Disconnecting</a></li>
+                </ul>
+            </div>
+
+            <h2 id="overview">What You'll Get</h2>
+            <p>Once connected, QuoteCreator integrates seamlessly with your Clio account:</p>
+            <ul>
+                <li><strong>Browse your matters:</strong> Search and select from all your Clio matters directly in QuoteCreator</li>
+                <li><strong>One-tap uploads:</strong> Send estimate PDFs to the right matter with a single tap</li>
+                <li><strong>Automatic organization:</strong> Estimates appear in your matter's Documents section</li>
+                <li><strong>Set defaults:</strong> Save frequent client matters for faster estimates</li>
+                <li><strong>Connection monitoring:</strong> Automatic re-authentication if your connection expires</li>
+            </ul>
+
+            <h2 id="requirements">Before You Start</h2>
+            <p>Make sure you have:</p>
+            <ul>
+                <li>✅ <strong>QuoteCreator installed</strong> on your Android device (<a href="https://play.google.com/store/apps/details?id=com.lexopoly.quotecreator" target="_blank" rel="noopener">Download from Google Play</a>)</li>
+                <li>✅ <strong>Active Clio account</strong> with login credentials</li>
+                <li>✅ <strong>Internet connection</strong> for initial setup</li>
+                <li>✅ <strong>Permission to connect apps</strong> (if you're on a firm-managed Clio account, check with your admin)</li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>⚠️ Firm-Managed Accounts:</strong> If you're part of a law firm with admin-managed Clio access, check with your IT administrator before connecting third-party apps. Some firms restrict integrations for security compliance.</p>
+            </div>
+
+            <h2 id="setup-steps">Setup Steps</h2>
+
+            <div class="step-box">
+                <h3><span class="step-number">1</span> Open QuoteCreator Settings</h3>
+                <ol>
+                    <li>Open the <strong>QuoteCreator</strong> app on your Android device</li>
+                    <li>Tap the <strong>⚙️ Settings</strong> icon (usually in the top-right corner or bottom navigation)</li>
+                    <li>Scroll to the <strong>Integrations</strong> section</li>
+                    <li>Find <strong>Clio Integration</strong> and tap <strong>Connect to Clio</strong></li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">2</span> Complete Manual OAuth Authorization</h3>
+                <p><strong>⚠️ Important:</strong> This is a manual copy/paste process. QuoteCreator will open your browser, then you'll need to copy the authorization code back to the app.</p>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2A: Authorize in Your Browser</h4>
+                <ol>
+                    <li>QuoteCreator automatically <strong>opens your browser</strong> to the Clio authorization page</li>
+                    <li>Enter your <strong>Clio email and password</strong> (we never see this)</li>
+                    <li>Review the permissions QuoteCreator is requesting:
+                        <ul>
+                            <li><strong>Read matters:</strong> To browse and search your client matters</li>
+                            <li><strong>Write documents:</strong> To upload estimate PDFs to matters</li>
+                        </ul>
+                    </li>
+                    <li>Click <strong>"Allow Access"</strong> to authorize</li>
+                </ol>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2B: Copy Code from "Can't Reach This Site" Page</h4>
+                <ol start="5">
+                    <li>After clicking "Allow", your browser will show <strong>"Can't reach this site"</strong> or similar error</li>
+                    <li><strong>This is normal!</strong> Look at the <strong>URL in your browser's address bar</strong></li>
+                    <li>The URL will look like: <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">http://127.0.0.1:5001/callback?code=AbCdEf123...</code></li>
+                    <li><strong>Copy the entire URL</strong> from the address bar (or just the code after <code>code=</code>)</li>
+                </ol>
+
+                <div class="highlight-box" style="margin-top: 1.5rem; background: #fffbeb; border-left-color: var(--warning);">
+                    <p><strong>📱 What You'll See in Your Browser:</strong></p>
+                    <p style="margin-bottom: 0.5rem;">After clicking "Allow Access", the browser shows:</p>
+                    <ul style="margin-bottom: 0; margin-left: 1.5rem;">
+                        <li><strong>"This site can't be reached"</strong> or <strong>"Unable to connect"</strong></li>
+                        <li>URL in address bar: <code style="background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85rem;">http://127.0.0.1:5001/callback?code=...</code></li>
+                        <li><strong>Don't close this page yet!</strong> You need to copy the URL first</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 1.5rem; color: var(--accent);">Step 2C: Paste Code Into QuoteCreator</h4>
+                <ol start="9">
+                    <li><strong>Switch back to QuoteCreator</strong> (use app switcher or tap QuoteCreator icon)</li>
+                    <li>You'll see <strong>"Paste Authorization Code"</strong> screen with a text field</li>
+                    <li><strong>Paste the URL or code</strong> into the field (QuoteCreator will extract the code automatically)</li>
+                    <li>Tap <strong>"Continue"</strong> to complete authorization</li>
+                </ol>
+
+                <div class="warning-box" style="margin-top: 1.5rem;">
+                    <p><strong>💡 Pro Tips:</strong></p>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Split-screen mode:</strong> If your device supports it, keep QuoteCreator and browser visible at once</li>
+                        <li><strong>Copy the entire URL:</strong> Don't worry about extracting just the code—paste the whole URL and QuoteCreator will parse it</li>
+                        <li><strong>Address bar, not error message:</strong> Copy from the address bar at the top, not the error text on the page</li>
+                        <li><strong>Codes expire quickly:</strong> If it doesn't work, start over from Step 1 within a few minutes</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 1.5rem;"><strong>🔐 Security Note:</strong> Your Clio password stays with Clio—we only receive a secure access token that allows QuoteCreator to perform the actions you approve.</p>
+            </div>
+
+            <div class="step-box">
+                <h3><span class="step-number">3</span> Confirm Connection</h3>
+                <ol>
+                    <li>You'll be redirected back to <strong>QuoteCreator</strong></li>
+                    <li>You'll see a <strong>✅ Connected to Clio</strong> success message</li>
+                    <li>Your Clio account email will be displayed in Settings</li>
+                    <li>Connection status will show as <strong>Active</strong></li>
+                </ol>
+            </div>
+
+            <div class="success-box">
+                <p><strong>✅ Setup Complete!</strong> You can now upload estimates directly to your Clio matters. See the next section for usage instructions.</p>
+            </div>
+
+            <h2 id="using-integration">Using the Clio Integration</h2>
+
+            <h3>Creating an Estimate with Clio Upload</h3>
+            <ol>
+                <li><strong>Create your estimate</strong> as usual (add line items, pricing, etc.)</li>
+                <li>Tap <strong>"Select Matter"</strong> in the estimate details</li>
+                <li><strong>Browse or search</strong> your Clio matters by:
+                    <ul>
+                        <li>Client name</li>
+                        <li>Matter description</li>
+                        <li>Matter number</li>
+                    </ul>
+                </li>
+                <li><strong>Select the correct matter</strong> and tap <strong>Confirm</strong></li>
+                <li>Complete your estimate and tap <strong>Generate PDF</strong></li>
+                <li>Tap <strong>Share</strong> → <strong>Send to Clio</strong></li>
+                <li>Confirm the upload—your PDF will appear in the matter's Documents section</li>
+            </ol>
+
+            <h3>Setting Default Matters</h3>
+            <p>For frequent clients, you can set a default matter to save time:</p>
+            <ol>
+                <li>Open an estimate for your frequent client</li>
+                <li>Select their matter as usual</li>
+                <li>Tap the <strong>⭐ Set as Default</strong> option</li>
+                <li>Next time you create an estimate for this customer, the matter will auto-populate</li>
+            </ol>
+
+            <h3>Verifying Uploads</h3>
+            <p>To confirm your estimate was uploaded successfully:</p>
+            <ol>
+                <li>Log in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a></li>
+                <li>Navigate to the client matter</li>
+                <li>Open the <strong>Documents</strong> tab</li>
+                <li>Look for your estimate PDF (named with the estimate number and date)</li>
+            </ol>
+
+            <h2 id="troubleshooting">Troubleshooting</h2>
+
+            <div class="troubleshooting-item">
+                <h4>❌ "Connection Failed" Error</h4>
+                <p><strong>Problem:</strong> Unable to connect to Clio during setup.</p>
+                <p class="solution">✅ Solution:</p>
+                <ul>
+                    <li>Check your internet connection (WiFi or mobile data)</li>
+                    <li>Verify your Clio login credentials are correct</li>
+                    <li>Try logging in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a> in your browser first</li>
+                    <li>Restart QuoteCreator and try again</li>
+                </ul>
+            </div>
+
+            <div class="troubleshooting-item">
+                <h4>❌ "No Matters Found"</h4>
+                <p><strong>Problem:</strong> Matter browser shows empty list.</p>
+                <p class="solution">✅ Solution:</p>
+                <ul>
+                    <li>Verify you have active matters in your Clio account</li>
+                    <li>Check that matters aren't archived (QuoteCreator only shows active matters)</li>
+                    <li>Try refreshing the matter list (pull down to refresh)</li>
+                    <li>Disconnect and reconnect your Clio integration</li>
+                </ul>
+            </div>
+
+            <div class="troubleshooting-item">
+                <h4>❌ "Upload Failed" Error</h4>
+                <p><strong>Problem:</strong> PDF won't upload to Clio matter.</p>
+                <p class="solution">✅ Solution:</p>
+                <ul>
+                    <li>Check your internet connection</li>
+                    <li>Verify the matter still exists and is active in Clio</li>
+                    <li>Ensure you have permission to upload documents to the matter</li>
+                    <li>Try re-authenticating your Clio connection</li>
+                    <li>Generate the PDF again and retry the upload</li>
+                </ul>
+            </div>
+
+            <div class="troubleshooting-item">
+                <h4>❌ "Session Expired" Warning</h4>
+                <p><strong>Problem:</strong> Clio access token expired after 30+ days of inactivity.</p>
+                <p class="solution">✅ Solution:</p>
+                <ul>
+                    <li>Tap <strong>Re-authenticate</strong> when prompted</li>
+                    <li>You'll be redirected to Clio to re-authorize access</li>
+                    <li>No data is lost—your estimates remain intact</li>
+                    <li>Connection will be restored automatically</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>Still Having Issues?</strong> Contact our support team at <a href="mailto:support@lexopoly.com">support@lexopoly.com</a> with:
+                <ul>
+                    <li>The error message you're seeing</li>
+                    <li>Your Android device model and OS version</li>
+                    <li>Whether you're using WiFi or mobile data</li>
+                    <li>Any recent changes to your Clio account</li>
+                </ul>
+                We typically respond within 24 hours (weekdays).</p>
+            </div>
+
+            <h2 id="disconnect">Disconnecting from Clio</h2>
+
+            <h3>From QuoteCreator</h3>
+            <p>To disconnect your Clio integration from QuoteCreator:</p>
+            <ol>
+                <li>Open <strong>QuoteCreator Settings</strong></li>
+                <li>Go to <strong>Integrations → Clio Integration</strong></li>
+                <li>Tap <strong>Disconnect from Clio</strong></li>
+                <li>Confirm the disconnection</li>
+            </ol>
+            <p>This will delete all Clio access tokens from your device. Your estimates remain intact, but you won't be able to upload to Clio until you reconnect.</p>
+
+            <h3>From Clio (Revoke Access)</h3>
+            <p>To permanently revoke QuoteCreator's access from the Clio side:</p>
+            <ol>
+                <li>Log in to <a href="https://app.clio.com" target="_blank" rel="noopener">Clio</a></li>
+                <li>Go to <strong>Settings → Integrations → Connected Apps</strong></li>
+                <li>Find <strong>QuoteCreator</strong> in the list</li>
+                <li>Click <strong>Revoke Access</strong></li>
+                <li>Confirm the revocation</li>
+            </ol>
+            <p>This prevents QuoteCreator from accessing your Clio account, even if you reinstall the app. You'll need to re-authorize if you want to reconnect later.</p>
+
+            <h2>Privacy & Security</h2>
+            <p>Your data security is our top priority:</p>
+            <ul>
+                <li><strong>No password storage:</strong> We never see or store your Clio password</li>
+                <li><strong>OAuth 2.0:</strong> Industry-standard secure authentication</li>
+                <li><strong>Encrypted tokens:</strong> Access tokens stored with Android KeyStore encryption</li>
+                <li><strong>HTTPS only:</strong> All Clio API requests use TLS 1.2+ encryption</li>
+                <li><strong>Local-first:</strong> Estimates stay on your device until you explicitly upload</li>
+                <li><strong>No data sale:</strong> We never sell or share your business data</li>
+            </ul>
+            <p>For complete details, see our <a href="/quotecreator/privacy/">Privacy Policy</a>.</p>
+
+            <h2>Next Steps</h2>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="https://play.google.com/store/apps/details?id=com.lexopoly.quotecreator" class="button" target="_blank" rel="noopener">Download QuoteCreator →</a>
+                <a href="/quotecreator/" class="button button-secondary">Learn More About QuoteCreator</a>
+                <a href="/support/" class="button button-secondary">Contact Support</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+        <p>
+            <a href="/">Lexopoly Home</a> |
+            <a href="/quotecreator/">QuoteCreator Home</a> |
+            <a href="/quotecreator/privacy/">Privacy Policy</a> |
+            <a href="/terms/">Terms of Service</a> |
+            <a href="/support/">Support</a>
+        </p>
+    </footer>
+
+    <script>
+        // Track page view
+        gtag('event', 'page_view', {
+            page_title: 'Clio Integration Setup Guide',
+            page_location: window.location.href,
+            page_path: '/quotecreator/setup/'
+        });
+
+        // Track setup step interactions
+        document.querySelectorAll('.step-box').forEach((box, index) => {
+            box.addEventListener('click', () => {
+                gtag('event', 'setup_step_view', {
+                    event_category: 'clio_setup',
+                    event_label: `step_${index + 1}`,
+                    value: index + 1
+                });
+            });
+        });
+
+        // Track troubleshooting interactions
+        document.querySelectorAll('.troubleshooting-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const issue = item.querySelector('h4').textContent;
+                gtag('event', 'troubleshooting_view', {
+                    event_category: 'support',
+                    event_label: issue
+                });
+            });
+        });
+
+        // Track CTA clicks
+        document.querySelectorAll('.button').forEach((button) => {
+            button.addEventListener('click', () => {
+                gtag('event', 'cta_click', {
+                    event_category: 'setup_guide',
+                    event_label: button.textContent.trim()
+                });
+            });
+        });
+    </script>
+</body>
+</html>
