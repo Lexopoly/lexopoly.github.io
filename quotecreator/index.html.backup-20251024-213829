@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Note: Config is called in analytics.js with attribution data
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Professional Estimate & Quote App | QuoteCreator</title>
+    <meta name="description" content="QuoteCreator by Lexopoly: Create professional estimates in 60 seconds. Perfect for contractors, consultants, and service professionals. $12.99 one-time purchase, no subscription. Works offline.">
+    <meta name="keywords" content="estimate app, quote generator, contractor estimates, invoice app, professional quotes, small business, handyman quotes, consultant estimates, mobile quote app">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/quotecreator/">
+
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="dns-prefetch" href="//play.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Professional Estimate & Quote App | QuoteCreator">
+    <meta property="og:description" content="Create professional estimates in 60 seconds. $12.99 one-time, no subscription. Perfect for contractors, consultants, lawyers, and all service professionals.">
+    <meta property="og:url" content="https://lexopoly.com/quotecreator/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+    <meta property="og:site_name" content="QuoteCreator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Professional Estimate & Quote App | QuoteCreator">
+    <meta name="twitter:description" content="Create professional estimates in 60 seconds. $12.99 one-time, no subscription.">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-quotecreator.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
+    <meta name="application-name" content="QuoteCreator">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* UNIFIED NAVIGATION TEMPLATE */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        /* Main Navigation */
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Dropdown Container */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 1rem 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Buttons */
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary-nav {
+            padding: 0.5rem 1.25rem;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary-nav:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+        }
+
+        /* Non-dropdown nav links (like Pricing) */
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav) {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav):hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--lexopoly-primary);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--lexopoly-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Target Audiences */
+        .audiences {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .audiences h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .audiences p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .audience-badge {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .audience-badge:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+        }
+
+        /* Features */
+        .features {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .pricing h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            list-style: none;
+            padding: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Bonus Section */
+        .bonus {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5aa0 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .bonus h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .bonus p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .bonus-features {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bonus-features li {
+            list-style: none;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .bonus-features li::before {
+            content: "⭐";
+            margin-right: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Section (More from Lexopoly) */
+        .portfolio {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tagline {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .product-features li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .product-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: color 0.3s;
+        }
+
+        .product-link:hover {
+            color: var(--lexopoly-primary);
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .product-showcase h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .product-showcase p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .screenshot-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .screenshot-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .screenshot-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, #2c5aa0 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-item {
+                padding: 1.25rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-main {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin: 0.5rem;
+                padding: 1rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-main.show {
+                display: flex;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+            }
+
+            .nav-dropdown > a {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 1rem;
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-menu {
+                display: block;
+            }
+
+            .nav-dropdown.mobile-open .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-secondary-nav,
+            .btn-primary-nav {
+                width: 100%;
+                text-align: center;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .features, .pricing, .audiences, .bonus, .portfolio, .product-showcase {
+                padding: 2rem 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .features-grid, .portfolio-grid, .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-card img {
+                max-width: 250px;
+            }
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "QuoteCreator",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "description": "Professional estimate and quote generation app for contractors, consultants, lawyers, and service professionals. Create estimates in 60 seconds with professional PDF output.",
+      "url": "https://lexopoly.com/quotecreator/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "12.99",
+        "priceCurrency": "USD",
+        "description": "One-time purchase, no subscription"
+      },
+      "featureList": [
+        "60-second estimate creation",
+        "Professional PDF generation",
+        "Customer database",
+        "Automatic tax calculations",
+        "Works offline",
+        "Clio integration for legal professionals"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is QuoteCreator really a one-time purchase with no subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pay $12.99 once, use forever. No monthly fees, no per-quote charges, no hidden costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use QuoteCreator on my phone while at a job site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. QuoteCreator works on iOS and Android. Create estimates on-site, email them to clients immediately from your phone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work offline? I often lose signal at construction sites.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. QuoteCreator works 100% offline. Create, save, and edit estimates without internet. Email them when you're back in range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the estimate template with my company logo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add your logo, company info, terms & conditions, payment instructions, and custom branding colors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does QuoteCreator integrate with Clio for lawyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Create estimates in QuoteCreator, sync them to Clio client files automatically. Saves 10-15 minutes per estimate for legal professionals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need to make changes to an estimate after sending it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edit anytime. QuoteCreator saves all estimates locally. Revise and resend updated versions - no limit on revisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I track which estimates were accepted vs rejected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mark estimates as Pending, Accepted, or Declined. View conversion rates and follow up on pending quotes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on how many estimates I can create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Create unlimited estimates. The $12.99 one-time purchase includes unlimited use forever."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What formats can I export estimates to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDF (most popular), email directly from app, or print. PDFs work on any device and look professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer a money-back guarantee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. 30-day full refund if you're not satisfied. No questions asked."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                QuoteCreator
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+            <div class="nav-main" id="nav-main">
+                <!-- Products Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Products
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        Solutions
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">By Industry</div>
+                        <a href="/lawyers/">For Lawyers</a>
+                        <a href="/journalists/">For Journalists</a>
+                        <a href="/dictation/">Dictation & Medical</a>
+                        <a href="/court-reporters/">For Court Reporters</a>
+                        <a href="/government/">For Government</a>
+                        <a href="/education/">For Education</a>
+                    </div>
+                </div>
+
+                <!-- About Dropdown -->
+                <div class="nav-dropdown" onclick="toggleMobileDropdown(this)">
+                    <a>
+                        About
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/about/">About Lexopoly</a>
+                        <a href="/contact/">Contact Us</a>
+                        <a href="/support/">Support</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/privacy/">Privacy Policy</a>
+                        <a href="/terms/">Terms of Service</a>
+                    </div>
+                </div>
+
+                <!-- Pricing Link -->
+                <a href="/pricing/">Pricing</a>
+
+                <!-- CTAs -->
+                <div class="nav-cta">
+                    <a href="/quotecreator/privacy/" class="btn-secondary-nav">Privacy</a>
+                    <a href="#pricing" class="btn-primary-nav">Get QuoteCreator</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Professional Estimates in 60 Seconds</h1>
+            <p class="tagline">Fast, Mobile, Professional</p>
+            <p class="subtitle">
+                Create estimates on your phone, generate PDFs instantly, get paid faster.
+                <strong>$12.99 one-time</strong> • <strong>No subscription</strong> • <strong>Works offline</strong><br>
+                Perfect for contractors, consultants, lawyers, and any professional who sends quotes.
+            </p>
+            <div class="hero-cta">
+                <a href="#pricing" class="btn-primary">See Pricing</a>
+                <a href="/quotecreator/privacy/" class="btn-secondary">Privacy Policy</a>
+            </div>
+        </section>
+
+        <section class="audiences">
+            <h2>Works for Every Professional</h2>
+            <p>From plumbers to lawyers—anyone who sends estimates and quotes</p>
+            <div class="audience-grid">
+                <div class="audience-badge">🔧 Contractors</div>
+                <div class="audience-badge">💡 Consultants</div>
+                <div class="audience-badge">⚖️ Lawyers</div>
+                <div class="audience-badge">🎨 Designers</div>
+                <div class="audience-badge">💻 Developers</div>
+                <div class="audience-badge">🍽️ Caterers</div>
+                <div class="audience-badge">📸 Photographers</div>
+                <div class="audience-badge">🏠 Real Estate</div>
+                <div class="audience-badge">🚗 Mechanics</div>
+                <div class="audience-badge">🔌 Electricians</div>
+                <div class="audience-badge">🪴 Landscapers</div>
+                <div class="audience-badge">🎯 Event Planners</div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why QuoteCreator?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p>Create professional estimates in 60 seconds. Customer database, line items, tax calculations—all built-in.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📄</span>
+                    <h3>Professional PDFs</h3>
+                    <p>Clean, branded PDF estimates generated instantly on your device. Email, text, or print on the spot.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>Customer Management</h3>
+                    <p>Build your customer database. Save contact info, track estimates, and follow up faster.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3>Smart Calculations</h3>
+                    <p>Automatic tax calculations, subtotals, and final totals. Hourly rates, project fees, or materials pricing.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h3>Mobile-First</h3>
+                    <p>Built for Android phones and tablets. Create estimates on-site, at meetings, or anywhere you work.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📴</span>
+                    <h3>Works Offline</h3>
+                    <p>No internet required. Create estimates in basements, job sites, or anywhere your work takes you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-showcase">
+            <h2>See It In Action</h2>
+            <p>Real screenshots from QuoteCreator showing the simple, professional workflow</p>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/01-home-estimates-list.png" alt="QuoteCreator home screen showing list of estimates" loading="lazy">
+                    <h3>Your Estimates</h3>
+                    <p>Clean, organized list of all your estimates. Quick access to edit, duplicate, or share</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/02-estimate-with-customer-and-matter.png" alt="Creating an estimate with customer and matter selection" loading="lazy">
+                    <h3>Create & Customize</h3>
+                    <p>Add line items, customers, and Clio matters in seconds. Automatic calculations included</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="/screenshots/quotecreator/04-pdf-preview.png" alt="Professional PDF preview of generated estimate" loading="lazy">
+                    <h3>Professional Output</h3>
+                    <p>Generate polished PDF estimates instantly. Email, text, or print on the spot</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <h2>Simple Pricing</h2>
+            <div class="price">$12.99</div>
+            <p class="price-subtitle">One-time purchase • No subscription • Own it forever</p>
+            <ul class="pricing-features">
+                <li>Unlimited estimates</li>
+                <li>Unlimited customers</li>
+                <li>Professional PDF generation</li>
+                <li>Automatic tax calculations</li>
+                <li>Customer database</li>
+                <li>Works offline</li>
+                <li>Custom branding</li>
+                <li>Email support</li>
+                <li>All future v0.x updates included</li>
+            </ul>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary">Download on Google Play (Coming Soon)</a>
+            </div>
+        </section>
+
+        <section class="bonus">
+            <h2>Bonus: Clio Integration for Lawyers</h2>
+            <p>Legal professionals get one-tap upload to Clio matters</p>
+            <ul class="bonus-features">
+                <li>OAuth 2.0 secure authentication (no password storage)</li>
+                <li>Browse and search your Clio matters</li>
+                <li>One-tap upload estimates directly to client files</li>
+                <li>Works alongside Clio's built-in tools</li>
+                <li>Mobile-optimized for attorneys on the go</li>
+            </ul>
+        </section>
+
+        <section class="portfolio">
+            <h2>More from Lexopoly</h2>
+            <p class="portfolio-subtitle">Professional tools designed to make your work easier</p>
+            <div class="portfolio-grid">
+                <div class="product-card">
+                    <span class="product-icon">🎙️</span>
+                    <h3>LocalTranscribe</h3>
+                    <p class="product-tagline">28x faster transcription with local privacy</p>
+                    <p>Professional-grade transcription software with 100% local processing. Perfect for lawyers, journalists, and anyone who values privacy and speed.</p>
+                    <ul class="product-features">
+                        <li>85-92% accuracy</li>
+                        <li>28x faster than real-time</li>
+                        <li>Complete privacy control</li>
+                        <li>Clio integration</li>
+                        <li>$79 one-time purchase</li>
+                    </ul>
+                    <a href="/localtranscribe/" class="product-link">Learn More →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Everything you need to know about QuoteCreator</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Is QuoteCreator really a one-time purchase with no subscription?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Pay $12.99 once, use forever. No monthly fees, no per-quote charges, no hidden costs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I use QuoteCreator on my phone while at a job site?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. QuoteCreator works on iOS and Android. Create estimates on-site, email them to clients immediately from your phone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Does it work offline? I often lose signal at construction sites.</h3>
+                    <div class="faq-answer">
+                        <p>Yes. QuoteCreator works 100% offline. Create, save, and edit estimates without internet. Email them when you're back in range.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I customize the estimate template with my company logo?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Add your logo, company info, terms & conditions, payment instructions, and custom branding colors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Does QuoteCreator integrate with Clio for lawyers?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Create estimates in QuoteCreator, sync them to Clio client files automatically. Saves 10-15 minutes per estimate for legal professionals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What if I need to make changes to an estimate after sending it?</h3>
+                    <div class="faq-answer">
+                        <p>Edit anytime. QuoteCreator saves all estimates locally. Revise and resend updated versions - no limit on revisions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I track which estimates were accepted vs rejected?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. Mark estimates as "Pending", "Accepted", or "Declined". View conversion rates and follow up on pending quotes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there a limit on how many estimates I can create?</h3>
+                    <div class="faq-answer">
+                        <p>No. Create unlimited estimates. The $12.99 one-time purchase includes unlimited use forever.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What formats can I export estimates to?</h3>
+                    <div class="faq-answer">
+                        <p>PDF (most popular), email directly from app, or print. PDFs work on any device and look professional.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer a money-back guarantee?</h3>
+                    <div class="faq-answer">
+                        <p>Yes. 30-day full refund if you're not satisfied. No questions asked.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <h3>Still Have Questions?</h3>
+                <p>Our team is here to help. Contact us for personalized answers.</p>
+                <a href="/contact/" class="btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuoteCreator</h4>
+                <div class="footer-links">
+                    <a href="/quotecreator/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/support/">Support</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <div class="footer-links">
+                    <a href="/">Lexopoly Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>More Products</h4>
+                <div class="footer-links">
+                    <a href="/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-links">
+                    <a href="https://x.com/lexopoly" target="_blank" rel="noopener">𝕏 Follow on X</a>
+                    <!-- REDDIT BANNED: <a href="https://reddit.com/u/Lexopoly" target="_blank" rel="noopener">📱 Join us on Reddit</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lexopoly LLC (Wyoming, USA). All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMobileMenu() {
+            const navMain = document.getElementById('nav-main');
+            navMain.classList.toggle('show');
+        }
+
+        function toggleMobileDropdown(element) {
+            if (window.innerWidth <= 968) {
+                element.classList.toggle('mobile-open');
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navContainer = document.querySelector('.nav-container');
+            const navMain = document.getElementById('nav-main');
+
+            if (!navContainer.contains(event.target) && navMain.classList.contains('show')) {
+                navMain.classList.remove('show');
+            }
+        });
+
+        // Close mobile dropdowns when resizing to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 968) {
+                document.querySelectorAll('.nav-dropdown.mobile-open').forEach(dropdown => {
+                    dropdown.classList.remove('mobile-open');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

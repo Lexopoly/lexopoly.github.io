@@ -627,24 +627,35 @@
             const inquiryType = document.getElementById('inquiry-type').value;
             trackEvent('conversion', 'contact_form_submit', inquiryType);
 
-            // Create form data
-            const formData = new FormData(form);
+            // Create JSON payload for Flask backend
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                company: document.getElementById('company').value,
+                phone: document.getElementById('phone').value,
+                product: document.getElementById('product').value,
+                inquiryType: inquiryType
+            };
 
-            // Submit to Formspree
-            fetch(form.action, {
+            // Submit to Flask backend /api/contact
+            fetch('/api/contact', {
                 method: 'POST',
-                body: formData,
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                body: JSON.stringify(formData)
             })
-            .then(response => {
-                if (response.ok) {
-                    showFormStatus('success', '✅ Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showFormStatus('success', '✅ ' + data.message);
                     form.reset();
                     trackEvent('conversion', 'contact_form_success', inquiryType);
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(data.error || 'Form submission failed');
                 }
             })
             .catch(error => {
@@ -816,7 +827,7 @@
 
             <div class="contact-form">
                 <div class="form-section">
-                    <form id="contactForm" action="https://formspree.io/f/xkndgzqr" method="POST">
+                    <form id="contactForm" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -871,11 +882,6 @@
                             <label for="message">Message *</label>
                             <textarea id="message" name="message" class="form-control textarea" required placeholder="Please provide details about your inquiry..."></textarea>
                         </div>
-
-                        <!-- Hidden field for analytics tracking -->
-                        <input type="hidden" name="_subject" id="form-subject" value="Lexopoly Contact Form">
-                        <input type="hidden" name="_next" value="https://lexopoly.com/contact/?success=true">
-                        <input type="hidden" name="_captcha" value="false">
 
                         <div class="form-status" id="form-status" style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;"></div>
 

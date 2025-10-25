@@ -201,22 +201,40 @@ Before starting integration, gather the following information:
 
 ### 2. Navigation Dropdown
 
-**Location**: `/index.html` - Products dropdown menu (lines 1301-1308)
+**Location**: All 17+ site pages - Products dropdown menu (homepage lines 1301-1308)
 
-**Template**:
+**Current 3-Product Template** (Updated October 2025):
 ```html
 <div class="dropdown-menu">
     <div class="dropdown-header">Our Products</div>
     <a href="/localtranscribe/">LocalTranscribe</a>
     <a href="/quotecreator/">QuoteCreator</a>
     <a href="/compliancelogger/">ComplianceLogger</a>
-    <a href="/[product-slug]/">[Product Name]</a>  <!-- ADD NEW PRODUCT HERE -->
+    <a href="/[product-slug]/">[Product Name]</a>  <!-- ADD PRODUCT #4 HERE -->
     <div class="dropdown-divider"></div>
     <a href="/#products" style="font-weight: 600;">View All Products →</a>
 </div>
 ```
 
 **Sort order**: Add products in launch order or business priority
+
+**⚠️ CRITICAL: Systematic Rollout Required**
+
+When adding Product #4, you **MUST update ALL existing pages**, not just the homepage:
+
+**Pages requiring navigation dropdown updates** (17+ pages as of Oct 2025):
+- Homepage: `/index.html`
+- Product pages: `/localtranscribe/`, `/quotecreator/`, `/compliancelogger/`
+- Vertical pages: `/lawyers/`, `/journalists/`, `/dictation/`, `/court-reporters/`, `/government/`, `/education/`
+- Utility pages: `/pricing/`, `/demo/`, `/about/`, `/support/`, `/contact/`, `/privacy/`, `/terms/`, `/signup/`
+
+**Recommended workflow**:
+1. Use grep to find all pages with outdated navigation: `grep -r "ComplianceLogger" --include="index.html" | grep -v "Product #4"`
+2. Create atomic git commit per page (or per logical group: product pages, vertical pages, utility pages)
+3. Verify all pages before pushing to production
+4. Pattern established during ComplianceLogger rollout (Oct 2025): 7 pages fixed in 6 separate commits
+
+**Common mistake**: Updating only homepage and forgetting vertical/utility pages, creating inconsistent navigation experience.
 
 ### 3. About Page Integration
 
@@ -230,7 +248,19 @@ Before starting integration, gather the following information:
 - `/index.html` - Add product to meta description
 - `/about/index.html` - Update product list
 
-**Pattern**: "LocalTranscribe, QuoteCreator, ComplianceLogger, and [New Product]"
+**Current 3-Product Pattern** (Updated October 2025):
+```
+"LocalTranscribe, QuoteCreator, ComplianceLogger, and [New Product]"
+```
+
+**Example meta description** (for Product #4):
+```html
+<meta name="description" content="Modern software solutions for legal and business professionals. LocalTranscribe for transcription, QuoteCreator for estimates, ComplianceLogger for EPA compliance, and [Product #4 Name] for [purpose]. Tools that make your work easier.">
+```
+
+**Note**: Keep meta descriptions under 160 characters for optimal SEO. If all 4 product names + descriptions exceed this, consider two approaches:
+1. Use category names: "Transcription, estimation, compliance, and [category] software"
+2. Create product-specific meta descriptions per vertical page instead of listing all products
 
 ---
 
@@ -312,9 +342,12 @@ Example: "Upload photos of manifests and disposal sites. Maintain visual proof f
 
 ### Phase 3: Main Site Integration
 - [ ] Add product card to homepage portfolio section
-- [ ] Add product to navigation dropdown
+- [ ] Add product to navigation dropdown **on ALL 17+ pages** (see Navigation Dropdown section)
+  - Use grep to find all pages: `grep -r "ComplianceLogger" --include="index.html"`
+  - Homepage, product pages, vertical pages, utility pages
+  - Create atomic commits per page or logical group
 - [ ] Update about page with new product
-- [ ] Update homepage meta description
+- [ ] Update homepage meta description (and about page)
 - [ ] Verify all internal links work
 
 ### Phase 4: Testing & QA
@@ -417,6 +450,7 @@ Example: "Upload photos of manifests and disposal sites. Maintain visual proof f
 3. **Git commits**: Separate commit for product pages, separate for homepage integration
 4. **Mobile-first**: Test mobile nav immediately after building pages
 5. **Parallel tool calls**: Use multiple bash/read commands simultaneously for efficiency
+6. **Systematic navigation rollout**: When adding Product #4+, update ALL 17+ pages in atomic commits (Oct 2025 pattern: 7 pages in 6 commits)
 
 ### What to Avoid
 1. **Don't skip the FAQ**: Users will ask these questions—answer them upfront
@@ -424,6 +458,7 @@ Example: "Upload photos of manifests and disposal sites. Maintain visual proof f
 3. **Don't forget legal disclaimers**: Some products need custom legal language
 4. **Don't mix pricing models**: Be clear about one-time vs subscription
 5. **Don't deploy without testing**: Always verify mobile responsive design
+6. **Don't update only the homepage navigation**: MUST update ALL 17+ pages when adding Product #4+ (common mistake discovered Oct 2025)
 
 ---
 
@@ -927,9 +962,12 @@ git push
 
 This playbook is a living document. If you find gaps, inefficiencies, or opportunities for improvement during product integration, document them in `INTEGRATION_PLAYBOOK_FEEDBACK.md` for the next revision.
 
-**Last Updated**: October 15, 2025
+**Last Updated**: October 16, 2025
 **Latest Additions**:
-- ComplianceLogger legal pages pattern (Next.js apps)
-- App removal & decommissioning playbook
+- Updated navigation dropdown to 3-product pattern (LocalTranscribe, QuoteCreator, ComplianceLogger)
+- Added systematic navigation rollout requirements (ALL 17+ pages must be updated)
+- Documented ComplianceLogger rollout pattern (Oct 2025: 7 pages in 6 commits)
+- ComplianceLogger legal pages pattern (Next.js apps) - Oct 15
+- App removal & decommissioning playbook - Oct 15
 **Next Review**: After Product #4 integration
 **Maintained By**: Claude Code + User

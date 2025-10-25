@@ -11,12 +11,16 @@ import json
 import datetime
 from collections import defaultdict, Counter
 import os
+import resend
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend integration
 
 # Database setup
 DATABASE = 'analytics.db'
+
+# Resend configuration
+resend.api_key = os.environ.get('RESEND_API_KEY', '')
 
 def init_db():
     """Initialize the SQLite database with required tables"""
@@ -357,6 +361,61 @@ def export_data():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/contact', methods=['POST'])
+def contact_form():
+    """Handle contact form submissions via Resend"""
+    try:
+        data = request.json
+        if not data:
+            return jsonify({'error': 'No data provided'}), 400
+
+        # Validate required fields
+        name = data.get('name', '').strip()
+        email = data.get('email', '').strip()
+        subject = data.get('subject', '').strip()
+        message = data.get('message', '').strip()
+
+        if not all([name, email, subject, message]):
+            return jsonify({'error': 'All fields are required'}), 400
+
+        # Basic email validation
+        if '@' not in email or '.' not in email:
+            return jsonify({'error': 'Invalid email address'}), 400
+
+        # Check if Resend API key is configured
+        if not resend.api_key:
+            return jsonify({'error': 'Email service not configured'}), 500
+
+        # Send email via Resend
+        params = {
+            "from": "Lexopoly Contact Form <onboarding@resend.dev>",
+            "to": ["admin@lexopoly.com"],
+            "reply_to": email,
+            "subject": f"Contact Form: {subject}",
+            "html": f"""
+            <h2>New Contact Form Submission</h2>
+            <p><strong>From:</strong> {name}</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>Subject:</strong> {subject}</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p>{message.replace(chr(10), '<br>')}</p>
+            """
+        }
+
+        email_response = resend.Emails.send(params)
+
+        return jsonify({
+            'status': 'success',
+            'message': 'Your message has been sent successfully!'
+        }), 200
+
+    except Exception as e:
+        print(f"Contact form error: {str(e)}")
+        return jsonify({
+            'error': 'Failed to send message. Please try again later.'
+        }), 500
+
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
@@ -400,6 +459,10 @@ def dashboard():
 
         <div class="endpoint">
             <span class="method">GET</span> /api/export?format=json&days=30 - Export data
+        </div>
+
+        <div class="endpoint">
+            <span class="method">POST</span> /api/contact - Submit contact form (Resend integration)
         </div>
 
         <div class="endpoint">

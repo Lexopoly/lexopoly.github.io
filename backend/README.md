@@ -7,6 +7,7 @@ Simple Flask API for collecting website analytics and conversion tracking.
 - **Event Tracking**: Page views, clicks, form submissions, conversions
 - **Session Management**: User session tracking with duration and page counts
 - **Conversion Funnel**: Track user progression through signup funnel
+- **Contact Form**: Email delivery via Resend API
 - **GDPR Compliance**: Respects cookie consent from frontend
 - **Offline Support**: Frontend can queue events when backend is unavailable
 - **Export Capabilities**: JSON/CSV export for external analysis
@@ -17,6 +18,10 @@ Simple Flask API for collecting website analytics and conversion tracking.
 ```bash
 # Install dependencies
 pip install -r requirements.txt
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env and add your RESEND_API_KEY
 
 # Run development server
 python app.py
@@ -71,8 +76,82 @@ Get conversion funnel data
 ### GET /api/export?format=json&days=30
 Export analytics data for external analysis
 
+### POST /api/contact
+Submit contact form (sends email via Resend)
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "subject": "Sales inquiry",
+  "message": "I'm interested in LocalTranscribe...",
+  "company": "Acme Corp",
+  "phone": "555-1234",
+  "product": "localtranscribe",
+  "inquiryType": "sales"
+}
+```
+
+Response:
+```json
+{
+  "status": "success",
+  "message": "Your message has been sent successfully!"
+}
+```
+
 ### GET /health
 Health check endpoint
+
+## Resend Email Integration
+
+The contact form uses [Resend](https://resend.com) for email delivery.
+
+### Setup Instructions
+
+1. **Get Resend API Key**:
+   - Sign up at https://resend.com
+   - Navigate to API Keys section
+   - Create a new API key
+
+2. **Configure Environment**:
+   ```bash
+   # In backend/.env
+   RESEND_API_KEY=re_your_api_key_here
+   ```
+
+3. **Verify Domain** (for production):
+   - Add your domain in Resend dashboard
+   - Add DNS records to verify ownership
+   - Update the "from" email in `app.py` line 391
+
+4. **Test Locally**:
+   ```bash
+   curl -X POST http://localhost:5000/api/contact \
+     -H "Content-Type: application/json" \
+     -d '{
+       "name": "Test User",
+       "email": "test@example.com",
+       "subject": "Test",
+       "message": "Testing contact form"
+     }'
+   ```
+
+### Email Template
+
+The contact form sends emails with:
+- **From**: `Lexopoly Contact Form <contact@lexopoly.com>`
+- **To**: `contact@lexopoly.com`
+- **Reply-To**: Customer's email address
+- **Subject**: `Contact Form: {subject}`
+- **Body**: HTML formatted with customer details and message
+
+### Migration from Formspree
+
+Previous implementation used Formspree. Migration completed October 2025:
+- ✅ Removed Formspree dependency
+- ✅ Self-hosted email delivery via Resend
+- ✅ Full control over email formatting and routing
+- ✅ Better analytics integration
 
 ## Database Schema
 
@@ -92,6 +171,7 @@ Health check endpoint
 1. **Environment Variables**:
    ```bash
    export FLASK_ENV=production
+   export RESEND_API_KEY=re_your_production_api_key
    export DATABASE_URL=postgresql://... # Optional: Use PostgreSQL
    ```
 
