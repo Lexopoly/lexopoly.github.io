@@ -4189,3 +4189,44 @@ EDUCATIONAL FRAMEWORK (KEPT):
 - Prompting guide: `/home/rain/Downloads/veo-3.1-prompting-guide.md`
 - WEBMASTER_BUS_OPS: Commit `2b9ac1f` - "docs: Add YouTube Shorts Week 1 production workflow"
 
+
+
+---
+
+## 🔍 SEO INFRASTRUCTURE IMPROVEMENT INITIATIVE (2025-10-25)
+
+### **CC-WEB OPERATION: SITEMAP REMEDIATION**
+**Project**: Google Search Console Sitemap Gap Closure
+**Status**: ⏳ PLAN DOCUMENTED - AWAITING EXECUTION
+**Priority**: P0 (Critical - 31% content invisibility)
+
+**DISCOVERY**
+Post-article deployment review revealed critical SEO infrastructure gap: 13 articles (31% of blog content) missing from sitemap.xml → Google unaware of content existence → Zero organic search potential for high-value SEO articles.
+
+**BUSINESS IMPACT**
+- **Immediate**: Today's QuoteCreator article not indexed
+- **Ongoing**: 5 QuoteCreator + 5 ComplianceLogger + 2 LocalTranscribe articles invisible to Google
+- **Revenue**: Estimated 15-30% organic traffic loss (based on content volume gap)
+
+**COMPREHENSIVE PLAN**
+**Document**: `SEO_INFRASTRUCTURE_PLAN_20251025.md` (5.5KB strategic plan)
+**Phases**:
+1. Immediate Fix (30 min): Update sitemap.xml with 13 missing URLs
+2. Google Search Console (15 min): Submit updated sitemap + manual indexing request
+3. Automation Setup (45 min): Node.js script + npm playbook for future updates
+4. Documentation (10 min): Update bus ops + create maintenance playbook
+
+**EXPECTED OUTCOMES**
+- **Technical**: 29 URLs → 42 URLs (+31% indexed content)
+- **Traffic**: +15-30% organic search traffic (60-90 days post-indexing)
+- **Process**: Manual sitemap updates → Automated (5 min/month)
+- **Revenue**: QuoteCreator free template article → 2-10 sales/month (after ranking)
+
+**STRATEGIC RATIONALE**
+Fix content invisibility before creating more invisible content. Sitemap remediation unblocks full value of existing SEO investment (13 articles × 3,000 words avg = 39,000 words of invisible content).
+
+**PHILOSOPHY**: Infrastructure > Volume. Working foundation > More broken pieces.
+
+**NEXT STEP**: Execute Phase 1 (sitemap update) upon approval
+
+
