@@ -1,0 +1,51 @@
+# DOCK-020 Secrets Management Protocol
+# Mandatory .gitignore patterns for Lexopoly Federation
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Secret directories
+secrets/
+.secrets/
+config/secrets/
+
+# Certificates and keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+
+# Backend configuration (lexopoly-site specific)
+backend/.env
+backend/config.json
+backend/*.env
+
+# Node modules and build artifacts
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
