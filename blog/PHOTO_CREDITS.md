@@ -593,9 +593,46 @@ For articles using photos, include this attribution section at the bottom:
 
 ---
 
-**Last Updated**: 2025-10-28 01:47 EST
+---
+
+## ComplianceLogger Articles - EPA Surprise Inspection (2025-10-28)
+
+**Article**: "EPA Surprise Inspection: What Construction Contractors Should Expect"
+**Published**: 2025-10-28
+**Photos Used**: 3
+
+### construciton manager with clipboard and hardhat walking through site.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Surprise Inspection article (hero image), EPA Audit Notice article (inline image - site inspection)
+- **Source URL**: [TBD]
+- **Notes**: Original size 3.2MB, shows compliance/inspection activity with manager conducting site walkthrough
+
+### construction waste pile with digger.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Surprise Inspection article (violations section inline - waste storage), EPA Fines Calculator article (hero image), Waste Manifest Template article (inline image - construction site)
+- **Source URL**: [TBD]
+- **Notes**: Original size 1.1MB, shows construction waste with excavator - demonstrates proper waste storage context
+
+### man scanning warehouse materials with tablet in other hand.jpg
+- **Source**: Pexels or Unsplash
+- **Photographer**: [TBD - verified CC0 at download]
+- **License**: CC0-equivalent (Pexels/Unsplash License)
+- **Downloaded**: 2025-10-15 (11:48-12:02)
+- **Used In**: EPA Surprise Inspection article (preparation section inline - mobile documentation), Mobile Waste Logging article (hero image)
+- **Source URL**: [TBD]
+- **Notes**: Original size 4.8MB, shows digital tracking and real-time mobile documentation
+
+---
+
+**Last Updated**: 2025-10-28 16:30 EST
 **Total Photos Documented**: 45 (31 construction/compliance + 8 QuoteCreator + 6 business/professional)
-**Articles with Photos**: 5 (EPA articles, QuoteCreator articles, pending ComplianceLogger articles)
+**Articles with Photos**: 6 (EPA articles - 4, QuoteCreator articles - 1, ComplianceLogger articles - 2)
 
 ---
 
