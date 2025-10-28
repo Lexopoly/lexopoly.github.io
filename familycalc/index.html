@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+    </script>
+
+    <!-- Basic SEO -->
+    <title>FamilyCalc Michigan - Family Law Calculator | Lexopoly</title>
+    <meta name="description" content="Michigan family law calculator for child support (MCL 552.605) and spousal support (14 Olson factors). $74.99/year for attorneys and self-represented litigants. 2 free calculations.">
+    <meta name="keywords" content="Michigan child support calculator, Michigan spousal support calculator, family law calculator, MCL 552.605, Olson factors, attorney calculator, pro se calculator">
+    <meta name="author" content="Lexopoly LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/familycalc/">
+
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="FamilyCalc Michigan - Family Law Calculator">
+    <meta property="og:description" content="Calculate child support and spousal support with Michigan-specific formulas. $74.99/year with 2 free calculations.">
+    <meta property="og:url" content="https://lexopoly.com/familycalc/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-familycalc.png">
+    <meta property="og:site_name" content="FamilyCalc Michigan">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FamilyCalc Michigan - Family Law Calculator">
+    <meta name="twitter:description" content="Michigan child support and spousal support calculator. $74.99/year.">
+    <meta name="twitter:image" content="https://lexopoly.com/assets/og-familycalc.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
+    <meta name="application-name" content="FamilyCalc Michigan">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "FamilyCalc Michigan",
+      "applicationCategory": "LegalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "74.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock"
+      },
+      "description": "Michigan family law calculator for child support and spousal support. MCL 552.605 compliant.",
+      "audience": {
+        "@type": "Audience",
+        "name": "Michigan attorneys and self-represented litigants"
+      },
+      "featureList": [
+        "Child support calculator (MCL 552.605)",
+        "Spousal support calculator (14 Olson factors)",
+        "PDF exports",
+        "Calculation history",
+        "Clio integration"
+      ],
+      "url": "https://lexopoly.com/familycalc/"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+            --familycalc-accent: #2f7d32;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* UNIFIED NAVIGATION TEMPLATE */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: -2px;
+        }
+
+        /* Main Navigation */
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Dropdown Container */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 1rem 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Buttons */
+        .nav-cta {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary-nav {
+            padding: 0.5rem 1.25rem;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary-nav:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary-nav {
+            padding: 0.5rem 1.25rem;
+            background: var(--familycalc-accent);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--familycalc-accent);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-nav:hover {
+            background: #1e5622;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(47, 125, 50, 0.3);
+        }
+
+        /* Non-dropdown nav links */
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav) {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-main > a:not(.btn-secondary-nav):not(.btn-primary-nav):hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--lexopoly-primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .hero .subhead {
+            font-size: 1.35rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .trial-info {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--familycalc-accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(47, 125, 50, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1e5622;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(47, 125, 50, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--lexopoly-primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Value Props Grid */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .prop-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: var(--familycalc-accent);
+        }
+
+        .prop-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .prop-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .prop-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Section Headers */
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--lexopoly-primary);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--familycalc-accent);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount .period {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .trial-info {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--familycalc-accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .pricing .subtext {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .pricing .cta-button {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Dual Audience Section */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .audience-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .audience-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .audience-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .audience-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .audience-card ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--familycalc-accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .audience-card .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .audience-card .disclaimer strong {
+            color: #f59e0b;
+        }
+
+        /* Why FamilyCalc Section */
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .reason {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .reason h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .reason p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Legal Disclaimers Footer */
+        .disclaimers {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .disclaimers .container {
+            max-width: 1000px;
+        }
+
+        .disclaimer-text {
+            margin-bottom: 2rem;
+        }
+
+        .disclaimer-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .disclaimer-text strong {
+            color: var(--text-primary);
+        }
+
+        .statutory-basis {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid var(--familycalc-accent);
+        }
+
+        .statutory-basis p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .legal-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .legal-links a:hover {
+            color: var(--lexopoly-primary);
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subhead {
+                font-size: 1.1rem;
+            }
+
+            .nav-main {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reasons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                Lexopoly
+                <span class="logo-subtitle">Professional Legal Tools</span>
+            </a>
+
+            <nav class="nav-main">
+                <div class="nav-dropdown">
+                    <a href="#">
+                        Products
+                        <span class="dropdown-arrow">▾</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <a href="/compliancelogger/">ComplianceLogger</a>
+                        <a href="/familycalc/">FamilyCalc Michigan</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+                <a href="/pricing/">Pricing</a>
+                <a href="/about/">About</a>
+                <a href="/support/">Support</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="https://familycalc.lexopoly.com/signup" class="btn-primary-nav">Start Free Trial</a>
+            </div>
+
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Michigan Family Law Calculator</h1>
+            <p class="subhead">Calculate child support and spousal support with confidence. State-specific formulas for attorneys and self-represented litigants.</p>
+            <div class="hero-cta">
+                <a href="https://familycalc.lexopoly.com/signup" class="btn btn-primary">Start Free Trial</a>
+                <a href="#why-familycalc" class="btn btn-secondary">Learn More</a>
+            </div>
+            <p class="trial-info">2 free calculations • No credit card required</p>
+        </section>
+
+        <!-- Value Props Grid -->
+        <section class="value-props">
+            <div class="prop-card">
+                <span class="icon">⚖️</span>
+                <h3>Michigan Compliant</h3>
+                <p>MCL 552.605 child support formula + 14 Olson spousal support factors. State-specific calculations, not generic estimates.</p>
+            </div>
+
+            <div class="prop-card">
+                <span class="icon">💰</span>
+                <h3>Affordable</h3>
+                <p>$74.99/year with 2 free calculations to try. More affordable than legacy calculators at a fraction of the cost.</p>
+            </div>
+
+            <div class="prop-card">
+                <span class="icon">🔍</span>
+                <h3>Full Transparency</h3>
+                <p>Step-by-step calculation breakdown with statutory citations. Understand exactly how support amounts are calculated.</p>
+            </div>
+
+            <div class="prop-card">
+                <span class="icon">📄</span>
+                <h3>Professional PDFs</h3>
+                <p>Court-ready calculation reports with full factor breakdown. Attorney credentials or educational disclaimers.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section">
+            <h2>Pricing</h2>
+            <div class="pricing">
+                <div class="price-amount">
+                    $74.99<span class="period">/year</span>
+                </div>
+                <p class="trial-info">2 free calculations, then $74.99/year • Cancel anytime</p>
+
+                <ul class="features-list">
+                    <li>Unlimited child support calculations</li>
+                    <li>Unlimited spousal support calculations</li>
+                    <li>PDF export & calculation history</li>
+                    <li>Michigan-specific formulas</li>
+                    <li>Clio integration (save to matters)</li>
+                </ul>
+
+                <div class="cta-button">
+                    <a href="https://familycalc.lexopoly.com/signup" class="btn btn-primary">Start Free Trial</a>
+                </div>
+
+                <p class="subtext">More affordable than legacy family law calculators, without sacrificing accuracy or features.</p>
+            </div>
+        </section>
+
+        <!-- Dual Audience Section -->
+        <section class="section">
+            <h2>Who Is FamilyCalc Michigan For?</h2>
+
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h3>👨‍⚖️ For Attorneys</h3>
+                    <ul>
+                        <li>Professional PDF exports with attorney credentials</li>
+                        <li>Bar number and letterhead on calculation reports</li>
+                        <li>Clio integration (save results to client matters)</li>
+                        <li>Calculation history for revisiting past client cases</li>
+                        <li>Michigan-compliant formulas (MCL 552.605, 14 Olson factors)</li>
+                    </ul>
+                </div>
+
+                <div class="audience-card">
+                    <h3>🏠 For Self-Represented Litigants</h3>
+                    <ul>
+                        <li>Educational tool with clear disclaimers (NOT legal advice)</li>
+                        <li>Transparent calculations (understand how support is calculated)</li>
+                        <li>Affordable ($74.99/year - accessible for pro se users)</li>
+                        <li>Step-by-step guidance through Michigan formulas</li>
+                        <li>Non-lawyer mode with prominent UPL warnings</li>
+                    </ul>
+                    <div class="disclaimer">
+                        <p><strong>Important</strong>: FamilyCalc Michigan is an educational tool. Consult a licensed Michigan attorney for case-specific legal advice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why FamilyCalc Section -->
+        <section class="section" id="why-familycalc">
+            <h2>Why FamilyCalc Michigan?</h2>
+
+            <div class="reasons">
+                <div class="reason">
+                    <h4>State-Specific Accuracy</h4>
+                    <p>Not a generic calculator. FamilyCalc Michigan uses Michigan-specific formulas (MCL 552.605 for child support, 14 Olson factors for spousal support). Statutory citations included in every calculation.</p>
+                </div>
+
+                <div class="reason">
+                    <h4>Transparent Methodology</h4>
+                    <p>See exactly how calculations work with step-by-step breakdowns. No black box formulas—understand the math and statutory basis behind every result.</p>
+                </div>
+
+                <div class="reason">
+                    <h4>Professional Yet Affordable</h4>
+                    <p>Court-ready PDF exports with professional formatting at $74.99/year. More affordable than legacy tools without sacrificing quality or features.</p>
+                </div>
+
+                <div class="reason">
+                    <h4>Built for Michigan</h4>
+                    <p>Designed specifically for Michigan family law practitioners and self-represented litigants. Future expansion to Illinois, Ohio, and Florida coming soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section" style="text-align: center;">
+            <h2>Get Started Today</h2>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">Try 2 calculations free. No credit card required.</p>
+            <a href="https://familycalc.lexopoly.com/signup" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.25rem 2.5rem;">Start Free Trial</a>
+        </section>
+    </div>
+
+    <!-- Legal Disclaimers Footer -->
+    <footer class="disclaimers">
+        <div class="container">
+            <div class="disclaimer-text">
+                <p><strong>Educational Tool Disclaimer</strong></p>
+                <p>FamilyCalc Michigan is an educational tool designed to help attorneys and self-represented litigants estimate child support and spousal support obligations under Michigan law. Results are estimates—actual court orders may vary based on judicial discretion and case-specific factors.</p>
+                <p>FamilyCalc Michigan does NOT provide legal advice. Consult a licensed Michigan attorney for case-specific legal advice.</p>
+            </div>
+
+            <div class="statutory-basis">
+                <p><strong>Statutory Basis</strong></p>
+                <p>Child Support: MCL 552.605 (Michigan Child Support Formula)<br>
+                Spousal Support: MCL 552.23, <em>Olson v. Olson</em>, 256 Mich. App. 619 (2003)</p>
+            </div>
+
+            <div class="legal-links">
+                <a href="/terms/">Terms of Service</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/support/">Contact</a>
+            </div>
+
+            <p class="copyright">© 2025 Lexopoly LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
