@@ -431,6 +431,86 @@ grep -r "ComplianceLogger" --include="index.html" | grep -v "[New Product Name]"
 1. Use category names: "Transcription, estimation, compliance, and [category] software"
 2. Create product-specific meta descriptions per vertical page instead of listing all products
 
+### 5. Global Pricing Page Integration
+
+**Location**: `/pricing/index.html` - Product overview section
+
+**When to Update**: When adding Product #4 or later
+
+**Why This Matters**: The pricing page is a high-intent page where users compare products before purchase. Missing a product creates inconsistent experience and lost conversions.
+
+**Lesson Learned (Oct 2025)**: FamilyCalc was missed on pricing page during initial integration because playbook lacked explicit pricing page checklist item. Navigation was updated but pricing page content was not.
+
+#### Product Card Template
+
+**Insert After**: Last existing product card (currently ComplianceLogger at line ~1086)
+
+**Template** (inline styles match existing cards):
+```html
+<!-- [Product Name] -->
+<div style="border: 2px solid var(--border); border-radius: 12px; padding: 2rem; transition: all 0.3s;">
+    <div style="font-size: 3rem; margin-bottom: 1rem;">[EMOJI]</div>
+    <h3 style="color: var(--lexopoly-primary); margin-bottom: 0.5rem; font-size: 1.5rem;">[Product Name]</h3>
+    <div style="font-size: 2rem; font-weight: 700; color: var(--accent); margin: 1rem 0;">[PRICE]</div>
+    <div style="color: var(--text-secondary); margin-bottom: 1.5rem;">[per month / per year / one-time]</div>
+    <ul style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-secondary);">
+        <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
+            <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+            [Feature 1 - core value prop]
+        </li>
+        <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
+            <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+            [Feature 2 - key differentiator]
+        </li>
+        <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
+            <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+            [Feature 3 - integration or technical feature]
+        </li>
+        <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
+            <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+            [Feature 4 - benefit or use case]
+        </li>
+        <li style="padding: 0.5rem 0; position: relative; padding-left: 1.5rem;">
+            <span style="position: absolute; left: 0; color: var(--success); font-weight: bold;">✓</span>
+            [Feature 5 - trial/guarantee/support]
+        </li>
+    </ul>
+    <a href="/[product-slug]/" style="display: block; width: 100%; padding: 1rem; background: transparent; color: var(--accent); border: 2px solid var(--accent); text-decoration: none; border-radius: 8px; font-weight: 600; text-align: center; transition: all 0.3s;">Learn More About [Product Name] →</a>
+</div>
+```
+
+#### Meta Description Updates
+
+**Update 3 meta tags** in `/pricing/index.html` head section:
+
+**1. Main meta description** (line ~18):
+```html
+<meta name="description" content="Transparent pricing for professional software. LocalTranscribe: Freemium to $79/user monthly. QuoteCreator: $12.99 one-time. ComplianceLogger: $149/year. [New Product]: [Price]. Choose the right tool for your business.">
+```
+
+**2. Open Graph description** (line ~26):
+```html
+<meta property="og:description" content="LocalTranscribe: Freemium to $79/user monthly. QuoteCreator: $12.99 one-time. ComplianceLogger: $149/year. [New Product]: [Price]. Professional tools with transparent pricing.">
+```
+
+**3. Twitter description** (line ~35):
+```html
+<meta name="twitter:description" content="LocalTranscribe: Freemium to $79/user monthly. QuoteCreator: $12.99 one-time. ComplianceLogger: $149/year. [New Product]: [Price]. Professional tools with transparent pricing.">
+```
+
+#### Balance Guidelines
+
+- **Equal visual weight**: All product cards same size (2rem padding, consistent border)
+- **Consistent feature count**: Exactly 5 bullet points per product
+- **Pricing clarity**: Display primary pricing tier (e.g., "$149/year", not range)
+- **CTA uniformity**: All cards link to product homepage (not pricing-specific page)
+
+**Current Products on Pricing Page** (as of Oct 2025):
+1. LocalTranscribe - Freemium to $79/user monthly (detailed pricing tiers below)
+2. QuoteCreator - $12.99 one-time purchase
+3. ComplianceLogger - $149/year
+4. FamilyCalc Michigan - $74.99/year
+
 ---
 
 ## 🎯 Design Consistency Standards
@@ -601,10 +681,15 @@ Example: "Upload photos of manifests and disposal sites. Maintain visual proof f
 
 ### Phase 3: Main Site Integration
 - [ ] Add product card to homepage portfolio section
-- [ ] Add product to navigation dropdown **on ALL 17+ pages** (see Navigation Dropdown section)
+- [ ] Add product to navigation dropdown **on ALL 21+ pages** (see Navigation Dropdown section)
   - Use grep to find all pages: `grep -r "ComplianceLogger" --include="index.html"`
   - Homepage, product pages, vertical pages, utility pages
   - Create atomic commits per page or logical group
+- [ ] **Add product to global pricing page** `/pricing/index.html`
+  - Insert product card in "Our Products" overview section (see template below)
+  - Match styling of existing product cards (border, padding, hover effects)
+  - Include 5 feature bullets + pricing + CTA link
+  - Update meta description (3 locations: main, Open Graph, Twitter)
 - [ ] Update about page with new product
 - [ ] Update homepage meta description (and about page)
 - [ ] Verify all internal links work
