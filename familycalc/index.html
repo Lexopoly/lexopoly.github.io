@@ -348,7 +348,6 @@
         .hero .subhead {
             font-size: 1.35rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -365,7 +364,6 @@
 
         .hero .trial-info {
             font-size: 0.95rem;
-            opacity: 0.9;
             margin-top: 1rem;
         }
 
@@ -430,9 +428,18 @@
         }
 
         .prop-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--familycalc-accent) 0%, #2c5282 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(47, 125, 50, 0.25);
         }
 
         .prop-card h3 {
@@ -517,6 +524,16 @@
             margin-top: 2rem;
             font-size: 0.95rem;
             line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        .pricing .pricing-benefits {
+            text-align: center;
+            color: var(--familycalc-accent);
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.8;
         }
 
         .pricing .cta-button {
@@ -543,6 +560,23 @@
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
             color: var(--lexopoly-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .audience-card h3 .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--familycalc-accent) 0%, #2c5282 100%);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(47, 125, 50, 0.2);
         }
 
         .audience-card ul {
@@ -601,6 +635,49 @@
         .reason p {
             color: var(--text-secondary);
             line-height: 1.7;
+        }
+
+        /* Future Expansion Section */
+        .expansion-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 3rem 0 0;
+            padding: 1rem 2rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+        }
+
+        /* Feedback Button */
+        .feedback-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .feedback-button a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--familycalc-accent);
+        }
+
+        .feedback-button a:hover {
+            background: var(--familycalc-accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(47, 125, 50, 0.3);
         }
 
         /* Legal Disclaimers Footer */
@@ -758,25 +835,25 @@
         <!-- Value Props Grid -->
         <section class="value-props">
             <div class="prop-card">
-                <span class="icon">⚖️</span>
+                <span class="icon">MI</span>
                 <h3>Michigan Compliant</h3>
                 <p>MCL 552.605 child support formula + 14 Olson spousal support factors. State-specific calculations, not generic estimates.</p>
             </div>
 
             <div class="prop-card">
-                <span class="icon">💰</span>
+                <span class="icon">$</span>
                 <h3>Affordable</h3>
                 <p>$74.99/year with 2 free calculations to try. More affordable than legacy calculators at a fraction of the cost.</p>
             </div>
 
             <div class="prop-card">
-                <span class="icon">🔍</span>
+                <span class="icon">✓</span>
                 <h3>Full Transparency</h3>
                 <p>Step-by-step calculation breakdown with statutory citations. Understand exactly how support amounts are calculated.</p>
             </div>
 
             <div class="prop-card">
-                <span class="icon">📄</span>
+                <span class="icon">PDF</span>
                 <h3>Professional PDFs</h3>
                 <p>Court-ready calculation reports with full factor breakdown. Attorney credentials or educational disclaimers.</p>
             </div>
@@ -789,7 +866,7 @@
                 <div class="price-amount">
                     $74.99<span class="period">/year</span>
                 </div>
-                <p class="trial-info">2 free calculations, then $74.99/year • Cancel anytime</p>
+                <p class="trial-info">2 free calculations, then $74.99/year</p>
 
                 <ul class="features-list">
                     <li>Unlimited child support calculations</li>
@@ -798,6 +875,8 @@
                     <li>Michigan-specific formulas</li>
                     <li>Clio integration (save to matters)</li>
                 </ul>
+
+                <p class="pricing-benefits">✓ All Michigan law updates included  •  ✓ New features at no extra cost  •  ✓ Cancel anytime</p>
 
                 <div class="cta-button">
                     <a href="https://familycalc.lexopoly.com/signup" class="btn btn-primary">Start Free Trial</a>
@@ -813,7 +892,7 @@
 
             <div class="audience-grid">
                 <div class="audience-card">
-                    <h3>👨‍⚖️ For Attorneys</h3>
+                    <h3><span class="badge">ATY</span> For Attorneys</h3>
                     <ul>
                         <li>Professional PDF exports with attorney credentials</li>
                         <li>Bar number and letterhead on calculation reports</li>
@@ -824,7 +903,7 @@
                 </div>
 
                 <div class="audience-card">
-                    <h3>🏠 For Self-Represented Litigants</h3>
+                    <h3><span class="badge">PRO</span> For Self-Represented Litigants</h3>
                     <ul>
                         <li>Educational tool with clear disclaimers (NOT legal advice)</li>
                         <li>Transparent calculations (understand how support is calculated)</li>
@@ -861,9 +940,13 @@
 
                 <div class="reason">
                     <h4>Built for Michigan</h4>
-                    <p>Designed specifically for Michigan family law practitioners and self-represented litigants. Future expansion to Illinois, Ohio, and Florida coming soon.</p>
+                    <p>Designed specifically for Michigan family law practitioners and self-represented litigants. Your subscription includes all future Michigan law updates and new features at no additional cost.</p>
                 </div>
             </div>
+
+            <!-- FUTURE EXPANSION SECTION - CAN BE REMOVED WHEN STATES LAUNCH -->
+            <p class="expansion-note">Coming soon: Illinois, Ohio, and Florida</p>
+            <!-- END FUTURE EXPANSION SECTION -->
         </section>
 
         <!-- Final CTA -->
@@ -898,5 +981,10 @@
             <p class="copyright">© 2025 Lexopoly LLC. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Feedback Button -->
+    <div class="feedback-button">
+        <a href="/support/?subject=FamilyCalc%20Feature%20Feedback">Share Feedback</a>
+    </div>
 </body>
 </html>
