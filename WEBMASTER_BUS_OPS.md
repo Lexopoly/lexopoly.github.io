@@ -11,6 +11,94 @@
 
 ---
 
+## 🧭 UNIFIED SOLUTIONS HUB PAGE CREATION (2025-10-29)
+
+### **MISSION**: Create `/solutions/index.html` - Central Discovery Page for Industry Solutions
+
+**Problem Identified**:
+- 6 vertical pages exist (lawyers, journalists, medical, court reporters, government, education) but no central hub
+- Each vertical heavily LocalTranscribe-focused, minimal cross-product visibility
+- Users must navigate separately to each vertical (fragmented discovery experience)
+- Missing SEO opportunity for "solutions for [industry]" keywords
+- FamilyCalc missing from /pricing page (fixed in commit 57b3185)
+
+**Solution**: Create unified solutions landing page showing:
+- All 6 industry verticals in grid layout
+- Cross-product solutions (e.g., lawyers get 3 tools: LocalTranscribe + QuoteCreator + FamilyCalc Michigan)
+- Product-to-vertical mapping showing which industries use which products
+- SEO-optimized for "solutions for [industry]" search terms
+
+### **PLANNED STRUCTURE**
+
+**Hero Section**:
+- H1: "Solutions for Every Industry"
+- Subtitle: "Professional software tailored to your industry's unique challenges"
+- Tagline: "From transcription to compliance, we have tools built for your workflow"
+
+**Industry Solutions Grid** (6 cards):
+
+1. **For Lawyers** → `/lawyers/`
+   - Products: LocalTranscribe (transcription) + QuoteCreator (estimates) + FamilyCalc Michigan (child support)
+   - Preview: "Attorney-client privilege, legal estimates, family law calculations"
+
+2. **For Journalists** → `/journalists/`
+   - Products: LocalTranscribe (transcription)
+   - Preview: "Source protection, deadline transcription, interview processing"
+
+3. **For Medical Professionals** → `/dictation/`
+   - Products: LocalTranscribe (dictation)
+   - Preview: "HIPAA-compliant dictation, medical terminology, patient notes"
+
+4. **For Court Reporters** → `/court-reporters/`
+   - Products: LocalTranscribe (transcription)
+   - Preview: "Workflow enhancement, stenographic verification, transcript production"
+
+5. **For Government** → `/government/`
+   - Products: LocalTranscribe (transcription) + ComplianceLogger (EPA compliance)
+   - Preview: "Security compliance, cost efficiency, waste tracking"
+
+6. **For Education** → `/education/`
+   - Products: LocalTranscribe (transcription)
+   - Preview: "Accessibility compliance, institutional pricing, lecture transcription"
+
+**Cross-Product Solutions Section**:
+- Legal Practice Management Suite (3 products)
+- EPA Compliance Suite (ComplianceLogger)
+- Professional Services Suite (LocalTranscribe + QuoteCreator)
+
+**Technical Specs**:
+- File: `/solutions/index.html`
+- Navigation: Add to main nav if space permits, otherwise keep in vertical dropdown
+- SEO: Meta descriptions targeting "solutions for [industry]" keywords
+- Schema.org: Organization + CollectionPage structured data
+- Design: Match existing Lexopoly design system (colors, typography, spacing)
+
+### **BENEFITS**
+✅ **User Experience**: Central discovery hub (one page vs 6 fragmented pages)
+✅ **Cross-Product Visibility**: Shows lawyers get 3 tools, not just transcription
+✅ **SEO**: Target "solutions for lawyers", "solutions for journalists", etc.
+✅ **Conversion**: Better product portfolio awareness → higher multi-product adoption
+✅ **Scalability**: Easy to add new verticals (construction, HVAC, etc.) to grid
+
+### **INTEGRATION PLAYBOOK UPDATE**
+- Update INTEGRATION_PLAYBOOK.md to include /solutions page as optional Phase 3 step
+- Guidance: Create /solutions when 3+ products serve same vertical OR 5+ products total
+
+### **ESTIMATED TIME**: 2-3 hours
+- Create /solutions/index.html (1.5 hours)
+- Update navigation (0.5 hours)
+- Update playbook (0.5 hours)
+- Testing & deployment (0.5 hours)
+
+### **COMMITS PLANNED**
+1. `feat: Create unified /solutions hub page - Central industry discovery`
+2. `docs: Update INTEGRATION_PLAYBOOK.md - Add /solutions guidance`
+
+**Status**: 🟡 PLANNING COMPLETE - Ready for execution
+**Next**: Git backup → Proceed with implementation
+
+---
+
 ## 🎉 BRAND BALANCE & ANALYTICS COMPLETION (2025-10-12)
 
 ### **MULTI-PRODUCT BRAND TRANSFORMATION COMPLETE**
