@@ -511,6 +511,92 @@ grep -r "ComplianceLogger" --include="index.html" | grep -v "[New Product Name]"
 3. ComplianceLogger - $149/year
 4. FamilyCalc Michigan - $74.99/year
 
+### 6. Solutions Page Strategy (Optional)
+
+**Location**: `/solutions/index.html` - Central industry discovery hub
+
+**When to Create**: Consider creating a unified solutions page when:
+- **3+ products serve the same vertical** (e.g., lawyers use 3 tools: LocalTranscribe + QuoteCreator + FamilyCalc)
+- **5+ products total** in portfolio (navigation complexity increases)
+- **Cross-product solutions exist** (e.g., Legal Practice Suite, EPA Compliance Suite)
+- **6+ vertical pages exist** (fragmented discovery experience)
+
+**Why It Matters**: Lexopoly created `/solutions/` in Oct 2025 (Product #4 launch) because:
+- 6 vertical pages (lawyers, journalists, medical, court reporters, government, education) existed but no central hub
+- Lawyers vertical should highlight 3 products but individual vertical pages were LocalTranscribe-heavy
+- Missing SEO opportunity for "solutions for [industry]" keywords
+- Better cross-product visibility → higher multi-product adoption
+
+**Decision Matrix**:
+| Products | Verticals | Create /solutions? | Rationale |
+|----------|-----------|-------------------|-----------|
+| 1-2 | Any | ❌ No | Vertical pages sufficient |
+| 3-4 | 1-3 | ⚠️ Optional | Consider if cross-product bundles exist |
+| 3-4 | 4-6 | ✅ Yes | Fragmented discovery, need central hub |
+| 5+ | Any | ✅ Yes | Portfolio complexity requires hub page |
+
+#### Structure Template
+
+**Hero Section**:
+- H1: "Solutions for Every Industry"
+- Subtitle: "Professional software tailored to your industry's unique challenges"
+- Tagline: Highlight breadth of offerings
+
+**Industry Solutions Grid** (responsive 2-3 column layout):
+```html
+<div class="solutions-grid">
+    <!-- For each vertical: -->
+    <div class="solution-card">
+        <span class="icon">[EMOJI]</span>
+        <h3>[Industry Name]</h3>
+        <p class="preview">[Use cases specific to this industry]</p>
+        <div class="products">
+            <div class="products-label">Available Products</div>
+            <div class="product-tags">
+                <span class="product-tag">[Product 1]</span>
+                <span class="product-tag">[Product 2]</span>
+                ...
+            </div>
+        </div>
+        <a href="/[vertical-slug]/" class="cta-link">Explore [Industry] Solutions →</a>
+    </div>
+</div>
+```
+
+**Cross-Product Solutions Section**:
+- Suite 1: Legal Practice Management (3 products)
+- Suite 2: EPA Compliance Suite (1 product, expandable)
+- Suite 3: Professional Services (2 products)
+
+**SEO Optimization**:
+- Meta description: "Industry-specific professional software solutions. Solutions for [list industries]. From [capability 1] to [capability 2], we have tools built for your workflow."
+- Keywords: "solutions for [industry 1]", "solutions for [industry 2]", etc.
+- Schema.org: CollectionPage structured data
+
+#### Integration Checklist
+
+**When Adding Product #5+**:
+- [ ] Update solutions page industry cards with new product (if applicable)
+- [ ] Add new cross-product suites (if new bundles emerge)
+- [ ] Update meta descriptions with new capabilities
+- [ ] If product creates new vertical, add new solution card to grid
+
+**Example (Oct 2025 - Product #4 FamilyCalc Launch)**:
+- Updated "For Lawyers" card: Added FamilyCalc Michigan product tag
+- Added "Legal Practice Management" suite: 3 products (LocalTranscribe + QuoteCreator + FamilyCalc)
+- Meta description: Added "family law calculations" to capabilities list
+
+**Time Investment**:
+- Initial /solutions page creation: 1.5-2 hours
+- Update per new product: 15-30 minutes (if applicable to existing verticals)
+- New vertical addition: 45-60 minutes (new card + content)
+
+**Reference Implementation**: `/solutions/index.html` (created Oct 29, 2025)
+- 6 industry cards (lawyers, journalists, medical, court reporters, government, education)
+- 3 cross-product suites
+- Responsive grid layout
+- SEO-optimized for industry-specific searches
+
 ---
 
 ## 🎯 Design Consistency Standards

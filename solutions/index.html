@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Note: Config is called in analytics.js with attribution data
+    </script>
+
+    <title>Solutions for Every Industry - Professional Software | Lexopoly</title>
+    <meta name="description" content="Industry-specific professional software solutions. Solutions for lawyers, journalists, medical professionals, court reporters, government, and education. From transcription to compliance, we have tools built for your workflow.">
+    <meta name="keywords" content="solutions for lawyers, solutions for journalists, professional software by industry, legal software solutions, medical dictation software, compliance software, education software">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Solutions for Every Industry | Lexopoly">
+    <meta property="og:description" content="Professional software tailored to your industry. Solutions for legal, journalism, medical, government, education, and more.">
+    <meta property="og:url" content="https://www.lexopoly.com/solutions/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solutions for Every Industry | Lexopoly">
+    <meta name="twitter:description" content="Professional software tailored to your industry. Solutions for legal, journalism, medical, government, education, and more.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core brand colors */
+            --lexopoly-primary: #1a365d;
+            --lexopoly-secondary: #2d3748;
+            --accent: #2c5aa0;
+
+            /* Vertical-specific colors */
+            --lawyers: #2b6cb0;
+            --journalists: #b45309;
+            --dictation: #2f7d32;
+            --court: #553c9a;
+            --government: #4a5568;
+            --education: #8b5a00;
+
+            /* UI colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+            --warning: #8b5a00;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+        }
+
+        /* UNIFIED NAVIGATION TEMPLATE */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Navigation */
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Dropdown Container */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-dropdown > a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow {
+            transform: translateY(2px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--bg-secondary);
+            color: var(--accent);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0.5rem 0;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* CTA Button in Nav */
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.3s;
+            margin-left: 1rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--lexopoly-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--lexopoly-primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Industry Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+            cursor: pointer;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .solution-card.lawyers { border-color: var(--lawyers); }
+        .solution-card.journalists { border-color: var(--journalists); }
+        .solution-card.medical { border-color: var(--dictation); }
+        .solution-card.court { border-color: var(--court); }
+        .solution-card.government { border-color: var(--government); }
+        .solution-card.education { border-color: var(--education); }
+
+        .solution-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .solution-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .solution-card h3.lawyers { color: var(--lawyers); }
+        .solution-card h3.journalists { color: var(--journalists); }
+        .solution-card h3.medical { color: var(--dictation); }
+        .solution-card h3.court { color: var(--court); }
+        .solution-card h3.government { color: var(--government); }
+        .solution-card h3.education { color: var(--education); }
+
+        .solution-card .preview {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .solution-card .products {
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-card .products-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-card .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .solution-card .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .solution-card .cta-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Cross-Product Solutions */
+        .cross-product {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 4rem;
+        }
+
+        .cross-product h2 {
+            font-size: 2rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .suite-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .suite-card {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 2px solid var(--border);
+        }
+
+        .suite-card h3 {
+            font-size: 1.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .suite-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suite-card li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .suite-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--lexopoly-primary);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .suite-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-main {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-top: 1px solid var(--border);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-main.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-cta {
+                margin-left: 0;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">Lexopoly</a>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+            <div class="nav-main" id="nav-main">
+                <!-- Products Dropdown -->
+                <div class="nav-dropdown">
+                    <a>Products <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">Our Products</div>
+                        <a href="/localtranscribe/">LocalTranscribe</a>
+                        <a href="/quotecreator/">QuoteCreator</a>
+                        <a href="/compliancelogger/">ComplianceLogger</a>
+                        <a href="/familycalc/">FamilyCalc Michigan</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/#products" style="font-weight: 600;">View All Products →</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Dropdown -->
+                <div class="nav-dropdown">
+                    <a>Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">By Industry</div>
+                        <a href="/lawyers/">For Lawyers</a>
+                        <a href="/journalists/">For Journalists</a>
+                        <a href="/dictation/">Dictation & Medical</a>
+                        <a href="/court-reporters/">For Court Reporters</a>
+                        <a href="/government/">For Government</a>
+                        <a href="/education/">For Education</a>
+                    </div>
+                </div>
+
+                <!-- Regular Links -->
+                <a href="/pricing/" class="nav-dropdown"><a>Pricing</a></a>
+                <a href="/about/" class="nav-dropdown"><a>About</a></a>
+                <a href="/support/" class="nav-dropdown"><a>Support</a></a>
+
+                <a href="https://localtranscribe.lexopoly.com/signup" class="nav-cta">Start Free Trial</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Solutions for Every Industry</h1>
+            <p class="subtitle">Professional software tailored to your industry's unique challenges</p>
+            <p class="tagline">From transcription to compliance, we have tools built for your workflow</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Industry Solutions Grid -->
+        <div class="section-header">
+            <h2>Choose Your Industry</h2>
+            <p>Explore software solutions designed specifically for your profession</p>
+        </div>
+
+        <div class="solutions-grid">
+            <!-- For Lawyers -->
+            <a href="/lawyers/" style="text-decoration: none;">
+                <div class="solution-card lawyers">
+                    <span class="icon">⚖️</span>
+                    <h3 class="lawyers">For Lawyers</h3>
+                    <p class="preview">Attorney-client privilege transcription, legal estimates with Clio integration, and Michigan family law calculations</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                            <span class="product-tag">QuoteCreator</span>
+                            <span class="product-tag">FamilyCalc Michigan</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Legal Solutions →</span>
+                </div>
+            </a>
+
+            <!-- For Journalists -->
+            <a href="/journalists/" style="text-decoration: none;">
+                <div class="solution-card journalists">
+                    <span class="icon">📰</span>
+                    <h3 class="journalists">For Journalists</h3>
+                    <p class="preview">Source protection with local transcription, deadline-focused workflow, interview processing with privacy-first tools</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Journalism Solutions →</span>
+                </div>
+            </a>
+
+            <!-- For Medical Professionals -->
+            <a href="/dictation/" style="text-decoration: none;">
+                <div class="solution-card medical">
+                    <span class="icon">🏥</span>
+                    <h3 class="medical">For Medical Professionals</h3>
+                    <p class="preview">HIPAA-compliant local dictation, medical terminology recognition, patient notes with complete privacy</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Medical Solutions →</span>
+                </div>
+            </a>
+
+            <!-- For Court Reporters -->
+            <a href="/court-reporters/" style="text-decoration: none;">
+                <div class="solution-card court">
+                    <span class="icon">📝</span>
+                    <h3 class="court">For Court Reporters</h3>
+                    <p class="preview">Workflow enhancement for transcript production, stenographic verification, professional court reporting tools</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Court Reporting Solutions →</span>
+                </div>
+            </a>
+
+            <!-- For Government -->
+            <a href="/government/" style="text-decoration: none;">
+                <div class="solution-card government">
+                    <span class="icon">🏛️</span>
+                    <h3 class="government">For Government</h3>
+                    <p class="preview">Security-focused transcription, EPA compliance tracking, cost-efficient tools meeting government standards</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                            <span class="product-tag">ComplianceLogger</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Government Solutions →</span>
+                </div>
+            </a>
+
+            <!-- For Education -->
+            <a href="/education/" style="text-decoration: none;">
+                <div class="solution-card education">
+                    <span class="icon">🎓</span>
+                    <h3 class="education">For Education</h3>
+                    <p class="preview">Accessibility compliance tools, institutional pricing, lecture transcription for students and educators</p>
+                    <div class="products">
+                        <div class="products-label">Available Products</div>
+                        <div class="product-tags">
+                            <span class="product-tag">LocalTranscribe</span>
+                        </div>
+                    </div>
+                    <span class="cta-link">Explore Education Solutions →</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Cross-Product Solutions -->
+        <div class="cross-product">
+            <h2>Complete Solution Suites</h2>
+            <div class="suite-grid">
+                <div class="suite-card">
+                    <h3>Legal Practice Management</h3>
+                    <ul>
+                        <li>LocalTranscribe for client interviews</li>
+                        <li>QuoteCreator for legal estimates</li>
+                        <li>FamilyCalc Michigan for child support</li>
+                        <li>Clio integration across all products</li>
+                    </ul>
+                </div>
+
+                <div class="suite-card">
+                    <h3>EPA Compliance Suite</h3>
+                    <ul>
+                        <li>ComplianceLogger for waste tracking</li>
+                        <li>Photo evidence documentation</li>
+                        <li>Proactive & reactive compliance modes</li>
+                        <li>Legal audit reconstruction</li>
+                    </ul>
+                </div>
+
+                <div class="suite-card">
+                    <h3>Professional Services</h3>
+                    <ul>
+                        <li>LocalTranscribe for client meetings</li>
+                        <li>QuoteCreator for project estimates</li>
+                        <li>Clio integration for law firms</li>
+                        <li>One-time purchase & subscription options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <h4>Products</h4>
+                <a href="/localtranscribe/">LocalTranscribe</a>
+                <a href="/quotecreator/">QuoteCreator</a>
+                <a href="/compliancelogger/">ComplianceLogger</a>
+                <a href="/familycalc/">FamilyCalc Michigan</a>
+            </div>
+            <div>
+                <h4>Solutions</h4>
+                <a href="/lawyers/">For Lawyers</a>
+                <a href="/journalists/">For Journalists</a>
+                <a href="/dictation/">Dictation & Medical</a>
+                <a href="/court-reporters/">For Court Reporters</a>
+                <a href="/government/">For Government</a>
+                <a href="/education/">For Education</a>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="/about/">About</a>
+                <a href="/pricing/">Pricing</a>
+                <a href="/support/">Support</a>
+                <a href="/contact/">Contact</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Service</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Lexopoly LLC. All rights reserved.</p>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-main');
+            nav.classList.toggle('active');
+        }
+
+        // Load analytics.js for attribution tracking
+        const script = document.createElement('script');
+        script.src = '/js/analytics.js';
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
