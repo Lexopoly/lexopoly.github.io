@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+
+        function trackEvent(category, action, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Contact & Early Access | RevenueRescue</title>
+    <meta name="description" content="Contact RevenueRescue for early access to pilot program. Email support for law firm billing automation questions. Join our pilot cohort.">
+    <meta name="keywords" content="RevenueRescue contact, law firm billing software support, early access pilot">
+    <meta name="author" content="Lexopoly">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/revenuerescue/contact/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --revenuerescue-primary: #7c3aed;
+            --revenuerescue-dark: #5b21b6;
+            --lexopoly-primary: #1a365d;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--revenuerescue-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--revenuerescue-primary);
+        }
+
+        .btn-nav-cta {
+            background: var(--revenuerescue-primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav-cta:hover {
+            background: var(--revenuerescue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: var(--lexopoly-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--revenuerescue-primary);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-card a {
+            color: var(--revenuerescue-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Pilot Info Box */
+        .pilot-info {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(91, 33, 182, 0.1) 100%);
+            border-left: 4px solid var(--revenuerescue-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .pilot-info strong {
+            color: var(--revenuerescue-primary);
+            font-size: 1.1rem;
+        }
+
+        .pilot-info ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Support Hours */
+        .hours {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .hours strong {
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: var(--revenuerescue-primary);
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/revenuerescue/" class="logo">
+                RevenueRescue
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <div class="nav-links">
+                <a href="/revenuerescue/features/">Features</a>
+                <a href="/revenuerescue/pricing/">Pricing</a>
+                <a href="/revenuerescue/contact/">Contact</a>
+                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'contact')">Contact for Early Access</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Contact & Early Access</h1>
+        <p>Join our pilot program and never forget billable time again</p>
+    </section>
+
+    <div class="container">
+        <!-- Early Access Section -->
+        <div class="section">
+            <h2>Request Early Access</h2>
+            <p>RevenueRescue is currently in pilot phase with limited availability. We're finalizing trial terms and onboarding process. Contact us to join our pilot cohort and receive priority access.</p>
+
+            <div class="pilot-info">
+                <p><strong>Pilot Program Benefits:</strong></p>
+                <ul>
+                    <li>Priority access to RevenueRescue platform</li>
+                    <li>Special pricing consideration for early adopters</li>
+                    <li>Direct input on feature development roadmap</li>
+                    <li>Dedicated onboarding support</li>
+                    <li>First access to multi-attorney firm features (launching Q2 2025)</li>
+                </ul>
+            </div>
+
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email Us</h3>
+                    <a href="mailto:support@lexopoly.com?subject=RevenueRescue%20Early%20Access%20Request" onclick="trackEvent('revenuerescue', 'contact_email_click', 'early_access')">support@lexopoly.com</a>
+                    <p>Subject line: "RevenueRescue Early Access Request"</p>
+                    <p style="margin-top: 1rem;"><strong>Please include:</strong></p>
+                    <p style="margin-top: 0.5rem;">• Your firm name and size (solo, small, mid-size)</p>
+                    <p>• Current practice management system (Clio, MyCase, etc.)</p>
+                    <p>• Estimated billable hours per week</p>
+                    <p>• Any specific questions or requirements</p>
+                </div>
+            </div>
+
+            <div class="hours">
+                <p><strong>Response Time:</strong> We typically respond to pilot requests within 1-2 business days.</p>
+                <p style="margin-top: 0.5rem;">Support Hours: Monday–Friday, 9:00 AM – 5:00 PM MT (Mountain Time)</p>
+            </div>
+        </div>
+
+        <!-- General Support Section -->
+        <div class="section">
+            <h2>General Questions & Support</h2>
+            <p>Have questions about RevenueRescue features, pricing, or compatibility? We're here to help.</p>
+
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <span class="contact-icon">💬</span>
+                    <h3>Email Support</h3>
+                    <a href="mailto:support@lexopoly.com?subject=RevenueRescue%20Question" onclick="trackEvent('revenuerescue', 'contact_email_click', 'support')">support@lexopoly.com</a>
+                    <p>Best for detailed questions and technical support</p>
+                    <p style="margin-top: 1rem;">Average response time: 24 hours during business days</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+            <p>Before reaching out, check if your question is answered in our FAQs:</p>
+            <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2; margin-top: 1rem;">
+                <li><a href="/revenuerescue/#faq" style="color: var(--revenuerescue-primary); text-decoration: none;">How does RevenueRescue detect unbilled time?</a></li>
+                <li><a href="/revenuerescue/#faq" style="color: var(--revenuerescue-primary); text-decoration: none;">Is my Clio data secure?</a></li>
+                <li><a href="/revenuerescue/pricing/#faq" style="color: var(--revenuerescue-primary); text-decoration: none;">How is $149/month justified?</a></li>
+                <li><a href="/revenuerescue/pricing/#faq" style="color: var(--revenuerescue-primary); text-decoration: none;">Do you offer multi-attorney pricing?</a></li>
+                <li><a href="/revenuerescue/pricing/#faq" style="color: var(--revenuerescue-primary); text-decoration: none;">What if I don't use Clio?</a></li>
+            </ul>
+
+            <p style="margin-top: 2rem;">Can't find what you're looking for? Visit our <a href="/revenuerescue/features/" style="color: var(--revenuerescue-primary);">features page</a> for detailed feature explanations or <a href="/revenuerescue/pricing/" style="color: var(--revenuerescue-primary);">pricing page</a> for ROI calculator and cost details.</p>
+        </div>
+
+        <!-- What to Expect Section -->
+        <div class="section">
+            <h2>What to Expect After Contacting Us</h2>
+            <div style="margin-top: 2rem;">
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--revenuerescue-primary); font-size: 1.2rem; margin-bottom: 0.5rem;">1. Initial Response (1-2 business days)</h3>
+                    <p>We'll review your pilot request and respond with next steps. If you're a good fit for our pilot cohort, we'll schedule a brief introductory call.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--revenuerescue-primary); font-size: 1.2rem; margin-bottom: 0.5rem;">2. Introductory Call (15-20 minutes)</h3>
+                    <p>We'll discuss your current billing challenges, explain how RevenueRescue works, and answer any technical questions. This is also where we'll share pilot program details and pricing.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: var(--revenuerescue-primary); font-size: 1.2rem; margin-bottom: 0.5rem;">3. Onboarding (2-5 minutes)</h3>
+                    <p>If you decide to join the pilot, we'll send you access credentials. Setup is simple: connect your Clio account via OAuth (click a button), approve calendar access, done. First suggestions appear within 24 hours.</p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--revenuerescue-primary); font-size: 1.2rem; margin-bottom: 0.5rem;">4. Ongoing Support</h3>
+                    <p>Pilot participants receive priority email support. We'll check in weekly during your first month to ensure you're getting maximum value from RevenueRescue.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Lexopoly Section -->
+        <div class="section">
+            <h2>About Lexopoly</h2>
+            <p>RevenueRescue is built by Lexopoly LLC, a software company focused on tools for legal professionals and service businesses. Our products include:</p>
+            <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2; margin-top: 1rem;">
+                <li><a href="/localtranscribe/" style="color: var(--revenuerescue-primary);">LocalTranscribe</a> - Privacy-first audio transcription</li>
+                <li><a href="/quotecreator/" style="color: var(--revenuerescue-primary);">QuoteCreator</a> - Professional estimate generation for contractors</li>
+                <li><a href="/compliancelogger/" style="color: var(--revenuerescue-primary);">ComplianceLogger</a> - EPA waste compliance tracking</li>
+                <li><a href="/familycalc/" style="color: var(--revenuerescue-primary);">FamilyCalc Michigan</a> - Child support calculator</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">We're a small team based in the United States, focused on building practical software that solves real business problems. Learn more at <a href="/" style="color: var(--revenuerescue-primary);">lexopoly.com</a>.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>Not Financial or Legal Advice:</strong> RevenueRescue is a software tool for time tracking and billing assistance. Results may vary based on firm size, billing practices, and adoption. ROI calculations are estimates based on industry research and may not reflect your specific situation. This software does not provide legal or financial advice. Consult your bar association regarding ethical billing practices in your jurisdiction.
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/revenuerescue/">Home</a>
+                    <a href="/revenuerescue/features/">Features</a>
+                    <a href="/revenuerescue/pricing/">Pricing</a>
+                    <a href="/revenuerescue/contact/">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="/blog/revenuerescue/">Blog Articles</a>
+                    <a href="/blog/law-firm-revenue-loss/">Revenue Loss Guide</a>
+                    <a href="/blog/manual-time-entry-law-firms/">Time Entry Cost Analysis</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Lexopoly</h4>
+                    <a href="/">All Products</a>
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                    <a href="/compliancelogger/">ComplianceLogger</a>
+                    <a href="/familycalc/">FamilyCalc Michigan</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/about/">About Lexopoly</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

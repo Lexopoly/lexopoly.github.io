@@ -1,0 +1,14 @@
+OG Image Placeholder for RevenueRescue
+
+This file marks where og-revenuerescue.png should be created.
+
+Recommended specs:
+- Dimensions: 1200×630px (Facebook/LinkedIn standard)
+- Background: Purple gradient (#7c3aed → #5b21b6)
+- Text: "RevenueRescue" in white
+- Subtitle: "Stop Losing Billable Time" in white
+- Logo: Lexopoly branding (optional)
+
+For now, pages reference /assets/og-revenuerescue.png but can function without it (social platforms will use page title/description as fallback).
+
+Create actual PNG before major launch/promotion campaign.

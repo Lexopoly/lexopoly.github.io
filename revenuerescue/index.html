@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+
+        function trackEvent(category, action, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    </script>
+
+    <!-- Basic SEO -->
+    <title>RevenueRescue | Stop Losing Billable Time for Law Firms Using Clio</title>
+    <meta name="description" content="Automatic revenue capture for law firms. AI monitors your Clio calendar, detects unbilled time, generates billing suggestions. $149/month. 7-19× ROI. Never forget billable time again.">
+    <meta name="keywords" content="law firm billing software, Clio integration, automatic time tracking, billable time capture, legal billing automation, revenue recovery">
+    <meta name="author" content="Lexopoly">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/revenuerescue/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="RevenueRescue | Stop Losing Billable Time for Law Firms">
+    <meta property="og:description" content="AI-powered automatic time capture for law firms using Clio. Never lose billable time again. $149/month, 7-19× ROI.">
+    <meta property="og:url" content="https://lexopoly.com/revenuerescue/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-revenuerescue.png">
+    <meta property="og:site_name" content="RevenueRescue">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RevenueRescue | Stop Losing Billable Time">
+    <meta name="twitter:description" content="AI-powered automatic time capture for law firms. $149/month, 7-19× ROI.">
+    <meta name="twitter:image" content="https://lexopoly.com/assets/og-revenuerescue.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RevenueRescue",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "AI-powered automatic time capture for law firms using Clio. Detects unbilled calendar activities and generates billing suggestions with one-click approval.",
+      "url": "https://lexopoly.com/revenuerescue/",
+      "offers": {
+        "@type": "Offer",
+        "price": "149.00",
+        "priceCurrency": "USD",
+        "description": "$149/month subscription"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lexopoly LLC",
+        "url": "https://lexopoly.com"
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --revenuerescue-primary: #7c3aed;
+            --revenuerescue-dark: #5b21b6;
+            --lexopoly-primary: #1a365d;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: white;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--revenuerescue-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--revenuerescue-primary);
+        }
+
+        .btn-nav-cta {
+            background: var(--revenuerescue-primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav-cta:hover {
+            background: var(--revenuerescue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--revenuerescue-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--revenuerescue-primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem Statement */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .problem-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+            border-color: var(--revenuerescue-primary);
+        }
+
+        .problem-stat {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--revenuerescue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .step-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--lexopoly-primary);
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing Preview */
+        .pricing-preview {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-preview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-amount {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-period {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .pricing-features {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+        }
+
+        .faq-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--lexopoly-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: var(--revenuerescue-primary);
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .btn-hero {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .pricing-amount {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/revenuerescue/" class="logo">
+                RevenueRescue
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <div class="nav-links">
+                <a href="/revenuerescue/features/">Features</a>
+                <a href="/revenuerescue/pricing/">Pricing</a>
+                <a href="/revenuerescue/contact/">Contact</a>
+                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'contact')">Contact for Early Access</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stop Losing $20K-$40K in Billable Time Every Year</h1>
+            <div class="hero-tagline">Automatic Revenue Capture for Law Firms Using Clio</div>
+            <p class="hero-subtitle">AI-powered system monitors your calendar, detects unbilled time, generates billing suggestions. You approve with one click. Revenue rescued.</p>
+            <div class="hero-stats">$149/month • 7-19× ROI • 18-30 day payback</div>
+            <div class="hero-ctas">
+                <a href="/revenuerescue/contact/" class="btn-hero btn-primary" onclick="trackEvent('revenuerescue', 'hero_cta_click', 'contact')">Contact for Early Access</a>
+                <a href="/revenuerescue/pricing/" class="btn-hero btn-secondary" onclick="trackEvent('revenuerescue', 'hero_cta_click', 'calculate')">Calculate Your Lost Revenue</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Law Firms Are Bleeding Revenue</h2>
+            <p class="section-subtitle">Every day attorneys forget to bill for client calls, email consultations, and calendar activities. Memory fades. Revenue disappears. Most firms have no idea how much they're losing.</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-stat">10-20%</div>
+                    <div class="problem-label">Billable Time Lost</div>
+                    <p class="problem-desc">ABA research shows law firms lose 10-20% of billable time due to delayed manual entry and memory deterioration.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">$70K-$450K</div>
+                    <div class="problem-label">Annual Cost Per Firm</div>
+                    <p class="problem-desc">Combined opportunity cost plus revenue loss from forgotten billable activities. Scales with firm size.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">30-75 min</div>
+                    <div class="problem-label">Wasted Daily</div>
+                    <p class="problem-desc">Per attorney on manual time entry burden. That's 125-312 hours per year on administrative recordkeeping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">How RevenueRescue Works</h2>
+            <p class="section-subtitle">Three simple steps. Zero manual entry. Maximum revenue capture.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Monitor</h3>
+                    <p class="step-desc">Connects to your Clio calendar and monitors billable activities automatically. OAuth secure authentication means we never see your password.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Suggest</h3>
+                    <p class="step-desc">AI detects unbilled time and generates professional billing entries with narratives. Time calculations and matter codes handled automatically.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Rescue</h3>
+                    <p class="step-desc">You approve suggestions with one click. We post to Clio. Revenue captured. The entire process takes minutes, not hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Powerful Features for Revenue Recovery</h2>
+            <p class="section-subtitle">Everything you need to capture lost billable time automatically</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">Calendar Monitoring</h3>
+                    <p class="feature-desc">Continuous automatic detection of billable calendar events. Never forgets, never sleeps, always watching.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Suggestions</h3>
+                    <p class="feature-desc">Smart billing narratives generated automatically with proper formatting and time calculations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">One-Click Approval</h3>
+                    <p class="feature-desc">Review and approve suggestions in seconds. Reject any suggestion that's not billable. Bulk actions supported.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3 class="feature-title">Clio Integration</h3>
+                    <p class="feature-desc">Native OAuth integration with Clio. Approved suggestions post directly to your time entries. No manual copy-paste.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Revenue Analytics</h3>
+                    <p class="feature-desc">Visualize captured revenue vs. potential. Track improvement over time. Identify patterns in unbilled activities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Multi-Matter Support</h3>
+                    <p class="feature-desc">Handles attorneys with multiple active matters. Smart matter detection from calendar event titles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="pricing-preview">
+                <div class="pricing-content">
+                    <h2>Simple Pricing. Massive ROI.</h2>
+                    <div class="pricing-amount">$149</div>
+                    <div class="pricing-period">per month</div>
+                    <div class="pricing-note">
+                        <strong>Pilot Program: Limited Availability</strong><br>
+                        Contact us for early access to join our pilot cohort. We're finalizing trial terms and will announce soon.
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited billing suggestions</li>
+                        <li>Clio OAuth integration</li>
+                        <li>AI-generated narratives</li>
+                        <li>One-click approval workflow</li>
+                        <li>Revenue dashboard analytics</li>
+                        <li>Multi-matter support</li>
+                        <li>Email support</li>
+                        <li>All future feature updates included</li>
+                    </ul>
+                    <a href="/revenuerescue/contact/" class="btn-hero btn-primary" onclick="trackEvent('revenuerescue', 'pricing_cta_click', 'contact')" style="background: white; color: var(--revenuerescue-primary);">Contact for Early Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">How does RevenueRescue detect unbilled time?</div>
+                        <p class="faq-answer">RevenueRescue connects to your Clio calendar via secure OAuth and monitors your calendar events in real-time. It identifies client-related activities (meetings, calls, consultations) and filters out internal/non-billable events. The AI analyzes event titles, participants, and duration to generate appropriate billing suggestions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is my Clio data secure?</div>
+                        <p class="faq-answer">Yes, absolutely. RevenueRescue uses OAuth 2.0 authentication, which means we never see or store your Clio password. All data is encrypted in transit and at rest. We use multi-tenant database architecture to ensure your firm's data is completely isolated. Our infrastructure follows SOC 2 compliance standards.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the ROI for my firm?</div>
+                        <p class="faq-answer">Research shows law firms lose 10-20% of billable time to forgotten activities. For a solo practitioner billing $350/hour, RevenueRescue typically recovers $14K-$36K annually. After the $1,800 annual cost, net benefit is $12,200-$34,200 (7-19× return). Payback period is typically 18-30 days. Visit our <a href="/revenuerescue/pricing/" style="color: var(--revenuerescue-primary); text-decoration: none; border-bottom: 1px solid var(--revenuerescue-primary);">pricing page</a> to calculate your specific ROI.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to change how I work?</div>
+                        <p class="faq-answer">No. RevenueRescue works invisibly in the background. You continue your day as normal—meeting with clients, making calls, sending emails. The system monitors your calendar automatically. At your convenience (typically end of day or week), you review suggestions and approve with one click. No workflow changes required.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">When can I start using RevenueRescue?</div>
+                        <p class="faq-answer">We're currently in pilot phase with limited availability. Contact us for early access to join our pilot cohort. We're finalizing trial terms and onboarding process. Pilot participants will receive priority access and special pricing consideration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Stop Losing Revenue?</h2>
+            <p>Join our pilot program and never forget billable time again.</p>
+            <a href="/revenuerescue/contact/" class="btn-hero btn-primary" onclick="trackEvent('revenuerescue', 'final_cta_click', 'contact')" style="background: white; color: var(--revenuerescue-primary);">Contact for Early Access</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>Not Financial or Legal Advice:</strong> RevenueRescue is a software tool for time tracking and billing assistance. Results may vary based on firm size, billing practices, and adoption. ROI calculations are estimates based on industry research and may not reflect your specific situation. This software does not provide legal or financial advice. Consult your bar association regarding ethical billing practices in your jurisdiction.
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/revenuerescue/">Home</a>
+                    <a href="/revenuerescue/features/">Features</a>
+                    <a href="/revenuerescue/pricing/">Pricing</a>
+                    <a href="/revenuerescue/contact/">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="/blog/revenuerescue/">Blog Articles</a>
+                    <a href="/blog/law-firm-revenue-loss/">Revenue Loss Guide</a>
+                    <a href="/blog/manual-time-entry-law-firms/">Time Entry Cost Analysis</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Lexopoly</h4>
+                    <a href="/">All Products</a>
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                    <a href="/compliancelogger/">ComplianceLogger</a>
+                    <a href="/familycalc/">FamilyCalc Michigan</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/about/">About Lexopoly</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

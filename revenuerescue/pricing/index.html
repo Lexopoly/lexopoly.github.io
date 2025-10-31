@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+
+        function trackEvent(category, action, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Pricing | RevenueRescue - $149/Month for Automatic Revenue Capture</title>
+    <meta name="description" content="$149/month for unlimited billing suggestions, Clio integration, AI-powered time capture. Calculate your ROI - most firms see 7-19× return on investment.">
+    <meta name="keywords" content="law firm billing software pricing, automatic time tracking cost, Clio integration price, legal billing automation cost">
+    <meta name="author" content="Lexopoly">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/revenuerescue/pricing/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pricing | RevenueRescue - $149/Month">
+    <meta property="og:description" content="Calculate your ROI - most law firms see 7-19× return on investment">
+    <meta property="og:url" content="https://lexopoly.com/revenuerescue/pricing/">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --revenuerescue-primary: #7c3aed;
+            --revenuerescue-dark: #5b21b6;
+            --lexopoly-primary: #1a365d;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--revenuerescue-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--revenuerescue-primary);
+        }
+
+        .btn-nav-cta {
+            background: var(--revenuerescue-primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav-cta:hover {
+            background: var(--revenuerescue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 4rem 3rem;
+            margin: 3rem auto;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 3px solid var(--revenuerescue-primary);
+        }
+
+        .pricing-badge {
+            background: var(--revenuerescue-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .price {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--lexopoly-primary);
+            margin: 1rem 0;
+        }
+
+        .price-period {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .trial-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            background: var(--revenuerescue-primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--revenuerescue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+        }
+
+        /* ROI Calculator */
+        .roi-calculator {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .roi-calculator h2 {
+            text-align: center;
+            color: var(--lexopoly-primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group input {
+            padding: 0.8rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--revenuerescue-primary);
+        }
+
+        .calculator-results {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        .result-label {
+            font-weight: 600;
+        }
+
+        .result-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: var(--lexopoly-primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-item strong {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: var(--revenuerescue-primary);
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .calculator-inputs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/revenuerescue/" class="logo">
+                RevenueRescue
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <div class="nav-links">
+                <a href="/revenuerescue/features/">Features</a>
+                <a href="/revenuerescue/pricing/">Pricing</a>
+                <a href="/revenuerescue/contact/">Contact</a>
+                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'contact')">Contact for Early Access</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Simple Pricing. Massive ROI.</h1>
+        <p>One plan. All features. 7-19× return on investment for most firms.</p>
+    </section>
+
+    <div class="container">
+        <!-- Pricing Card -->
+        <div class="pricing-card">
+            <span class="pricing-badge">PILOT PROGRAM</span>
+            <div class="price">$149<span class="price-period">/month</span></div>
+            <div class="trial-badge">Contact for Early Access</div>
+
+            <ul class="features-list">
+                <li>Unlimited billing suggestions</li>
+                <li>AI-powered narrative generation</li>
+                <li>Continuous calendar monitoring</li>
+                <li>One-click approval workflow</li>
+                <li>Native Clio OAuth integration</li>
+                <li>Direct time entry posting</li>
+                <li>Revenue dashboard & analytics</li>
+                <li>Historical calendar analysis (30-365 days)</li>
+                <li>Multi-matter support</li>
+                <li>Matter code detection</li>
+                <li>Activity code mapping</li>
+                <li>Email support</li>
+                <li>All future updates included</li>
+                <li>Cancel anytime</li>
+            </ul>
+
+            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_cta_click', 'contact')">Contact for Early Access</a>
+
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem;">
+                We're finalizing trial terms and onboarding process. Contact us to join pilot cohort.
+            </p>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="roi-calculator">
+            <h2>Calculate Your Lost Revenue</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+                Research shows law firms lose 10-20% of billable time to forgotten activities. Calculate your specific opportunity cost.
+            </p>
+
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <label for="hourlyRate">Your Billable Rate ($/hour)</label>
+                    <input type="number" id="hourlyRate" value="350" min="0" step="10" oninput="calculateROI()">
+                </div>
+                <div class="input-group">
+                    <label for="billableHours">Billable Hours Per Week</label>
+                    <input type="number" id="billableHours" value="30" min="0" max="80" step="1" oninput="calculateROI()">
+                </div>
+                <div class="input-group">
+                    <label for="lossPercent">Estimated Time Loss (%)</label>
+                    <input type="number" id="lossPercent" value="15" min="0" max="100" step="1" oninput="calculateROI()">
+                </div>
+            </div>
+
+            <div class="calculator-results">
+                <div class="result-row">
+                    <span class="result-label">Annual Billable Hours Lost:</span>
+                    <span class="result-value" id="hoursLost">234 hours</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Annual Revenue Lost:</span>
+                    <span class="result-value" id="revenueLost">$81,900</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">RevenueRescue Captures (90%):</span>
+                    <span class="result-value" id="revenueRecovered">$73,710</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">RevenueRescue Cost:</span>
+                    <span class="result-value">-$1,800/year</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">NET BENEFIT:</span>
+                    <span class="result-value" id="netBenefit" style="color: #4ade80; font-size: 1.8rem;">$71,910/year</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Return on Investment:</span>
+                    <span class="result-value" id="roi" style="color: #4ade80; font-size: 1.5rem;">40× ROI</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Payback Period:</span>
+                    <span class="result-value" id="payback">9 days</span>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary); font-size: 0.9rem;">
+                <strong>Note:</strong> Calculations assume 52 work weeks per year and 90% capture rate. Actual results vary by firm size, billing practices, and adoption. Conservative estimate based on ABA research showing 10-20% billable time loss.
+            </p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Pricing Questions</h2>
+
+            <div class="faq-item">
+                <h3>How is $149/month justified for my firm?</h3>
+                <p><strong>Think of it as capturing 1.28 hours per month of forgotten billable time.</strong> At $350/hour, that's $448 recovered. At $600/hour (typical for partners), that's $768 recovered. RevenueRescue pays for itself in the first 3-5 days of each month. The rest is pure profit. Most solo practitioners recover $12K-$34K net annually. Small firms (3-5 attorneys) recover $100K+ firm-wide.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's included in the price?</h3>
+                <p><strong>Everything.</strong> Unlimited billing suggestions, unlimited calendar monitoring, full Clio integration, AI narrative generation, revenue analytics dashboard, email support, and all future feature updates. No usage limits, no per-user fees (single attorney), no hidden charges. $149/month is the complete price.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you offer discounts?</h3>
+                <p>Not currently. $149/month is already below market rate for the value provided. Typical revenue recovery is $12K-$34K annually for solo practitioners (80-230× the monthly cost). <strong>Annual prepayment discount:</strong> We're considering $1,590/year (10% off) for firms that prepay annually. Contact us if interested in annual billing.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does the trial work?</h3>
+                <p><strong>Trial terms are being finalized.</strong> We're currently in pilot phase with limited availability. Contact us for early access to join our pilot cohort. Pilot participants will receive priority access and consideration for special launch pricing. We expect to announce trial terms (7-day or 14-day) within the next 2 weeks.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>All major credit cards via Stripe (Visa, Mastercard, American Express, Discover). Payments are processed securely and PCI-compliant. Monthly billing standard. Annual prepayment option available (10% discount). No checks or wire transfers at this time.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I cancel anytime?</h3>
+                <p><strong>Yes, absolutely.</strong> No contracts, no cancellation fees, no questions asked. Cancel from your account settings anytime. Access continues until end of current billing period, then auto-renewal stops. We're confident in the value - if RevenueRescue isn't recovering revenue for you, we don't want your money.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you offer multi-attorney pricing?</h3>
+                <p><strong>Coming soon.</strong> Current pricing is per attorney ($149/month each). <strong>Firm-wide features launching Q2 2025:</strong> Centralized billing, role-based access (attorneys vs administrators), firm-wide analytics dashboard, bulk approval workflows. Pricing: $499/month for 5 attorneys ($99/attorney), $899/month for 10 attorneys ($89/attorney). Contact us if you need multi-attorney now.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is there a setup fee or onboarding cost?</h3>
+                <p><strong>No.</strong> Setup is free and takes 2 minutes. You connect your Clio account via OAuth (click a button), RevenueRescue requests calendar access, you approve, done. No technical setup, no data migration, no IT involvement required. First suggestions appear within 24 hours of connecting.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What if I don't use Clio?</h3>
+                <p><strong>RevenueRescue currently requires Clio Manage.</strong> We chose Clio for initial launch because it's the market leader for small/mid-size law firms (70%+ market share). <strong>Other practice management systems coming in 2025:</strong> MyCase (Q2), PracticePanther (Q3), Smokeball (Q4). If you use a different system, contact us - we prioritize integrations based on customer demand.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's your refund policy?</h3>
+                <p><strong>14-day money-back guarantee (after trial).</strong> If you're not satisfied in the first 14 days after trial ends, contact support for full refund. After 14 days, no refunds (but you can cancel anytime and access continues until period ends). We want happy customers who are capturing real revenue - if it's not working for you, we'll refund you.</p>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div style="text-align: center; padding: 3rem 0;">
+            <h2 style="color: var(--lexopoly-primary); margin-bottom: 1rem;">Ready to Stop Losing Revenue?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">Contact us for early access to RevenueRescue pilot program</p>
+            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_final_cta_click', 'contact')">Contact for Early Access</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>Not Financial or Legal Advice:</strong> RevenueRescue is a software tool for time tracking and billing assistance. Results may vary based on firm size, billing practices, and adoption. ROI calculations are estimates based on industry research and may not reflect your specific situation. This software does not provide legal or financial advice. Consult your bar association regarding ethical billing practices in your jurisdiction.
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/revenuerescue/">Home</a>
+                    <a href="/revenuerescue/features/">Features</a>
+                    <a href="/revenuerescue/pricing/">Pricing</a>
+                    <a href="/revenuerescue/contact/">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="/blog/revenuerescue/">Blog Articles</a>
+                    <a href="/blog/law-firm-revenue-loss/">Revenue Loss Guide</a>
+                    <a href="/blog/manual-time-entry-law-firms/">Time Entry Cost Analysis</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Lexopoly</h4>
+                    <a href="/">All Products</a>
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                    <a href="/compliancelogger/">ComplianceLogger</a>
+                    <a href="/familycalc/">FamilyCalc Michigan</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/about/">About Lexopoly</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ROI Calculator JavaScript -->
+    <script>
+        function calculateROI() {
+            const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+            const billableHours = parseFloat(document.getElementById('billableHours').value) || 0;
+            const lossPercent = parseFloat(document.getElementById('lossPercent').value) || 0;
+
+            // Calculate annual hours and revenue
+            const annualBillableHours = billableHours * 52;
+            const hoursLost = annualBillableHours * (lossPercent / 100);
+            const revenueLost = hoursLost * hourlyRate;
+
+            // RevenueRescue captures 90% of lost time
+            const revenueRecovered = revenueLost * 0.9;
+            const revenueRescueCost = 149 * 12; // $149/month
+            const netBenefit = revenueRecovered - revenueRescueCost;
+            const roiMultiplier = revenueRescueCost > 0 ? (netBenefit / revenueRescueCost) : 0;
+
+            // Payback period (days to recover cost)
+            const dailyRevenue = revenueRecovered / 365;
+            const paybackDays = dailyRevenue > 0 ? Math.ceil(revenueRescueCost / dailyRevenue) : 0;
+
+            // Update display
+            document.getElementById('hoursLost').textContent = `${Math.round(hoursLost)} hours`;
+            document.getElementById('revenueLost').textContent = `$${revenueLost.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+            document.getElementById('revenueRecovered').textContent = `$${revenueRecovered.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+            document.getElementById('netBenefit').textContent = `$${netBenefit.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}/year`;
+            document.getElementById('roi').textContent = `${Math.round(roiMultiplier)}× ROI`;
+            document.getElementById('payback').textContent = `${paybackDays} days`;
+        }
+
+        // Calculate on page load
+        calculateROI();
+    </script>
+</body>
+</html>

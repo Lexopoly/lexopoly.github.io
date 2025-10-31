@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N29Z7B6T5T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N29Z7B6T5T');
+
+        function trackEvent(category, action, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    </script>
+
+    <!-- Basic SEO -->
+    <title>Features | RevenueRescue - Automatic Time Capture for Law Firms</title>
+    <meta name="description" content="AI-powered calendar monitoring, smart billing suggestions, one-click approval, Clio integration, revenue analytics. Stop losing billable time with RevenueRescue.">
+    <meta name="keywords" content="law firm billing software features, automatic time tracking, Clio integration, AI billing suggestions, revenue capture, legal billing automation">
+    <meta name="author" content="Lexopoly">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lexopoly.com/revenuerescue/features/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Features | RevenueRescue - Automatic Time Capture">
+    <meta property="og:description" content="AI-powered calendar monitoring, smart billing suggestions, one-click approval. Stop losing billable time.">
+    <meta property="og:url" content="https://lexopoly.com/revenuerescue/features/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lexopoly.com/assets/og-revenuerescue.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "RevenueRescue Features",
+      "description": "Comprehensive features for automatic revenue capture in law firms",
+      "url": "https://lexopoly.com/revenuerescue/features/",
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "RevenueRescue",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "149.00",
+          "priceCurrency": "USD"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --revenuerescue-primary: #7c3aed;
+            --revenuerescue-dark: #5b21b6;
+            --lexopoly-primary: #1a365d;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --success: #2f7d32;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--revenuerescue-primary);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--revenuerescue-primary);
+        }
+
+        .btn-nav-cta {
+            background: var(--revenuerescue-primary);
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-nav-cta:hover {
+            background: var(--revenuerescue-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Feature Detail */
+        .feature-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .feature-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 1.8rem;
+            color: var(--lexopoly-primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            line-height: 1.8;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-visual {
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Use Case Cards */
+        .use-case-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--revenuerescue-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        .use-case-card h3 {
+            color: var(--lexopoly-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card .scenario {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card .scenario strong {
+            color: var(--revenuerescue-primary);
+        }
+
+        .use-case-card .solution {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .use-case-card ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .use-case-card .outcome {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--revenuerescue-primary);
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: var(--revenuerescue-primary);
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-detail:nth-child(even) {
+                direction: ltr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/revenuerescue/" class="logo">
+                RevenueRescue
+                <span class="logo-subtitle">by Lexopoly</span>
+            </a>
+            <div class="nav-links">
+                <a href="/revenuerescue/features/">Features</a>
+                <a href="/revenuerescue/pricing/">Pricing</a>
+                <a href="/revenuerescue/contact/">Contact</a>
+                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'contact')">Contact for Early Access</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Powerful Features for Automatic Revenue Capture</h1>
+        <p>Everything you need to stop losing billable time and maximize revenue recovery</p>
+    </section>
+
+    <div class="container">
+        <!-- Core Features Deep Dive -->
+        <section class="section">
+            <h2>Core Features</h2>
+            <p class="section-subtitle">Six powerful capabilities working together to capture every billable minute</p>
+
+            <!-- Feature 1: Calendar Monitoring -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>1. Calendar Monitoring</h3>
+                    <p>Continuous automatic detection of billable calendar events. RevenueRescue works invisibly in the background, monitoring your Clio calendar 24/7 without requiring any manual input.</p>
+                    <ul class="feature-list">
+                        <li>Real-time monitoring of calendar events as they occur</li>
+                        <li>OAuth 2.0 secure authentication - we never see your password</li>
+                        <li>Intelligent filtering between client and internal events</li>
+                        <li>Event participant analysis to identify client interactions</li>
+                        <li>Duration tracking with automatic rounding to billing increments</li>
+                        <li>Never forgets, never sleeps, always watching for billable activities</li>
+                        <li>Works with recurring meetings and one-time appointments</li>
+                        <li>Handles last-minute calendar changes and updates</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📅
+                </div>
+            </div>
+
+            <!-- Feature 2: AI Suggestions -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>2. AI Billing Suggestions</h3>
+                    <p>Smart AI generates professional billing narratives automatically, following your firm's standards and formatting conventions. Each suggestion includes time calculations, matter codes, and activity descriptions.</p>
+                    <ul class="feature-list">
+                        <li>Professional narrative generation following legal billing standards</li>
+                        <li>Automatic time calculations (duration to billable increments)</li>
+                        <li>Matter code detection from event titles and participants</li>
+                        <li>Activity code assignment based on meeting type</li>
+                        <li>Context-aware descriptions (calls vs meetings vs consultations)</li>
+                        <li>Client name extraction and verification</li>
+                        <li>Proper capitalization and formatting</li>
+                        <li>Learns from your approval patterns to improve suggestions</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    🤖
+                </div>
+            </div>
+
+            <!-- Feature 3: One-Click Approval -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>3. One-Click Approval Workflow</h3>
+                    <p>Review and approve billing suggestions in seconds, not minutes. Reject non-billable activities, edit narratives before posting, or approve in bulk. The entire process is designed for speed and efficiency.</p>
+                    <ul class="feature-list">
+                        <li>Single-click approval posts directly to Clio time entries</li>
+                        <li>Bulk actions supported - approve multiple suggestions at once</li>
+                        <li>Reject button for non-billable activities (admin time, internal meetings)</li>
+                        <li>Edit narratives, times, or matter codes before approving</li>
+                        <li>Approval history tracking for accountability</li>
+                        <li>Undo capability for recently approved entries</li>
+                        <li>Keyboard shortcuts for power users (spacebar to approve, X to reject)</li>
+                        <li>Mobile-friendly interface for on-the-go approvals</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    ✓
+                </div>
+            </div>
+
+            <!-- Feature 4: Clio Integration -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>4. Native Clio Integration</h3>
+                    <p>Seamless OAuth integration with Clio Manage means no API keys, no manual configuration, no data export/import. Approved suggestions post directly as time entries with proper matter codes, activity codes, and billing rates.</p>
+                    <ul class="feature-list">
+                        <li>OAuth 2.0 authentication - no API keys or passwords to manage</li>
+                        <li>Direct time entry creation in Clio (no CSV imports)</li>
+                        <li>Automatic matter and activity code sync</li>
+                        <li>Contact matching and verification</li>
+                        <li>Billing rate application from Clio settings</li>
+                        <li>Respects Clio's billable/non-billable flags</li>
+                        <li>Supports Clio's custom activity codes</li>
+                        <li>Real-time sync - changes reflected immediately</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    🔗
+                </div>
+            </div>
+
+            <!-- Feature 5: Revenue Analytics -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>5. Revenue Dashboard & Analytics</h3>
+                    <p>Visualize captured revenue vs potential opportunities. Track improvement over time, identify patterns in unbilled activities, and measure the financial impact of RevenueRescue on your firm's bottom line.</p>
+                    <ul class="feature-list">
+                        <li>Dashboard showing captured vs missed revenue</li>
+                        <li>Weekly and monthly trend analysis</li>
+                        <li>Pattern identification (which types of activities most often missed)</li>
+                        <li>Attorney-level performance tracking (for firm administrators)</li>
+                        <li>ROI calculation showing RevenueRescue's financial impact</li>
+                        <li>Export reports for accounting and management review</li>
+                        <li>Time-of-day analysis (when are most activities forgotten?)</li>
+                        <li>Matter-level revenue recovery tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    📊
+                </div>
+            </div>
+
+            <!-- Feature 6: Multi-Matter Support -->
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>6. Multi-Matter & Multi-Attorney Support</h3>
+                    <p>Handles complex scenarios where attorneys work on multiple active matters simultaneously. Smart detection algorithms match calendar events to the correct client matters without manual intervention.</p>
+                    <ul class="feature-list">
+                        <li>Automatic matter detection from event titles and participants</li>
+                        <li>Handles attorneys with 50+ active client matters</li>
+                        <li>Matter switching without re-authentication</li>
+                        <li>Firm-wide deployment supporting unlimited attorneys</li>
+                        <li>Role-based access (attorneys see only their suggestions, admins see firm-wide)</li>
+                        <li>Multi-client meeting support (split time across matters)</li>
+                        <li>Conflict-of-interest awareness (flags potential conflicts)</li>
+                        <li>Matter closing detection (suggests final billing review)</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    💼
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Features -->
+        <section class="section">
+            <h2>Advanced Technical Capabilities</h2>
+            <p class="section-subtitle">Enterprise-grade security, flexibility, and control</p>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>Security & Compliance</h3>
+                    <p>Your client data is protected with enterprise-grade security measures. We use OAuth 2.0 for authentication, ensuring we never see or store your Clio credentials.</p>
+                    <ul class="feature-list">
+                        <li>OAuth 2.0 authentication (no passwords stored)</li>
+                        <li>End-to-end encryption for data in transit and at rest</li>
+                        <li>Multi-tenant database architecture with complete data isolation</li>
+                        <li>Industry-standard security practices and protocols</li>
+                        <li>Regular security reviews and updates</li>
+                        <li>GDPR and CCPA compliant data handling</li>
+                        <li>Attorney-client privilege protection measures</li>
+                        <li>Automatic data deletion upon account termination</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    🔒
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>Historical Analysis & Daily Refresh</h3>
+                    <p>RevenueRescue doesn't just monitor going forward - it can analyze your calendar history to find revenue opportunities you've already missed. Daily refresh means new suggestions appear automatically every morning.</p>
+                    <ul class="feature-list">
+                        <li>Analyze 30-365 days of historical calendar data (configurable)</li>
+                        <li>Daily automatic refresh - new suggestions every morning</li>
+                        <li>Continuous monitoring mode (real-time) or batch processing (daily)</li>
+                        <li>One-time historical backfill when you first connect</li>
+                        <li>Recovers past unbilled activities from previous months</li>
+                        <li>Date range filtering to focus on specific time periods</li>
+                        <li>Handles timezone differences for multi-office firms</li>
+                        <li>Weekend and holiday activity detection</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    ⏰
+                </div>
+            </div>
+
+            <div class="feature-detail">
+                <div class="feature-content">
+                    <h3>Customization & Control</h3>
+                    <p>Every firm has different billing practices and preferences. RevenueRescue adapts to your workflow with extensive customization options and configuration settings.</p>
+                    <ul class="feature-list">
+                        <li>Custom billing increment preferences (0.1, 0.25, 0.5 hour rounding)</li>
+                        <li>Minimum billable time thresholds (e.g., ignore events under 6 minutes)</li>
+                        <li>Event type filtering (include/exclude specific calendar categories)</li>
+                        <li>Narrative template customization (your firm's standard language)</li>
+                        <li>Activity code mapping (map event types to your Clio activity codes)</li>
+                        <li>Notification preferences (email digests vs real-time alerts)</li>
+                        <li>Approval workflow settings (single-stage or multi-stage review)</li>
+                        <li>Firm-wide policy enforcement for administrators</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    ⚙️
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="section">
+            <h2>Real-World Use Cases</h2>
+
+            <div class="use-case-card">
+                <h3>Use Case 1: Solo Practitioner Revenue Recovery</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> Sarah is a solo estate planning attorney billing $350/hour. She's busy with client meetings and often forgets to log calls and brief consultations. She estimates she loses about 1 hour per day to forgotten time entries - approximately $30,000 per year in lost revenue.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with RevenueRescue:</strong></p>
+                    <ol>
+                        <li>Sarah connects RevenueRescue to her Clio account (2 minutes setup)</li>
+                        <li>RevenueRescue analyzes her last 90 days of calendar history</li>
+                        <li>Immediately identifies 47 unbilled activities worth $8,200</li>
+                        <li>Going forward, Sarah receives daily suggestion emails each morning</li>
+                        <li>She spends 10 minutes reviewing and approving suggestions (vs 60 minutes manual entry)</li>
+                        <li>RevenueRescue captures 90% of previously forgotten activities</li>
+                    </ol>
+                    <p class="outcome"><strong>Outcome:</strong> Sarah recovers $27,000 in the first year (90% of lost revenue). After the $1,800 annual cost ($149/month), net benefit is $25,200 - a 14× return on investment. Plus she saves 208 hours per year on time entry (5 work weeks).</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Use Case 2: Small Firm Standardization</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> Thompson & Associates is a 5-attorney personal injury firm. Billing practices vary by attorney - some enter time daily, others weekly (or later). The firm suspects they're losing $100K+ annually to forgotten time, but lacks data. Managing partner wants standardized billing suggestions across all attorneys.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with RevenueRescue:</strong></p>
+                    <ol>
+                        <li>Firm administrator deploys RevenueRescue firm-wide (5 attorneys)</li>
+                        <li>Each attorney connects their Clio calendar independently</li>
+                        <li>RevenueRescue provides firm-wide analytics dashboard</li>
+                        <li>Managing partner identifies patterns: junior attorneys miss 25% of calls</li>
+                        <li>AI suggestions standardize narrative quality across all attorneys</li>
+                        <li>Firm captures additional $120,000 in billable time over 12 months</li>
+                    </ol>
+                    <p class="outcome"><strong>Outcome:</strong> $120,000 additional revenue across 5 attorneys. Annual cost: $8,940 ($149/month × 5 attorneys). Net benefit: $111,060 (12× ROI). Plus standardized billing quality improves client perception and reduces write-downs.</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Use Case 3: Time Entry Burden Reduction</h3>
+                <div class="scenario">
+                    <strong>Scenario:</strong> Michael is a litigation partner billing $600/hour. He spends 60 minutes per day on manual time entry, reconstructing his activities from memory and notes. That's 250 hours per year on administrative work worth $150,000 in potential billable time. He's frustrated by the time entry burden and accuracy concerns.
+                </div>
+                <div class="solution">
+                    <p><strong>Solution with RevenueRescue:</strong></p>
+                    <ol>
+                        <li>Michael connects RevenueRescue to offload time entry burden</li>
+                        <li>Instead of 60 min/day reconstructing from memory, spends 10 min/day reviewing suggestions</li>
+                        <li>RevenueRescue captures calendar activities automatically</li>
+                        <li>Michael edits narratives as needed before approving</li>
+                        <li>Time entry accuracy improves (real-time vs end-of-day memory)</li>
+                        <li>Reclaims 208 hours per year (50 min/day × 250 work days)</li>
+                    </ol>
+                    <p class="outcome"><strong>Outcome:</strong> Michael reclaims 208 hours per year. Even if he converts just 20% of that time to billable work, that's 42 hours × $600/hour = $25,200 in additional revenue. Plus reduced stress, improved accuracy, and better work-life balance. The productivity gain alone justifies the investment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Ready to Stop Losing Revenue?</h2>
+            <p>Contact us for early access to RevenueRescue pilot program</p>
+            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'features_cta_click', 'contact')">Contact for Early Access</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-disclaimer">
+                <strong>Not Financial or Legal Advice:</strong> RevenueRescue is a software tool for time tracking and billing assistance. Results may vary based on firm size, billing practices, and adoption. ROI calculations are estimates based on industry research and may not reflect your specific situation. This software does not provide legal or financial advice. Consult your bar association regarding ethical billing practices in your jurisdiction.
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="/revenuerescue/">Home</a>
+                    <a href="/revenuerescue/features/">Features</a>
+                    <a href="/revenuerescue/pricing/">Pricing</a>
+                    <a href="/revenuerescue/contact/">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="/blog/revenuerescue/">Blog Articles</a>
+                    <a href="/blog/law-firm-revenue-loss/">Revenue Loss Guide</a>
+                    <a href="/blog/manual-time-entry-law-firms/">Time Entry Cost Analysis</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Lexopoly</h4>
+                    <a href="/">All Products</a>
+                    <a href="/localtranscribe/">LocalTranscribe</a>
+                    <a href="/quotecreator/">QuoteCreator</a>
+                    <a href="/compliancelogger/">ComplianceLogger</a>
+                    <a href="/familycalc/">FamilyCalc Michigan</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                    <a href="/about/">About Lexopoly</a>
+                    <a href="/contact/">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lexopoly LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
