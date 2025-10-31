@@ -418,6 +418,16 @@
             border-color: var(--quotecreator);
         }
 
+        .filter-btn.revenuerescue.active {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+            border-color: #7c3aed;
+        }
+
+        .category-badge.revenuerescue {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+            color: white;
+        }
+
         /* Articles Grid */
         .articles-section {
             background: white;
@@ -498,6 +508,10 @@
 
         .product-badge.quotecreator {
             background: var(--quotecreator);
+        }
+
+        .product-badge.revenuerescue {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
         }
 
         .article-date {
@@ -841,12 +855,36 @@
                 <button class="filter-btn compliancelogger" data-category="compliancelogger" onclick="filterArticles('compliancelogger')">ComplianceLogger</button>
                 <button class="filter-btn localtranscribe" data-category="localtranscribe" onclick="filterArticles('localtranscribe')">LocalTranscribe</button>
                 <button class="filter-btn quotecreator" data-category="quotecreator" onclick="filterArticles('quotecreator')">QuoteCreator</button>
+                <button class="filter-btn revenuerescue" data-category="revenuerescue" onclick="filterArticles('revenuerescue')">RevenueRescue</button>
             </div>
         </div>
 
         <!-- Articles Grid -->
         <section class="articles-section fade-in">
             <div class="articles-grid" id="articles-grid">
+                <!-- RevenueRescue Articles -->
+                <a href="/blog/manual-time-entry-law-firms/" class="article-card" data-category="revenuerescue">
+                    <div class="article-meta">
+                        <span class="category-badge revenuerescue">RevenueRescue</span>
+                        <span>📅 Oct 30, 2025</span>
+                        <span>⏱️ 15 min</span>
+                    </div>
+                    <h2>The True Cost of Manual Time Entry for Law Firms</h2>
+                    <p>Manual time entry costs $70K-$450K annually per attorney. Calculate your firm's hidden cost and discover how automated billing recovers lost revenue.</p>
+                    <span class="read-more">Read Article →</span>
+                </a>
+
+                <a href="/blog/law-firm-revenue-loss/" class="article-card" data-category="revenuerescue">
+                    <div class="article-meta">
+                        <span class="category-badge revenuerescue">RevenueRescue</span>
+                        <span>📅 Oct 30, 2025</span>
+                        <span>⏱️ 9 min</span>
+                    </div>
+                    <h2>How Much Revenue Is Your Law Firm Losing?</h2>
+                    <p>Law firms lose $20,000-$200,000 annually from forgotten billable time. Learn the four ways revenue disappears and how systematic capture can recover it.</p>
+                    <span class="read-more">Read Article →</span>
+                </a>
+
                 <!-- Article 1: Free Contractor Estimate Template -->
                 <article class="article-card fade-in" data-category="quotecreator">
                     <div class="article-image">📝</div>
@@ -1132,6 +1170,20 @@
                             Professional estimate creation, mobile workflow tips, and Clio integration guides for service professionals.
                         </p>
                         <a href="/blog/quotecreator/" class="article-link">View All QuoteCreator Articles</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">💜</div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="product-badge revenuerescue">RevenueRescue</span>
+                        </div>
+                        <h2><a href="/blog/revenuerescue/">RevenueRescue Articles</a></h2>
+                        <p class="article-excerpt">
+                            Law firm revenue recovery and billing optimization
+                        </p>
+                        <a href="/blog/revenuerescue/" class="article-link">View All RevenueRescue Articles (2)</a>
                     </div>
                 </article>
             </div>

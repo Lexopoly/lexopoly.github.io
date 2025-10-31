@@ -211,6 +211,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://lexopoly.com/blog/revenuerescue/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/law-firm-revenue-loss/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/blog/manual-time-entry-law-firms/</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lexopoly.com/dictation/</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>monthly</changefreq>
