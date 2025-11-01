@@ -259,6 +259,48 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://lexopoly.com/quotecreator/help/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/getting-started/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/license-activation/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/backup-and-restore/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/estimate-numbering/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/browser-data-faq/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lexopoly.com/quotecreator/help/troubleshooting/</loc>
+    <lastmod>2025-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://lexopoly.com/support/</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>

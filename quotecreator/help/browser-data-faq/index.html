@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Data & Privacy FAQ | QuoteCreator Help</title>
+    <meta name="description" content="Your browser stores QuoteCreator information locally for complete privacy. Learn what happens when you clear your browsing history and how to protect your data.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: #2f7d32;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            border-bottom: 3px solid #2f7d32;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #2f7d32;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2f7d32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2f7d32;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            color: #2d3748;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #e8f5e9;
+            border-left: 3px solid #2f7d32;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .example {
+            background: #f7fafc;
+            border-left: 3px solid #718096;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        a {
+            color: #2f7d32;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2f7d32;
+        }
+
+        .related-articles {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .related-articles h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #2f7d32;
+        }
+
+        .related-articles ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2f7d32;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/quotecreator/">Home</a> /
+            <a href="/quotecreator/help/">Help</a> /
+            Browser Data FAQ
+        </div>
+
+        <header>
+            <h1>Browser Data & Privacy FAQ</h1>
+            <div class="meta">10 min read</div>
+        </header>
+
+        <p>Understanding how QuoteCreator stores your data and what happens when you clear your browsing history.</p>
+
+        <h2>How QuoteCreator Stores Data</h2>
+
+        <h3>Privacy-First Approach</h3>
+
+        <p>QuoteCreator is designed for <strong>complete privacy</strong>:</p>
+        <ul>
+            <li>All data stored <strong>locally in your browser</strong></li>
+            <li>No cloud storage</li>
+            <li>No account or login required</li>
+            <li>We don't see your estimates or client information</li>
+            <li>Works offline after first load</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>What this means for you:</strong></p>
+            <ul>
+                <li>Your client data never leaves your device</li>
+                <li>No monthly fees for cloud storage</li>
+                <li>Complete control over your data</li>
+                <li>Peace of mind about client confidentiality</li>
+            </ul>
+        </div>
+
+        <h2>Where Your Data Lives</h2>
+
+        <h3>Your Browser Stores Information</h3>
+
+        <p>QuoteCreator uses your browser's storage to save information:</p>
+
+        <h4>What's Stored:</h4>
+        <ul>
+            <li><strong>All your estimates</strong> (client names, line items, totals)</li>
+            <li><strong>Customer database</strong></li>
+            <li><strong>App settings</strong> (tax rate, business name, etc.)</li>
+            <li><strong>License key</strong></li>
+            <li><strong>Estimate counters</strong> (for numbering)</li>
+        </ul>
+
+        <p><strong>Think of it as:</strong> A small database inside your browser</p>
+
+        <p><strong>Location:</strong> These are stored in your browser's data folder on your computer (similar to website cookies and saved passwords).</p>
+
+        <h2>What Happens When You Clear Browser Data</h2>
+
+        <h3>Different Types of "Clearing"</h3>
+
+        <p>Browsers offer different levels of "clearing":</p>
+
+        <h4>1. Clear Cache Only</h4>
+
+        <p><strong>What's deleted:</strong> Downloaded website files (images, CSS, JavaScript)</p>
+        <p><strong>What survives:</strong> Your estimates, Your license, Your settings</p>
+
+        <div class="highlight">
+            <p><strong>Impact on QuoteCreator:</strong> <strong>None</strong> - Everything works normally</p>
+        </div>
+
+        <h4>2. Clear Cookies Only</h4>
+
+        <p><strong>What's deleted:</strong> Website cookies (login sessions, preferences)</p>
+        <p><strong>What may be deleted:</strong> License key (in some browsers)</p>
+
+        <div class="example">
+            <p><strong>Impact on QuoteCreator:</strong> License may disappear, but estimates stay</p>
+        </div>
+
+        <h4>3. Clear All Browsing Data</h4>
+
+        <p><strong>What's deleted:</strong> Cache, cookies, browser storage - <strong>EVERYTHING</strong></p>
+
+        <div class="warning">
+            <p><strong>What's deleted:</strong></p>
+            <ul>
+                <li>All estimates</li>
+                <li>License</li>
+                <li>Settings</li>
+                <li>Customers</li>
+            </ul>
+            <p><strong>Impact on QuoteCreator:</strong> <strong>Complete data loss</strong> - like a fresh install</p>
+        </div>
+
+        <h2>Recovery Scenarios</h2>
+
+        <h3>Scenario 1: Accidentally Cleared All Data</h3>
+
+        <p><strong>What you lost:</strong></p>
+        <ul>
+            <li>All estimates</li>
+            <li>License key</li>
+            <li>Settings and preferences</li>
+            <li>Customer database</li>
+        </ul>
+
+        <p><strong>What you can recover:</strong></p>
+
+        <p><strong>License Key</strong> - From email or encrypted backup</p>
+        <ul>
+            <li>Check email for "Your QuoteCreator License"</li>
+            <li>Or restore your backup file</li>
+            <li>Re-enter in Settings → License section</li>
+        </ul>
+
+        <p><strong>Your PDF Estimates</strong> - From sent emails or downloads</p>
+        <ul>
+            <li>Your PDFs still exist in sent emails, texts, or downloads</li>
+            <li>You can reference them, but can't edit or recreate in app</li>
+            <li><strong>Your PDF estimates are always safe</strong></li>
+        </ul>
+
+        <p><strong>Estimates in the App</strong> - Cannot be recovered unless you made a data backup</p>
+        <ul>
+            <li>QuoteCreator doesn't have copies (privacy-first)</li>
+            <li>Estimates exist only as PDFs</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Prevention:</strong></p>
+            <ol>
+                <li>Create a backup regularly (Settings → Create a Backup)</li>
+                <li>Keep license email safe</li>
+                <li>Export important estimates as PDFs before maintenance</li>
+            </ol>
+        </div>
+
+        <h3>Scenario 2: Browser Incognito/Private Mode</h3>
+
+        <p><strong>What happens:</strong></p>
+        <ul>
+            <li>QuoteCreator works normally while window is open</li>
+            <li><strong>When you close the incognito window, ALL data is deleted</strong></li>
+        </ul>
+
+        <p><strong>Impact:</strong></p>
+        <ul>
+            <li>License disappears</li>
+            <li>Estimates created in incognito are lost</li>
+            <li>Must re-enter license each session</li>
+        </ul>
+
+        <div class="warning">
+            <p><strong>Solution:</strong> Don't use incognito mode for regular QuoteCreator work. Only use regular browsing mode.</p>
+        </div>
+
+        <h3>Scenario 3: Switched Browsers</h3>
+
+        <p><strong>Example:</strong> Used QuoteCreator in Chrome, now opening in Firefox</p>
+
+        <p><strong>What happens:</strong></p>
+        <ul>
+            <li>Firefox is a different browser = different storage</li>
+            <li>None of your Chrome data is visible</li>
+            <li>It's like starting fresh</li>
+        </ul>
+
+        <p><strong>Solution:</strong></p>
+        <ol>
+            <li>In Chrome: Create a backup (Settings → Backup & Restore → Create a Backup)</li>
+            <li>Transfer the <code>.qclic</code> file</li>
+            <li>In Firefox: Restore from backup</li>
+            <li>Your license works in Firefox!</li>
+        </ol>
+
+        <p><strong>Note:</strong> Estimates don't transfer between browsers. Each browser has its own estimates.</p>
+
+        <h3>Scenario 4: Corporate IT Auto-Clear Policy</h3>
+
+        <p><strong>What happens:</strong> Some workplaces have IT policies that auto-clear browser data nightly, weekly, or on logout.</p>
+
+        <p><strong>Impact:</strong> QuoteCreator data gets wiped regularly</p>
+
+        <p><strong>Solutions:</strong></p>
+
+        <p><strong>Option 1: Export/Import Routine</strong></p>
+        <ul>
+            <li>Create a backup at end of each day</li>
+            <li>Restore at start of next day</li>
+            <li>Takes 30 seconds</li>
+        </ul>
+
+        <p><strong>Option 2: Use Personal Device</strong></p>
+        <ul>
+            <li>Use QuoteCreator on personal computer/tablet</li>
+            <li>No IT policies to worry about</li>
+        </ul>
+
+        <p><strong>Option 3: Keep License Email Handy</strong></p>
+        <ul>
+            <li>Bookmark the license email</li>
+            <li>Quick re-entry each day (5 seconds)</li>
+            <li>Estimate counters won't sync, but license works</li>
+        </ul>
+
+        <h2>Protecting Your Data</h2>
+
+        <h3>Before Clearing Browser Data</h3>
+
+        <p>If you know you're about to clear data (computer maintenance, troubleshooting, etc.):</p>
+
+        <p><strong>Step 1: Create a Backup</strong></p>
+        <ol>
+            <li>Go to <strong>Settings → Backup & Restore</strong></li>
+            <li>Click <strong>"Create a Backup"</strong></li>
+            <li>Save the <code>.qclic</code> file to cloud storage or email it to yourself</li>
+        </ol>
+
+        <p><strong>Step 2: (Optional) Export Your Estimates as PDFs</strong></p>
+        <ol>
+            <li>Go to <strong>Estimates</strong> list</li>
+            <li>Open each estimate</li>
+            <li>Click <strong>"Export as PDF"</strong></li>
+            <li>Save PDFs to a safe location</li>
+        </ol>
+
+        <p><strong>Why:</strong> Even though estimates are deleted from the app, PDFs let you reference them</p>
+
+        <h3>After Clearing Browser Data</h3>
+
+        <p><strong>Step 1: Restore Your License</strong></p>
+        <ol>
+            <li>Go to <strong>Settings → Backup & Restore</strong></li>
+            <li>Click <strong>"Restore from Backup"</strong></li>
+            <li>Select your <code>.qclic</code> file</li>
+            <li>Enter password</li>
+            <li>License restored!</li>
+        </ol>
+
+        <h2>Understanding "Your PDFs Are the Source of Truth"</h2>
+
+        <h3>What We Mean</h3>
+
+        <p>When you create an estimate:</p>
+        <ol>
+            <li>You fill out the form in QuoteCreator</li>
+            <li>You export it as a PDF</li>
+            <li>You send that PDF to your client (email/text)</li>
+        </ol>
+
+        <div class="highlight">
+            <p><strong>The PDF is what matters:</strong></p>
+            <ul>
+                <li>Client receives and views the PDF</li>
+                <li>PDF exists in sent emails/texts</li>
+                <li>PDF can be printed, saved, downloaded</li>
+                <li>PDF is the legal/official estimate</li>
+            </ul>
+        </div>
+
+        <p><strong>The data in the app is for editing:</strong></p>
+        <ul>
+            <li>The app is a tool to create/edit estimates</li>
+            <li>But the PDF is the final product</li>
+            <li>Even if app data is lost, your PDFs still exist</li>
+        </ul>
+
+        <h3>This Is Intentional</h3>
+
+        <p><strong>Why not sync to cloud?</strong></p>
+        <ul>
+            <li><strong>Privacy:</strong> Your client data stays 100% private</li>
+            <li><strong>Cost:</strong> No monthly fees for you</li>
+            <li><strong>Control:</strong> You own your data, we don't</li>
+        </ul>
+
+        <p><strong>Trade-off:</strong></p>
+        <ul>
+            <li>You manage backups (license export)</li>
+            <li>If you clear data, estimates are gone from app (but PDFs remain)</li>
+        </ul>
+
+        <h3>Best Practice</h3>
+
+        <p>After creating an estimate:</p>
+        <ol>
+            <li>Export as PDF</li>
+            <li>Send to client (email/text)</li>
+            <li>Save PDF in your filing system (Google Drive, Dropbox, etc.)</li>
+        </ol>
+
+        <p>Now you have:</p>
+        <ul>
+            <li>PDF in sent email (permanent record)</li>
+            <li>PDF in your filing system (backup)</li>
+            <li>Copy in QuoteCreator app (for editing if needed)</li>
+        </ul>
+
+        <p><strong>If app data is lost:</strong> You still have PDFs as reference.</p>
+
+        <h2>Common Questions</h2>
+
+        <p><strong>Q: Will my estimates disappear if I clear my cache?</strong><br>
+        A: Depends on what you clear.</p>
+
+        <ul>
+            <li><strong>Cache only</strong> (website files): Estimates stay</li>
+            <li><strong>Cookies only:</strong> Estimates stay (license may disappear)</li>
+            <li><strong>All browsing data:</strong> Estimates deleted</li>
+        </ul>
+
+        <p><strong>Safe option:</strong> Only clear "cache" - not cookies or site data.</p>
+
+        <p><strong>Q: Can I recover deleted estimates?</strong><br>
+        A: Only if you created a backup before clearing.</p>
+
+        <p><strong>Recovery options:</strong></p>
+        <ul>
+            <li>PDFs you sent to clients still exist</li>
+            <li>Saved PDFs in your downloads/cloud storage</li>
+            <li>Estimates in the app (only if you made a data backup)</li>
+        </ul>
+
+        <p><strong>Q: Why don't you sync to the cloud?</strong><br>
+        A: Privacy and cost.</p>
+
+        <p><strong>Privacy:</strong> Your estimates contain client names, project details, pricing. Storing in the cloud means data breach risk and compliance requirements.</p>
+
+        <p><strong>Cost:</strong> Cloud storage costs money, which means we'd need to charge monthly fees.</p>
+
+        <p><strong>Our approach:</strong> Your data, your device, your control. One-time $12.99 payment, forever.</p>
+
+        <p><strong>Q: What if my computer crashes?</strong><br>
+        A: QuoteCreator data is lost with the hard drive.</p>
+
+        <p><strong>Recovery:</strong></p>
+        <ul>
+            <li>License key (from email)</li>
+            <li>PDFs (from sent emails, cloud storage)</li>
+            <li>Estimates in the app (only from backups)</li>
+        </ul>
+
+        <p><strong>Q: Can I use QuoteCreator on multiple devices?</strong><br>
+        A: Yes, but estimates don't auto-sync.</p>
+
+        <p><strong>How it works:</strong></p>
+        <ul>
+            <li>Create a backup from Device A</li>
+            <li>Restore on Device B</li>
+            <li>Both devices have active license</li>
+            <li>But estimates on Device A stay on Device A</li>
+        </ul>
+
+        <p><strong>Best practice:</strong> Pick one primary device for QuoteCreator.</p>
+
+        <h2>Browser-Specific Guidance</h2>
+
+        <h3>Google Chrome</h3>
+
+        <p><strong>To clear cache safely:</strong></p>
+        <ol>
+            <li>Settings → Privacy and security → Clear browsing data</li>
+            <li><strong>Only check:</strong> "Cached images and files"</li>
+            <li><strong>Uncheck:</strong> "Cookies and other site data"</li>
+            <li>Click "Clear data"</li>
+        </ol>
+
+        <p><strong>QuoteCreator impact:</strong> None - Estimates and license stay</p>
+
+        <h3>Mozilla Firefox</h3>
+
+        <p><strong>To clear cache safely:</strong></p>
+        <ol>
+            <li>Settings → Privacy & Security → Cookies and Site Data → Clear Data</li>
+            <li><strong>Only check:</strong> "Cached Web Content"</li>
+            <li><strong>Uncheck:</strong> "Cookies and Site Data"</li>
+            <li>Click "Clear"</li>
+        </ol>
+
+        <p><strong>QuoteCreator impact:</strong> None - Estimates and license stay</p>
+
+        <h3>Safari</h3>
+
+        <p><strong>To clear cache safely:</strong></p>
+        <ol>
+            <li>Safari → Preferences → Privacy → Manage Website Data</li>
+            <li>Remove other websites, <strong>keep</strong> quotecreator.lexopoly.com</li>
+            <li>Click "Done"</li>
+        </ol>
+
+        <p><strong>QuoteCreator impact:</strong> None - Estimates and license stay</p>
+
+        <h2>Data Safety Checklist</h2>
+
+        <h3>Do This:</h3>
+
+        <ul>
+            <li>Create a backup right after purchasing</li>
+            <li>Save <code>.qclic</code> file to cloud storage</li>
+            <li>Keep license email in safe folder</li>
+            <li>Export estimates as PDFs regularly</li>
+            <li>Only clear "cache" (not cookies or site data)</li>
+            <li>Use regular browsing mode (not incognito)</li>
+        </ul>
+
+        <h3>Avoid This:</h3>
+
+        <ul>
+            <li>Clearing "Cookies and site data" without backing up first</li>
+            <li>Using incognito mode for regular work</li>
+            <li>Deleting license email</li>
+            <li>Assuming estimates sync to cloud (they don't)</li>
+        </ul>
+
+        <h3>If You Lose Data:</h3>
+
+        <ol>
+            <li><strong>Restore license:</strong> Use <code>.qclic</code> file or email key</li>
+            <li><strong>Reference PDFs:</strong> Check sent emails for PDF copies</li>
+            <li><strong>Contact support:</strong> We can help recover license from purchase records</li>
+        </ol>
+
+        <div class="highlight">
+            <p><strong>Bottom Line:</strong> QuoteCreator is privacy-first. Your data stays on your device. Create a backup regularly to protect your $12.99 investment!</p>
+        </div>
+
+        <div class="related-articles">
+            <h3>Related Help Articles</h3>
+            <ul>
+                <li><a href="/quotecreator/help/backup-and-restore/">Backup and Restore Guide</a> - How to protect your license</li>
+                <li><a href="/quotecreator/help/license-activation/">License Activation Guide</a> - How to recover your license</li>
+                <li><a href="/quotecreator/help/troubleshooting/">Troubleshooting Guide</a> - Fix common data issues</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="/quotecreator/help/">← Back to Help Center</a></p>
+        </footer>
+    </div>
+</body>
+</html>

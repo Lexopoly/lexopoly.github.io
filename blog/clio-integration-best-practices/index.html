@@ -22,7 +22,7 @@
 
     <!-- Basic SEO -->
     <title>Clio Integration Best Practices for Law Firms | RevenueRescue</title>
-    <meta name="description" content="Clio integration best practices for law firms. Secure OAuth setup, permission scopes, data protection tips. Expert guide to third-party app security.">
+    <meta name="description" content="Clio integration best practices for law firms. Secure OAuth setup, app permissions, data protection tips. Expert guide to third-party app security.">
     <meta name="keywords" content="clio integration, clio best practices, oauth security, law firm integrations, clio app directory, legal tech security, practice management security">
     <meta name="author" content="Lexopoly">
     <meta name="robots" content="index, follow">
@@ -30,7 +30,7 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Clio Integration Best Practices for Law Firms">
-    <meta property="og:description" content="Clio integration best practices for law firms. Secure OAuth setup, permission scopes, data protection tips. Expert guide to third-party app security.">
+    <meta property="og:description" content="Clio integration best practices for law firms. Secure OAuth setup, app permissions, data protection tips. Expert guide to third-party app security.">
     <meta property="og:url" content="https://lexopoly.com/blog/clio-integration-best-practices/">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-11-02">
@@ -41,7 +41,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Clio Integration Best Practices for Law Firms">
-    <meta name="twitter:description" content="Clio integration best practices for law firms. Secure OAuth setup, permission scopes, data protection tips. Expert guide to third-party app security.">
+    <meta name="twitter:description" content="Clio integration best practices for law firms. Secure OAuth setup, app permissions, data protection tips. Expert guide to third-party app security.">
     <meta name="twitter:site" content="@lexopoly">
     <meta name="twitter:image" content="https://lexopoly.com/blog/images/revenuerescue/rr-laptop-dashboard-graphs-unsplash-carlosmuza-hpjSkU2UYSU.jpg">
 
@@ -54,7 +54,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Clio Integration Best Practices for Law Firms",
-      "description": "Clio integration best practices for law firms. Secure OAuth setup, permission scopes, data protection tips. Expert guide to third-party app security.",
+      "description": "Clio integration best practices for law firms. Secure OAuth setup, app permissions, data protection tips. Expert guide to third-party app security.",
       "author": {
         "@type": "Organization",
         "name": "Lexopoly"
@@ -87,7 +87,7 @@
           "name": "Can third-party apps see my trust account balances?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Only if you grant them trust_accounts:read permission during OAuth authorization. Most apps don't request this scope because they don't need it. But when evaluating a new integration, specifically check whether the permission request includes trust account access. If an app requests trust_accounts:read or trust_accounts:write, ask the vendor why. Legitimate reasons include: accounting integrations syncing trust balances to QuickBooks, compliance tools auditing trust account rules, or trust-specific analytics dashboards. If the vendor can't articulate a clear reason, don't connect the app."
+            "text": "Only if you grant them trust_accounts:read permission during OAuth authorization. Most apps don't request this permission because they don't need it. But when evaluating a new integration, specifically check whether the permission request includes trust account access. If an app requests trust_accounts:read or trust_accounts:write, ask the vendor why. Legitimate reasons include: accounting integrations syncing trust balances to QuickBooks, compliance tools auditing trust account rules, or trust-specific analytics dashboards. If the vendor can't articulate a clear reason, don't connect the app."
           }
         },
         {
@@ -111,7 +111,7 @@
           "name": "What happens if a connected app gets hacked?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The blast radius depends on what OAuth permissions you granted. If you authorized calendar:read only, hackers can see calendar event titles but not documents, trust accounts, or communications. If you authorized Full account access, they can see everything. This is why following Clio integration best practices matters—minimal OAuth scopes limit the damage from a vendor breach."
+            "text": "The potential damage depends on what permissions you granted. If you authorized calendar access only, hackers can see calendar event titles but not documents, trust accounts, or communications. If you authorized full account access, they can see everything. This is why following Clio integration best practices matters. Minimal permissions limit the damage from a vendor breach."
           }
         },
         {
@@ -756,9 +756,9 @@
 
                 <p>This creates a silent risk. Your malpractice insurance covers legal errors, not data breaches caused by poorly configured third-party integrations. Your client engagement letters promise confidentiality, but third-party apps might store client data on servers you've never audited. And if you practice in California, Europe, or other privacy-regulated jurisdictions, you're personally liable for how client data flows through your tech stack.</p>
 
-                <p>The ABA recognized this problem in 2012 when they amended <a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_1_competence/comment_on_rule_1_1/" target="_blank" rel="noopener noreferrer">Model Rule 1.1, Comment [8]</a> to require lawyers maintain "the requisite knowledge and skill" including understanding "the benefits and risks associated with relevant technology." Clicking "Connect to Clio" without reading the permission request isn't just careless—it's an ethics violation.</p>
+                <p>The ABA recognized this problem in 2012 when they amended <a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_1_competence/comment_on_rule_1_1/" target="_blank" rel="noopener noreferrer">Model Rule 1.1, Comment [8]</a> to require lawyers maintain "the requisite knowledge and skill" including understanding "the benefits and risks associated with relevant technology." Clicking "Connect to Clio" without reading the permission request may not meet these ethics requirements.</p>
 
-                <p>This guide explains Clio integration best practices in plain English. You'll learn how OAuth 2.0 authorization works, what permission scopes mean, and five actionable security practices. We'll examine RevenueRescue as a case study for minimal-scope integrations, identify common mistakes, and answer frequently asked questions. By the end, you'll evaluate Clio integrations like a security professional—without needing a computer science degree.</p>
+                <p>This guide explains Clio integration best practices in plain English. You'll learn how OAuth 2.0 authorization works, what app permissions mean, and five actionable security practices. We'll examine RevenueRescue as a case study, identify common mistakes, and answer frequently asked questions. By the end, you'll evaluate Clio integrations like a security professional, without needing a computer science degree.</p>
             </section>
 
             <!-- Article Image 1 -->
@@ -768,85 +768,23 @@
             </div>
 
             <section id="understanding-oauth">
-                <h2>Understanding OAuth 2.0 Security</h2>
+                <h2>Understanding App Connections to Clio</h2>
 
-                <p>Before diving into Clio integration best practices, you need to understand how OAuth 2.0 works. OAuth (Open Authorization) is the security protocol that powers "Connect to Clio" buttons across the legal tech ecosystem.</p>
+                <p>When you click "Connect to Clio," you're granting a third-party app permission to access specific parts of your Clio account. This connection system (called OAuth 2.0) works like a hotel key card: the app gets limited access to certain resources, never sees your password, and you can revoke access anytime.</p>
 
-                <h3 id="what-is-oauth">What is OAuth 2.0?</h3>
+                <h3 id="what-you-need-to-know">What You Need to Know</h3>
 
-                <p>OAuth 2.0 is an authorization protocol that allows third-party applications to access your Clio data without ever seeing your password. Think of it like a hotel key card system.</p>
+                <p>When evaluating Clio integrations, focus on these key security principles:</p>
 
-                <p>When you check into a hotel, you don't give the valet your room key. Instead, the hotel issues a separate key card that:</p>
                 <ul>
-                    <li>Only opens specific doors (your room, the gym, the pool)</li>
-                    <li>Only works for a limited time (your stay duration)</li>
-                    <li>Can be deactivated instantly if lost (without changing your room lock)</li>
+                    <li><strong>Apps never see your password.</strong> You always log in through Clio's official website, not the third-party app.</li>
+                    <li><strong>You control what each app can access.</strong> Apps request specific permissions (like "read calendar" or "create time entries"), and you approve or deny each request.</li>
+                    <li><strong>Some permissions are riskier than others.</strong> Calendar access is low risk. Trust account access is very high risk. Documents and communications are moderate to high risk depending on your practice area.</li>
+                    <li><strong>You can disconnect anytime.</strong> Go to Clio Settings → Integrations and revoke access instantly. No need to contact the app vendor.</li>
+                    <li><strong>Read-only is safer than write access.</strong> Apps that can only read data can't modify, delete, or create records in your Clio account.</li>
                 </ul>
 
-                <p>OAuth works the same way. When you "Connect to Clio," the third-party app receives a token (digital key card) that grants limited, time-bound, revocable access to specific Clio resources. The app never receives your Clio password, and you can revoke access anytime from your Clio settings.</p>
-
-                <h3 id="permission-scopes">Permission Scopes Explained</h3>
-
-                <p>Not all OAuth tokens are created equal. The "doors" a token can open depend on its permission scopes. Here's how Clio structures permission scopes with real-world risk levels:</p>
-
-                <div class="permission-box">
-                    <h4>Low Risk Scopes</h4>
-                    <ul>
-                        <li><code>calendar:read</code> - App can see your calendar events (who, what, when)</li>
-                        <li><code>matters:read</code> - App can see matter names and basic details</li>
-                        <li><code>contacts:read</code> - App can see client names and contact information</li>
-                    </ul>
-                </div>
-
-                <div class="permission-box">
-                    <h4>Medium Risk Scopes</h4>
-                    <ul>
-                        <li><code>activities:read</code> - App can see time entries and activities (billable hours, descriptions)</li>
-                        <li><code>communications:read</code> - App can see emails, calls, and text messages stored in Clio</li>
-                    </ul>
-                </div>
-
-                <div class="permission-box">
-                    <h4>High Risk Scopes</h4>
-                    <ul>
-                        <li><code>billing:write</code> - App can create invoices and adjust billing rates</li>
-                        <li><code>documents:read</code> - App can access all uploaded documents (contracts, discovery, privileged communications)</li>
-                    </ul>
-                </div>
-
-                <div class="permission-box">
-                    <h4>Very High Risk Scopes</h4>
-                    <ul>
-                        <li><code>trust_accounts:read</code> - App can see trust account balances and transactions</li>
-                        <li><code>trust_accounts:write</code> - App can create trust account transfers (IOLTA risk)</li>
-                    </ul>
-                </div>
-
-                <p>When evaluating Clio integration best practices, the key question is: Does this app need the permissions it's requesting? A calendar-based time tracking app needs <code>calendar:read</code> and <code>activities:write</code> but has no legitimate reason to request <code>documents:read</code> or <code>trust_accounts:read</code>.</p>
-
-                <h3 id="oauth-flow">The OAuth Flow Walkthrough</h3>
-
-                <p>Here's what happens when you click "Connect to Clio":</p>
-
-                <div class="oauth-flow">
-                    <ol>
-                        <li><strong>Redirect to Clio:</strong> The third-party app redirects you to Clio's authorization server</li>
-                        <li><strong>Login (if needed):</strong> You enter your Clio username and password on Clio's official website (not the app's website)</li>
-                        <li><strong>Permission Request Screen:</strong> Clio displays exactly what the app is requesting (e.g., "Read your calendar and create time entries")</li>
-                        <li><strong>You Approve or Deny:</strong> If you click "Authorize," Clio generates a token and sends it to the app. If you deny, the integration fails.</li>
-                        <li><strong>App Receives Token:</strong> The app stores this token and uses it to make API calls to Clio on your behalf</li>
-                        <li><strong>Revocable Access:</strong> You can revoke the token anytime from Clio Settings → Integrations</li>
-                    </ol>
-                </div>
-
-                <p>This flow means three critical things:</p>
-                <ol>
-                    <li>The app never sees your Clio password (even if the app gets hacked, your Clio account remains secure)</li>
-                    <li>You have granular control over what each app can access</li>
-                    <li>Revocation is instant and doesn't require contacting the app vendor</li>
-                </ol>
-
-                <p>Understanding OAuth 2.0 is the foundation of Clio integration best practices. With this knowledge, you can now evaluate whether an app deserves the access it's requesting.</p>
+                <p>The key question when evaluating any Clio integration: Does this app need the permissions it's requesting to deliver the features I'll actually use?</p>
             </section>
 
             <!-- Article Image 2 -->
@@ -873,7 +811,7 @@
 
                     <p>If an app isn't in the Clio App Directory, it hasn't passed these checks. You're betting your client data security on an unvetted vendor.</p>
 
-                    <p>Some vendors claim "We're Clio-compatible but not in the App Directory yet" or "We're in the approval process." This is a red flag. Clio's approval process takes 4-8 weeks for legitimate vendors. If an app has been "in review" for six months, either they failed the security audit or never submitted for review.</p>
+                    <p>Some vendors claim "We're Clio-compatible but not in the App Directory yet" or "We're in the approval process." This is a red flag. Clio's approval process takes several weeks for legitimate vendors. If an app has been "in review" for six months, either they failed the security audit or never submitted for review.</p>
 
                     <div class="action-step">
                         <strong>Action Step:</strong> Before connecting any app to Clio, search <a href="https://app.clio.com" target="_blank" rel="noopener noreferrer">app.clio.com</a>. If you don't find it there, don't connect it. If you absolutely must use a non-directory app, consult your malpractice carrier first and document the business justification in writing.
@@ -883,16 +821,16 @@
                 <div class="best-practice">
                     <h3 id="best-practice-2">Best Practice #2: Read Permission Requests Carefully</h3>
 
-                    <p>When you click "Connect to Clio," slow down and read the permission request screen. This simple step is one of the most important Clio integration best practices—it's your only opportunity to see what the app is requesting before granting access.</p>
+                    <p>When you click "Connect to Clio," slow down and read the permission request screen. This simple step is one of the most important Clio integration best practices. It's your only opportunity to see what the app is requesting before granting access.</p>
 
                     <p>Ask three questions:</p>
                     <ol>
                         <li><strong>Does this app need these permissions?</strong> A time-tracking app needs <code>calendar:read</code> and <code>activities:write</code>, but why would it need <code>documents:read</code>?</li>
                         <li><strong>Is this read-only or read-write?</strong> Read-only access (<code>calendar:read</code>) is safer than write access (<code>billing:write</code>). Apps can't corrupt data they can't modify.</li>
-                        <li><strong>What's the scope breadth?</strong> Some apps request narrow scopes (specific resources), others request broad scopes (entire account access).</li>
+                        <li><strong>What's the access level?</strong> Some apps request specific permissions (like calendar only), others request extensive access (entire account).</li>
                     </ol>
 
-                    <p>Example: RevenueRescue requests <code>calendar:read</code> and <code>matters:read</code> to detect unbilled time. It doesn't request <code>billing:write</code> because you manually approve billing suggestions before they're created. This follows the principle of least privilege—request only the minimum permissions required.</p>
+                    <p>Example: A time-tracking app might request calendar and matter access to detect unbilled time, but not billing or trust account access. Look for apps that use approval workflows before writing data to your Clio account.</p>
 
                     <div class="action-step">
                         <strong>Action Step:</strong> Take a screenshot of every permission request screen before approving. Store these screenshots in your IT documentation. If the app ever acts strangely or a data breach occurs, you'll have proof of what you authorized.
@@ -902,7 +840,7 @@
                 <div class="best-practice">
                     <h3 id="best-practice-3">Best Practice #3: Prefer Read-Only Integrations When Possible</h3>
 
-                    <p>Read-only integrations (apps that request only <code>*:read</code> scopes) are inherently safer than read-write integrations. If an app can't write data to Clio, it can't:</p>
+                    <p>Read-only integrations (apps that request only <code>*:read</code> permissions) are inherently safer than read-write integrations. If an app can't write data to Clio, it can't:</p>
                     <ul>
                         <li>Accidentally delete matters or contacts</li>
                         <li>Create incorrect invoices or time entries</li>
@@ -924,9 +862,9 @@
                 <div class="best-practice">
                     <h3 id="best-practice-4">Best Practice #4: Audit Connected Apps Quarterly</h3>
 
-                    <p>OAuth tokens don't expire automatically. Once you connect an app to Clio, it retains access until you explicitly revoke it—even if you stop using the app.</p>
+                    <p>OAuth tokens don't expire automatically. Once you connect an app to Clio, it retains access until you explicitly revoke it, even if you stop using the app.</p>
 
-                    <p>This creates "zombie integrations"—apps you tried months ago, decided not to use, but never disconnected. These apps still have active OAuth tokens silently accessing your Clio data in the background.</p>
+                    <p>This creates "zombie integrations": apps you tried months ago, decided not to use, but never disconnected. These apps still have active OAuth tokens silently accessing your Clio data in the background.</p>
 
                     <p>Set a calendar reminder for the first Monday of every quarter (January, April, July, October) to audit connected apps:</p>
 
@@ -948,7 +886,7 @@
                 <div class="best-practice">
                     <h3 id="best-practice-5">Best Practice #5: Implement an Immediate Revocation Protocol</h3>
 
-                    <p>When an employee leaves your firm—voluntarily or involuntarily—most firms remember to:</p>
+                    <p>When an employee leaves your firm (voluntarily or involuntarily), most firms remember to:</p>
                     <ul>
                         <li>Disable their Clio user account</li>
                         <li>Collect their laptop and phone</li>
@@ -981,7 +919,7 @@
             <section id="case-study">
                 <h2>RevenueRescue Case Study: Minimal-Scope Integration</h2>
 
-                <p>Let's examine RevenueRescue as a case study for Clio integration best practices. This isn't a sales pitch—it's an educational example of how a billing automation app can deliver value while requesting minimal OAuth permissions.</p>
+                <p>Let's examine RevenueRescue as a case study for Clio integration best practices. This isn't a sales pitch. It's an educational example of how a billing automation app can deliver value while requesting minimal OAuth permissions.</p>
 
                 <div class="disclaimer">
                     <strong>Disclaimer:</strong> This case study analyzes RevenueRescue's security posture to illustrate OAuth best practices. We're affiliated with RevenueRescue, so treat this as educational content, not an unbiased product review.
@@ -999,28 +937,37 @@
                     <li>Create time entries in Clio (only after your explicit approval)</li>
                 </ol>
 
-                <h3 id="permissions-requested">Permissions Requested: Minimal Scope</h3>
+                <h3 id="permissions-requested">Permissions Requested: Read vs Write Access</h3>
 
                 <div class="case-study">
-                    <h3>RevenueRescue OAuth Scopes</h3>
+                    <h3>RevenueRescue Clio Permissions</h3>
+                    <p>RevenueRescue requests the following permissions:</p>
                     <ul>
-                        <li><code>calendar:read</code> - Read calendar events to detect potential billable time</li>
-                        <li><code>matters:read</code> - Read matter names and details to associate events with clients</li>
-                        <li><code>activities:write</code> - Create time entries in Clio (only after your explicit approval)</li>
+                        <li><code>Activities</code> - Read/Write (create time entries after your approval)</li>
+                        <li><code>Calendars</code> - Read (detect potential billable time)</li>
+                        <li><code>Communications</code> - Read (detect billable client communications)</li>
+                        <li><code>Contacts</code> - Read (associate activities with clients)</li>
+                        <li><code>Custom Fields</code> - Read (read matter custom fields)</li>
+                        <li><code>Documents</code> - Read (analyze document activity patterns)</li>
+                        <li><code>Matters</code> - Read (associate events with client matters)</li>
+                        <li><code>Users</code> - Read (identify which attorney worked on each matter)</li>
+                        <li><code>Tasks</code> - Read (detect task completion for billing)</li>
+                        <li><code>Webhooks</code> - Read/Write (receive real-time updates from Clio)</li>
+                        <li><code>Custom Actions</code> - Read/Write (enable quick actions in Clio interface)</li>
                     </ul>
 
-                    <p style="margin-top: 1.5rem;"><strong>Permissions NOT requested:</strong></p>
+                    <p style="margin-top: 1.5rem;"><strong>Key security features:</strong></p>
                     <ul>
-                        <li><code>billing:read</code> or <code>billing:write</code> - RevenueRescue doesn't read existing invoices or create invoices directly</li>
-                        <li><code>documents:read</code> - RevenueRescue doesn't access uploaded documents</li>
-                        <li><code>trust_accounts:read</code> - RevenueRescue doesn't see trust account balances</li>
-                        <li><code>communications:read</code> - RevenueRescue doesn't access emails or messages</li>
+                        <li>Most permissions are read-only (8 of 11)</li>
+                        <li>Write permissions require your manual approval first</li>
+                        <li>No access to billing records or trust accounts</li>
+                        <li>No ability to modify or delete existing data</li>
                     </ul>
                 </div>
 
-                <p>Note that <code>activities:write</code> is a write permission, but RevenueRescue only exercises it after you manually approve each billing suggestion in the dashboard. This approval workflow gives you final control over what gets written to your Clio account.</p>
+                <p>Note that while RevenueRescue requests several read permissions, the write permissions (Activities, Webhooks, Custom Actions) only execute after you manually approve each suggestion in the dashboard. This approval workflow gives you final control over what gets written to your Clio account.</p>
 
-                <p>This follows the principle of least privilege. The app requests only the minimum permissions required to deliver its core value (detecting unbilled calendar time and creating approved time entries).</p>
+                <p>When evaluating any app, focus on: (1) Does each permission support a feature you'll actually use? (2) Are write permissions protected by approval workflows? (3) Does the app access trust accounts or billing records?</p>
 
                 <h3 id="why-this-matters">Why This Matters for Your Firm</h3>
 
@@ -1036,7 +983,7 @@
 
                 <p>The all-in-one app might offer more features, but it also has access to significantly more sensitive data. If that vendor suffers a data breach, they're exposing your entire Clio account—trust balances, privileged documents, confidential communications.</p>
 
-                <p>RevenueRescue's limited scope means the blast radius of a potential breach is smaller. Even in a worst-case scenario where RevenueRescue's servers were compromised, attackers would only see calendar event titles and matter names—not documents, trust accounts, or communications.</p>
+                <p>An app with limited write access means the potential damage from a breach is smaller. Even if servers were compromised, read-only permissions prevent attackers from modifying or deleting your data. They also prevent access to the most sensitive areas like trust accounts and billing records.</p>
 
                 <h3 id="data-handling">Data Handling: Server-Side Processing</h3>
 
@@ -1074,12 +1021,12 @@
                 <div class="mistake-box">
                     <h3>Mistake #1: Granting Full Account Access to Every App</h3>
 
-                    <p>Many apps request broad permissions like "Full account access" or "All resources: read and write." These permission requests are lazy app design. A well-architected app requests only the specific scopes it needs.</p>
+                    <p>Many apps request broad permissions like "Full account access" or "All resources: read and write." These permission requests are lazy app design. A well-architected app requests only the specific permissions it needs.</p>
 
-                    <p>When you see "Full account access," ask the vendor: "Can you configure this integration with narrower scopes? We only need [specific feature]." Reputable vendors will work with you to scope down permissions. Vendors who refuse are either technically incompetent (they hardcoded broad permissions) or deliberately overreaching (they want access to data they don't need).</p>
+                    <p>When you see "Full account access," ask the vendor: "Can you configure this integration with more limited permissions? We only need [specific feature]." Reputable vendors will work with you to reduce permissions. Vendors who refuse are either technically incompetent (they hardcoded broad permissions) or deliberately overreaching (they want access to data they don't need).</p>
 
                     <div class="fix-box">
-                        <strong>Fix:</strong> Never approve "Full account access" without written justification from the vendor explaining why each requested scope is necessary. If they can't justify it, find a different app.
+                        <strong>Fix:</strong> Never approve "Full account access" without written justification from the vendor explaining why each requested permission is necessary. If they can't justify it, find a different app.
                     </div>
                 </div>
 
@@ -1140,7 +1087,7 @@
                 <div class="faq-section">
                     <div class="faq-item">
                         <h3>Can third-party apps see my trust account balances?</h3>
-                        <p>Only if you grant them <code>trust_accounts:read</code> permission during OAuth authorization. Most apps don't request this scope because they don't need it. But when evaluating a new integration, specifically check whether the permission request includes trust account access.</p>
+                        <p>Only if you grant them <code>trust_accounts:read</code> permission during OAuth authorization. Most apps don't request this permission because they don't need it. But when evaluating a new integration, specifically check whether the permission request includes trust account access.</p>
                         <p>If an app requests <code>trust_accounts:read</code> or <code>trust_accounts:write</code>, ask the vendor why. Legitimate reasons include: accounting integrations syncing trust balances to QuickBooks, compliance tools auditing trust account rules, or trust-specific analytics dashboards. If the vendor can't articulate a clear reason, don't connect the app.</p>
                     </div>
 
@@ -1168,7 +1115,7 @@
 
                     <div class="faq-item">
                         <h3>What happens if a connected app gets hacked?</h3>
-                        <p>The blast radius depends on what OAuth permissions you granted. If you authorized <code>calendar:read</code> only, hackers can see calendar event titles but not documents, trust accounts, or communications. If you authorized "Full account access," they can see everything. This is why following Clio integration best practices matters—minimal OAuth scopes limit the damage from a vendor breach.</p>
+                        <p>The potential damage depends on what permissions you granted. If you authorized calendar access only, hackers can see calendar event titles but not documents, trust accounts, or communications. If you authorized "Full account access," they can see everything. This is why following Clio integration best practices matters. Limited permissions reduce the damage from a vendor breach.</p>
                     </div>
 
                     <div class="faq-item">
@@ -1200,7 +1147,7 @@
                 <ol>
                     <li><strong>Audit Now:</strong> Log into Clio → Settings → Integrations. Review every connected app. Revoke anything you're not actively using.</li>
                     <li><strong>Verify:</strong> Check that all connected apps appear in the official Clio App Directory (app.clio.com)</li>
-                    <li><strong>Review:</strong> Look at the permission scopes each app has. Do any have broader access than they need?</li>
+                    <li><strong>Review:</strong> Look at the permissions each app has. Do any have broader access than they need?</li>
                     <li><strong>Revoke:</strong> Disconnect any apps that request permissions they don't justify</li>
                     <li><strong>Document:</strong> Screenshot your current integrations list and store it in your IT documentation</li>
                     <li><strong>Schedule:</strong> Set a quarterly calendar reminder for your next Clio integration audit</li>
@@ -1208,7 +1155,7 @@
 
                 <div class="cta-medium">
                     <h3>See Clio Integration Best Practices in Action</h3>
-                    <p>RevenueRescue demonstrates minimal-scope OAuth, server-side processing, and user-controlled billing approvals. Recover $15,000-$40,000 in annual revenue leakage while requesting only the OAuth permissions strictly needed.</p>
+                    <p>RevenueRescue demonstrates read-focused permissions, server-side processing, and user-controlled billing approvals. Recover $15,000-$40,000 in annual revenue leakage with careful attention to data security.</p>
                     <a href="/revenuerescue/" class="btn-cta" onclick="trackEvent('blog', 'cta_final_click', 'revenuerescue-trial')">Start Your 7-Day Free Trial</a>
                     <p style="margin-top: 1rem; font-size: 0.95rem;"><a href="../revenuerescue/" style="color: white; opacity: 0.9; text-decoration: underline;">Learn More About RevenueRescue Security</a></p>
                 </div>

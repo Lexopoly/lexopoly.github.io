@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Backup of Your QuoteCreator License | QuoteCreator Help</title>
+    <meta name="description" content="Learn how to create encrypted backups of your QuoteCreator license and restore it on any device. Protect your investment with our simple backup guide.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: #2f7d32;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            border-bottom: 3px solid #2f7d32;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #2f7d32;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2f7d32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2f7d32;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #e8f5e9;
+            border-left: 3px solid #2f7d32;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .example {
+            background: #f7fafc;
+            border-left: 3px solid #718096;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        a {
+            color: #2f7d32;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2f7d32;
+        }
+
+        .related-articles {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .related-articles h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #2f7d32;
+        }
+
+        .related-articles ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2f7d32;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/quotecreator/">Home</a> /
+            <a href="/quotecreator/help/">Help</a> /
+            Backup and Restore
+        </div>
+
+        <header>
+            <h1>Create a Backup of Your QuoteCreator License</h1>
+            <div class="meta">9 min read</div>
+        </header>
+
+        <p>Learn how to create encrypted backups of your license and restore it on any device.</p>
+
+        <h2>Why Create a Backup?</h2>
+
+        <p>Your QuoteCreator license and data live in your browser. If you:</p>
+        <ul>
+            <li>Clear your browsing history</li>
+            <li>Switch browsers or devices</li>
+            <li>Reinstall your operating system</li>
+            <li>Experience browser corruption</li>
+        </ul>
+
+        <p>...you'll need to restore your license. Creating a backup protects your $12.99 investment.</p>
+
+        <div class="highlight">
+            <p><strong>Good News:</strong> You have TWO backup methods:</p>
+            <ol>
+                <li><strong>Email</strong> - License key sent to your inbox (automatic)</li>
+                <li><strong>Encrypted File</strong> - <code>.qclic</code> backup file (recommended!)</li>
+            </ol>
+        </div>
+
+        <h2>Method 1: Email Backup (Automatic)</h2>
+
+        <p>When you purchase, we automatically send your license key to your email.</p>
+
+        <div class="example">
+            <strong>Subject:</strong> "Your QuoteCreator License - QC-XXXX-XXXX-XXXX-XXXX"
+        </div>
+
+        <p><strong>What to do:</strong></p>
+        <ul>
+            <li>Keep this email - don't delete it!</li>
+            <li>Add to an "Important" or "Licenses" folder</li>
+            <li>Star/flag it for easy finding</li>
+            <li>Optional: Save to password manager</li>
+        </ul>
+
+        <p><strong>Recovery:</strong> Just copy/paste the key from email into Settings → License section</p>
+
+        <p><strong>Pros:</strong></p>
+        <ul>
+            <li>Automatic - no setup required</li>
+            <li>Easy to find (search email for "QuoteCreator")</li>
+            <li>Works on any device</li>
+        </ul>
+
+        <p><strong>Cons:</strong></p>
+        <ul>
+            <li>Doesn't backup estimate counters</li>
+            <li>Relies on email not getting deleted</li>
+        </ul>
+
+        <h2>Method 2: Encrypted Backup File (Recommended)</h2>
+
+        <p>Create a backup as an encrypted <code>.qclic</code> file.</p>
+
+        <h3>What Gets Backed Up?</h3>
+
+        <p><strong>License Information:</strong></p>
+        <ul>
+            <li>License key</li>
+            <li>Activation date</li>
+            <li>Purchase details</li>
+        </ul>
+
+        <p><strong>Estimate Counters:</strong></p>
+        <ul>
+            <li>Daily estimate counts (so next estimate continues from correct number)</li>
+            <li>Last estimate number created</li>
+            <li>Last estimate date</li>
+        </ul>
+
+        <p><strong>Encryption:</strong></p>
+        <ul>
+            <li>Bank-level security (AES-256)</li>
+            <li>Password-protected</li>
+            <li>Only you can decrypt it</li>
+        </ul>
+
+        <h2>How to Create a Backup</h2>
+
+        <h3>Step 1: Go to Settings</h3>
+
+        <ol>
+            <li>Open QuoteCreator</li>
+            <li>Click the <strong>gear icon</strong> (Settings)</li>
+            <li>Scroll down to <strong>Backup & Restore</strong> section</li>
+        </ol>
+
+        <h3>Step 2: Create a Backup</h3>
+
+        <ol>
+            <li>Click <strong>"Create a Backup"</strong> button</li>
+            <li>A window will appear asking for a password</li>
+        </ol>
+
+        <h3>Step 3: Choose a Strong Password</h3>
+
+        <p><strong>Requirements:</strong></p>
+        <ul>
+            <li>Minimum 8 characters</li>
+            <li>Use a password you'll remember!</li>
+        </ul>
+
+        <div class="code-box">
+❌ Weak: "password", "12345678"
+✅ Strong: "MyQuote2025!", "PaintBiz#Secure"
+        </div>
+
+        <p><strong>Important:</strong> Write down this password or store in password manager. You'll need it to restore!</p>
+
+        <h3>Step 4: Download the File</h3>
+
+        <ol>
+            <li>Enter your password</li>
+            <li>Click <strong>"Create Backup"</strong></li>
+            <li>File downloads: <code>quotecreator-license-backup-20251101-123456.qclic</code></li>
+        </ol>
+
+        <p><strong>File name format:</strong> <code>quotecreator-license-backup-YYYYMMDD-HHMMSS.qclic</code></p>
+        <ul>
+            <li>Includes date and time when you created the backup</li>
+        </ul>
+
+        <h3>Step 5: Store Safely</h3>
+
+        <p>Save your <code>.qclic</code> file in a secure location:</p>
+
+        <p><strong>Recommended:</strong></p>
+        <ul>
+            <li>Cloud storage (Google Drive, Dropbox, iCloud)</li>
+            <li>Password manager (1Password, LastPass)</li>
+            <li>External hard drive</li>
+            <li>Email to yourself (as attachment)</li>
+        </ul>
+
+        <p><strong>Not Recommended:</strong></p>
+        <ul>
+            <li>Desktop only (gets deleted if computer fails)</li>
+            <li>USB drive only (can be lost)</li>
+            <li>Public/shared folders</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Best Practice:</strong> Store in TWO places (cloud + password manager)</p>
+        </div>
+
+        <h2>How to Restore from Backup</h2>
+
+        <h3>When to Restore?</h3>
+
+        <p>Restore when:</p>
+        <ul>
+            <li>You cleared browser data and lost your license</li>
+            <li>You're setting up QuoteCreator on a new device</li>
+            <li>You switched browsers</li>
+            <li>You reinstalled your OS</li>
+        </ul>
+
+        <h3>Step 1: Locate Your Backup File</h3>
+
+        <p>Find your <code>.qclic</code> file:</p>
+        <ul>
+            <li>Check Downloads folder</li>
+            <li>Check cloud storage (Google Drive, Dropbox, etc.)</li>
+            <li>Check email attachments</li>
+            <li>Check password manager</li>
+        </ul>
+
+        <h3>Step 2: Go to Settings</h3>
+
+        <ol>
+            <li>Open QuoteCreator</li>
+            <li>Click <strong>gear icon</strong> (Settings)</li>
+            <li>Scroll to <strong>Backup & Restore</strong> section</li>
+        </ol>
+
+        <h3>Step 3: Restore from Backup</h3>
+
+        <ol>
+            <li>Click <strong>"Restore from Backup"</strong> button</li>
+            <li>A window appears</li>
+        </ol>
+
+        <h3>Step 4: Select File and Enter Password</h3>
+
+        <ol>
+            <li>Click <strong>"Choose File"</strong> or drag-and-drop your <code>.qclic</code> file</li>
+            <li>Enter the password you used when creating the backup</li>
+            <li>Click <strong>"Restore"</strong></li>
+        </ol>
+
+        <h3>Step 5: Verify Success</h3>
+
+        <p>You should see:</p>
+        <ul>
+            <li>"License restored successfully! Refreshing..."</li>
+            <li>"License activated! You now have unlimited estimates."</li>
+        </ul>
+
+        <p><strong>Check:</strong></p>
+        <ul>
+            <li>Go to <strong>Settings → License</strong> section</li>
+            <li>Should show "License Active"</li>
+            <li>Your license key should be displayed</li>
+        </ul>
+
+        <h3>Step 6: Create Next Estimate</h3>
+
+        <p>Your estimate counter should continue from where you left off!</p>
+
+        <div class="example">
+            <strong>Example:</strong><br>
+            Last estimate before clearing data: <code>EST-20251101-005</code><br>
+            Next estimate after restore: <code>EST-20251101-006</code> (if same day)
+        </div>
+
+        <h2>Set Up QuoteCreator on Multiple Devices</h2>
+
+        <p><strong>Goal:</strong> Use QuoteCreator on both your desktop and laptop with the same license</p>
+
+        <h3>On Your Primary Device (Desktop):</h3>
+
+        <ol>
+            <li>Activate your license (after purchase)</li>
+            <li>Go to <strong>Settings → Backup & Restore</strong></li>
+            <li>Click <strong>"Create a Backup"</strong></li>
+            <li>Choose password: "MySecurePassword123"</li>
+            <li>Save <code>.qclic</code> file to cloud storage (e.g., Google Drive)</li>
+        </ol>
+
+        <h3>On Your Secondary Device (Laptop):</h3>
+
+        <ol>
+            <li>Open QuoteCreator (without license)</li>
+            <li>Download <code>.qclic</code> file from cloud storage</li>
+            <li>Go to <strong>Settings → Backup & Restore</strong></li>
+            <li>Click <strong>"Restore from Backup"</strong></li>
+            <li>Select the <code>.qclic</code> file</li>
+            <li>Enter password: "MySecurePassword123"</li>
+            <li>License activated on laptop!</li>
+        </ol>
+
+        <p><strong>Note:</strong> Estimates don't sync between devices automatically. Each device has its own estimates.</p>
+
+        <h2>Regular Backup Schedule</h2>
+
+        <p><strong>Recommended:</strong> Create a backup monthly or after major milestones</p>
+
+        <p><strong>When to Create a Backup:</strong></p>
+        <ul>
+            <li>Right after purchasing (first time)</li>
+            <li>After creating many estimates (counter backup)</li>
+            <li>Before clearing browser data</li>
+            <li>Before computer maintenance/upgrades</li>
+            <li>Once a month (set calendar reminder)</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Pro Tip:</strong> Set a recurring calendar event:</p>
+            <p><strong>Title:</strong> Backup QuoteCreator License<br>
+            <strong>Frequency:</strong> Monthly<br>
+            <strong>Task:</strong> Create backup and upload to Google Drive</p>
+        </div>
+
+        <h2>Troubleshooting Restore Issues</h2>
+
+        <h3>"Incorrect password or corrupted file"</h3>
+
+        <p><strong>Cause:</strong> Wrong password or damaged file</p>
+
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Double-check password (case-sensitive!)</li>
+            <li>Try typing password instead of copy/paste</li>
+            <li>Re-download the <code>.qclic</code> file from original location</li>
+            <li>If still failing, use manual entry (use your license key from email)</li>
+        </ol>
+
+        <h3>"Invalid backup file format"</h3>
+
+        <p><strong>Cause:</strong> Wrong file type or corrupted</p>
+
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Verify file extension is <code>.qclic</code></li>
+            <li>Make sure you selected the correct file</li>
+            <li>Don't rename the file</li>
+            <li>If you edited the file, it's corrupted - use original</li>
+        </ol>
+
+        <h3>Restore succeeds but estimate counter doesn't restore</h3>
+
+        <p><strong>Cause:</strong> Backup was created before counter feature (Nov 1, 2025)</p>
+
+        <p><strong>Explanation:</strong> Old backups don't include estimate counters. This is normal.</p>
+
+        <p><strong>Fix:</strong> Your license still works! Estimates will use date-based numbering, so no duplicates.</p>
+
+        <h2>Security & Privacy</h2>
+
+        <h3>Is my backup file secure?</h3>
+
+        <p><strong>Yes!</strong> Here's how:</p>
+
+        <p><strong>Encryption:</strong> AES-256-GCM</p>
+        <ul>
+            <li>Same encryption banks use</li>
+            <li>Requires password to decrypt</li>
+            <li>Even we can't decrypt it without your password</li>
+        </ul>
+
+        <p><strong>What if someone gets my file?</strong></p>
+        <ul>
+            <li>They can't open it without your password</li>
+            <li>Brute force would take millions of years</li>
+            <li>Store password separately from file</li>
+        </ul>
+
+        <p><strong>What's in the file?</strong></p>
+        <ul>
+            <li>License key</li>
+            <li>Estimate counters</li>
+            <li>Activation dates</li>
+            <li>NO estimates, NO client data, NO PDFs</li>
+        </ul>
+
+        <h3>Can QuoteCreator see my backup?</h3>
+
+        <p><strong>No!</strong></p>
+        <ul>
+            <li>Encryption happens in your browser</li>
+            <li>We never receive the file or password</li>
+            <li>Backup/restore is 100% local to your device</li>
+        </ul>
+
+        <h2>Common Questions</h2>
+
+        <p><strong>Q: How often should I create a backup?</strong><br>
+        A: Once right after purchase is sufficient. Create another backup if you've created many estimates and want counter backup.</p>
+
+        <p><strong>Q: Can I have multiple backup files?</strong><br>
+        A: Yes! Each backup creates a new timestamped file. Keep the most recent one.</p>
+
+        <p><strong>Q: What if I forget my backup password?</strong><br>
+        A: You can still recover using your license key from email. Just won't get counter restoration.</p>
+
+        <p><strong>Q: Can I email my .qclic file to myself?</strong><br>
+        A: Yes! It's encrypted, so it's safe to email. Just remember the password.</p>
+
+        <p><strong>Q: Will restoring overwrite my current estimates?</strong><br>
+        A: No. Restoring only restores your license and counters, not your estimates. Each device keeps its own estimates.</p>
+
+        <p><strong>Q: Can I restore on multiple devices?</strong><br>
+        A: Yes! Restore the same <code>.qclic</code> file on as many devices as you want.</p>
+
+        <p><strong>Q: What's better - email or file backup?</strong><br>
+        A: <strong>Both!</strong> Email is easier for license key recovery. File backup restores your counters too.</p>
+
+        <h2>Backup Checklist</h2>
+
+        <p>After purchasing QuoteCreator:</p>
+
+        <ul>
+            <li>Keep license email in a safe folder</li>
+            <li>Create a backup to <code>.qclic</code> file</li>
+            <li>Upload <code>.qclic</code> to cloud storage</li>
+            <li>Store password in password manager</li>
+            <li>Test restore on another device (optional)</li>
+            <li>Set monthly reminder to create new backup</li>
+        </ul>
+
+        <p><strong>Time investment:</strong> 5 minutes<br>
+        <strong>Protection:</strong> Lifetime access to your $12.99 license</p>
+
+        <div class="related-articles">
+            <h3>Related Help Articles</h3>
+            <ul>
+                <li><a href="/quotecreator/help/license-activation/">License Activation Guide</a> - How to activate and recover your license</li>
+                <li><a href="/quotecreator/help/browser-data-faq/">Browser Data FAQ</a> - Understanding how your data is stored</li>
+                <li><a href="/quotecreator/help/troubleshooting/">Troubleshooting Guide</a> - Fix common backup issues</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="/quotecreator/help/">← Back to Help Center</a></p>
+        </footer>
+    </div>
+</body>
+</html>

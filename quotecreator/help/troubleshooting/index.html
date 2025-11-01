@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteCreator Troubleshooting Guide | QuoteCreator Help</title>
+    <meta name="description" content="Quick solutions to common QuoteCreator issues. Find your problem and follow simple steps to fix license activation, estimate numbering, PDF export, and more.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: #2f7d32;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            border-bottom: 3px solid #2f7d32;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #2f7d32;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2f7d32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2f7d32;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            color: #2d3748;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #e8f5e9;
+            border-left: 3px solid #2f7d32;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .example {
+            background: #f7fafc;
+            border-left: 3px solid #718096;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .toc {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #2f7d32;
+        }
+
+        .toc ul {
+            margin-left: 1.5rem;
+        }
+
+        .toc a {
+            color: #2f7d32;
+        }
+
+        a {
+            color: #2f7d32;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2f7d32;
+        }
+
+        .related-articles {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .related-articles h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #2f7d32;
+        }
+
+        .related-articles ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2f7d32;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/quotecreator/">Home</a> /
+            <a href="/quotecreator/help/">Help</a> /
+            Troubleshooting
+        </div>
+
+        <header>
+            <h1>QuoteCreator Troubleshooting Guide</h1>
+            <div class="meta">15 min read</div>
+        </header>
+
+        <p>Quick solutions to common issues. Find your problem below and follow the steps.</p>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <p><strong>License Issues</strong></p>
+            <ul>
+                <li><a href="#cant-find-license-email">Can't find my license email</a></li>
+                <li><a href="#invalid-license-format">License key says "Invalid format"</a></li>
+                <li><a href="#license-wont-activate">License won't activate</a></li>
+                <li><a href="#license-keeps-disappearing">License keeps disappearing</a></li>
+                <li><a href="#lost-license-after-clearing-data">Lost license after clearing browser data</a></li>
+            </ul>
+            <p><strong>Estimate Issues</strong></p>
+            <ul>
+                <li><a href="#estimate-numbers-resetting">Estimate numbers are resetting or duplicating</a></li>
+                <li><a href="#cant-edit-estimate-number">Can't edit estimate number</a></li>
+                <li><a href="#counter-not-restoring">Estimate counter not restoring after restore</a></li>
+            </ul>
+            <p><strong>Import/Export Issues</strong></p>
+            <ul>
+                <li><a href="#license-import-failed">License restore failed</a></li>
+                <li><a href="#pdf-export-not-working">PDF export not working</a></li>
+            </ul>
+            <p><strong>Payment Issues</strong></p>
+            <ul>
+                <li><a href="#payment-but-no-license">Payment went through but no license</a></li>
+                <li><a href="#refund-request">Refund request</a></li>
+            </ul>
+            <p><strong>General Issues</strong></p>
+            <ul>
+                <li><a href="#app-wont-load">App won't load or is stuck</a></li>
+                <li><a href="#estimates-not-saving">Estimates not saving</a></li>
+                <li><a href="#offline-mode-not-working">Offline mode not working</a></li>
+            </ul>
+        </div>
+
+        <h2>License Issues</h2>
+
+        <h3 id="cant-find-license-email">Can't Find My License Email</h3>
+
+        <p><strong>Problem:</strong> You purchased but can't find the email with your license key.</p>
+
+        <h4>Try This First: Search Your Email</h4>
+
+        <p><strong>Gmail:</strong></p>
+        <ul>
+            <li>Search: <code>from:no-reply@lexopoly.com</code></li>
+            <li>Or: <code>"QuoteCreator License"</code></li>
+            <li>Or: <code>"QC-"</code></li>
+        </ul>
+
+        <p><strong>Outlook:</strong></p>
+        <ul>
+            <li>Search: <code>from:no-reply@lexopoly.com</code></li>
+            <li>Check: Junk Email folder</li>
+        </ul>
+
+        <p><strong>Apple Mail:</strong></p>
+        <ul>
+            <li>Search: <code>QuoteCreator</code></li>
+            <li>Check: Trash and Junk folders</li>
+        </ul>
+
+        <h4>If That Didn't Work: Check Your Payment Receipt</h4>
+
+        <ol>
+            <li>Search email for "Stripe" or "Receipt"</li>
+            <li>Find receipt for $12.99 charge</li>
+            <li>Note: Email used for purchase</li>
+            <li>Contact support with purchase email (we can look up your license)</li>
+        </ol>
+
+        <h4>Still Can't Find It: Contact Support</h4>
+
+        <p><strong>What to provide:</strong></p>
+        <ul>
+            <li>Email used for purchase</li>
+            <li>Approximate purchase date</li>
+            <li>Payment receipt screenshot (if available)</li>
+        </ul>
+
+        <p>We'll look up your license and resend the email.</p>
+
+        <p><strong>Contact:</strong> Visit quotecreator.lexopoly.com</p>
+
+        <h3 id="invalid-license-format">License Key Says "Invalid Format"</h3>
+
+        <p><strong>Problem:</strong> When you paste your license key, you get: "Invalid license key format."</p>
+
+        <h4>Valid Format</h4>
+
+        <p><strong>Correct format:</strong> <code>QC-XXXX-XXXX-XXXX-XXXX</code></p>
+
+        <div class="code-box">
+Valid examples:
+QC-A1B2-C3D4-E5F6-G7H8
+QC-1234-5678-90AB-CDEF
+
+Invalid examples:
+QC-123-456 (too short)
+QCA1B2C3D4E5F6G7H8 (missing dashes)
+A1B2-C3D4-E5F6-G7H8 (missing "QC-" prefix)
+        </div>
+
+        <h4>Try This First:</h4>
+
+        <ol>
+            <li>Check the email again - Copy the entire key, including "QC-"</li>
+            <li>Verify dashes - Make sure all four dashes are present</li>
+            <li>Check for spaces - Remove any leading/trailing spaces</li>
+            <li>Try typing manually - If copy/paste fails, type it character by character</li>
+        </ol>
+
+        <h3 id="license-wont-activate">License Won't Activate</h3>
+
+        <p><strong>Problem:</strong> You enter a valid license key, click "Activate," but it doesn't work or shows an error.</p>
+
+        <h4>Try This First: Refresh and Retry</h4>
+
+        <ol>
+            <li>Refresh the page (F5 or Cmd+R)</li>
+            <li>Go back to <strong>Settings → License</strong></li>
+            <li>Try entering the license key again</li>
+        </ol>
+
+        <h4>If That Didn't Work: Clear Browser Cache</h4>
+
+        <p><strong>Warning:</strong> Only clear cache, NOT cookies or site data!</p>
+
+        <p><strong>Chrome:</strong></p>
+        <ol>
+            <li>Settings → Privacy and security → Clear browsing data</li>
+            <li><strong>Only check:</strong> "Cached images and files"</li>
+            <li>Click "Clear data"</li>
+            <li>Refresh QuoteCreator</li>
+            <li>Re-enter license</li>
+        </ol>
+
+        <p><strong>Firefox:</strong></p>
+        <ol>
+            <li>Settings → Privacy & Security → Cookies and Site Data → Clear Data</li>
+            <li><strong>Only check:</strong> "Cached Web Content"</li>
+            <li>Click "Clear"</li>
+            <li>Refresh QuoteCreator</li>
+            <li>Re-enter license</li>
+        </ol>
+
+        <h4>If That Didn't Work: Try a Different Browser</h4>
+
+        <ol>
+            <li>Open QuoteCreator in Chrome (if you were using Firefox)</li>
+            <li>Or vice versa</li>
+            <li>Try activating license there</li>
+            <li>If it works, your original browser may have an issue</li>
+        </ol>
+
+        <h4>Still Not Working: Contact Support</h4>
+
+        <p>Contact us with:</p>
+        <ul>
+            <li>Browser and version (Chrome 120, Firefox 115, etc.)</li>
+            <li>Operating system (Windows 11, macOS 14, etc.)</li>
+            <li>Error message screenshot</li>
+            <li>License key (last 4 characters only for security)</li>
+        </ul>
+
+        <h3 id="license-keeps-disappearing">License Keeps Disappearing</h3>
+
+        <p><strong>Problem:</strong> You activate your license, but it disappears after closing the browser or restarting your computer.</p>
+
+        <h4>Common Cause 1: Using Incognito/Private Mode</h4>
+
+        <p><strong>Symptom:</strong> License works while window is open, disappears when you close it</p>
+
+        <p><strong>Try This First:</strong></p>
+        <ul>
+            <li>Don't use Incognito/Private mode for QuoteCreator</li>
+            <li>Use regular browsing mode</li>
+            <li>License will persist between sessions</li>
+        </ul>
+
+        <h4>Common Cause 2: Browser Auto-Clear Settings</h4>
+
+        <p><strong>Symptom:</strong> License disappears daily or on logout</p>
+
+        <p><strong>Try This First: Check Your Browser Settings</strong></p>
+        <ul>
+            <li>Chrome: Settings → Privacy → Clear browsing data on close</li>
+            <li>Firefox: Settings → Privacy → Delete cookies and site data when Firefox is closed</li>
+            <li>Safari: Preferences → Privacy → Manage Website Data → Remove on close</li>
+        </ul>
+
+        <p><strong>If That Didn't Work:</strong></p>
+        <ul>
+            <li>Disable auto-clear for quotecreator.lexopoly.com</li>
+            <li>Or create/restore backup daily</li>
+        </ul>
+
+        <h4>Common Cause 3: Corporate IT Policy</h4>
+
+        <p><strong>Symptom:</strong> License disappears at logout or nightly</p>
+
+        <p><strong>Solutions:</strong></p>
+        <ul>
+            <li><strong>Option A:</strong> Create a backup daily, restore next morning</li>
+            <li><strong>Option B:</strong> Use QuoteCreator on personal device</li>
+            <li><strong>Option C:</strong> Ask IT to whitelist quotecreator.lexopoly.com</li>
+        </ul>
+
+        <h3 id="lost-license-after-clearing-data">Lost License After Clearing Browser Data</h3>
+
+        <p><strong>Problem:</strong> You cleared your browsing history and now QuoteCreator shows "Create 1 free estimate" again.</p>
+
+        <p><strong>What happened:</strong> Browser data includes your license key. When you cleared it, the license was deleted.</p>
+
+        <h4>Try This First: Email Recovery (Fastest)</h4>
+
+        <ol>
+            <li>Find email with subject "Your QuoteCreator License"</li>
+            <li>Copy license key (QC-XXXX-XXXX-XXXX-XXXX)</li>
+            <li>Go to <strong>Settings → License</strong></li>
+            <li>Paste in "Already have a license key?" field</li>
+            <li>Click <strong>"Activate"</strong></li>
+        </ol>
+
+        <p>Done! License restored.</p>
+
+        <h4>If That Didn't Work: Restore from Backup</h4>
+
+        <p>If you created a backup before clearing data:</p>
+
+        <ol>
+            <li>Find your <code>.qclic</code> file (Downloads, cloud storage, etc.)</li>
+            <li>Go to <strong>Settings → Backup & Restore</strong></li>
+            <li>Click <strong>"Restore from Backup"</strong></li>
+            <li>Select file, enter password</li>
+            <li>License restored!</li>
+        </ol>
+
+        <h2>Estimate Issues</h2>
+
+        <h3 id="estimate-numbers-resetting">Estimate Numbers Are Resetting or Duplicating</h3>
+
+        <p><strong>Problem:</strong> Your estimate numbers seem to reset or you're seeing duplicate numbers.</p>
+
+        <h4>Scenario 1: Counter Resets Daily (This Is Normal!)</h4>
+
+        <div class="example">
+            <strong>Observation:</strong><br>
+            Nov 1: EST-20251101-001, EST-20251101-002<br>
+            Nov 2: EST-20251102-001 ← Back to 001?
+        </div>
+
+        <p><strong>Explanation:</strong> <strong>This is normal!</strong> Date-based numbering resets the counter each day.</p>
+
+        <p><strong>Why:</strong> Different dates = different numbers. No duplicates possible.</p>
+
+        <p><strong>If you don't like this:</strong> Click "Edit" and use custom sequential numbering (EST-0042, EST-0043, etc.)</p>
+
+        <h4>Scenario 2: Duplicate Numbers After Cache Clear</h4>
+
+        <div class="example">
+            <strong>Observation:</strong><br>
+            Before clearing: EST-0042<br>
+            After clearing: EST-0001 (same number as first estimate!)
+        </div>
+
+        <p><strong>Explanation:</strong> Old sequential system reset when cache cleared</p>
+
+        <p><strong>Try This First:</strong> Switch to date-based numbering (automatic) or manually continue from last known number</p>
+
+        <h3 id="cant-edit-estimate-number">Can't Edit Estimate Number</h3>
+
+        <p><strong>Problem:</strong> The estimate number field doesn't seem editable.</p>
+
+        <h4>Try This First:</h4>
+
+        <ol>
+            <li>Look for the <strong>"Edit"</strong> button next to the estimate number</li>
+            <li>Click <strong>"Edit"</strong></li>
+            <li>The field becomes editable</li>
+            <li>Type your desired number</li>
+            <li>Click anywhere outside the field or press Enter</li>
+        </ol>
+
+        <p><strong>If you don't see an "Edit" button:</strong> You may be viewing an existing estimate (numbers can't be changed after saving). This only works when creating a NEW estimate.</p>
+
+        <h3 id="counter-not-restoring">Estimate Counter Not Restoring After Restore</h3>
+
+        <p><strong>Problem:</strong> You restored your license, but the estimate counter didn't restore. Next estimate starts at 001 instead of continuing your count.</p>
+
+        <h4>Common Cause: Old Backup File (Before Nov 1, 2025)</h4>
+
+        <p><strong>Explanation:</strong> Backups created before Nov 1, 2025 don't include estimate counters (feature didn't exist yet).</p>
+
+        <p><strong>Try This First:</strong> No fix needed. Use date-based numbering going forward, or manually continue your sequence.</p>
+
+        <h2>Import/Export Issues</h2>
+
+        <h3 id="license-import-failed">License Restore Failed</h3>
+
+        <p><strong>Problem:</strong> When you try to restore your <code>.qclic</code> file, you get an error.</p>
+
+        <h4>Error: "Incorrect password or corrupted file"</h4>
+
+        <p><strong>Try This First:</strong></p>
+        <ol>
+            <li>Double-check password (case-sensitive!)</li>
+            <li>Try typing password instead of copy/paste</li>
+            <li>Check for extra spaces</li>
+        </ol>
+
+        <p><strong>If That Didn't Work:</strong></p>
+        <ol>
+            <li>Re-download the <code>.qclic</code> file from original location</li>
+            <li>If you have multiple backups, try an older one</li>
+            <li>Use email recovery instead (copy license key from email, manually enter in Settings)</li>
+        </ol>
+
+        <h4>Error: "Invalid backup file format"</h4>
+
+        <p><strong>Try This First:</strong></p>
+        <ol>
+            <li>Verify file extension is <code>.qclic</code></li>
+            <li>Make sure you selected the correct file</li>
+            <li>Don't rename the file</li>
+            <li>If you edited the file, it's corrupted - use original</li>
+        </ol>
+
+        <h3 id="pdf-export-not-working">PDF Export Not Working</h3>
+
+        <p><strong>Problem:</strong> When you click "Export as PDF," nothing happens or you get an error.</p>
+
+        <h4>Try This First: Check Pop-up Blocker</h4>
+
+        <p><strong>Symptom:</strong> PDF doesn't open in new tab</p>
+
+        <p><strong>Fix:</strong></p>
+        <ol>
+            <li>Look for pop-up blocked icon in address bar</li>
+            <li>Allow pop-ups for quotecreator.lexopoly.com</li>
+            <li>Try exporting again</li>
+        </ol>
+
+        <p><strong>Chrome:</strong> Click the icon in address bar → "Always allow pop-ups and redirects"</p>
+        <p><strong>Firefox:</strong> Preferences → Privacy & Security → Permissions → Pop-ups → Exceptions → Allow quotecreator.lexopoly.com</p>
+
+        <h4>If That Didn't Work: Disable Browser Extensions</h4>
+
+        <p>Some ad blockers interfere with PDF generation:</p>
+        <ol>
+            <li>Temporarily disable ad blocker</li>
+            <li>Try exporting PDF</li>
+            <li>If it works, whitelist quotecreator.lexopoly.com in ad blocker</li>
+        </ol>
+
+        <h4>If That Didn't Work: Try a Different Browser</h4>
+
+        <ol>
+            <li>If PDF won't export in Chrome, try Firefox</li>
+            <li>Or vice versa</li>
+            <li>This helps identify if it's a browser-specific issue</li>
+        </ol>
+
+        <h2>Payment Issues</h2>
+
+        <h3 id="payment-but-no-license">Payment Went Through But No License</h3>
+
+        <p><strong>Problem:</strong> You completed checkout, payment was charged, but you don't have a license.</p>
+
+        <h4>Try This First: Wait and Check Email</h4>
+
+        <ol>
+            <li><strong>Check email</strong> - License email should arrive within 5 minutes
+                <ul>
+                    <li>Check spam/junk folder</li>
+                    <li>Search for "QuoteCreator" or "lexopoly"</li>
+                </ul>
+            </li>
+            <li><strong>Wait 10 minutes</strong> - Emails can be delayed</li>
+        </ol>
+
+        <h4>If Still No License After 10 Minutes: Contact Support Immediately</h4>
+
+        <p><strong>What to provide:</strong></p>
+        <ul>
+            <li>Purchase email address</li>
+            <li>Payment receipt screenshot</li>
+            <li>Payment amount ($12.99)</li>
+            <li>Approximate purchase time</li>
+        </ul>
+
+        <p>We'll:</p>
+        <ol>
+            <li>Verify your payment</li>
+            <li>Look up your license key</li>
+            <li>Resend the license email</li>
+            <li>Manually activate your license if needed</li>
+        </ol>
+
+        <p><strong>Contact:</strong> Visit quotecreator.lexopoly.com</p>
+        <p><strong>Expected Response Time:</strong> Within 24 hours (usually much faster)</p>
+
+        <h3 id="refund-request">Refund Request</h3>
+
+        <p><strong>Problem:</strong> You'd like a refund for your QuoteCreator purchase.</p>
+
+        <h4>Try This First: Contact Us to Fix the Issue</h4>
+
+        <p><strong>Common issues we can help fix:</strong></p>
+        <ul>
+            <li>Can't activate license → We can assist</li>
+            <li>Lost license key → We can resend</li>
+            <li>Feature not working → We can troubleshoot</li>
+            <li>Don't understand how to use → We can provide guidance</li>
+        </ul>
+
+        <p><strong>Contact us first</strong> - Most issues are solvable!</p>
+
+        <h4>Refund Policy</h4>
+
+        <p><strong>Eligibility:</strong></p>
+        <ul>
+            <li>Within 30 days of purchase</li>
+            <li>Not satisfied with the product</li>
+            <li>Technical issues we couldn't resolve</li>
+        </ul>
+
+        <p><strong>Process:</strong></p>
+        <ol>
+            <li>Contact support at quotecreator.lexopoly.com</li>
+            <li>Provide:
+                <ul>
+                    <li>Purchase email</li>
+                    <li>Payment receipt</li>
+                    <li>Reason for refund (helps us improve!)</li>
+                </ul>
+            </li>
+            <li>We'll process refund within 5-7 business days</li>
+        </ol>
+
+        <h2>General Issues</h2>
+
+        <h3 id="app-wont-load">App Won't Load or Is Stuck</h3>
+
+        <p><strong>Problem:</strong> QuoteCreator won't load, shows blank page, or is stuck on loading screen.</p>
+
+        <h4>Try This First: Hard Refresh</h4>
+
+        <p><strong>Chrome/Firefox/Edge:</strong></p>
+        <ul>
+            <li>Windows: <code>Ctrl + Shift + R</code></li>
+            <li>Mac: <code>Cmd + Shift + R</code></li>
+        </ul>
+
+        <p>This forces the browser to reload all files (bypasses cache).</p>
+
+        <h4>If That Didn't Work: Clear Cache</h4>
+
+        <p><strong>Warning:</strong> Only clear cache, NOT site data!</p>
+
+        <p><strong>Chrome:</strong></p>
+        <ol>
+            <li>Settings → Privacy → Clear browsing data</li>
+            <li><strong>Only check:</strong> "Cached images and files"</li>
+            <li>Clear data</li>
+        </ol>
+
+        <p><strong>Firefox:</strong></p>
+        <ol>
+            <li>Settings → Privacy → Cookies and Site Data → Clear Data</li>
+            <li><strong>Only check:</strong> "Cached Web Content"</li>
+            <li>Clear</li>
+        </ol>
+
+        <h4>If That Didn't Work: Try Different Browser</h4>
+
+        <p>Test in another browser to isolate the issue:</p>
+        <ul>
+            <li>If works in Firefox but not Chrome → Chrome-specific issue</li>
+            <li>If works nowhere → Possible internet or device issue</li>
+        </ul>
+
+        <h3 id="estimates-not-saving">Estimates Not Saving</h3>
+
+        <p><strong>Problem:</strong> You fill out an estimate, click "Save," but it doesn't save or shows an error.</p>
+
+        <h4>Try This First: Check Required Fields</h4>
+
+        <p><strong>Symptom:</strong> Alert/error message: "Please enter a client name" or "Please enter a matter name"</p>
+
+        <p><strong>Fix:</strong> Fill in all required fields:</p>
+        <ul>
+            <li>Client Name (required)</li>
+            <li>Matter/Project Name (required)</li>
+            <li>At least one line item with description</li>
+        </ul>
+
+        <h4>If That Didn't Work: Disable Browser Extensions</h4>
+
+        <p><strong>Symptom:</strong> No error, but save doesn't happen</p>
+
+        <p><strong>Try This First:</strong></p>
+        <ol>
+            <li>Disable ad blockers or privacy extensions</li>
+            <li>Try saving again</li>
+            <li>If it works, whitelist quotecreator.lexopoly.com</li>
+        </ol>
+
+        <h4>Common Cause: Using Incognito Mode</h4>
+
+        <p><strong>Symptom:</strong> Estimate seems to save, but disappears after closing window</p>
+
+        <p><strong>Fix:</strong> Don't use Incognito mode - use regular browsing</p>
+
+        <h3 id="offline-mode-not-working">Offline Mode Not Working</h3>
+
+        <p><strong>Problem:</strong> QuoteCreator says it works offline, but doesn't load when internet is disconnected.</p>
+
+        <h4>Understanding Offline Mode</h4>
+
+        <p><strong>Requires first online load:</strong></p>
+        <ul>
+            <li>Must load QuoteCreator at least once while online</li>
+            <li>Browser caches the app for offline use</li>
+            <li>Then works offline afterward</li>
+        </ul>
+
+        <p><strong>If you've never loaded it before:</strong> Internet is required for first load</p>
+
+        <h4>Try This First: Load While Online First</h4>
+
+        <ol>
+            <li>Connect to internet</li>
+            <li>Open quotecreator.lexopoly.com</li>
+            <li>Let it fully load</li>
+            <li>Create at least one estimate</li>
+            <li>Now it's cached for offline use</li>
+        </ol>
+
+        <h4>If That Didn't Work: Hard Refresh to Update Cache</h4>
+
+        <ol>
+            <li>Connect to internet</li>
+            <li>Open QuoteCreator</li>
+            <li>Hard refresh: <code>Ctrl+Shift+R</code> (Windows) or <code>Cmd+Shift+R</code> (Mac)</li>
+            <li>Let it fully load</li>
+            <li>Now try offline</li>
+        </ol>
+
+        <h2>Prevention Tips</h2>
+
+        <div class="highlight">
+            <p><strong>Before Clearing Browser Data:</strong></p>
+            <ul>
+                <li>Create a backup</li>
+                <li>Export important estimates as PDFs</li>
+                <li>Note your last estimate number (if using custom numbering)</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <p><strong>Regular Maintenance:</strong></p>
+            <ul>
+                <li>Create a backup monthly</li>
+                <li>Keep license email safe</li>
+                <li>Save PDFs to cloud storage</li>
+                <li>Don't delete browser data unnecessarily</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Best Practices:</strong></p>
+            <ul>
+                <li>Use regular browsing mode (not incognito)</li>
+                <li>Whitelist quotecreator.lexopoly.com in ad blockers</li>
+                <li>Use a supported browser (Chrome, Firefox, Safari, Edge)</li>
+                <li>Keep browser updated</li>
+            </ul>
+        </div>
+
+        <h2>Still Need Help?</h2>
+
+        <p>If your issue isn't covered here:</p>
+
+        <h3>Check Other Help Articles</h3>
+
+        <ul>
+            <li><a href="/quotecreator/help/license-activation/">License Activation Guide</a> - License recovery</li>
+            <li><a href="/quotecreator/help/backup-and-restore/">Backup and Restore Guide</a> - Create/restore backups</li>
+            <li><a href="/quotecreator/help/browser-data-faq/">Browser Data FAQ</a> - Privacy and data storage</li>
+        </ul>
+
+        <h3>Contact Support</h3>
+
+        <p><strong>Visit:</strong> quotecreator.lexopoly.com</p>
+
+        <p><strong>Include in your message:</strong></p>
+        <ul>
+            <li>Detailed description of the problem</li>
+            <li>Steps you've already tried</li>
+            <li>Browser and version (Chrome 120, Firefox 115, etc.)</li>
+            <li>Operating system (Windows 11, macOS 14, etc.)</li>
+            <li>Screenshots if applicable</li>
+        </ul>
+
+        <p><strong>Response Time:</strong> Within 24-48 hours (usually much faster)</p>
+
+        <p><strong>Most issues are quick fixes!</strong> Start with the simplest solution (refresh, retry) and work your way up to more complex ones.</p>
+
+        <div class="related-articles">
+            <h3>Related Help Articles</h3>
+            <ul>
+                <li><a href="/quotecreator/help/license-activation/">License Activation Guide</a> - How to activate and recover your license</li>
+                <li><a href="/quotecreator/help/backup-and-restore/">Backup and Restore Guide</a> - How to protect your license with backups</li>
+                <li><a href="/quotecreator/help/browser-data-faq/">Browser Data FAQ</a> - Understanding how your data is stored</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="/quotecreator/help/">← Back to Help Center</a></p>
+        </footer>
+    </div>
+</body>
+</html>

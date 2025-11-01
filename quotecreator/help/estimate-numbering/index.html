@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Estimate Numbers in QuoteCreator | QuoteCreator Help</title>
+    <meta name="description" content="Learn how QuoteCreator generates estimate numbers using today's date. Simple examples show how EST-20251101-001 works and how to customize for your workflow.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .breadcrumb {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: #2f7d32;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            border-bottom: 3px solid #2f7d32;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #2f7d32;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2f7d32;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2f7d32;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #e8f5e9;
+            border-left: 3px solid #2f7d32;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .example {
+            background: #f7fafc;
+            border-left: 3px solid #718096;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        a {
+            color: #2f7d32;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #2f7d32;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f7fafc;
+            color: #2f7d32;
+            font-weight: 600;
+        }
+
+        .related-articles {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 3rem 0 2rem 0;
+        }
+
+        .related-articles h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #2f7d32;
+        }
+
+        .related-articles ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            border-top: 2px solid #e2e8f0;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2f7d32;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/quotecreator/">Home</a> /
+            <a href="/quotecreator/help/">Help</a> /
+            Estimate Numbering
+        </div>
+
+        <header>
+            <h1>Understanding Estimate Numbers</h1>
+            <div class="meta">8 min read</div>
+        </header>
+
+        <p>Learn how QuoteCreator generates estimate numbers and how to customize them for your workflow.</p>
+
+        <h2>What Are Estimate Numbers?</h2>
+
+        <p>Every estimate in QuoteCreator gets a unique number. This helps you:</p>
+        <ul>
+            <li>Reference estimates in conversations ("Per EST-20251101-001...")</li>
+            <li>Organize your work chronologically</li>
+            <li>Track estimates in your accounting system</li>
+            <li>Avoid confusion between different projects</li>
+        </ul>
+
+        <div class="example">
+            <strong>Example:</strong> When you create an estimate, it appears on your PDF as <code>EST-20251101-001</code>
+        </div>
+
+        <h2>How Estimate Numbering Works</h2>
+
+        <h3>Date-Based Numbering (Default)</h3>
+
+        <p><strong>Format:</strong> <code>EST-YYYYMMDD-NNN</code></p>
+
+        <p><strong>Breaking it down:</strong></p>
+        <ul>
+            <li><code>EST</code> = Prefix for "Estimate"</li>
+            <li><code>YYYYMMDD</code> = Today's date when the estimate was created</li>
+            <li><code>NNN</code> = Counter for that day (001, 002, 003...)</li>
+        </ul>
+
+        <div class="code-box">
+EST-20251101-001  →  First estimate created on November 1, 2025
+EST-20251101-002  →  Second estimate created on November 1, 2025
+EST-20251102-001  →  First estimate created on November 2, 2025
+        </div>
+
+        <h3>Why Date-Based?</h3>
+
+        <p><strong>Problem we solved:</strong> Old sequential numbering (EST-001, EST-002, EST-003...) had a fatal flaw:</p>
+
+        <div class="example">
+            <strong>Scenario:</strong>
+            <ol>
+                <li>You create EST-001 through EST-042</li>
+                <li>You clear your browser cache (or switch devices)</li>
+                <li>Next estimate becomes EST-001 again</li>
+                <li>Now you have <strong>two different estimates</strong> both numbered EST-001!</li>
+            </ol>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Solution:</strong> Date-based numbering means even if you clear your cache:</p>
+            <ul>
+                <li>Today's date: <code>20251101</code></li>
+                <li>Tomorrow's date: <code>20251102</code></li>
+                <li>They're <strong>automatically different</strong> - no duplicates possible!</li>
+            </ul>
+        </div>
+
+        <h2>How Estimates Are Numbered</h2>
+
+        <h3>Your First Estimate</h3>
+
+        <p>When you create your first estimate on November 1, 2025:</p>
+
+        <p><strong>Generates:</strong> <code>EST-20251101-001</code></p>
+        <p><strong>Stored:</strong> Counter for that date (001) saved in browser</p>
+
+        <h3>Your Second Estimate (Same Day)</h3>
+
+        <p>Later that day, you create another estimate:</p>
+
+        <p><strong>Generates:</strong> <code>EST-20251101-002</code></p>
+        <p><strong>Logic:</strong> Same date, so counter increments (001 → 002)</p>
+
+        <h3>Next Day</h3>
+
+        <p>On November 2, 2025, you create a new estimate:</p>
+
+        <p><strong>Generates:</strong> <code>EST-20251102-001</code></p>
+        <p><strong>Logic:</strong> New date, so counter resets to 001</p>
+
+        <div class="highlight">
+            <p><strong>This is normal!</strong> It's not a bug - each day gets its own counter.</p>
+        </div>
+
+        <h2>Customizing Estimate Numbers</h2>
+
+        <p>Don't like the automatic number? You can change it!</p>
+
+        <h3>How to Edit Estimate Numbers</h3>
+
+        <p><strong>Step 1:</strong> Start Creating an Estimate</p>
+        <ol>
+            <li>Go to <strong>New Estimate</strong></li>
+            <li>At the top of the form, you'll see the estimate number section</li>
+        </ol>
+
+        <p><strong>Step 2:</strong> Click "Edit"</p>
+        <ol>
+            <li>Find the estimate number display (e.g., <code>EST-20251101-001</code>)</li>
+            <li>Click the <strong>"Edit"</strong> button next to it</li>
+        </ol>
+
+        <p><strong>Step 3:</strong> Enter Your Custom Number</p>
+
+        <p>The field becomes editable. Type any format you want:</p>
+
+        <div class="code-box">
+EST-0042              (continue sequential from old system)
+EST-SMITH-001         (client-based)
+EST-JOB2025-001       (project-based)
+EST-NOV-001           (month-based)
+QUOTE-20251101-001    (change prefix)
+        </div>
+
+        <p><strong>Step 4:</strong> Save Your Estimate</p>
+        <ul>
+            <li>Click anywhere outside the field or click "Cancel" to lock it in</li>
+            <li>Continue filling out your estimate</li>
+            <li>When you save, your custom number is used</li>
+        </ul>
+
+        <h2>Custom Numbering Examples</h2>
+
+        <h3>Sequential (Old Style)</h3>
+
+        <p><strong>Format:</strong> <code>EST-0001</code>, <code>EST-0002</code>, <code>EST-0003</code>...</p>
+
+        <p><strong>When to use:</strong></p>
+        <ul>
+            <li>You prefer simple sequential numbers</li>
+            <li>You're migrating from old QuoteCreator</li>
+            <li>You manually track your last number</li>
+        </ul>
+
+        <p><strong>How to continue:</strong></p>
+        <ol>
+            <li>Remember your last estimate number (e.g., EST-0042)</li>
+            <li>When creating new estimate, click "Edit"</li>
+            <li>Type <code>EST-0043</code></li>
+            <li>Next time, manually type <code>EST-0044</code>, etc.</li>
+        </ol>
+
+        <h3>Project-Based</h3>
+
+        <p><strong>Format:</strong> <code>EST-PROJECT-001</code>, <code>EST-PROJECT-002</code>...</p>
+
+        <p><strong>When to use:</strong></p>
+        <ul>
+            <li>You work on long-term projects with multiple estimates</li>
+            <li>You want estimates grouped by project name</li>
+        </ul>
+
+        <div class="example">
+            <strong>Example:</strong><br>
+            EST-SMITH-KITCHEN-001<br>
+            EST-SMITH-KITCHEN-002<br>
+            EST-JONES-BATHROOM-001<br>
+            EST-JONES-BATHROOM-002
+        </div>
+
+        <h3>Client-Based</h3>
+
+        <p><strong>Format:</strong> <code>EST-CLIENTNAME-001</code></p>
+
+        <p><strong>When to use:</strong></p>
+        <ul>
+            <li>You have repeat clients with multiple estimates</li>
+            <li>You want client name visible in number</li>
+        </ul>
+
+        <div class="example">
+            <strong>Example:</strong><br>
+            EST-ACME-001<br>
+            EST-ACME-002<br>
+            EST-GLOBEX-001
+        </div>
+
+        <h2>Best Practices</h2>
+
+        <h3>Do This:</h3>
+
+        <p><strong>Keep it consistent:</strong> Pick a format and stick with it</p>
+        <div class="code-box">
+✅ EST-20251101-001, EST-20251101-002, EST-20251101-003
+❌ EST-20251101-001, EST-SMITH-002, QUOTE-001
+        </div>
+
+        <p><strong>Include the date</strong> (in some form): Makes sorting easier</p>
+        <div class="code-box">
+✅ EST-20251101-001 or EST-2025-NOV-001
+❌ EST-001, EST-002 (no date context)
+        </div>
+
+        <p><strong>Use leading zeros:</strong> Helps with sorting</p>
+        <div class="code-box">
+✅ EST-001, EST-002, ... EST-099, EST-100
+❌ EST-1, EST-2, ... EST-99, EST-100 (sorts wrong)
+        </div>
+
+        <p><strong>Keep it professional:</strong> Clients see this on the PDF</p>
+        <div class="code-box">
+✅ EST-20251101-001
+❌ BobsEstimate-42-FINAL-v2
+        </div>
+
+        <h3>Avoid This:</h3>
+
+        <ul>
+            <li><strong>Changing formats mid-stream:</strong> Pick one and stick with it</li>
+            <li><strong>Too complex:</strong> EST-2025-Q4-NOV-WEEK1-SMITH-BATHROOM-REV3-001</li>
+            <li><strong>Special characters:</strong> Stick to letters, numbers, and dashes</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <p><strong>Q: Why does my estimate start with today's date?</strong><br>
+        A: QuoteCreator uses date-based numbering by default. This prevents duplicate numbers if you clear your browsing history.</p>
+
+        <div class="example">
+            <strong>Example:</strong> <code>EST-20251101-001</code> means "first estimate created on November 1, 2025"
+        </div>
+
+        <p><strong>Q: Can I change it to EST-001, EST-002, EST-003?</strong><br>
+        A: Yes! Click "Edit" and type your desired number. You'll need to manually increment each time (002, 003, 004...).</p>
+
+        <p><strong>Q: Why did my counter reset to 001?</strong><br>
+        A: The counter resets each day. This is normal.</p>
+
+        <div class="example">
+            <strong>Example:</strong><br>
+            Nov 1: EST-20251101-001, EST-20251101-002<br>
+            Nov 2: EST-20251102-001 ← Resets to 001 (different date)
+        </div>
+
+        <p>This is intentional - prevents duplicates across days.</p>
+
+        <p><strong>Q: I cleared my cache and my numbers are off. Help!</strong></p>
+
+        <p><strong>Solution 1: Let it be</strong></p>
+        <ul>
+            <li>New estimates will use today's date</li>
+            <li>Old estimates keep their numbers</li>
+            <li>No duplicates because dates differ</li>
+        </ul>
+
+        <p><strong>Solution 2: Manual override</strong></p>
+        <ul>
+            <li>Remember your last number (check old estimates or sent PDFs)</li>
+            <li>Click "Edit" and continue from there</li>
+            <li>E.g., if last was EST-0042, manually type EST-0043</li>
+        </ul>
+
+        <p><strong>Solution 3: Restore from backup</strong></p>
+        <ul>
+            <li>If you created a backup before clearing cache</li>
+            <li>Restore to get your counters back</li>
+            <li>Next estimate continues correctly</li>
+        </ul>
+
+        <p><strong>Q: Can I have different prefixes? (QUOTE, INV, EST)</strong><br>
+        A: Yes! Just type the prefix you want:</p>
+
+        <div class="code-box">
+QUOTE-20251101-001
+INV-20251101-001
+PROPOSAL-20251101-001
+        </div>
+
+        <p>Currently, you change this per-estimate by clicking "Edit."</p>
+
+        <p><strong>Q: My client asked about the long number. What do I say?</strong></p>
+
+        <p><strong>Professional response:</strong></p>
+        <div class="example">
+            "This is our estimate numbering system. The middle portion is today's date the estimate was created, making it easy to track and reference. The last three digits are a unique identifier for that day."
+        </div>
+
+        <p><strong>Or keep it simple:</strong></p>
+        <div class="example">
+            "This is your estimate reference number. Use this when discussing this estimate."
+        </div>
+
+        <p><strong>Q: Will my old estimates (EST-001 format) still work?</strong><br>
+        A: Yes! Old and new formats coexist perfectly.</p>
+
+        <div class="example">
+            Your estimate list might look like:<br>
+            EST-001 (old format)<br>
+            EST-002 (old format)<br>
+            EST-20251101-001 (new format)<br>
+            EST-20251101-002 (new format)
+        </div>
+
+        <h2>Pro Tips</h2>
+
+        <h3>Tip 1: Use Dates for Chronology</h3>
+
+        <p>Even if you customize, include a date somehow:</p>
+
+        <div class="code-box">
+✅ EST-2025-SMITH-001
+✅ EST-NOV2025-001
+        </div>
+
+        <p>Makes it easy to find estimates by timeframe.</p>
+
+        <h3>Tip 2: Client Prefixes for Repeat Work</h3>
+
+        <p>If you have a long-term client with many estimates:</p>
+
+        <div class="example">
+            EST-ACME-20251101-001<br>
+            EST-ACME-20251115-002<br>
+            EST-ACME-20251201-003
+        </div>
+
+        <p>Easy to filter/search later.</p>
+
+        <h3>Tip 3: Create Backups to Preserve Counters</h3>
+
+        <p>Before clearing cache or switching devices:</p>
+        <ol>
+            <li>Go to Settings → Backup & Restore</li>
+            <li>Create a Backup</li>
+            <li>After restore, counters continue correctly</li>
+        </ol>
+
+        <h2>Summary</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Example</th>
+                    <th>Pros</th>
+                    <th>Cons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Date-based (default)</strong></td>
+                    <td>EST-20251101-001</td>
+                    <td>No duplicates, automatic</td>
+                    <td>Longer, resets daily</td>
+                </tr>
+                <tr>
+                    <td><strong>Sequential</strong></td>
+                    <td>EST-0042</td>
+                    <td>Simple, short</td>
+                    <td>Duplicates if cache cleared</td>
+                </tr>
+                <tr>
+                    <td><strong>Project-based</strong></td>
+                    <td>EST-KITCHEN-001</td>
+                    <td>Clear project context</td>
+                    <td>Longer</td>
+                </tr>
+                <tr>
+                    <td><strong>Client-based</strong></td>
+                    <td>EST-ACME-001</td>
+                    <td>Clear client context</td>
+                    <td>Longer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight">
+            <p><strong>Recommendation:</strong> Use default date-based unless you have a specific workflow need.</p>
+        </div>
+
+        <div class="related-articles">
+            <h3>Related Help Articles</h3>
+            <ul>
+                <li><a href="/quotecreator/help/getting-started/">Getting Started Guide</a> - Learn how to create your first estimate</li>
+                <li><a href="/quotecreator/help/troubleshooting/">Troubleshooting Guide</a> - Fix numbering issues</li>
+                <li><a href="/quotecreator/help/backup-and-restore/">Backup and Restore Guide</a> - How to preserve your counters</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="/quotecreator/help/">← Back to Help Center</a></p>
+        </footer>
+    </div>
+</body>
+</html>
