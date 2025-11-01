@@ -447,7 +447,7 @@
                 <a href="/revenuerescue/features/">Features</a>
                 <a href="/revenuerescue/pricing/">Pricing</a>
                 <a href="/revenuerescue/contact/">Contact</a>
-                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'contact')">Contact for Early Access</a>
+                <a href="/revenuerescue/contact/" class="btn-nav-cta" onclick="trackEvent('revenuerescue', 'nav_cta_click', 'trial')">Start Your 7-Day Free Trial</a>
             </div>
         </nav>
     </header>
@@ -461,9 +461,9 @@
     <div class="container">
         <!-- Pricing Card -->
         <div class="pricing-card">
-            <span class="pricing-badge">PILOT PROGRAM</span>
+            <span class="pricing-badge">7-DAY FREE TRIAL</span>
             <div class="price">$149<span class="price-period">/month</span></div>
-            <div class="trial-badge">Contact for Early Access</div>
+            <div class="trial-badge">Try free for 7 days • No credit card required to start</div>
 
             <ul class="features-list">
                 <li>Unlimited billing suggestions</li>
@@ -483,11 +483,68 @@
                 <li>Cancel anytime</li>
             </ul>
 
-            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_cta_click', 'contact')">Contact for Early Access</a>
+            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_cta_click', 'trial')">Start Your 7-Day Free Trial</a>
 
             <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem;">
-                We're finalizing trial terms and onboarding process. Contact us to join pilot cohort.
+                Trial access uses your last 30 days of calendar data. See real revenue recovery potential before committing.
             </p>
+        </div>
+
+        <!-- Trial vs Paid Comparison -->
+        <div style="background: white; border-radius: 16px; padding: 3rem; margin: 3rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+            <h2 style="text-align: center; color: var(--lexopoly-primary); font-size: 2.5rem; margin-bottom: 1rem;">Trial vs. Paid Subscription</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Your trial gives you a snapshot to validate the concept. The paid subscription provides ongoing value that compounds over time.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <!-- Trial Column -->
+                <div style="border: 2px solid var(--border); border-radius: 12px; padding: 2rem;">
+                    <h3 style="color: var(--lexopoly-primary); font-size: 1.5rem; margin-bottom: 1rem; text-align: center;">7-Day Trial</h3>
+                    <div style="background: var(--bg-light); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--success);">FREE</div>
+                        <div style="color: var(--text-secondary);">No credit card required</div>
+                    </div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Duration:</strong> 7 days access</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Calendar Window:</strong> Last 30 days only</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Data Access:</strong> Summary metrics only</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Samples:</strong> 3 anonymized opportunities</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Purpose:</strong> Validate potential revenue</li>
+                        <li style="padding: 0.75rem 0; color: var(--text-secondary);"><strong style="color: var(--text-primary);">Ongoing Capture:</strong> ❌ None (trial ends after 7 days)</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-light); border-radius: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>Best for:</strong> Understanding if you're losing revenue and how much RevenueRescue can capture
+                    </div>
+                </div>
+
+                <!-- Paid Column -->
+                <div style="border: 3px solid var(--revenuerescue-primary); border-radius: 12px; padding: 2rem; position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--revenuerescue-primary); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">RECOMMENDED</div>
+                    <h3 style="color: var(--revenuerescue-primary); font-size: 1.5rem; margin-bottom: 1rem; text-align: center; margin-top: 0.5rem;">Paid Subscription</h3>
+                    <div style="background: linear-gradient(135deg, var(--revenuerescue-primary) 0%, var(--revenuerescue-dark) 100%); color: white; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center;">
+                        <div style="font-size: 2rem; font-weight: 700;">$149</div>
+                        <div style="opacity: 0.9;">per month</div>
+                    </div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Duration:</strong> Unlimited (cancel anytime)</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Calendar Window:</strong> Full unlimited history</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Data Access:</strong> Complete detailed analytics</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Samples:</strong> Unlimited billing suggestions</li>
+                        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);"><strong style="color: var(--text-primary);">Purpose:</strong> Stop losing revenue forever</li>
+                        <li style="padding: 0.75rem 0; color: var(--text-secondary);"><strong style="color: var(--text-primary);">Ongoing Capture:</strong> ✅ Real-time monitoring forever</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(124, 58, 237, 0.1); border-radius: 8px; font-size: 0.9rem; color: var(--text-primary);">
+                        <strong>Best for:</strong> Continuously capturing revenue from every client activity, with value that compounds over months and years
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-light); border-radius: 12px; border-left: 4px solid var(--revenuerescue-primary);">
+                <p style="color: var(--text-primary); line-height: 1.7; margin: 0;">
+                    <strong>💡 Key Insight:</strong> The trial shows you what you've <em>been losing</em> (30-day snapshot). The subscription ensures you <em>stop losing it</em> going forward (unlimited ongoing capture). Most firms find the trial validates $15K-$40K in annual revenue leakage—the subscription captures it.
+                </p>
+            </div>
         </div>
 
         <!-- ROI Calculator -->
@@ -569,7 +626,7 @@
 
             <div class="faq-item">
                 <h3>How does the trial work?</h3>
-                <p><strong>Trial terms are being finalized.</strong> We're currently in pilot phase with limited availability. Contact us for early access to join our pilot cohort. Pilot participants will receive priority access and consideration for special launch pricing. We expect to announce trial terms (7-day or 14-day) within the next 2 weeks.</p>
+                <p><strong>7-day trial with 30-day calendar window.</strong> When you start your trial, RevenueRescue analyzes your last 30 days of Clio calendar data and shows billing suggestions from recent activities. You'll see summary analytics and 3 anonymized sample opportunities to understand the potential. No credit card required to start trial. After 7 days, continue with $149/month subscription for unlimited access to full history and ongoing monitoring.</p>
             </div>
 
             <div class="faq-item">
@@ -606,8 +663,8 @@
         <!-- Final CTA -->
         <div style="text-align: center; padding: 3rem 0;">
             <h2 style="color: var(--lexopoly-primary); margin-bottom: 1rem;">Ready to Stop Losing Revenue?</h2>
-            <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">Contact us for early access to RevenueRescue pilot program</p>
-            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_final_cta_click', 'contact')">Contact for Early Access</a>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">Start your 7-day free trial and see real revenue recovery potential</p>
+            <a href="/revenuerescue/contact/" class="btn-primary" onclick="trackEvent('revenuerescue', 'pricing_final_cta_click', 'trial')">Start Your 7-Day Free Trial</a>
         </div>
     </div>
 
