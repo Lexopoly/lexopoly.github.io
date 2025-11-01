@@ -220,7 +220,7 @@
         </ul>
 
         <h2 id="data-storage">Data Storage</h2>
-        <p>All business data you create in QuoteCreator is stored <strong>exclusively in your browser</strong> using IndexedDB:</p>
+        <p>All business data you create in QuoteCreator is stored <strong>exclusively in your browser's secure storage</strong>:</p>
         <ul>
             <li>Estimates and quotes</li>
             <li>Line items and pricing</li>
@@ -285,7 +285,7 @@
         <h3>Local Libraries (No Data Transmission)</h3>
         <ul>
             <li><strong>PDF generation:</strong> Client-side PDF creation (operates locally, no network calls)</li>
-            <li><strong>IndexedDB:</strong> Browser storage API (operates locally)</li>
+            <li><strong>Browser storage:</strong> All data stored locally in your browser (no network calls)</li>
         </ul>
         <p><strong>No analytics, crash reporting, or cloud services.</strong></p>
 
@@ -309,10 +309,10 @@
         <h2 id="data-security">Data Security</h2>
         <p>Your data is protected by multiple layers of security:</p>
         <ul>
-            <li><strong>Browser security:</strong> Modern browsers protect IndexedDB data with origin-based isolation</li>
+            <li><strong>Browser security:</strong> Modern browsers protect your data with origin-based isolation</li>
             <li><strong>Local-only storage:</strong> No cloud sync = no cloud breaches</li>
-            <li><strong>Encrypted OAuth tokens:</strong> Clio access tokens stored using browser Credential Management API</li>
-            <li><strong>HTTPS only:</strong> All Clio API requests use TLS 1.2+ encryption</li>
+            <li><strong>Encrypted OAuth tokens:</strong> Clio access tokens stored securely in your browser</li>
+            <li><strong>HTTPS only:</strong> All Clio API requests use secure encryption</li>
             <li><strong>No password storage:</strong> We never see or store your Clio password (OAuth handles authentication)</li>
         </ul>
 
@@ -321,7 +321,7 @@
         <h3>Your Rights (GDPR, CCPA, etc.)</h3>
         <p>Under privacy laws like GDPR (EU), CCPA (California), and PIPEDA (Canada), you have rights to:</p>
         <ul>
-            <li><strong>Access your data:</strong> All your data is stored in your browser's IndexedDB storage</li>
+            <li><strong>Access your data:</strong> All your data is stored in your browser's local storage</li>
             <li><strong>Delete your data:</strong> Clear browser data for the QuoteCreator site (see below)</li>
             <li><strong>Export your data:</strong> Generate PDFs and save to any location you choose</li>
             <li><strong>Opt-out of collection:</strong> Nothing to opt out of - we collect no business data</li>
@@ -332,7 +332,7 @@
         <p>To permanently delete all your QuoteCreator data from your browser:</p>
         <ol>
             <li><strong>Option 1 - Clear site data:</strong> Use QuoteCreator Settings → Clear All Data (recommended)</li>
-            <li><strong>Option 2 - Browser settings:</strong> Clear browsing data for quotecreator-web-kr6aj.ondigitalocean.app in your browser's privacy settings</li>
+            <li><strong>Option 2 - Browser settings:</strong> Clear browsing data for QuoteCreator in your browser's privacy settings</li>
         </ol>
         <p>This permanently deletes:</p>
         <ul>

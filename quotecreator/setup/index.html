@@ -513,7 +513,7 @@
             <h2 id="requirements">Before You Start</h2>
             <p>Make sure you have:</p>
             <ul>
-                <li>✅ <strong>QuoteCreator open</strong> in your browser (<a href="https://quotecreator-web-kr6aj.ondigitalocean.app" target="_blank" rel="noopener">Open QuoteCreator</a>)</li>
+                <li>✅ <strong>QuoteCreator open</strong> in your browser (<a href="https://quotecreator.lexopoly.com" target="_blank" rel="noopener">Open QuoteCreator</a>)</li>
                 <li>✅ <strong>Active Clio account</strong> with login credentials</li>
                 <li>✅ <strong>Internet connection</strong> for initial setup</li>
                 <li>✅ <strong>Permission to connect apps</strong> (if you're on a firm-managed Clio account, check with your admin)</li>
@@ -556,7 +556,7 @@
                 <ol start="5">
                     <li>After clicking "Allow", your browser will show <strong>"Can't reach this site"</strong> or similar error</li>
                     <li><strong>This is normal!</strong> Look at the <strong>URL in your browser's address bar</strong></li>
-                    <li>The URL will look like: <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">http://127.0.0.1:5001/callback?code=AbCdEf123...</code></li>
+                    <li>The URL will look like: <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">http://localhost/callback?code=AbCdEf123...</code></li>
                     <li><strong>Copy the entire URL</strong> from the address bar (or just the code after <code>code=</code>)</li>
                 </ol>
 
@@ -565,7 +565,7 @@
                     <p style="margin-bottom: 0.5rem;">After clicking "Allow Access", the browser shows:</p>
                     <ul style="margin-bottom: 0; margin-left: 1.5rem;">
                         <li><strong>"This site can't be reached"</strong> or <strong>"Unable to connect"</strong></li>
-                        <li>URL in address bar: <code style="background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85rem;">http://127.0.0.1:5001/callback?code=...</code></li>
+                        <li>URL in address bar: <code style="background: white; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.85rem;">http://localhost/callback?code=...</code></li>
                         <li><strong>Don't close this page yet!</strong> You need to copy the URL first</li>
                     </ul>
                 </div>
@@ -732,8 +732,8 @@
             <ul>
                 <li><strong>No password storage:</strong> We never see or store your Clio password</li>
                 <li><strong>OAuth 2.0:</strong> Industry-standard secure authentication</li>
-                <li><strong>Encrypted tokens:</strong> Access tokens stored using browser Credential Management API</li>
-                <li><strong>HTTPS only:</strong> All Clio API requests use TLS 1.2+ encryption</li>
+                <li><strong>Encrypted tokens:</strong> Access tokens stored securely in your browser</li>
+                <li><strong>HTTPS only:</strong> All Clio API requests use secure encryption</li>
                 <li><strong>Local-first:</strong> Estimates stay in your browser until you explicitly upload</li>
                 <li><strong>No data sale:</strong> We never sell or share your business data</li>
             </ul>
@@ -741,7 +741,7 @@
 
             <h2>Next Steps</h2>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="https://quotecreator-web-kr6aj.ondigitalocean.app" class="button" target="_blank" rel="noopener">Open QuoteCreator →</a>
+                <a href="https://quotecreator.lexopoly.com" class="button" target="_blank" rel="noopener">Open QuoteCreator →</a>
                 <a href="/quotecreator/" class="button button-secondary">Learn More About QuoteCreator</a>
                 <a href="/support/" class="button button-secondary">Contact Support</a>
             </div>

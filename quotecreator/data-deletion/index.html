@@ -177,7 +177,7 @@
         </div>
 
         <h2>What Data Does QuoteCreator Store?</h2>
-        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively in your browser using IndexedDB:</p>
+        <p>QuoteCreator is a <strong>local-first application</strong> that stores all data exclusively in your browser's secure storage:</p>
         <ul>
             <li>Estimates and quotes you've created</li>
             <li>Line items and pricing information</li>
@@ -209,7 +209,7 @@
                 <li>Navigate to <strong>Privacy</strong> or <strong>Privacy & Security</strong></li>
                 <li>Find <strong>Clear browsing data</strong> or <strong>Site data</strong></li>
                 <li>Select <strong>Cookies and site data</strong></li>
-                <li>Filter or search for <strong>quotecreator-web-kr6aj.ondigitalocean.app</strong></li>
+                <li>Filter or search for <strong>QuoteCreator</strong> or <strong>quotecreator.lexopoly.com</strong></li>
                 <li>Clear data for that specific site</li>
             </ol>
             <p><strong>Result:</strong> All QuoteCreator data is permanently deleted from your browser. You can access QuoteCreator again with a fresh start.</p>
@@ -249,7 +249,7 @@
         <p>To verify that your data has been deleted:</p>
         <ul>
             <li><strong>After clearing site data:</strong> Open QuoteCreator and you'll see the initial welcome screen (as if you're using it for the first time)</li>
-            <li><strong>Browser developer tools:</strong> Open browser DevTools → Application → Storage to confirm IndexedDB for quotecreator-web-kr6aj.ondigitalocean.app is empty</li>
+            <li><strong>Browser developer tools:</strong> Open browser DevTools → Application → Storage to confirm QuoteCreator storage is empty</li>
         </ul>
         <p><strong>Server-side verification not needed:</strong> Since we don't store your business data on any servers, there's no server-side data to check or delete.</p>
 
@@ -270,7 +270,7 @@
         <h2>Your Rights</h2>
         <p>Under privacy laws like GDPR (EU), CCPA (California), and PIPEDA (Canada), you have the right to:</p>
         <ul>
-            <li><strong>Access your data:</strong> All your data is stored in your browser's IndexedDB storage</li>
+            <li><strong>Access your data:</strong> All your data is stored in your browser's local storage</li>
             <li><strong>Delete your data:</strong> Use the methods described above</li>
             <li><strong>Export your data:</strong> Generate PDFs of your estimates and save them to any location</li>
             <li><strong>Revoke third-party access:</strong> Disconnect Clio integration at any time</li>
