@@ -758,7 +758,7 @@
 
                 <p>The ABA recognized this problem in 2012 when they amended <a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_1_competence/comment_on_rule_1_1/" target="_blank" rel="noopener noreferrer">Model Rule 1.1, Comment [8]</a> to require lawyers maintain "the requisite knowledge and skill" including understanding "the benefits and risks associated with relevant technology." Clicking "Connect to Clio" without reading the permission request may not meet these ethics requirements.</p>
 
-                <p>This guide explains Clio integration best practices in plain English. You'll learn how OAuth 2.0 authorization works, what app permissions mean, and five actionable security practices. We'll examine RevenueRescue as a case study, identify common mistakes, and answer frequently asked questions. By the end, you'll evaluate Clio integrations like a security professional, without needing a computer science degree.</p>
+                <p>This guide explains Clio integration best practices in plain English. You'll learn how OAuth 2.0 (the secure connection system) works, what app permissions mean, and five actionable security practices. We'll examine RevenueRescue as a case study, identify common security wins, and answer frequently asked questions. By the end, you'll evaluate Clio integrations like a security professional, without needing a computer science degree.</p>
             </section>
 
             <!-- Article Image 1 -->
@@ -825,8 +825,8 @@
 
                     <p>Ask three questions:</p>
                     <ol>
-                        <li><strong>Does this app need these permissions?</strong> A time-tracking app needs <code>calendar:read</code> and <code>activities:write</code>, but why would it need <code>documents:read</code>?</li>
-                        <li><strong>Is this read-only or read-write?</strong> Read-only access (<code>calendar:read</code>) is safer than write access (<code>billing:write</code>). Apps can't corrupt data they can't modify.</li>
+                        <li><strong>Does this app need these permissions?</strong> A time-tracking app needs <code>calendar:read</code> (permission to view your calendar) and <code>activities:write</code> (ability to create time entries), but why would it need <code>documents:read</code> (access to uploaded documents)?</li>
+                        <li><strong>Is this read-only or read-write?</strong> Read-only access like <code>calendar:read</code> (can view but not modify) is safer than write access like <code>billing:write</code> (can create or modify invoices). Apps can't corrupt data they can't modify.</li>
                         <li><strong>What's the access level?</strong> Some apps request specific permissions (like calendar only), others request extensive access (entire account).</li>
                     </ol>
 
@@ -971,34 +971,13 @@
 
                 <h3 id="why-this-matters">Why This Matters for Your Firm</h3>
 
-                <p>Compare RevenueRescue's permission request to a hypothetical "all-in-one practice management analytics" app that requests:</p>
-                <ul>
-                    <li><code>calendar:read</code></li>
-                    <li><code>matters:read</code></li>
-                    <li><code>billing:read</code></li>
-                    <li><code>documents:read</code></li>
-                    <li><code>trust_accounts:read</code></li>
-                    <li><code>communications:read</code></li>
-                </ul>
+                <p>Apps with limited write access mean the potential damage from a breach is smaller. Even if servers were compromised, read-only permissions prevent attackers from modifying or deleting your data. They also prevent access to the most sensitive areas like trust accounts and billing records.</p>
 
-                <p>The all-in-one app might offer more features, but it also has access to significantly more sensitive data. If that vendor suffers a data breach, they're exposing your entire Clio account—trust balances, privileged documents, confidential communications.</p>
-
-                <p>An app with limited write access means the potential damage from a breach is smaller. Even if servers were compromised, read-only permissions prevent attackers from modifying or deleting your data. They also prevent access to the most sensitive areas like trust accounts and billing records.</p>
+                <p>When evaluating apps, ask: Does this app request access to billing records or trust accounts? If yes, does it actually need that access for the features I'll use?</p>
 
                 <h3 id="data-handling">Data Handling: Server-Side Processing</h3>
 
-                <p>RevenueRescue processes billing suggestions server-side without permanently storing calendar data. Here's the data flow:</p>
-
-                <ol>
-                    <li>RevenueRescue API calls Clio to fetch calendar events (using OAuth token)</li>
-                    <li>Server analyzes events to identify potential unbilled time</li>
-                    <li>Billing suggestions are generated and shown to you in the dashboard</li>
-                    <li>You approve or reject suggestions</li>
-                    <li>Approved suggestions are sent to Clio to create time entries</li>
-                    <li>Calendar data is not permanently stored in RevenueRescue's database</li>
-                </ol>
-
-                <p>This architecture minimizes data retention risk. RevenueRescue doesn't build a permanent archive of your calendar history that could be subpoenaed or breached.</p>
+                <p>RevenueRescue analyzes your calendar to suggest billing entries, then discards the calendar data. Only approved time entries are saved to Clio. This minimizes data retention risk—no permanent archive of your calendar history that could be subpoenaed or breached.</p>
 
                 <h3 id="user-control">User Control: Revocable Anytime</h3>
 
@@ -1014,36 +993,36 @@
             </div>
 
             <section id="common-mistakes">
-                <h2>Common Mistakes to Avoid</h2>
+                <h2>5 Quick Security Wins</h2>
 
-                <p>Even firms that understand OAuth make these four mistakes when managing Clio integrations:</p>
+                <p>Implement these five security optimizations to strengthen your Clio integration security:</p>
 
                 <div class="mistake-box">
-                    <h3>Mistake #1: Granting Full Account Access to Every App</h3>
+                    <h3>Security Win #1: Challenge "Full Account Access" Requests</h3>
 
                     <p>Many apps request broad permissions like "Full account access" or "All resources: read and write." These permission requests are lazy app design. A well-architected app requests only the specific permissions it needs.</p>
 
                     <p>When you see "Full account access," ask the vendor: "Can you configure this integration with more limited permissions? We only need [specific feature]." Reputable vendors will work with you to reduce permissions. Vendors who refuse are either technically incompetent (they hardcoded broad permissions) or deliberately overreaching (they want access to data they don't need).</p>
 
                     <div class="fix-box">
-                        <strong>Fix:</strong> Never approve "Full account access" without written justification from the vendor explaining why each requested permission is necessary. If they can't justify it, find a different app.
+                        <strong>Action:</strong> Never approve "Full account access" without written justification from the vendor explaining why each requested permission is necessary. If they can't justify it, find a different app.
                     </div>
                 </div>
 
                 <div class="mistake-box">
-                    <h3>Mistake #2: Never Reviewing Connected Apps</h3>
+                    <h3>Security Win #2: Audit Connected Apps Quarterly</h3>
 
                     <p>The average law firm connects 5-7 apps to Clio over three years but only actively uses 3-4 at any given time. That means 30-40% of connected apps are "zombie integrations"—authorized but unused.</p>
 
                     <p>Firms forget about trial apps they tested and abandoned, tools that were replaced by better alternatives, and integrations configured by former employees. All of these zombie integrations retain active OAuth access until explicitly revoked.</p>
 
                     <div class="fix-box">
-                        <strong>Fix:</strong> Implement the quarterly audit protocol from Best Practice #4. Every 90 days, review Settings → Integrations and revoke anything you're not actively using.
+                        <strong>Action:</strong> Implement the quarterly audit protocol from Best Practice #4. Every 90 days, review Settings → Integrations and revoke anything you're not actively using.
                     </div>
                 </div>
 
                 <div class="mistake-box">
-                    <h3>Mistake #3: Using Non-Clio-App-Directory Integrations</h3>
+                    <h3>Security Win #3: Only Use Clio App Directory Apps</h3>
 
                     <p>Some vendors build "Clio-compatible" integrations but never submit for App Directory approval. This is often because:</p>
                     <ul>
@@ -1055,12 +1034,12 @@
                     <p>Whatever the reason, using non-directory apps means you're trusting your client data to an unvetted vendor. If that vendor suffers a breach and your clients sue you for negligence, "But they were Clio-compatible!" won't protect you from liability.</p>
 
                     <div class="fix-box">
-                        <strong>Fix:</strong> Only connect apps listed in the official Clio App Directory (app.clio.com). If a vendor isn't listed, ask when they expect directory approval. If they say "We're not pursuing directory approval," that's a red flag.
+                        <strong>Action:</strong> Only connect apps listed in the official Clio App Directory (app.clio.com). If a vendor isn't listed, ask when they expect directory approval. If they say "We're not pursuing directory approval," that's a red flag.
                     </div>
                 </div>
 
                 <div class="mistake-box">
-                    <h3>Mistake #4: Sharing Clio Passwords with Staff Instead of Creating User Accounts</h3>
+                    <h3>Security Win #4: Create Individual User Accounts for Each Staff Member</h3>
 
                     <p>OAuth security depends on individual user accounts with individual OAuth tokens. When firms share a single "admin" Clio login across multiple staff members, they lose:</p>
                     <ul>
@@ -1070,7 +1049,17 @@
                     </ul>
 
                     <div class="fix-box">
-                        <strong>Fix:</strong> Create individual Clio user accounts for every staff member who needs access. Configure role-based permissions. Use OAuth at the user level, not the firm level.
+                        <strong>Action:</strong> Create individual Clio user accounts for every staff member who needs access. Configure role-based permissions. Use OAuth at the user level, not the firm level.
+                    </div>
+                </div>
+
+                <div class="mistake-box">
+                    <h3>Security Win #5: Screenshot Permission Requests Before Approving</h3>
+
+                    <p>When you click "Authorize" on an OAuth permission screen, that record disappears. Six months later when you're troubleshooting an integration issue or responding to a security audit, you won't remember what permissions you granted.</p>
+
+                    <div class="fix-box">
+                        <strong>Action:</strong> Take a screenshot of every OAuth permission request screen before clicking "Authorize." Store these in your firm's IT documentation folder. This creates an audit trail of exactly what you authorized and when.
                     </div>
                 </div>
             </section>
