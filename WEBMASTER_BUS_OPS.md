@@ -264,7 +264,8 @@ Implemented FCO-approved 7-day trial strategy for RevenueRescue, focusing on Lay
 - Duration: 7 days
 - Calendar Window: Last 30 days only (Layer 1 restriction)
 - Data Access: Summary metrics + 3 anonymized samples (Layer 2 restriction)
-- Credit Card: NOT required to start trial (reduce friction)
+- Credit Card: Required to start trial (prevents abuse, standard SaaS practice)
+- Billing: Starts automatically after 7 days unless canceled (no charge during trial period)
 - Purpose: Validate revenue leakage and understand ROI before committing
 
 ---

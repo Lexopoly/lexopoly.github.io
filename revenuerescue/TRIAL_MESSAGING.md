@@ -12,7 +12,8 @@
 - **Duration**: 7 days
 - **Calendar Window**: Last 30 days only (OAuth restriction Layer 1)
 - **Data Access**: Summary metrics only + 3 anonymized sample opportunities (Layer 2)
-- **Credit Card**: NOT required to start trial (reduce friction)
+- **Credit Card**: Required to start trial (prevents abuse, standard SaaS practice)
+- **Billing**: Starts automatically after 7 days unless canceled (no charge during trial period)
 - **IP Rate Limiting**: Max 3 trials per IP per 24 hours (Layer 3, reuse FamilyCalc code)
 - **Ongoing Value Messaging**: Present throughout experience (Layer 4)
 
@@ -37,6 +38,11 @@ Welcome to your 7-day RevenueRescue trial!
 - 3 anonymized sample opportunities to understand how suggestions work
 - Complete access to the dashboard and approval workflow
 
+**About your card:**
+- Your credit card is on file but **won't be charged for 7 days**
+- Cancel anytime within 7 days = never charged
+- After 7 days, billing automatically starts at $149/month unless you cancel
+
 **What to expect:**
 - Most firms discover $15K-$40K in annual revenue leakage during the trial
 - The trial shows you what you've *been losing* (30-day snapshot)
@@ -48,7 +54,7 @@ Welcome to your 7-day RevenueRescue trial!
 3. Explore the 3 sample billing suggestions
 4. See the "Why Continue After Trial?" section to understand ongoing value
 
-Your trial ends in 7 days on [Expiration Date]. No credit card required to continue exploring.
+Your trial ends in 7 days on [Expiration Date].
 
 Questions? Reply to this email or visit our [support page].
 
@@ -57,11 +63,13 @@ Questions? Reply to this email or visit our [support page].
 ---
 
 ### Email 2: Trial Day 5 Reminder
-**Subject**: 2 days left in your trial - Here's what you've discovered
+**Subject**: 2 days left in your trial - Your card will be charged in 2 days
 
 Hi [First Name],
 
 You have **2 days remaining** in your RevenueRescue trial.
+
+**Important billing reminder:** Your credit card will be charged $149 in 2 days unless you cancel. If you want to cancel, do it before [Expiration Date] to avoid any charges.
 
 **What you've learned so far:**
 Based on your last 30 days of calendar data, our analysis shows:
@@ -102,11 +110,13 @@ Questions? Reply to this email.
 ---
 
 ### Email 3: Trial Day 7 Expiration
-**Subject**: Your trial has ended - Continue capturing revenue?
+**Subject**: Your trial has ended - Your card will be charged today
 
 Hi [First Name],
 
-Your 7-day RevenueRescue trial has ended.
+Your 7-day RevenueRescue trial has ended today.
+
+**Important:** Your credit card will be charged $149 today to continue your subscription. If you want to cancel, do it now to avoid the charge.
 
 **What you discovered:**
 - Annual revenue leakage: **[Calculated Amount]**
@@ -312,9 +322,7 @@ Paid subscription ($149/month) provides unlimited access to full calendar histor
 ---
 
 ### Q: Do I need a credit card to start the trial?
-**A:** No credit card required to start your 7-day trial. We want you to validate the revenue potential first, with zero risk.
-
-After your trial ends, you'll need to provide payment information to continue with a paid subscription ($149/month).
+**A:** Yes, credit card required to start your 7-day trial. This is standard practice to prevent abuse while keeping the trial genuinely free. **You won't be charged during the 7-day trial period.** If you cancel within 7 days, your card is never charged. After 7 days, billing automatically starts at $149/month unless you cancel.
 
 ---
 
