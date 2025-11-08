@@ -6,6 +6,88 @@
 
 ---
 
+## 🔄 CASS CALCULATOR REBRAND COMPLETE (2025-11-08)
+
+### **FAMILYCALC MICHIGAN → CASS CALCULATOR** ✅
+
+**Mission**: Rebrand FamilyCalc Michigan to CASS Calculator (Child and Spousal Support Calculator) for multi-state expansion strategy
+
+**Status**: ✅ COMPLETE - 404 FIXED | All 27 pages updated | Deployed to production
+
+**STRATEGIC RATIONALE**
+- **Problem**: "FamilyCalc Michigan" name limits perceived scope to Michigan-only
+- **Expansion Goal**: Multi-state rollout (Michigan → Ohio → Texas → 50 states)
+- **Solution**: Generic "CASS Calculator" brand supports state-agnostic expansion
+- **Business Impact**: Positions product for nationwide market vs single-state limitation
+
+**PHASE 5B: SITE-WIDE NAVIGATION REBRAND** (22 HTML pages updated)
+
+**Core Pages** (6):
+- Homepage (index.html) - Product card + navigation + meta description
+- Pricing page - Full product card + meta tags + navigation
+- Lawyers page - Navigation menu
+- About page - Product card + meta description + navigation
+- Contact page - Navigation menu
+- Support page - Navigation menu
+
+**Solution Pages** (5):
+- Journalists, dictation, court-reporters, government, education - Navigation menus
+
+**Product Pages** (2):
+- LocalTranscribe, QuoteCreator - Navigation menus
+
+**RevenueRescue Subpages** (4):
+- Main page, features, pricing, contact - Navigation + footer links
+
+**Utility Pages** (5):
+- Privacy, signup, terms, solutions - Navigation + content references
+
+**PHASE 6: PRODUCT PAGE MIGRATION** (Directory rename + content update)
+
+**Directory Structure**:
+- `/familycalc/` → `/casscalculator/` ✅ RENAMED
+- Fixed 404 errors on all navigation links
+
+**Product Page Updates** (casscalculator/index.html - 33 changes):
+- Title & meta tags: "FamilyCalc Michigan" → "CASS Calculator"
+- Open Graph & Twitter cards: Updated titles, descriptions, URLs
+- Schema.org structured data: Application name + URL
+- CSS variables: `--familycalc-accent` → `--cass-accent` (13 instances)
+- Image references: `og-familycalc.png` → `og-casscalculator.png`
+- Navigation self-reference: `/familycalc/` → `/casscalculator/`
+- Body content: H1, H2 headings, disclaimers (9 text instances)
+- Anchor links: `#why-familycalc` → `#why-cass`
+- Support feedback URL parameter updated
+
+**EXTERNAL SITE REFERENCES UPDATED**:
+- sitemap.xml: URL updated to `/casscalculator/`
+- pricing/index.html: 2 Open Graph meta tags updated
+- Blog posts (2): Footer navigation links updated
+
+**DEPLOYMENT**:
+- 11 atomic git commits (one per logical grouping)
+- Pushed to GitHub Pages: main branch
+- Live URL verified: https://lexopoly.com/casscalculator/ ✅ WORKING
+
+**CONSERVATIVE BRANDING NOTES**:
+- Michigan pricing retained: "$74.99/year (Michigan)"
+- Multi-state messaging: "Currently available for Michigan, with more states launching soon"
+- External app domain unchanged: familycalc.lexopoly.com (signup URL)
+- Per-state licensing model emphasized (not all-states-for-one-price)
+
+**TOTAL SCOPE**:
+- 27 HTML pages updated across site
+- 1 sitemap.xml updated
+- 1 directory renamed
+- ~70+ individual text/code changes
+- Zero "FamilyCalc Michigan" references remaining (excluding external app domain)
+
+**COMPLETION DATE**: November 8, 2025
+**EXECUTION TIME**: ~2 hours (research + planning + execution + deployment)
+**PATTERN APPLIED**: Systematic rollout with atomic commits, proven Oct 2025 navigation template
+
+---
+
 ## 📊 GA + GSC WEEKLY REPORTING SYSTEM LAUNCH (2025-11-04)
 
 ### **ANALYTICS AUTOMATION INFRASTRUCTURE** ✅

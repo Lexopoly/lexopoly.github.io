@@ -11,6 +11,129 @@
 
 ---
 
+## 🔄 CASS CALCULATOR REBRAND OPERATIONS (2025-11-08)
+
+### **PRODUCT REBRAND: FAMILYCALC MICHIGAN → CASS CALCULATOR** ✅
+
+**Operation Type**: Product rebrand + directory migration + SEO update
+**Status**: ✅ COMPLETE - All files updated | Ready for deployment
+**Execution Time**: ~2 hours (research + planning + implementation)
+
+**TECHNICAL SCOPE**:
+- **Files Modified**: 6 files (product page, sitemap, pricing, 2 blog posts, docs)
+- **Directory Migration**: `/familycalc/` → `/casscalculator/`
+- **Content Changes**: 33+ instances across product landing page
+- **SEO Impact**: Canonical URL, Open Graph, Schema.org, sitemap all updated
+- **CSS Updates**: `--familycalc-accent` → `--cass-accent` (13 instances via replace_all)
+
+**ROOT CAUSE OF 404**:
+- Previous session (nav rollout) updated all 21 pages' navigation links to `/casscalculator/`
+- Physical directory remained as `/familycalc/`
+- Result: All site navigation pointing to non-existent URL
+- Fix: Rename directory + update all internal product page references
+
+**CHANGES BREAKDOWN**:
+
+**1. Directory Migration**:
+```bash
+mv familycalc casscalculator
+```
+- Physical file path: `/home/rain/code/lexopoly-site/casscalculator/index.html`
+- Web URL: `https://lexopoly.com/casscalculator/`
+
+**2. casscalculator/index.html** (33 changes):
+- Title tag: "CASS Calculator - Child and Spousal Support Calculator"
+- Canonical URL: `https://lexopoly.com/casscalculator/`
+- Open Graph metadata (title, URL, image, site_name)
+- Twitter Cards (title, description)
+- Schema.org structured data (name, description, url)
+- CSS custom properties: `--cass-accent: #2f7d32`
+- All H1/H2/H3 headings: "FamilyCalc Michigan" → "CASS Calculator"
+- Body content: "Who Is CASS Calculator For?", "Why CASS Calculator?"
+- Navigation links: `/casscalculator/`
+- OG image reference: `og-casscalculator.png`
+
+**3. sitemap.xml** (line 334):
+```xml
+<loc>https://lexopoly.com/casscalculator/</loc>
+```
+- Critical for search engine indexing
+- Old URL removed, new URL added
+
+**4. pricing/index.html** (lines 26, 35):
+- Open Graph description updated
+- Twitter Card description updated
+- Product name: "CASS Calculator: $74.99/year"
+
+**5. Blog Post Footer Navigation** (2 files):
+- `/blog/real-time-mobile-waste-logging-construction/index.html` (line 650)
+- `/blog/epa-surprise-inspection-construction/index.html` (line 714)
+- Footer link: `<a href="/casscalculator/">CASS Calculator</a>`
+
+**6. SUPER_BUS_OPS.md**:
+- Comprehensive business entry documenting strategic rationale
+- Multi-state expansion context
+- Full technical breakdown
+
+**SEO IMPACT ASSESSMENT**:
+- ✅ **Canonical URL**: Updated (prevents duplicate content penalty)
+- ✅ **Open Graph**: Social sharing now shows correct product name
+- ✅ **Schema.org**: Structured data accurate for search engines
+- ✅ **Sitemap**: Search engines will index new URL correctly
+- ⚠️ **301 Redirects**: NOT IMPLEMENTED (GitHub Pages limitation)
+  - Old `/familycalc/` URL will 404 if externally linked
+  - Acceptable risk: New product, minimal external backlinks
+  - Mitigation: Internal site navigation all updated
+
+**CSS ARCHITECTURE**:
+- Variable naming convention: `--cass-accent` (product namespace)
+- Color: `#2f7d32` (Michigan State University green, retained for brand consistency)
+- Usage: Consistent across buttons, headers, interactive elements
+- Implementation: CSS custom properties for maintainability
+
+**DEPLOYMENT PLAN**:
+1. Git add all modified files
+2. Commit message: "rebrand: Complete CASS Calculator migration - fix 404, update product page, sitemap, and docs"
+3. Push to main branch (GitHub Pages auto-deploys)
+4. Verify https://lexopoly.com/casscalculator/ loads successfully
+5. Check sitemap.xml served correctly
+6. Validate Open Graph tags with Facebook Debugger
+
+**POST-DEPLOYMENT VERIFICATION CHECKLIST**:
+- [ ] https://lexopoly.com/casscalculator/ returns 200 OK
+- [ ] Page title shows "CASS Calculator" in browser tab
+- [ ] CSS styling loads correctly (green accent color)
+- [ ] Navigation links work (header/footer)
+- [ ] Open Graph tags validate (Facebook/LinkedIn sharing preview)
+- [ ] sitemap.xml contains new URL
+- [ ] No console errors in browser DevTools
+- [ ] Mobile responsive design intact
+
+**STRATEGIC CONTEXT**:
+- **Business Driver**: Multi-state expansion (Michigan → Ohio → Texas → 50 states)
+- **Brand Limitation**: "FamilyCalc Michigan" perceived as Michigan-only
+- **Solution**: Generic "CASS Calculator" supports nationwide scope
+- **Revenue Model**: $74.99/year per state license
+- **Target Expansion**: 10-15 states within 12 months
+
+**OPERATIONAL NOTES**:
+- No server-side code changes (static site)
+- No database migrations required
+- No API endpoint updates needed
+- CSS changes backward compatible
+- Image assets to be created: `og-casscalculator.png` (1200x630px for social sharing)
+
+**LESSONS LEARNED**:
+- Navigation rollout (previous session) updated all 21 pages' links but missed directory rename
+- Two-session execution created mismatch between links and physical files
+- Future rebrand: Directory rename + content update should be atomic operation
+- Benefit: 404 error caught in development before production traffic impacted
+
+**COMPLETION TIMESTAMP**: November 8, 2025, 14:45 EST
+**NEXT OPERATIONS**: Deploy to production → Monitor traffic → Create OG image asset
+
+---
+
 ## 📊 ANALYTICS & SEO MONITORING (2025-11-04)
 
 ### **WEEKLY REPORTING SYSTEM** - ✅ DEPLOYED
@@ -65,6 +188,49 @@
 - Action items drive product and content strategy decisions
 
 **Expected Business Impact**: Data-driven resource allocation → better content targeting → higher conversion rates → increased revenue
+
+### **MCP SETUP SESSION** - 🟡 IN PROGRESS (2025-11-02)
+
+**Session Start**: 2025-11-02 02:30 EST
+**Status**: 🟡 BLOCKED - Google Cloud Project Creation Permissions
+**Agent**: CC-WEB
+**Account**: admin@lexopoly.com (Google Workspace Admin)
+
+**Current Phase**: Phase 1 of 3 - Google Cloud Project Setup
+
+**Blocker Details**:
+- **Error**: `resourcemanager.projects.create` permission denied
+- **Location**: Creating new Google Cloud project "Lexopoly Analytics MCP"
+- **Issue**: Workspace admin account lacks project creation permission
+- **Verified**: Cloud Platform enabled for organization ✅
+- **Verified**: User is Super Admin ✅
+- **Problem**: IAM-level permission missing despite admin status
+
+**Resolution Attempts**:
+1. ⏳ **NEXT**: Try creating project under lexopoly.com organization (not "No organization")
+2. ⏸️ **Fallback**: Check for existing projects in Cloud Console
+3. ⏸️ **Alternative**: Grant `roles/resourcemanager.projectCreator` at organization IAM level
+4. ⏸️ **Last Resort**: Use personal Gmail account instead
+
+**Completed Steps**:
+- [x] Accessed Google Cloud Console
+- [x] Verified Workspace Cloud Platform enabled
+- [x] Defined project (Name: Lexopoly Analytics MCP)
+- [ ] **BLOCKED**: Create project ← Current blocker
+- [ ] Enable Google Analytics Data API
+- [ ] Enable Google Search Console API
+- [ ] Create OAuth 2.0 credentials
+- [ ] Install MCPs
+- [ ] Generate Week 44 report
+
+**Time Tracking**:
+- Elapsed: 22 minutes
+- On blocker: ~15 minutes
+- Estimated remaining: 30-40 minutes (once blocker resolved)
+
+**Status File**: `/MCP_SETUP_STATUS_20251102_0252.md` (detailed troubleshooting and resolution paths)
+
+**Next Action**: User to try creating project under lexopoly.com organization instead of "No organization"
 
 ---
 
