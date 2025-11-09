@@ -1140,9 +1140,9 @@
 
         .btn-primary-large,
         .btn-secondary-large {
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -1151,24 +1151,24 @@
         }
 
         .btn-primary-large {
-            background: var(--primary-color);
+            background: var(--lexopoly-primary);
             color: white;
         }
 
         .btn-primary-large:hover {
-            background: var(--accent-color);
+            background: var(--accent);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 94, 184, 0.3);
         }
 
         .btn-secondary-large {
             background: white;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+            color: var(--lexopoly-primary);
+            border: 3px solid var(--lexopoly-primary);
         }
 
         .btn-secondary-large:hover {
-            background: var(--primary-color);
+            background: var(--lexopoly-primary);
             color: white;
             transform: translateY(-2px);
         }
@@ -1542,12 +1542,18 @@
                 </div>
 
                 <div class="peerpush-badges">
-                    <a href="https://peerpush.net/p/quotecreator" target="_blank" rel="noopener" style="height: 60px;">
-                        <img src="https://peerpush.net/p/quotecreator/badge" alt="QuoteCreator on PeerPush" style="height: 60px;">
-                    </a>
-                    <a href="https://peerpush.net/p/compliancelogger" target="_blank" rel="noopener" style="height: 60px;">
-                        <img src="https://peerpush.net/p/compliancelogger/badge" alt="ComplianceLogger on PeerPush" style="height: 60px;">
-                    </a>
+                    <div class="peerpush-badge-container">
+                        <h4 style="text-align: center; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 600;">QuoteCreator</h4>
+                        <a href="/quotecreator/">
+                            <img src="https://peerpush.net/p/quotecreator/badge" alt="QuoteCreator - Available on PeerPush" style="height: 60px;">
+                        </a>
+                    </div>
+                    <div class="peerpush-badge-container">
+                        <h4 style="text-align: center; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 600;">ComplianceLogger</h4>
+                        <a href="/compliancelogger/">
+                            <img src="https://peerpush.net/p/compliancelogger/badge" alt="ComplianceLogger - Available on PeerPush" style="height: 60px;">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="cta-group">
