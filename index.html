@@ -840,7 +840,7 @@
 
         .trust-item {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
         }
 
         .trust-icon {
@@ -1046,6 +1046,11 @@
                 gap: 1rem;
             }
 
+            .peerpush-badge-container {
+                min-width: 100%;
+                width: 100%;
+            }
+
             .cta-group {
                 flex-direction: column;
                 gap: 1rem;
@@ -1130,6 +1135,38 @@
             transform: translateY(-2px);
         }
 
+        .peerpush-badge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .peerpush-badge-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--lexopoly-primary);
+        }
+
+        .peerpush-badge-container h4 {
+            text-align: center;
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .peerpush-badge-container a {
+            display: block;
+            text-align: center;
+        }
+
         .cta-group {
             display: flex;
             justify-content: center;
@@ -1175,7 +1212,7 @@
 
         /* Product Card Badges */
         .product-badge {
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             text-align: center;
         }
 
@@ -1543,13 +1580,13 @@
 
                 <div class="peerpush-badges">
                     <div class="peerpush-badge-container">
-                        <h4 style="text-align: center; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 600;">QuoteCreator</h4>
+                        <h4>QuoteCreator</h4>
                         <a href="/quotecreator/">
                             <img src="https://peerpush.net/p/quotecreator/badge" alt="QuoteCreator - Available on PeerPush" style="height: 60px;">
                         </a>
                     </div>
                     <div class="peerpush-badge-container">
-                        <h4 style="text-align: center; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem; font-weight: 600;">ComplianceLogger</h4>
+                        <h4>ComplianceLogger</h4>
                         <a href="/compliancelogger/">
                             <img src="https://peerpush.net/p/compliancelogger/badge" alt="ComplianceLogger - Available on PeerPush" style="height: 60px;">
                         </a>
