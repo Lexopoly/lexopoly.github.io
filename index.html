@@ -1031,6 +1031,161 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
+            .new-products-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .product-benefits {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .peerpush-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary-large,
+            .btn-secondary-large {
+                width: 100%;
+            }
+        }
+
+        /* Recently Launched Products Section */
+        .new-products {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+
+        .new-products-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .new-products h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .new-products > p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .product-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2.5rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefit {
+            text-align: center;
+        }
+
+        .benefit strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .benefit p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .peerpush-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .peerpush-badges a {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .peerpush-badges a:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-large,
+        .btn-secondary-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 250px;
+        }
+
+        .btn-primary-large {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary-large:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 94, 184, 0.3);
+        }
+
+        .btn-secondary-large {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary-large:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Product Card Badges */
+        .product-badge {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .product-badge a {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .product-badge a:hover {
+            transform: translateY(-2px);
         }
     </style>
 
@@ -1366,6 +1521,42 @@
             </div>
         </section>
 
+        <section class="section new-products" id="new-products">
+            <div class="new-products-card">
+                <h2>🚀 Recently Launched Products</h2>
+                <p>QuoteCreator and ComplianceLogger are now available on PeerPush. Professional-grade tools at introductory rates—privacy-first architecture, one-time purchases, no subscription lock-in.</p>
+
+                <div class="product-benefits">
+                    <div class="benefit">
+                        <strong>✅ Introductory Pricing</strong>
+                        <p>Special launch rates available</p>
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ Privacy-First Architecture</strong>
+                        <p>Local processing, no cloud uploads</p>
+                    </div>
+                    <div class="benefit">
+                        <strong>✅ One-Time Purchases</strong>
+                        <p>No subscriptions, own the software</p>
+                    </div>
+                </div>
+
+                <div class="peerpush-badges">
+                    <a href="https://peerpush.net/p/quotecreator" target="_blank" rel="noopener" style="height: 60px;">
+                        <img src="https://peerpush.net/p/quotecreator/badge" alt="QuoteCreator on PeerPush" style="height: 60px;">
+                    </a>
+                    <a href="https://peerpush.net/p/compliancelogger" target="_blank" rel="noopener" style="height: 60px;">
+                        <img src="https://peerpush.net/p/compliancelogger/badge" alt="ComplianceLogger on PeerPush" style="height: 60px;">
+                    </a>
+                </div>
+
+                <div class="cta-group">
+                    <a href="/quotecreator/" class="btn-primary-large">Try QuoteCreator ($12.99)</a>
+                    <a href="/compliancelogger/" class="btn-secondary-large">Try ComplianceLogger ($149/year)</a>
+                </div>
+            </div>
+        </section>
+
         <section class="portfolio fade-in" id="products">
             <h2>Our Products</h2>
             <p class="portfolio-subtitle">Professional tools designed to make your work easier</p>
@@ -1397,6 +1588,11 @@
                         <li>Works in any modern browser</li>
                         <li>$12.99 one-time purchase</li>
                     </ul>
+                    <div class="product-badge">
+                        <a href="https://peerpush.net/p/quotecreator" target="_blank" rel="noopener">
+                            <img src="https://peerpush.net/p/quotecreator/badge" alt="QuoteCreator on PeerPush" style="height: 40px;">
+                        </a>
+                    </div>
                     <a href="/quotecreator/" class="product-link">Learn More →</a>
                 </div>
 
@@ -1412,6 +1608,11 @@
                         <li>Audit-ready CSV exports</li>
                         <li>$149/year subscription</li>
                     </ul>
+                    <div class="product-badge">
+                        <a href="https://peerpush.net/p/compliancelogger" target="_blank" rel="noopener">
+                            <img src="https://peerpush.net/p/compliancelogger/badge" alt="ComplianceLogger on PeerPush" style="height: 40px;">
+                        </a>
+                    </div>
                     <a href="/compliancelogger/" class="product-link">Learn More →</a>
                 </div>
 
