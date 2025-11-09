@@ -1,0 +1,424 @@
+/**
+ * Lexopoly Component Library (Lite)
+ * Reusable CSS components for consistent UI patterns
+ * Depends on: design-tokens.css
+ */
+
+/* ========================================
+   CARD COMPONENTS
+   ======================================== */
+
+/* Base card - white background, subtle shadow */
+.card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-base);
+    padding: var(--space-xl);
+    transition: var(--transition-base);
+}
+
+/* Card with border */
+.card-bordered {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-base);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border-light);
+    transition: var(--transition-base);
+}
+
+/* Card with elevation */
+.card-elevated {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-base);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-base);
+    transition: var(--transition-base);
+}
+
+/* Interactive card - hover lift effect */
+.card-interactive {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-base);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border-light);
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.card-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-600);
+}
+
+/* Card with accent border (left) */
+.card-accent-left {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-base);
+    padding: var(--space-xl);
+    border-left: 4px solid var(--color-accent-500);
+    transition: var(--transition-base);
+}
+
+/* ========================================
+   BUTTON COMPONENTS
+   ======================================== */
+
+/* Base button styles */
+.btn {
+    display: inline-block;
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: var(--font-sans);
+}
+
+/* Primary button - Lexopoly blue */
+.btn-primary {
+    background: var(--color-primary-600);
+    color: var(--color-text-inverse);
+}
+
+.btn-primary:hover {
+    background: var(--color-accent-500);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary button - outlined */
+.btn-secondary {
+    background: var(--color-bg-primary);
+    color: var(--color-primary-600);
+    border: 2px solid var(--color-primary-600);
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary-600);
+    color: var(--color-text-inverse);
+    transform: translateY(-2px);
+}
+
+/* Ghost button - transparent */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-primary-600);
+    border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+    background: var(--color-gray-50);
+    border-color: var(--color-border-light);
+}
+
+/* Link button - text only */
+.btn-link {
+    background: transparent;
+    color: var(--color-primary-600);
+    padding: var(--space-sm) var(--space-base);
+    font-weight: var(--font-medium);
+}
+
+.btn-link:hover {
+    color: var(--color-accent-500);
+    text-decoration: underline;
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--text-sm);
+}
+
+.btn-lg {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    min-width: 250px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ========================================
+   BADGE COMPONENTS
+   ======================================== */
+
+/* Base badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-full);
+    background: var(--color-gray-100);
+    color: var(--color-text-primary);
+}
+
+/* Status badges */
+.badge-success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Platform badge - for PeerPush, app stores, etc */
+.badge-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-base) var(--space-lg);
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-gray-100) 100%);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
+}
+
+.badge-platform:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary-600);
+}
+
+/* ========================================
+   SECTION LAYOUTS
+   ======================================== */
+
+/* Centered section with max-width */
+.section-centered {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-xl);
+}
+
+/* Full-width section with background */
+.section-full-width {
+    width: 100%;
+    padding: var(--space-3xl) var(--space-xl);
+}
+
+/* Section with secondary background */
+.section-bg-secondary {
+    background: var(--color-bg-secondary);
+}
+
+/* Section with gradient background */
+.section-bg-gradient {
+    background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+}
+
+/* Grid layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+}
+
+/* Auto-fit grid - responsive by default */
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+}
+
+/* Flex layouts */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-base);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-base);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-base);
+}
+
+/* ========================================
+   TEXT UTILITIES
+   ======================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text balance - prevents orphans */
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Gradient text */
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-accent-500) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Muted text */
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+.text-subtle {
+    color: var(--color-text-tertiary);
+}
+
+/* ========================================
+   SPACING UTILITIES
+   ======================================== */
+
+/* Margin utilities */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--space-base); }
+.mt-2 { margin-top: var(--space-xl); }
+.mt-3 { margin-top: var(--space-2xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--space-base); }
+.mb-2 { margin-bottom: var(--space-xl); }
+.mb-3 { margin-bottom: var(--space-2xl); }
+
+/* Padding utilities */
+.p-0 { padding: 0; }
+.p-1 { padding: var(--space-base); }
+.p-2 { padding: var(--space-xl); }
+.p-3 { padding: var(--space-2xl); }
+
+/* Gap utilities for flex/grid */
+.gap-sm { gap: var(--space-sm); }
+.gap-base { gap: var(--space-base); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (max-width: 968px) {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .btn-lg {
+        min-width: 100%;
+    }
+
+    .section-centered,
+    .section-full-width {
+        padding: var(--space-xl) var(--space-base);
+    }
+
+    /* Hide on mobile */
+    .hide-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 969px) {
+    /* Hide on desktop */
+    .hide-desktop {
+        display: none;
+    }
+}
+
+/* ========================================
+   ANIMATION UTILITIES
+   ======================================== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn var(--duration-slow) var(--ease-out);
+}
+
+/* Hover lift - common pattern */
+.hover-lift {
+    transition: var(--transition-transform);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+/* Hover shadow */
+.hover-shadow {
+    transition: var(--transition-base);
+}
+
+.hover-shadow:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Focus visible - accessibility */
+.focus-ring:focus-visible {
+    outline: 2px solid var(--color-primary-600);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+}
