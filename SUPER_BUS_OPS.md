@@ -6,6 +6,25 @@
 
 ---
 
+## 🎯 CYCLECORE SITE: PRODUCT PAGES + TRANSPARENCY FIXES (2025-11-18)
+
+**Status**: ✅ COMPLETE - READY FOR DEPLOYMENT
+**Project**: CycleCore Technologies Website (cyclecore.ai)
+**Branch**: redesign-bold-minimalist-20251117
+
+**What Shipped**:
+- ✅ Fixed transparency FAQ: Generic hosting disclosure (removed AWS reference), softened verification claims
+- ✅ Created `/cyclesum` product page: Features, pricing ($49), waitlist CTA (295 lines)
+- ✅ Created `/mcpbodega` product page: Features, pricing tiers (Free/$29/Custom), links to mcpbodega.com (297 lines)
+- ✅ All pages use consistent black minimalist design system
+- ✅ Product differentiation clear: CycleSum (100% offline) vs MCPBodega (privacy-respecting SaaS)
+
+**Content Accuracy**: Hosting provider not disclosed (user privacy preference), realistic positioning for new company
+
+**Next**: Deploy to production (awaiting approval)
+
+---
+
 ## 🎨 CC-WEB PHASE 2: DESIGN SYSTEM FOUNDATION (2025-11-09)
 
 ### **PROFESSIONAL DESIGN SYSTEM DEPLOYMENT** ✅
